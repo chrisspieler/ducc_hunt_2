@@ -1,0 +1,9 @@
+{
+  "BodyPrefab": "data/equipment/weapon_death/weapon_death.prefab",
+  "PickupPrefab": "data/equipment/weapon_death/weapon_death.prefab",
+  "Name": "Death",
+  "Description": "",
+  "PickupTint": "1,0,0,1",
+  "PickupSound": "data/equipment/weapon_death/church_bell.sound",
+  "__references": []
+}

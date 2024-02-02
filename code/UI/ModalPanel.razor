@@ -1,0 +1,65 @@
+@using System;
+@using System.Linq;
+@using System.Collections.Generic;
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <div class="shadow-box"></div>
+    <div class="body">
+        @if ( !string.IsNullOrWhiteSpace(Title) )
+        {
+            <div class="title">@Title</div>
+        }
+        @if ( !string.IsNullOrWhiteSpace(Message) )
+        {
+            <div class="message">@Message</div>
+        }
+        @if ( Choices.Any() )
+        {
+            <div id="choices">
+                @foreach ( var choice in Choices )
+                {
+                    <div class="button" onclick=@(() => Close(choice) )>@choice</div>
+                }
+            </div>
+        }
+    </div>
+</root>
+
+@code
+{
+    [Property] public string Title { get; set; }
+    [Property, TextArea] public string Message { get; set; } = "Sample Text";
+    [Property] public Action<string> OnClose { get; set; }
+    [Property] public List<string> Choices { get; set; } = new() { "Ok" };
+
+    protected override int BuildHash() => System.HashCode.Combine( Title, Message, Choices?.Count );
+
+    protected override void OnTreeFirstBuilt()
+    {
+        Scene.TimeScale = 0f;
+    }
+
+    public void Close( string choice)
+    {
+        Scene.TimeScale = 1f;
+        OnClose?.Invoke( choice );
+        Enabled = false;
+    }
+
+    public void Show(string message, string title = null, Action<string> onClose = null)
+    {
+        Show( message, title, onClose, "Ok" );
+    }
+
+    public void Show(string message, string title, Action<string> onClose, params string[] choices)
+    {
+        Message = message;
+        Title = title;
+        OnClose = onClose;
+        Choices = choices.ToList();
+        Enabled = true;
+    }
+}

@@ -1,0 +1,26 @@
+MegaToastPanel {
+	position: absolute;
+	height: 40%;
+	width: 100%;
+	bottom: 0;
+	justify-content: center;
+	background: linear-gradient( #0000, #000F );
+	transition: transform 0.3s ease-in;
+	pointer-events: none;
+
+	&:intro {
+		transform: translateY( 100% );
+	}
+
+	&.hide {
+		transform: translateY( 100% );
+	}
+
+	.toast {
+		font-size: 56px;
+		font-family: Poppins;
+		align-self: flex-end;
+		bottom: 20%;
+		color: #fff;
+	}
+}

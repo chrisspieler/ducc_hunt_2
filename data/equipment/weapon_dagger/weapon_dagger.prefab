@@ -1,0 +1,33 @@
+{
+  "RootObject": {
+    "Id": "22e96a61-d497-4900-acd7-1e410a36c54c",
+    "Name": "weapon_dagger",
+    "Enabled": true,
+    "Children": [
+      {
+        "Id": "e0b5eb71-6f77-4ac4-ae11-69c67122cab9",
+        "Name": "Model",
+        "Position": "0,0,3.1",
+        "Scale": "3,3,3",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 5,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/ornate_medieval_dagger.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "polyhaven.ornate_medieval_dagger"
+  ]
+}

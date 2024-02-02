@@ -1,0 +1,47 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class=@PanelClass>
+	<div class="toast">@Message</div>
+</root>
+
+@code
+{
+
+    [Property] public string Message{ get; set; } = "Hello World!";
+    [Property] public float DefaultDuration { get; set; } = 3f;
+
+    private string PanelClass => _toastStartTime < _toastDuration
+        ? ""
+        : "hide";
+    private float _toastDuration = float.PositiveInfinity;
+    private TimeSince _toastStartTime = 0f;
+
+    protected override void OnUpdate()
+    {
+        if ( _toastStartTime > _toastDuration + 0.5f)
+        {
+            Enabled = false;
+        }
+    }
+
+    /// <summary>
+    /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+    /// </summary>
+    protected override int BuildHash() => System.HashCode.Combine( Message, PanelClass );
+
+    public void Show( string message, float duration = 0f )
+    {
+        if ( duration <= 0f )
+        {
+            duration = DefaultDuration;
+        }
+        // Disable the panel to replay :intro
+        Enabled = false;
+        Enabled = true;
+        Message = message;
+        _toastStartTime = 0f;
+        _toastDuration = duration;
+    }
+}

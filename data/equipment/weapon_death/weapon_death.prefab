@@ -1,0 +1,32 @@
+{
+  "RootObject": {
+    "Id": "feee34dd-8057-4905-ba97-54e8f05e27b8",
+    "Name": "Weapon Death",
+    "Enabled": true,
+    "Children": [
+      {
+        "Id": "5a08b9eb-7f66-42f2-ab68-0bac7c76537a",
+        "Name": "Model",
+        "Rotation": "-0.00000003161013,-0.00000003161014,0.7071067,0.7071068",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "model/model/untitled_6.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "tesssssssssst.untitled_623"
+  ]
+}

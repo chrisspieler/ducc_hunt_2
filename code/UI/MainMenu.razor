@@ -1,0 +1,32 @@
+﻿@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <div class="title">@GameTitle</div>
+    <div id="choices">
+        <div class="button" @onclick=@NewGame>New Game</div>
+        <div class="button" onclick=@HelloMisterPresident>I am 46th US President Joseph Robinette Biden Jr.</div>
+        <div class="button disabled">Hold ESC to Quit</div>
+    </div>
+    <div class="copyright">Copyright © 2024 The Pokèmon Company</div>
+</root>
+
+@code
+{
+    [Property] public string GameTitle { get; set; } = "ducc hunt 2";
+    [Property] public ModalPanel PresidentialModal { get; set; }
+    [Property] public SceneFile NewGameScene { get; set; }
+
+    protected override int BuildHash() => System.HashCode.Combine( 1 );
+
+    public void NewGame()
+    {
+        Scene.Load( NewGameScene );
+    }
+
+    public void HelloMisterPresident()
+    {
+        PresidentialModal.Enabled = true;
+    }
+}

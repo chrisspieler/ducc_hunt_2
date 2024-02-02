@@ -1,0 +1,21 @@
+﻿.button {
+    font-size: 28px;
+    justify-content: center;
+    border: 1px solid #fff3;
+    border-radius: 30px;
+    padding: 10px 50px;
+    background-color: #0005;
+    backdrop-filter: blur(10px);
+
+    &:not(.disabled) {
+        &:hover {
+            background-color: #FFF2;
+            border-color: #FFF;
+        }
+    }
+
+    &.disabled {
+        color: #fffA;
+        border-color: #0002;
+    }
+}

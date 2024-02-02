@@ -1,0 +1,32 @@
+{
+  "RootObject": {
+    "Id": "6cfa669a-15f8-436e-afa7-2c989e0994a5",
+    "Name": "cash_stack",
+    "Enabled": true,
+    "Children": [
+      {
+        "Id": "17691556-cdc1-429b-a285-9fce2accde2b",
+        "Name": "Model",
+        "Position": "0,0,2",
+        "Rotation": "0,0.7071068,0,0.7071068",
+        "Scale": "3,3,3",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": "dirty",
+            "MaterialOverride": null,
+            "Model": "models/money_stacks/small_stack.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

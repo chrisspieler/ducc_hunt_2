@@ -1,0 +1,281 @@
+{
+  "Id": "947a54f3-4c55-4fa2-9c74-96a04f0546b2",
+  "GameObjects": [
+    {
+      "Id": "e05baf65-4b63-4b09-a5f8-e6bf9310fe41",
+      "Name": "Camera",
+      "Position": "-200,0,100",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "Bloom",
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Screen",
+          "Strength": 2,
+          "Threshold": 0.04,
+          "ThresholdWidth": 0
+        },
+        {
+          "__type": "DepthOfField",
+          "BackBlur": true,
+          "BlurSize": 100,
+          "FocalDistance": 50,
+          "FrontBlur": false
+        }
+      ]
+    },
+    {
+      "Id": "5020c781-e95d-4c34-af0e-5714538c8fcb",
+      "Name": "Screen",
+      "Position": "153.8508,130.9362,-221.7649",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "GameUI",
+          "MegaToast": {
+            "_type": "component",
+            "go": "4d1a959e-8737-4412-bbed-42d55a05c876",
+            "component_type": "MegaToastPanel"
+          },
+          "Modal": {
+            "_type": "component",
+            "go": "b48c848f-ef12-4045-8918-25a7aac03732",
+            "component_type": "ModalPanel"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "Id": "ca8d968f-ec66-4b6d-bf89-a40157e34289",
+          "Name": "Main Menu",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "MainMenu",
+              "GameTitle": "ducc hunt 2",
+              "NewGameScene": "scenes/edgy_zone.scene",
+              "PresidentialModal": {
+                "_type": "component",
+                "go": "b48c848f-ef12-4045-8918-25a7aac03732",
+                "component_type": "ModalPanel"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "Id": "b48c848f-ef12-4045-8918-25a7aac03732",
+              "Name": "Modal",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModalPanel",
+                  "__enabled": false,
+                  "Choices": [
+                    "The honor is all mine, ducc."
+                  ],
+                  "Message": "Hello, Mr. President. It\u0027s an honor to meet you!",
+                  "OnClose": {
+                    "Kind": "Action",
+                    "Version": 3,
+                    "Variables": [
+                      {
+                        "Name": "_this",
+                        "Type": "Sandbox.Game/Sandbox.Component",
+                        "Default": {
+                          "_type": "component",
+                          "go": "b48c848f-ef12-4045-8918-25a7aac03732",
+                          "component_type": "ModalPanel"
+                        }
+                      }
+                    ],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input"
+                      },
+                      {
+                        "Id": 1,
+                        "Type": "menu.megatoast",
+                        "UserData": {
+                          "Position": "400,0"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 1,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "Value": "I hope you enjoy my game, Mr. President.",
+                        "DstId": 1,
+                        "DstName": "message"
+                      }
+                    ],
+                    "UserData": {
+                      "Title": "On Close",
+                      "id": "502079b0-e268-4551-a905-0081fad134f9",
+                      "ReferencedComponentTypes": []
+                    }
+                  },
+                  "Title": "ducc says:"
+                }
+              ]
+            },
+            {
+              "Id": "4d1a959e-8737-4412-bbed-42d55a05c876",
+              "Name": "Mega Toast",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "MegaToastPanel",
+                  "__enabled": false,
+                  "DefaultDuration": 3,
+                  "Message": "Hello World!"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "0253edae-a5fe-4d91-8538-f64c021b1ae5",
+      "Name": "Sun",
+      "Rotation": "0,0.5688016,0,0.8224748",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        },
+        {
+          "__type": "Rotator",
+          "RotationPerSecond": "0,6,9"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "e8ccc776-f290-497c-b265-13be66ee2716",
+          "Name": "2D Skybox",
+          "Position": "-110.0869,77.6129,-91.30151",
+          "Rotation": "0,-0.5688016,0,0.8224748",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkyBox2D",
+              "SkyMaterial": "starmap20.vmat",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "dcf817d0-c41d-4e77-bef4-ec431a94a607",
+      "Name": "ducc",
+      "Position": "-150,0,95",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "534ef729-f534-4656-b43f-201007f58155",
+          "Name": "Model",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Rotator",
+              "RotationPerSecond": "0,80,0"
+            },
+            {
+              "__type": "SineHover",
+              "Amplitude": "15,9,6",
+              "Frequency": "1,0.6,0.9"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "main_menu",
+  "Description": "",
+  "LastSaved": "2024-02-01T04:41:01.9013871-07:00",
+  "__references": [
+    "dopamine.starmap",
+    "duccsoft.duck_decoration"
+  ]
+}

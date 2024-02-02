@@ -1,0 +1,8 @@
+{
+  "PickupPrefab": "data/powerups/cash_stack/cash_stack.prefab",
+  "Name": "Stack of Jacksons",
+  "Description": "One day, ducc will be on this money.",
+  "PickupTint": "0,0.33735,0.12932,1",
+  "PickupSound": "data/powerups/cash_stack/cash_register.sound",
+  "__references": []
+}

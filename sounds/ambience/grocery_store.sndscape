@@ -1,0 +1,18 @@
+{
+  "MasterVolume": "1.00,1.00,0",
+  "LoopedSounds": [
+    {
+      "SoundFile": "sounds/ambience/grocery_store.vsnd",
+      "Volume": "1.00,1.00,0"
+    }
+  ],
+  "StingSounds": [
+    {
+      "SoundFile": "sounds/ambience/metal_bar_falling.sound",
+      "InstanceCount": 1,
+      "RepeatTime": "1.00,2.00,1",
+      "Distance": "50.00,100.00,1"
+    }
+  ],
+  "__references": []
+}
