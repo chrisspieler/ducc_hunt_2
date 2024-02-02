@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Sandbox;
 using Sandbox.Diagnostics;
@@ -13,8 +10,11 @@ public partial class DuccController
 
 	[Property] public EquipmentAddedDelegate OnEquipmentAdded { get; set; }
 
-	[Property] public GameObject WeaponHoldPoint { get; set; }
-	[Property] public GameObject HeadHoldPoint { get; set; }
+	
+	[Property, Category( "Hold Points" )] 
+	public GameObject WeaponHoldPoint { get; set; }
+	[Property, Category( "Hold Points" )] 
+	public GameObject HeadHoldPoint { get; set; }
 
 	private List<EquipmentData> _equipmentList = new();
 	private Dictionary<EquipmentSlot, Equipment> _equipmentInstances = new();
@@ -38,6 +38,7 @@ public partial class DuccController
 	{
 		var prefabScene = SceneUtility.GetPrefabScene( equipment.BodyPrefab );
 		var equipmentInstance = prefabScene.Clone();
+		equipmentInstance.BreakFromPrefab();
 		AddToHoldPoint( equipmentInstance, equipment.Slot );
 		var equipmentComponent = equipmentInstance.Components.Get<Equipment>();
 		Assert.NotNull( equipmentComponent );

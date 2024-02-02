@@ -1,6 +1,7 @@
 {
-  "BodyPrefab": "data/equipment/weapon_death/weapon_death.prefab",
-  "PickupPrefab": "data/equipment/weapon_death/weapon_death.prefab",
+  "BodyPrefab": "data/equipment/weapon_death/e_weapon_death.prefab",
+  "Slot": "Head",
+  "PickupPrefab": "data/equipment/weapon_death/p_weapon_death.prefab",
   "Name": "Death",
   "Description": "",
   "PickupTint": "1,0,0,1",

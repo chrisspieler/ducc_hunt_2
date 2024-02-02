@@ -1,8 +1,9 @@
 {
-  "BodyPrefab": "data/equipment/weapon_dagger/weapon_dagger.prefab",
-  "PickupPrefab": "data/equipment/weapon_dagger/weapon_dagger.prefab",
+  "BodyPrefab": "data/equipment/weapon_dagger/e_weapon_dagger.prefab",
+  "Slot": "Weapon",
+  "PickupPrefab": "data/equipment/weapon_dagger/p_weapon_dagger.prefab",
   "Name": "Dagger",
-  "Description": "The simplest murder machine.",
+  "Description": "The simplest of murder machines.",
   "PickupTint": "1,0,0,1",
   "PickupSound": "data/equipment/weapon_dagger/knife_equip.sound",
   "__references": []

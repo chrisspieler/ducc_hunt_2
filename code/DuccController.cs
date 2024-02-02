@@ -34,7 +34,7 @@ public sealed partial class DuccController : Component
 
 	private void UpdateQuack()
 	{
-		if ( Input.Pressed( "attack1" ) )
+		if ( Input.Pressed( "attack2" ) )
 		{
 			Distraction.DeployDistraction();
 		}
@@ -43,12 +43,17 @@ public sealed partial class DuccController : Component
 	protected override void OnFixedUpdate()
 	{
 		UpdateWishVelocity();
+		if ( !Character.IsOnGround )
+		{
+			Character.Velocity += Vector3.Down * 50f;
+		}
 		Character.Accelerate( WishVelocity );
 		Character.ApplyFriction( 4.0f, 150f );
 		Character.Move();
-		if ( !Character.Velocity.IsNearZeroLength )
+		
+		if ( !Character.Velocity.IsNearlyZero( 60f ) )
 		{
-			Body.Transform.Rotation = Rotation.LookAt( Character.Velocity.Normal, Vector3.Up );
+			Body.Transform.Rotation = Rotation.LookAt( Character.Velocity.WithZ( 0f ).Normal, Vector3.Up );
 		}
 	}
 

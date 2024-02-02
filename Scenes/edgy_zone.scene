@@ -66,6 +66,17 @@
                   "Message": "Hello World!"
                 }
               ]
+            },
+            {
+              "Id": "ede5b750-995d-4ce9-9f4d-c8fb598b461d",
+              "Name": "Crosshair",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "CrosshairPanel"
+                }
+              ]
             }
           ]
         }
@@ -255,7 +266,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-447.2235,12.14798,0",
+      "Position": "-288.8138,0,0",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -297,10 +308,16 @@
             "component_type": "DistractionSource"
           },
           "Eye": null,
-          "HeadHoldPoint": null,
+          "HeadHoldPoint": {
+            "_type": "gameobject",
+            "go": "fb562d64-11df-4499-8741-5b300b258fa1"
+          },
           "OnEquipmentAdded": null,
           "Speed": 175,
-          "WeaponHoldPoint": null
+          "WeaponHoldPoint": {
+            "_type": "gameobject",
+            "go": "b85fa407-dc34-429c-b170-b0363dbc5d3a"
+          }
         },
         {
           "__type": "ScrapeNoise",
@@ -1022,52 +1039,11 @@
           "__type": "ItemPickup",
           "Data": null,
           "Equipment": "data/equipment/weapon_dagger/weapon_dagger.equip",
-          "OnPickup": {
-            "Kind": "Action",
-            "Version": 3,
-            "Variables": [
-              {
-                "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
-                "Default": {
-                  "_type": "component",
-                  "go": "e840d1b2-ff3c-4208-9239-c4b3fb5c543d",
-                  "component_type": "CapsuleCollider"
-                }
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "menu.megatoast",
-                "UserData": {
-                  "Position": "256,-0"
-                }
-              }
-            ],
             "Links": [
               {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "Value": "hehehe...",
                 "DstId": 1,
                 "DstName": "message"
-              }
-            ],
-            "UserData": {
-              "Title": "On Pickup",
-              "id": "26c750b3-fbc1-4272-92bb-c328b12be2d7",
-              "ReferencedComponentTypes": []
-            }
-          },
+          "OnPickup": null,
           "PickupPosition": {
             "_type": "gameobject",
             "go": "da98f888-96a1-4acd-85c0-6f1891a28685"
@@ -1194,33 +1170,14 @@
                 "Type": "input"
               },
               {
-                "Id": 2,
+                "Id": 1,
                 "Type": "menu.showmodalchoices",
                 "UserData": {
-                  "Position": "336,0"
                 }
               },
               {
                 "Id": 4,
-                "Type": "if",
-                "UserData": {
-                  "Position": "912,192"
-                }
-              },
-              {
-                "Id": 7,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String",
-                  "_name": "Contains"
-                },
-                "UserData": {
-                  "Position": "720,208"
-                }
-              },
-              {
-                "Id": 8,
+                "Id": 2,
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
@@ -1228,28 +1185,49 @@
                   "_name": "ToLower"
                 },
                 "UserData": {
-                  "Position": "528,208"
+                  "Position": "400,112"
                 }
               },
               {
-                "Id": 10,
+                "Id": 8,
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String",
+                  "_name": "Contains"
+                },
+                "UserData": {
+                  "Position": "528,208"
+                  "Position": "400,176"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "if",
+                "UserData": {
+                  "Position": "608,80"
+                }
+              },
+              {
+                "Id": 6,
                 "Type": "menu.megatoast",
                 "UserData": {
-                  "Position": "1248,304"
+                  "Position": "880,144"
                 }
               },
               {
-                "Id": 11,
+                "Id": 7,
+                "Type": "menu.megatoast",
+                "UserData": {
+                  "Position": "880,240"
+                }
+              },
+              {
+                "Id": 8,
                 "Type": "ducc.banish",
                 "UserData": {
-                  "Position": "1264,224"
-                }
-              },
-              {
-                "Id": 12,
-                "Type": "menu.megatoast",
-                "UserData": {
-                  "Position": "1504,224"
+                  "Position": "1056,144"
                 }
               }
             ],
@@ -1257,97 +1235,96 @@
               {
                 "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 2,
+                "DstId": 1,
                 "DstName": "_signal"
               },
               {
                 "Value": "That\u0027s very cool.",
-                "DstId": 2,
+                "DstId": 1,
                 "DstName": "choices",
                 "DstIndex": 0
               },
               {
                 "Value": "Who cares? Screw you.",
-                "DstId": 2,
+                "DstId": 1,
                 "DstName": "choices",
                 "DstIndex": 1
               },
               {
                 "Value": "As you can see, there are secret areas that yield many interesting rewards for curious players.",
-                "DstId": 2,
+                "DstId": 1,
                 "DstName": "message"
               },
               {
                 "Value": "Exploration Tutorial",
-                "DstId": 2,
+                "DstId": 1,
                 "DstName": "title"
               },
               {
-                "SrcId": 2,
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "Value": "screw",
+                "DstId": 3,
+                "DstName": "value"
+              },
+              {
+                "SrcId": 1,
                 "SrcName": "_signal",
                 "DstId": 4,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 7,
+                "SrcId": 3,
                 "SrcName": "_result",
                 "DstId": 4,
                 "DstName": "condition"
               },
               {
-                "SrcId": 8,
-                "SrcName": "_result",
-                "DstId": 7,
-                "DstName": "_target"
-              },
-              {
-                "Value": "screw",
-                "DstId": 7,
-                "DstName": "value"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 8,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "false",
-                "DstId": 10,
-                "DstName": "_signal"
-              },
-              {
-                "Value": "I hope you\u0027ll have a lot of fun with my game.",
-                "DstId": 10,
-                "DstName": "message"
-              },
-              {
                 "SrcId": 4,
                 "SrcName": "true",
-                "DstId": 11,
+                "DstId": 6,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 11,
-                "SrcName": "_signal",
-                "DstId": 12,
-                "DstName": "_signal"
-              },
-              {
-                "Value": 1E+18,
-                "DstId": 12,
+                "Value": 999999,
+                "DstId": 6,
                 "DstName": "duration"
               },
               {
                 "Value": "Hold ESC to Quit",
-                "DstId": 12,
+                "DstId": 6,
                 "DstName": "message"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "false",
+                "DstId": 7,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "I hope you have a lot of fun with my game.",
+                "DstId": 7,
+                "DstName": "message"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_signal",
+                "DstId": 8,
+                "DstName": "_signal"
               }
             ],
             "UserData": {
               "Title": "On Pickup",
-              "id": "1d3248a7-70b5-4e4a-8795-6b3196c21da7",
+              "id": "d4629892-c818-4f03-9467-384d33b926ed",
               "ReferencedComponentTypes": []
             }
           },
@@ -2093,7 +2070,7 @@
               "__type": "FollowCam",
               "FollowDistance": 0,
               "LerpSpeed": 0,
-              "SlerpSpeed": 5,
+              "SlerpSpeed": 1,
               "Target": {
                 "_type": "gameobject",
                 "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
@@ -2126,7 +2103,7 @@
     {
       "Id": "167277ee-ed50-40b5-a650-044330f69747",
       "Name": "tv",
-      "Position": "745.8518,80.00237,33.21685",
+      "Position": "760.8324,80.00238,33.21685",
       "Rotation": "0.00000000000001065814,-0.00000005217163,-0.9999999,0.0000001788139",
       "Scale": "1.295826,1.295826,1.295826",
       "Enabled": true,
@@ -2169,13 +2146,275 @@
       "Enabled": true,
       "Components": [
         {
-          "__type": "Prop",
-          "Health": 100,
-          "IsStatic": false,
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
           "Model": "models/sbox_props/office_desk/office_desk.vmdl",
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/office_desk/office_desk.vmdl",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "03697f77-d686-4384-878e-abfb7f5c652b",
+      "Name": "Pallet Ramp",
+      "Position": "728.8811,169.2974,0.00003713691",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "404f1499-4c65-4272-8d3f-13d6814e3718",
+          "Name": "wooden_crate_02 (1)",
+          "Position": "30.38733,-34.62027,12.05844",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f0777d43-9aac-41bf-95f3-d8f57809809b",
+          "Name": "pallet",
+          "Position": "19.80432,-24.95129,19.83933",
+          "Rotation": "-0.1588489,0,0,0.987303",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "3d97aa1b-3036-4aba-b143-1f0e1328b139",
+          "Name": "pallet (1)",
+          "Position": "19.80438,-24.95128,6.003846",
+          "Rotation": "-0.00000001053671,0.00000001053671,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "5469201f-8a15-4bf6-a205-670ea09190b2",
+          "Name": "pallet (2)",
+          "Position": "19.80438,-23.13904,-0.1666795",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0dde7b25-3b65-4dce-82c1-bac14f6010c3",
+          "Name": "pallet (3)",
+          "Position": "19.80438,22.03116,12.67968",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b0e0ca70-cea1-483d-b80b-d3f948abc030",
+          "Name": "pallet (6)",
+          "Position": "-22.70367,22.03113,6.860765",
+          "Rotation": "-0.1116103,-0.1116104,0.6982428,0.6982429",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "75cc2c0a-4571-4ba5-b09b-2b64add5e592",
+          "Name": "pallet (5)",
+          "Position": "19.80438,19.9884,6.615348",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "9e0c4005-e323-418d-96e6-3b3435129183",
+          "Name": "pallet (4)",
+          "Position": "19.80438,24.35213,0.6084585",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/sbox_props/pallet/pallet.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ff5cae33-3774-4a61-904f-4b233bce1ab4",
+          "Name": "wooden_crate_02",
+          "Position": "9.968811,-34.62024,12.05844",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_02.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "IsTrigger": false,
+              "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_02.vmdl",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a6a7778d-d75e-4b1d-8d52-1201f58f4f3e",
+      "Name": "scaffolding_tube_a",
+      "Position": "681.4118,207.6278,1.956846",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Scale": "0.2677276,1,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/sbox_props/scaffolding/scaffolding_tube_a.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/scaffolding/scaffolding_tube_a.vmdl",
+          "Static": false,
+          "Surface": null
         }
       ]
     }
@@ -2191,15 +2430,18 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-01T22:47:33.897919-07:00",
+  "LastSaved": "2024-02-02T02:38:27.8058548-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
     "facepunch.concrete_simple",
     "facepunch.floor_rough_asphalt",
     "facepunch.office_desk",
+    "facepunch.pallet",
+    "facepunch.scaffolding_tube_a",
     "facepunch.trolley",
     "facepunch.tv",
+    "facepunch.wooden_crate_02",
     "polyhaven.ornate_medieval_dagger",
     "rust.pallet_boxes_b",
     "rust.pallet_boxes_c"

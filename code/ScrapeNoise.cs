@@ -59,6 +59,7 @@ public sealed class ScrapeNoise : Component
 		if ( Character.IsValid() )
 		{
 			intensity = MathX.LerpInverse( Character.Velocity.Length, 0f, 200f, false );
+			intensity *= Character.IsOnGround ? 1 : 0;
 		}
 		return intensity;
 	}

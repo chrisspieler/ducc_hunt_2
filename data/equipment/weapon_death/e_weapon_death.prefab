@@ -1,0 +1,39 @@
+{
+  "RootObject": {
+    "Id": "a61b3a9c-b9ba-41ce-b732-b63d0c95a245",
+    "Name": "e_weapon_death",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Death"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "3594d850-b936-446f-a42f-349985a4c2bb",
+        "Name": "Object",
+        "Position": "0.9548406,0.07162898,-3.798682",
+        "Rotation": "0.2108537,-0.1243806,-0.9056255,0.346284",
+        "Scale": "0.2568364,0.2568364,0.2568364",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "model/model/untitled_6.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "tesssssssssst.untitled_623"
+  ]
+}

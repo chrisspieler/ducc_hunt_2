@@ -1,4 +1,4 @@
-﻿namespace Sandbox;
+﻿using Sandbox;
 
 [GameResource("Equipment", "equip", "An equippable item displayed on the person.")]
 public class EquipmentData : PickupData

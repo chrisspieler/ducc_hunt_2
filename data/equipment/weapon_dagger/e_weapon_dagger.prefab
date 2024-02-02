@@ -1,0 +1,66 @@
+{
+  "RootObject": {
+    "Id": "a916e1c5-ad7e-4e20-a22e-31ae9136e84c",
+    "Name": "e_weapon_dagger",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Knife",
+        "StabSound": "data/equipment/weapon_dagger/knife_stab.sound",
+        "StabTrigger": {
+          "_type": "component",
+          "go": "3892501d-b588-4909-8f09-4566c9f323ab",
+          "component_type": "Trigger"
+        },
+        "State": "Idle"
+      }
+    ],
+    "Children": [
+      {
+        "Id": "ea44039c-902d-4b33-939c-4589208716c6",
+        "Name": "Model",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 5,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/ornate_medieval_dagger.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "3892501d-b588-4909-8f09-4566c9f323ab",
+        "Name": "Trigger",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "CapsuleCollider",
+            "End": "0,0,10",
+            "IsTrigger": true,
+            "Radius": 0.60000014,
+            "Start": "0,0,0",
+            "Static": false,
+            "Surface": null
+          },
+          {
+            "__type": "Trigger",
+            "ExcludeAny": "player",
+            "IncludeAny": null,
+            "OnEnter": null,
+            "OnExit": null
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "polyhaven.ornate_medieval_dagger"
+  ]
+}

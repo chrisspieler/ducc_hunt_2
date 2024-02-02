@@ -1,4 +1,4 @@
-﻿namespace Sandbox;
+﻿using Sandbox;
 
 [GameResource("Pickup", "pickup", "An item which may be picked up by the player.")]
 public class PickupData : GameResource
