@@ -1,0 +1,211 @@
+{
+  "RootObject": {
+    "Id": "e9c75076-039c-495d-af4d-4b136e53237e",
+    "Name": "Greeter",
+    "Position": "665.5218,9.571262,0.00003960188",
+    "Tags": "human",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18
+      },
+      {
+        "__type": "HumanController",
+        "Animation": {
+          "_type": "component",
+          "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "Character": {
+          "_type": "component",
+          "go": "e9c75076-039c-495d-af4d-4b136e53237e",
+          "component_type": "CharacterController"
+        },
+        "Renderer": {
+          "_type": "component",
+          "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+          "component_type": "SkinnedModelRenderer"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "Id": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+        "Name": "Body",
+        "Position": "0,0,0",
+        "Rotation": "0,0,-0.9914449,0.1305264",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 69,
+            "BoneMergeTarget": null,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "default",
+            "MaterialOverride": null,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "BodyWeight": 1,
+            "EyeSource": null,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "IkLeftFoot": null,
+            "IkLeftHand": null,
+            "IkRightFoot": null,
+            "IkRightHand": null,
+            "LookAt": null,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "ModelPhysics",
+            "__enabled": false,
+            "Locking": {},
+            "Model": "models/citizen/citizen.vmdl",
+            "Renderer": {
+              "_type": "component",
+              "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "RigidbodyFlags": 0
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false,
+            "Surface": null
+          },
+          {
+            "__type": "ModelHitboxes",
+            "Renderer": {
+              "_type": "component",
+              "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "Target": {
+              "_type": "gameobject",
+              "go": "e9c75076-039c-495d-af4d-4b136e53237e"
+            }
+          }
+        ],
+        "Children": [
+          {
+            "Id": "dc248c89-fd8c-4cb7-8cf2-4fc1d3681ce0",
+            "Name": "Hair",
+            "Position": "0,0,0",
+            "Tags": "clothing",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "MaterialGroup": "default",
+                "MaterialOverride": null,
+                "Model": "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "dd7fb720-cc30-490c-b4ac-6956e289ace9",
+            "Name": "Smart Trousers",
+            "Position": "0,0,0",
+            "Tags": "clothing",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/citizen_clothes/trousers/loosetrousers/models/loose_trousers.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "4867f995-4396-495d-8ba3-63ba210f064c",
+            "Name": "Suit Jacket",
+            "Position": "0,0,0",
+            "Tags": "clothing",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt_white.vmdl",
+                "RenderType": "On",
+                "Tint": "0.55814,0.62442,1,1"
+              }
+            ]
+          },
+          {
+            "Id": "dabdab8f-ab36-4c2b-8115-214a096d9504",
+            "Name": "Smart Shoes",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "Components": [
+              {
+                "__type": "SkinnedModelRenderer",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "MaterialGroup": null,
+                "MaterialOverride": null,
+                "Model": "models/citizen_clothes/shoes/sneakers/models/sneakers.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

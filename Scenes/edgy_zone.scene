@@ -266,7 +266,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-288.8138,0,0",
+      "Position": "-160.1926,-46.55046,-0.0001195216",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -860,170 +860,52 @@
     },
     {
       "Id": "e9c75076-039c-495d-af4d-4b136e53237e",
-      "Name": "Greeter",
+      "Name": "Human",
       "Position": "665.5218,9.571262,0.00003960188",
       "Tags": "human",
       "Enabled": true,
-      "Children": [
-        {
-          "Id": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
-          "Name": "Body",
-          "Position": "0,0,0",
-          "Rotation": "0,0,-0.9914449,0.1305264",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "SkinnedModelRenderer",
-              "BodyGroups": 69,
-              "BoneMergeTarget": null,
-              "CreateBoneObjects": false,
-              "MaterialGroup": "default",
-              "MaterialOverride": null,
-              "Model": "models/citizen/citizen.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "CitizenAnimationHelper",
-              "BodyWeight": 1,
-              "EyeSource": null,
-              "EyesWeight": 1,
-              "HeadWeight": 1,
-              "Height": 1,
-              "IkLeftFoot": null,
-              "IkLeftHand": null,
-              "IkRightFoot": null,
-              "IkRightHand": null,
-              "LookAt": null,
-              "LookAtEnabled": false,
-              "Target": {
-                "_type": "component",
-                "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
-                "component_type": "SkinnedModelRenderer"
-              }
-            }
-          ],
-          "Children": [
-            {
-              "Id": "331f6430-171a-40bf-9396-0ab468f4a4be",
-              "Name": "Collider",
-              "Position": "1.666,0,0",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "CapsuleCollider",
-                  "End": "0,0,66",
-                  "IsTrigger": false,
-                  "Radius": 6,
-                  "Start": "0,0,6",
-                  "Static": false,
-                  "Surface": null
-                }
-              ]
-            },
-            {
-              "Id": "dc248c89-fd8c-4cb7-8cf2-4fc1d3681ce0",
-              "Name": "Hair",
-              "Position": "0,0,0",
-              "Tags": "clothing",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "SkinnedModelRenderer",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "MaterialGroup": "default",
-                  "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "Id": "dd7fb720-cc30-490c-b4ac-6956e289ace9",
-              "Name": "Smart Trousers",
-              "Position": "0,0,0",
-              "Tags": "clothing",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "SkinnedModelRenderer",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/trousers/loosetrousers/models/loose_trousers.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "Id": "4867f995-4396-495d-8ba3-63ba210f064c",
-              "Name": "Suit Jacket",
-              "Position": "0,0,0",
-              "Tags": "clothing",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "SkinnedModelRenderer",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt_white.vmdl",
-                  "RenderType": "On",
-                  "Tint": "0.55814,0.62442,1,1"
-                }
-              ]
-            },
-            {
-              "Id": "dabdab8f-ab36-4c2b-8115-214a096d9504",
-              "Name": "Smart Shoes",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "SkinnedModelRenderer",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/shoes/sneakers/models/sneakers.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "b0345921-2ddd-4a82-a94a-04cfbc1b9934",
+      "Name": "Human (1)",
+      "Position": "622.0606,-145.8628,-0.00003002848",
+      "Rotation": "0,0,-0.5,0.8660255",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "bcf3d49f-8756-49af-a5b9-631b72ead1bb",
+      "Name": "Human (2)",
+      "Position": "613.2436,135.8373,-0.00004984499",
+      "Rotation": "0,0,0.3826834,0.9238796",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "7a4acfe4-c9d1-4070-b65a-ce12fe581fce",
+      "Name": "Human (3)",
+      "Position": "718.5937,368.8978,-0.00002841919",
+      "Rotation": "0,0,0.1305262,0.9914449",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "ec86339d-9c24-41bb-a10e-63fc9e22a5a9",
+      "Name": "Human (4)",
+      "Position": "581.6263,316.7651,-0.00002841919",
+      "Rotation": "0,0,0.7933533,0.6087615",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
     },
     {
       "Id": "e840d1b2-ff3c-4208-9239-c4b3fb5c543d",
       "Name": "pickup",
-      "Position": "-193.1931,-44.31796,3.671789",
+      "Position": "304.2919,-63.26288,3.6718",
       "Enabled": true,
       "Components": [
         {
@@ -1039,10 +921,6 @@
           "__type": "ItemPickup",
           "Data": null,
           "Equipment": "data/equipment/weapon_dagger/weapon_dagger.equip",
-            "Links": [
-              {
-                "DstId": 1,
-                "DstName": "message"
           "OnPickup": null,
           "PickupPosition": {
             "_type": "gameobject",
@@ -1173,15 +1051,15 @@
                 "Id": 1,
                 "Type": "menu.showmodalchoices",
                 "UserData": {
+                  "Position": "208,80"
                 }
               },
               {
-                "Id": 4,
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "System.Private.CoreLib/System.String",
+                  "_isStatic": false,
                   "_name": "ToLower"
                 },
                 "UserData": {
@@ -1189,16 +1067,14 @@
                 }
               },
               {
-                "Id": 8,
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "System.Private.CoreLib/System.String",
+                  "_isStatic": false,
                   "_name": "Contains"
                 },
                 "UserData": {
-                  "Position": "528,208"
                   "Position": "400,176"
                 }
               },
@@ -1267,6 +1143,7 @@
                 "DstName": "_target"
               },
               {
+                "SrcId": 2,
                 "SrcName": "_result",
                 "DstId": 3,
                 "DstName": "_target"
@@ -1499,7 +1376,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1517,7 +1394,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1535,7 +1412,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1553,7 +1430,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1571,7 +1448,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1589,7 +1466,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1607,7 +1484,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1625,7 +1502,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1643,7 +1520,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1661,7 +1538,7 @@
             {
               "__type": "Prop",
               "Health": 400,
-              "IsStatic": false,
+              "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": null,
               "OnPropTakeDamage": null,
@@ -1835,7 +1712,7 @@
     {
       "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
       "Name": "pickup (2)",
-      "Position": "-218.66,-112.8521,0",
+      "Position": "12.86816,-52.76785,-0.00009856725",
       "Enabled": true,
       "Components": [
         {
@@ -2417,6 +2294,92 @@
           "Surface": null
         }
       ]
+    },
+    {
+      "Id": "d9a9defa-153f-4367-b87f-875b43ddd338",
+      "Name": "fence_panel_gate",
+      "Position": "706.6193,-433.8887,-5.112649",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Scale": "0.4400307,1,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/props/temporary_fencing/fence_panel_gate.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "85470798-d067-44ae-85e7-5f6cb9853124",
+      "Name": "fence_panel_gate (1)",
+      "Position": "787.1348,46.8639,-8.9575",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Scale": "1.145344,1,1.296405",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/props/temporary_fencing/fence_panel_gate.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "e9625d63-0b51-49e0-aa20-1b414f1ea9bc",
+      "Name": "Text",
+      "Position": "784.3079,-30.63276,58.42355",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "1,1,1,1",
+          "FontFamily": "Chiller",
+          "FontSize": 64,
+          "Scale": 0.3,
+          "Text": "WORK IN PROGRESS"
+        }
+      ]
+    },
+    {
+      "Id": "66823189-3308-4d72-b354-53f000d2f686",
+      "Name": "Text (3)",
+      "Position": "784.3079,-30.63276,28.16487",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "1,1,1,1",
+          "FontFamily": "Chiller",
+          "FontSize": 35.04,
+          "Scale": 0.3,
+          "Text": "Short game, I know. \nBut there will be more later. I prooooomise.\n:-)"
+        }
+      ]
+    },
+    {
+      "Id": "9da4dd17-6eb2-4988-8d1d-fca7b1cce3c9",
+      "Name": "Text (2)",
+      "Position": "702.5662,-464.7953,23.73799",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "1,1,1,1",
+          "FontFamily": "Chiller",
+          "FontSize": 62.47,
+          "Scale": 0.12,
+          "Text": "WORK IN PROGRESS"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -2430,11 +2393,12 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-02T02:38:27.8058548-07:00",
+  "LastSaved": "2024-02-02T04:16:11.9390214-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
     "facepunch.concrete_simple",
+    "facepunch.fence_panel_gate",
     "facepunch.floor_rough_asphalt",
     "facepunch.office_desk",
     "facepunch.pallet",

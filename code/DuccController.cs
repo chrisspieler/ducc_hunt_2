@@ -55,6 +55,12 @@ public sealed partial class DuccController : Component
 		{
 			Body.Transform.Rotation = Rotation.LookAt( Character.Velocity.WithZ( 0f ).Normal, Vector3.Up );
 		}
+
+		if ( Transform.Position.z < -200f )
+		{
+			Transform.Position = Vector3.Up * 50f;
+			Character.Velocity = Vector3.Zero;
+		}
 	}
 
 	private void UpdateWishVelocity()

@@ -84,6 +84,7 @@ public class Knife : Equipment
 		var tr = Scene.Trace
 			.Ray( attackRay, 120f )
 			.WithoutTags( "player" )
+			.UseHitboxes()
 			.Run();
 		_attackPosition = tr.EndPosition;
 		StabTrigger.Enabled = true;
@@ -113,6 +114,17 @@ public class Knife : Equipment
 			Log.Info( $"stabbed {other.GameObject.Name}" );
 		}
 		Sound.Play( StabSound, other.Transform.Position );
+		DoDamage( other.GameObject );
 		BeginIdle();
+	}
+
+	private void DoDamage( GameObject go )
+	{
+		if ( !go.Components.TryGet<IDamageable>( out var damageable, FindMode.EverythingInSelfAndAncestors ) )
+			return;
+
+		// TODO: Add hitbox support.
+		var damageInfo = new DamageInfo( 100, DuccController.Instance.GameObject, GameObject );
+		damageable.OnDamage( damageInfo );
 	}
 }
