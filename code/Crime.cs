@@ -2,6 +2,8 @@
 
 public sealed class Crime : Component
 {
+	[ConVar( "crime_debug" )]
+	public static bool Debug { get; set; }
 	[Property] public float SecondsSinceCrime => _crimeStart.Relative;
 	private TimeSince _crimeStart;
 

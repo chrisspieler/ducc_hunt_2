@@ -289,6 +289,7 @@
         {
           "__type": "CharacterController",
           "Acceleration": 10,
+          "Bounciness": 0.3,
           "GroundAngle": 45,
           "Height": 12,
           "IgnoreLayers": "",
@@ -2418,7 +2419,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-02T23:27:32.6342649-07:00",
+  "LastSaved": "2024-02-03T01:30:49.8430953-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

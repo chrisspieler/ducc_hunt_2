@@ -52,7 +52,10 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		var nearbyPeople = GetNearby( Transform.Position, 800f );
 		foreach ( var person in nearbyPeople )
 		{
-			Log.Info( $"{person.GameObject.Name} set panicked state" );
+			if ( Crime.Debug )
+			{
+				Log.Info( $"{person.GameObject.Name} set panicked state" );
+			}
 			person.IsPanicked = true;
 		}
 		Agent.Stop();

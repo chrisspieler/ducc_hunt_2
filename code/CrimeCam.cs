@@ -16,9 +16,12 @@ public sealed class CrimeCam : Component
 
 	protected override void OnUpdate()
 	{
-		Gizmo.Draw.Color = Color.Green;
-		Gizmo.Transform = global::Transform.Zero;
-		Gizmo.Draw.LineBBox( WorldSpaceArea );
+		if ( Crime.Debug )
+		{
+			Gizmo.Draw.Color = Color.Green;
+			Gizmo.Transform = global::Transform.Zero;
+			Gizmo.Draw.LineBBox( WorldSpaceArea );
+		}
 		if ( ActiveCrime.IsValid() )
 			return;
 
@@ -36,7 +39,10 @@ public sealed class CrimeCam : Component
 			if ( !WorldSpaceArea.Contains( crime.Transform.Position ) )
 				continue;
 
-			Log.Info( $"Crime detected on {crime.GameObject.Name}" );
+			if ( Crime.Debug )
+			{
+				Log.Info( $"Crime detected on {crime.GameObject.Name}" );
+			}
 			if ( newestCrime is null || crime.SecondsSinceCrime < newestCrime.SecondsSinceCrime )
 			{
 				newestCrime = crime;
