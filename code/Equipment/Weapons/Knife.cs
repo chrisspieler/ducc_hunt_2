@@ -81,12 +81,13 @@ public class Knife : Equipment
 	{
 		_state = KnifeState.Attacking;
 		var attackRay = Scene.Camera.ScreenNormalToRay( new( 0.5f ) );
-		var tr = Scene.Trace
-			.Ray( attackRay, 120f )
-			.WithoutTags( "player" )
-			.UseHitboxes()
-			.Run();
-		_attackPosition = tr.EndPosition;
+		//var tr = Scene.Trace
+		//	.Ray( attackRay, 120f )
+		//	.WithoutTags( "player" )
+		//	.UseHitboxes()
+		//	.Run();
+		//_attackPosition = tr.EndPosition;
+		_attackPosition = attackRay.Project( 160f );
 		StabTrigger.Enabled = true;
 	}
 

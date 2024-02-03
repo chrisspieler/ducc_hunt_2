@@ -2,48 +2,69 @@ using Sandbox;
 using Sandbox.Citizen;
 using System.Threading.Tasks;
 
-public sealed class HumanController : Component, Component.IDamageable
+public sealed partial class HumanController : Component, Component.IDamageable
 {
 	[Property] public CharacterController Character { get; set; }
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 	[Property] public CitizenAnimationHelper Animation { get; set; }
 
+	public Vector3 MovementDirection { get; set; }
+	public Vector3 Velocity { get; set; }
 	public bool IsRagdoll { get; private set; }
+
+	protected override void OnStart()
+	{
+		GameObject.BreakFromPrefab();
+	}
 
 	protected override void OnUpdate()
 	{
+		Think();
+		
+		UpdateAnimation();
+	}
 
+	protected override void OnFixedUpdate()
+	{
+		Renderer.GameObject.Transform.Rotation = Rotation.LookAt( Velocity.Normal, Vector3.Up );
 	}
 
 	private void UpdateAnimation()
 	{
+		if ( !Animation.IsValid() )
+			return;
 		
+		Animation.WithVelocity( Velocity );
+		Animation.WithWishVelocity( Velocity );
+		Animation.IsGrounded = true;
 	}
 
 	public void OnDamage( in DamageInfo damage )
 	{
-		SetRagdollState( !IsRagdoll );
-		_ = MurderCam();
+		// Battery and murder are crimes.
+		Components.Create<Crime>();
+		Kill();
 	}
 
-	private async Task MurderCam()
+	public void Kill()
 	{
-		var mainCam = Scene.Camera;
-		mainCam.Priority--;
-		Scene.TimeScale = 0.05f;
-		RealTimeUntil _unpause = 2f;
-		while( !_unpause )
+		SetRagdollState( true );
+		var nearbyPeople = GetNearby( Transform.Position, 800f );
+		foreach ( var person in nearbyPeople )
 		{
-			await Task.Frame();
+			Log.Info( $"{person.GameObject.Name} set panicked state" );
+			person.IsPanicked = true;
 		}
-		Scene.TimeScale = 1f;
-		mainCam.Priority++;
+		Agent.Stop();
 	}
 
 	private void SetRagdollState( bool enabled )
 	{
-		// var collider = Renderer.Components.GetOrCreate<ModelCollider>( FindMode.EverythingInSelf );
-		// collider.Enabled = !enabled;
+		var collider = Renderer.Components.Get<Collider>( FindMode.EverythingInSelf );
+		if ( collider.IsValid() )
+		{
+			collider.Enabled = !enabled;
+		}
 		var physics = Renderer.Components.GetOrCreate<ModelPhysics>( FindMode.EverythingInSelf );
 		physics.Enabled = enabled;
 		physics.Renderer = Renderer;

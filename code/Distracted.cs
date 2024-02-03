@@ -15,6 +15,12 @@ public sealed class Distracted : Component
 		Animation ??= Components.GetInAncestorsOrSelf<CitizenAnimationHelper>();
 		Animation.LookAt = Source;
 		_distactionStart = 0f;
+		Tags.Add( "distracted" );
+	}
+
+	protected override void OnDisabled()
+	{
+		Tags.Remove( "distracted" );
 	}
 
 	protected override void OnUpdate()

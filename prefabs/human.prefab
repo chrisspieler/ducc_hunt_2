@@ -1,13 +1,13 @@
 {
   "RootObject": {
     "Id": "e9c75076-039c-495d-af4d-4b136e53237e",
-    "Name": "Greeter",
-    "Position": "665.5218,9.571262,0.00003960188",
+    "Name": "human",
     "Tags": "human",
     "Enabled": true,
     "Components": [
       {
         "__type": "CharacterController",
+        "__enabled": false,
         "Acceleration": 10,
         "GroundAngle": 45,
         "Height": 64,
@@ -17,6 +17,11 @@
       },
       {
         "__type": "HumanController",
+        "Agent": {
+          "_type": "component",
+          "go": "e9c75076-039c-495d-af4d-4b136e53237e",
+          "component_type": "NavMeshAgent"
+        },
         "Animation": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
@@ -27,18 +32,27 @@
           "go": "e9c75076-039c-495d-af4d-4b136e53237e",
           "component_type": "CharacterController"
         },
+        "IsPanicked": false,
         "Renderer": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
           "component_type": "SkinnedModelRenderer"
         }
+      },
+      {
+        "__type": "NavMeshAgent",
+        "Acceleration": 50,
+        "Height": 64,
+        "MaxSpeed": 150,
+        "Radius": 16,
+        "Separation": 0.25,
+        "UpdatePosition": true
       }
     ],
     "Children": [
       {
         "Id": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
         "Name": "Body",
-        "Position": "0,0,0",
         "Rotation": "0,0,-0.9914449,0.1305264",
         "Enabled": true,
         "Components": [
@@ -85,13 +99,6 @@
             "RigidbodyFlags": 0
           },
           {
-            "__type": "ModelCollider",
-            "IsTrigger": false,
-            "Model": "models/citizen/citizen.vmdl",
-            "Static": false,
-            "Surface": null
-          },
-          {
             "__type": "ModelHitboxes",
             "Renderer": {
               "_type": "component",
@@ -100,15 +107,23 @@
             },
             "Target": {
               "_type": "gameobject",
-              "go": "e9c75076-039c-495d-af4d-4b136e53237e"
+              "prefab": "prefabs/human.prefab"
             }
+          },
+          {
+            "__type": "CapsuleCollider",
+            "End": "0,0,66",
+            "IsTrigger": false,
+            "Radius": 8,
+            "Start": "0,0,6",
+            "Static": false,
+            "Surface": null
           }
         ],
         "Children": [
           {
             "Id": "dc248c89-fd8c-4cb7-8cf2-4fc1d3681ce0",
             "Name": "Hair",
-            "Position": "0,0,0",
             "Tags": "clothing",
             "Enabled": true,
             "Components": [
@@ -132,7 +147,6 @@
           {
             "Id": "dd7fb720-cc30-490c-b4ac-6956e289ace9",
             "Name": "Smart Trousers",
-            "Position": "0,0,0",
             "Tags": "clothing",
             "Enabled": true,
             "Components": [
@@ -156,7 +170,6 @@
           {
             "Id": "4867f995-4396-495d-8ba3-63ba210f064c",
             "Name": "Suit Jacket",
-            "Position": "0,0,0",
             "Tags": "clothing",
             "Enabled": true,
             "Components": [
@@ -180,7 +193,6 @@
           {
             "Id": "dabdab8f-ab36-4c2b-8115-214a096d9504",
             "Name": "Smart Shoes",
-            "Position": "0,0,0",
             "Enabled": true,
             "Components": [
               {

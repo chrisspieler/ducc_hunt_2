@@ -1058,9 +1058,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false,
-                  "_name": "ToLower"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1070,9 +1070,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false,
-                  "_name": "Contains"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -1917,7 +1917,7 @@
               "__type": "CameraComponent",
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "All",
-              "FieldOfView": 110,
+              "FieldOfView": 74,
               "IsMainCamera": false,
               "Orthographic": false,
               "OrthographicHeight": 1204,
@@ -1947,7 +1947,7 @@
               "__type": "FollowCam",
               "FollowDistance": 0,
               "LerpSpeed": 0,
-              "SlerpSpeed": 1,
+              "SlerpSpeed": 2,
               "Target": {
                 "_type": "gameobject",
                 "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
@@ -1955,23 +1955,36 @@
             },
             {
               "__type": "ColorAdjustments",
-              "Brightness": 1.51,
-              "Contrast": 1.03,
+              "Brightness": 1.5,
+              "Contrast": 1,
               "HueRotate": 0,
               "Saturation": 0
             },
             {
               "__type": "FilmGrain",
-              "Intensity": 0.43333405,
+              "Intensity": 0.2,
               "Response": 1
             },
             {
               "__type": "Vignette",
               "Center": "0.5,0.5",
               "Color": "0,0,0,1",
-              "Intensity": 0.68,
+              "Intensity": 0.59,
               "Roundness": 0.79,
               "Smoothness": 0.96
+            },
+            {
+              "__type": "CrimeCam",
+              "ActiveCrime": null,
+              "Camera": {
+                "_type": "component",
+                "go": "98d10229-d78a-49b7-9fca-09270680a788",
+                "component_type": "CameraComponent"
+              },
+              "CheckArea": {
+                "Mins": "-240,-300,-220",
+                "Maxs": "50,525,0"
+              }
             }
           ]
         }
@@ -2389,11 +2402,23 @@
     "NetworkFrequency": 30,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "human,player",
+      "IncludedBodies": ""
+    }
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-02T04:16:11.9390214-07:00",
+  "LastSaved": "2024-02-02T23:27:32.6342649-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
