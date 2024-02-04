@@ -7,8 +7,6 @@ public class BehaviorTree
 {
 	public BehaviorNode Root { get; set; }
 
-	public void OnStart( ActorComponent actor, DataContext context ) { }
-
 	public BehaviorResult Execute( ActorComponent actor, DataContext context )
 	{
 		// If this behavior tree is acting as a leaf node in another tree,
@@ -17,8 +15,6 @@ public class BehaviorTree
 
 		return Root.Execute( actor, treeContext );
 	}
-
-	public void OnStop( ActorComponent actor, DataContext context ) { }
 
 	public JsonNode Serialize()
 	{

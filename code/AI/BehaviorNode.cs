@@ -16,9 +16,7 @@ public abstract class BehaviorNode
 		TypeName = GetType().Name;
 	}
 
-	public virtual void OnStart( ActorComponent actor, DataContext context ) { }
 	public abstract BehaviorResult Execute( ActorComponent actor, DataContext context );
-	public virtual void OnStop( ActorComponent actor, DataContext context ) { }
 
 	public JsonNode Serialize()
 	{

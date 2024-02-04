@@ -10,9 +10,7 @@ public class ActorComponent : Component
 		get => _currentTree;
 		set
 		{
-			_currentTree?.OnStop( this, DataContext );
 			_currentTree = value;
-			_currentTree.OnStart( this, DataContext );
 		}
 	}
 	private BehaviorTree _currentTree;
@@ -23,18 +21,8 @@ public class ActorComponent : Component
 	}
 	private DataContext _dataContext;
 
-	protected override void OnEnabled()
-	{
-		CurrentTree?.OnStart( this, DataContext );
-	}
-
 	protected override void OnUpdate()
 	{
 		CurrentTree?.Execute( this, DataContext );
-	}
-
-	protected override void OnDisabled()
-	{
-		CurrentTree?.OnStop( this, DataContext );
 	}
 }
