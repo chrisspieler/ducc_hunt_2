@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ducc.AI;
 
-public class WalkCommand : BehaviorNode
+public class GoToCommand : BehaviorNode
 {
 	public const string K_WALK_TARGET = "walk_target";
 	public const string K_PATH_GENERATION_INTERVAL = "path_generation_interval";
@@ -14,7 +14,7 @@ public class WalkCommand : BehaviorNode
 	private List<Vector3> _pathPositions = new();
 	private int _currentPathIndex = -1;
 
-	public override BehaviorResult Execute( HumanController actor, DataContext context )
+	public override BehaviorResult Execute( ActorComponent actor, DataContext context )
 	{
 		Vector3 target = context.GetVector3( K_WALK_TARGET );
 		float pathGenerationInterval = context.GetFloat( K_PATH_GENERATION_INTERVAL );
@@ -36,21 +36,22 @@ public class WalkCommand : BehaviorNode
 			}
 		}
 
-		MoveActor( actor, targetReachedDistance );
+		var human = actor.Components.Get<HumanController>();
+		MoveActor( human, targetReachedDistance );
 
 		return BehaviorResult.Running;
 	}
 
-	private void MoveActor( HumanController actor, float targetReachedDistance )
+	private void MoveActor( HumanController human, float targetReachedDistance )
 	{
 		var targetPos = _pathPositions[_currentPathIndex];
-		if ( actor.Transform.Position.Distance( targetPos ) <= targetReachedDistance )
+		if ( human.Transform.Position.Distance( targetPos ) <= targetReachedDistance )
 		{
 			_currentPathIndex++;
 			return;
 		}
-		var direction = (targetPos - actor.Transform.Position).Normal;
-		actor.MovementDirection = direction;
+		var direction = (targetPos - human.Transform.Position).Normal;
+		human.MovementDirection = direction;
 	}
 
 	private List<Vector3> GeneratePath( Vector3 startPos, Vector3 targetPos )

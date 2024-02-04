@@ -2,11 +2,6 @@
 
 public partial class HumanController
 {
-	public enum Behavior
-	{
-		Wander,
-
-	}
 	[ConVar("ai_debug")]
 	public static bool Debug { get; set; } = false;
 
@@ -31,8 +26,6 @@ public partial class HumanController
 		Velocity = Agent.Velocity;
 		DebugDraw();
 	}
-
-
 
 	private void DebugDraw()
 	{

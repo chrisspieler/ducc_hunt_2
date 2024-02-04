@@ -72,8 +72,15 @@ public sealed class CrimeCam : Component
 
 	protected override void DrawGizmos()
 	{
-		Gizmo.Draw.Color = Color.White;
+		Gizmo.Draw.Color = Gizmo.IsSelected ? Color.Yellow : Color.White;
 		Gizmo.Transform = new Transform( Transform.Position );
 		Gizmo.Draw.LineBBox( CheckArea );
+		if ( !Gizmo.IsSelected ) return;
+
+		Gizmo.Hitbox.DepthBias = 0.02f;
+		if ( Gizmo.Control.BoundingBox( "checkarea", CheckArea, out var newBox ) )
+		{ 
+			CheckArea = newBox;
+		}
 	}
 }

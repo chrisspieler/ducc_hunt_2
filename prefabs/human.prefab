@@ -9,6 +9,7 @@
         "__type": "CharacterController",
         "__enabled": false,
         "Acceleration": 10,
+        "Bounciness": 0.3,
         "GroundAngle": 45,
         "Height": 64,
         "IgnoreLayers": "",
@@ -47,6 +48,10 @@
         "Radius": 16,
         "Separation": 0.25,
         "UpdatePosition": true
+      },
+      {
+        "__type": "ActorComponent",
+        "InitialTree": null
       }
     ],
     "Children": [

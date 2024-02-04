@@ -1,0 +1,25 @@
+{
+  "Root": {
+    "_type": "Sequence",
+    "Subtasks": [
+      {
+        "Radius": 300,
+        "_type": "GoToRandomCommand",
+        "Subtasks": []
+      },
+      {
+        "_type": "GoToCommand",
+        "Subtasks": []
+      },
+      {
+        "Radius": 10000000,
+        "_type": "GoToRandomCommand",
+        "Subtasks": []
+      },
+      {
+        "_type": "GoToCommand",
+        "Subtasks": []
+      }
+    ]
+  }
+}

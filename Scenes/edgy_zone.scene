@@ -423,7 +423,7 @@
     {
       "Id": "57cceca9-bd05-47ae-aaf6-db2bbeaff8ae",
       "Name": "Cube",
-      "Position": "496.6458,-64.57561,166.2842",
+      "Position": "496.6458,-64.57561,168.6557",
       "Scale": "0.2869897,5.932916,1.530678",
       "Enabled": true,
       "Components": [
@@ -625,6 +625,33 @@
       "Id": "cc7986aa-89e3-4b3f-be1b-e258d2981f2a",
       "Name": "Cube (4)",
       "Position": "1178.105,-498.8633,98.72241",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Scale": "0.2869897,27.48757,4.31312",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "2e1a19c1-f467-4140-93fc-df3f0e062d90",
+      "Name": "Cube (10)",
+      "Position": "1178.105,1486.232,98.72241",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "0.2869897,27.48757,4.31312",
       "Enabled": true,
@@ -1992,6 +2019,108 @@
       ]
     },
     {
+      "Id": "ef2804c3-ab6a-40c3-96e9-d18230463507",
+      "Name": "Camera Dome (1)",
+      "Position": "1369.885,140.4043,205.6869",
+      "Scale": "0.3351941,0.3351941,0.3351941",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_nonmetal_rough00.vmat",
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "0,0,0,1"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "411f909f-0558-477b-9ca0-f28be6311263",
+          "Name": "Camera",
+          "Position": "0,0,-14.02431",
+          "Rotation": "0.409574,0.01692709,-0.9113419,0.03766442",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 74,
+              "IsMainCamera": false,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 0,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "CCTVComponent",
+              "Camera": {
+                "_type": "component",
+                "go": "411f909f-0558-477b-9ca0-f28be6311263",
+                "component_type": "CameraComponent"
+              },
+              "RenderSize": "512,512",
+              "Target": {
+                "_type": "component",
+                "go": "167277ee-ed50-40b5-a650-044330f69747",
+                "component_type": "MonitorComponent"
+              }
+            },
+            {
+              "__type": "FollowCam",
+              "FollowDistance": 0,
+              "LerpSpeed": 0,
+              "SlerpSpeed": 2,
+              "Target": {
+                "_type": "gameobject",
+                "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
+              }
+            },
+            {
+              "__type": "ColorAdjustments",
+              "Brightness": 1.5,
+              "Contrast": 1,
+              "HueRotate": 0,
+              "Saturation": 0
+            },
+            {
+              "__type": "FilmGrain",
+              "Intensity": 0.2,
+              "Response": 1
+            },
+            {
+              "__type": "Vignette",
+              "Center": "0.5,0.5",
+              "Color": "0,0,0,1",
+              "Intensity": 0.59,
+              "Roundness": 0.79,
+              "Smoothness": 0.96
+            },
+            {
+              "__type": "CrimeCam",
+              "ActiveCrime": null,
+              "Camera": {
+                "_type": "component",
+                "go": "411f909f-0558-477b-9ca0-f28be6311263",
+                "component_type": "CameraComponent"
+              },
+              "CheckArea": {
+                "Mins": "-576,-633.7043,-201.7331",
+                "Maxs": "480.6145,1332.686,0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "Id": "167277ee-ed50-40b5-a650-044330f69747",
       "Name": "tv",
       "Position": "760.8324,80.00238,33.21685",
@@ -2315,7 +2444,6 @@
       "Position": "706.6193,-433.8887,-5.112649",
       "Rotation": "0,0,-0.7071067,0.7071068",
       "Scale": "0.4400307,1,1",
-      "Enabled": true,
       "Components": [
         {
           "__type": "Prop",
@@ -2325,6 +2453,26 @@
           "OnPropBreak": null,
           "OnPropTakeDamage": null,
           "ShowCreatedComponents": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "9da4dd17-6eb2-4988-8d1d-fca7b1cce3c9",
+          "Name": "Text (2)",
+          "Position": "70.23734,-4.053106,28.85064",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "2.272569,1,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "Color": "1,1,1,1",
+              "FontFamily": "Chiller",
+              "FontSize": 62.47,
+              "Scale": 0.12,
+              "Text": "WORK IN PROGRESS"
+            }
+          ]
         }
       ]
     },
@@ -2334,7 +2482,6 @@
       "Position": "787.1348,46.8639,-8.9575",
       "Rotation": "0,0,-0.7071067,0.7071068",
       "Scale": "1.145344,1,1.296405",
-      "Enabled": true,
       "Components": [
         {
           "__type": "Prop",
@@ -2345,53 +2492,62 @@
           "OnPropTakeDamage": null,
           "ShowCreatedComponents": false
         }
-      ]
-    },
-    {
-      "Id": "e9625d63-0b51-49e0-aa20-1b414f1ea9bc",
-      "Name": "Text",
-      "Position": "784.3079,-30.63276,58.42355",
-      "Enabled": true,
-      "Components": [
+      ],
+      "Children": [
         {
-          "__type": "TextRenderer",
-          "Color": "1,1,1,1",
-          "FontFamily": "Chiller",
-          "FontSize": 64,
-          "Scale": 0.3,
-          "Text": "WORK IN PROGRESS"
+          "Id": "e9625d63-0b51-49e0-aa20-1b414f1ea9bc",
+          "Name": "Text",
+          "Position": "67.66234,-2.826918,51.97531",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "0.8731001,1,0.7713639",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "Color": "1,1,1,1",
+              "FontFamily": "Chiller",
+              "FontSize": 64,
+              "Scale": 0.3,
+              "Text": "WORK IN PROGRESS"
+            }
+          ]
+        },
+        {
+          "Id": "66823189-3308-4d72-b354-53f000d2f686",
+          "Name": "Text (3)",
+          "Position": "67.66234,-2.826918,28.63486",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "0.8731001,1,0.7713639",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "Color": "1,1,1,1",
+              "FontFamily": "Chiller",
+              "FontSize": 35.04,
+              "Scale": 0.3,
+              "Text": "Short game, I know. \nBut there will be more later. I prooooomise.\n:-)"
+            }
+          ]
         }
       ]
     },
     {
-      "Id": "66823189-3308-4d72-b354-53f000d2f686",
-      "Name": "Text (3)",
-      "Position": "784.3079,-30.63276,28.16487",
+      "Id": "22583873-6fb4-40f5-81a9-447ce3a0e55a",
+      "Name": "Object",
+      "Position": "630.2137,-25.3322,79.79255",
       "Enabled": true,
       "Components": [
         {
-          "__type": "TextRenderer",
-          "Color": "1,1,1,1",
-          "FontFamily": "Chiller",
-          "FontSize": 35.04,
-          "Scale": 0.3,
-          "Text": "Short game, I know. \nBut there will be more later. I prooooomise.\n:-)"
-        }
-      ]
-    },
-    {
-      "Id": "9da4dd17-6eb2-4988-8d1d-fca7b1cce3c9",
-      "Name": "Text (2)",
-      "Position": "702.5662,-464.7953,23.73799",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "TextRenderer",
-          "Color": "1,1,1,1",
-          "FontFamily": "Chiller",
-          "FontSize": 62.47,
-          "Scale": 0.12,
-          "Text": "WORK IN PROGRESS"
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-130,-481.2651,-80.80013",
+            "Maxs": "161.8668,534.0002,138.1332"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
         }
       ]
     }
@@ -2419,7 +2575,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-03T04:14:25.1725963-07:00",
+  "LastSaved": "2024-02-04T08:06:25.772464-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
