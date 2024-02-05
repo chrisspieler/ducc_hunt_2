@@ -1,6 +1,5 @@
 using Sandbox;
 using Sandbox.Citizen;
-using System.Threading.Tasks;
 
 public sealed partial class HumanController : Component, Component.IDamageable
 {
@@ -8,8 +7,11 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 	[Property] public CitizenAnimationHelper Animation { get; set; }
 
-	public Vector3 MovementDirection { get; set; }
+	public Vector3 MoveDirection { get; set; }
+	public float MoveSpeed { get; set; } = 120f;
 	public Vector3 Velocity { get; set; }
+
+	[Property] public bool IsRunning { get; set; }
 	public bool IsRagdoll { get; private set; }
 
 	protected override void OnStart()
@@ -19,14 +21,17 @@ public sealed partial class HumanController : Component, Component.IDamageable
 
 	protected override void OnUpdate()
 	{
-		Think();
-		
 		UpdateAnimation();
 	}
 
 	protected override void OnFixedUpdate()
 	{
 		Renderer.GameObject.Transform.Rotation = Rotation.LookAt( Velocity.Normal, Vector3.Up );
+
+		var speedFactor = IsRunning ? 2f : 1f;
+		Character.Accelerate( MoveDirection * MoveSpeed * speedFactor );
+		Character.ApplyFriction( 4f );
+		Character.Move();
 	}
 
 	private void UpdateAnimation()
@@ -34,8 +39,8 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		if ( !Animation.IsValid() )
 			return;
 		
-		Animation.WithVelocity( Velocity );
-		Animation.WithWishVelocity( Velocity );
+		Animation.WithVelocity( Character.Velocity);
+		Animation.WithWishVelocity( MoveDirection * MoveSpeed );
 		Animation.IsGrounded = true;
 	}
 
@@ -56,9 +61,8 @@ public sealed partial class HumanController : Component, Component.IDamageable
 			{
 				Log.Info( $"{person.GameObject.Name} set panicked state" );
 			}
-			person.IsPanicked = true;
+			person.IsRunning = true;
 		}
-		Agent.Stop();
 	}
 
 	private void SetRagdollState( bool enabled )

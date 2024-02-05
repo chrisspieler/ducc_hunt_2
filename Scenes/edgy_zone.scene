@@ -1340,7 +1340,7 @@
     {
       "Id": "c1677b85-feb4-4734-a309-ee580bc00d8d",
       "Name": "Point Light (2)",
-      "Position": "600.7117,796.0314,174.8738",
+      "Position": "1181.119,1045.539,183.9975",
       "Enabled": true,
       "Components": [
         {
@@ -2575,7 +2575,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-04T08:06:25.772464-07:00",
+  "LastSaved": "2024-02-04T22:40:49.4077421-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
