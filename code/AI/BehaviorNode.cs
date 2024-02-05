@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Sandbox;
+using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 
 namespace Ducc.AI;
 
-public abstract class BehaviorNode
+public abstract partial class BehaviorNode
 {
 	[JsonPropertyName( "_type" )]
 	public string TypeName { get; }
@@ -16,7 +17,16 @@ public abstract class BehaviorNode
 		TypeName = GetType().Name;
 	}
 
-	public abstract BehaviorResult Execute( ActorComponent actor, DataContext context );
+	public BehaviorResult Execute( ActorComponent actor, DataContext context )
+	{
+		if ( DebugVars.AI )
+		{
+			// Log.Info( $"({actor.GameObject.Name}) OnExecute: {GetType().Name}" );
+		}
+		return ExecuteInternal( actor, context );
+	}
+
+	protected abstract BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context );
 
 	public JsonNode Serialize()
 	{

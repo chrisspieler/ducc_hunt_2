@@ -5,7 +5,8 @@ namespace Ducc.AI;
 public class Sequence : BehaviorNode
 {
 	private HashSet<BehaviorNode> _successfulSubtasks = new();
-	public override BehaviorResult Execute( ActorComponent actor, DataContext context )
+
+	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
 		foreach( var subtask in Subtasks )
 		{
@@ -27,6 +28,7 @@ public class Sequence : BehaviorNode
 			}
 		}
 		// There weren't any subtasks, or we succeeded at all of them.
+		_successfulSubtasks.Clear();
 		return BehaviorResult.Success;
 	}
 }

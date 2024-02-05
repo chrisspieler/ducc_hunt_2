@@ -54,8 +54,6 @@ public class BehaviorTree
 			Subtasks = new()
 			{
 				new GoToRandomCommand() { Radius = 300f },
-				new GoToCommand(),
-				new GoToRandomCommand() { Radius = 10_000_000f },
 				new GoToCommand()
 			}
 		};

@@ -3,20 +3,12 @@
     "_type": "Sequence",
     "Subtasks": [
       {
-        "Radius": 300,
+        "Radius": 30,
         "_type": "GoToRandomCommand",
         "Subtasks": []
       },
       {
-        "_type": "GoToCommand",
-        "Subtasks": []
-      },
-      {
-        "Radius": 10000000,
-        "_type": "GoToRandomCommand",
-        "Subtasks": []
-      },
-      {
+        "TargetReachedDistance": 4,
         "_type": "GoToCommand",
         "Subtasks": []
       }

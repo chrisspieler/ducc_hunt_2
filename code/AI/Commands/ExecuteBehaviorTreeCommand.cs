@@ -6,7 +6,7 @@ public class ExecuteBehaviorTreeCommand : BehaviorNode
 
 	private BehaviorTree _behaviorTree;
 
-	public override BehaviorResult Execute( ActorComponent actor, DataContext context )
+	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
 		_behaviorTree ??= BehaviorTree.Load( BehaviorTreeName );
 		return _behaviorTree.Execute( actor, context );

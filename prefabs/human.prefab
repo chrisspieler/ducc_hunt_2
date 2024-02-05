@@ -18,11 +18,6 @@
       },
       {
         "__type": "HumanController",
-        "Agent": {
-          "_type": "component",
-          "go": "e9c75076-039c-495d-af4d-4b136e53237e",
-          "component_type": "NavMeshAgent"
-        },
         "Animation": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
@@ -33,7 +28,7 @@
           "go": "e9c75076-039c-495d-af4d-4b136e53237e",
           "component_type": "CharacterController"
         },
-        "IsPanicked": false,
+        "IsRunning": false,
         "Renderer": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
@@ -58,7 +53,6 @@
       {
         "Id": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
         "Name": "Body",
-        "Rotation": "0,0,-0.9914449,0.1305264",
         "Enabled": true,
         "Components": [
           {

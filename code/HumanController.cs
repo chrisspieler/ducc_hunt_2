@@ -26,7 +26,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 
 	protected override void OnFixedUpdate()
 	{
-		Renderer.GameObject.Transform.Rotation = Rotation.LookAt( Velocity.Normal, Vector3.Up );
+		Renderer.GameObject.Transform.Rotation = Rotation.LookAt( MoveDirection.Normal, Vector3.Up );
 
 		var speedFactor = IsRunning ? 2f : 1f;
 		Character.Accelerate( MoveDirection * MoveSpeed * speedFactor );

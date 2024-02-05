@@ -7,7 +7,7 @@ public class Selector : BehaviorNode
 {
 	private readonly HashSet<BehaviorNode> _failedSubtasks = new();
 	
-	public override BehaviorResult Execute( ActorComponent actor, DataContext context )
+	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
 		foreach( var subtask in Subtasks )
 		{

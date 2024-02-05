@@ -16,10 +16,19 @@ public class ActorComponent : Component
 	private BehaviorTree _currentTree;
 	public DataContext DataContext 
 	{
-		get => _dataContext ?? new DataContext();
+		get
+		{
+			_dataContext ??= new();
+			return _dataContext;
+		}
 		set => _dataContext = value;
 	}
 	private DataContext _dataContext;
+
+	protected override void OnStart()
+	{
+		_currentTree = BehaviorTree.Load( InitialTree );
+	}
 
 	protected override void OnUpdate()
 	{

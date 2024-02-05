@@ -1,5 +1,6 @@
 ﻿using Sandbox;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Ducc.AI;
@@ -7,28 +8,33 @@ namespace Ducc.AI;
 public class GoToCommand : BehaviorNode
 {
 	public const string K_WALK_TARGET = "walk_target";
-	public const string K_PATH_GENERATION_INTERVAL = "path_generation_interval";
-	public const string K_TARGET_REACHED_DISTANCE = "target_reached_distance";
 
-	private TimeSince _sincePathGenerated;
+	public float TargetReachedDistance { get; set; } = 4.0f;
+
 	private List<Vector3> _pathPositions = new();
 	private int _currentPathIndex = -1;
 
-	public override BehaviorResult Execute( ActorComponent actor, DataContext context )
+	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
 		Vector3 target = context.GetVector3( K_WALK_TARGET );
-		float pathGenerationInterval = context.GetFloat( K_PATH_GENERATION_INTERVAL );
-		float targetReachedDistance = context.GetFloat( K_TARGET_REACHED_DISTANCE );
 
 		var remainingDistance = actor.Transform.Position.Distance( target );
-		if ( remainingDistance <= targetReachedDistance ) 
+		if ( remainingDistance <= TargetReachedDistance ) 
 		{
+			_pathPositions.Clear();
+			_currentPathIndex = -1;
 			return BehaviorResult.Success;
 		}
 
-		if ( !_pathPositions.Any() || _sincePathGenerated > pathGenerationInterval )
+		if ( !_pathPositions.Any() )
 		{
+			var sw = Stopwatch.StartNew();
 			_pathPositions = GeneratePath( actor.Transform.Position, target );
+			sw.Stop();
+			if ( DebugVars.AI )
+			{
+				Log.Info( $"{actor.GameObject.Name}: New {_pathPositions.Count} segment path in {sw.ElapsedMilliseconds}ms" );
+			}
 			if (!_pathPositions.Any() )
 			{
 				// No path to the target was found.
@@ -39,17 +45,21 @@ public class GoToCommand : BehaviorNode
 		DebugDraw( actor );
 
 		var human = actor.Components.Get<HumanController>();
-		MoveActor( human, targetReachedDistance );
+		MoveActor( human );
 
 		return BehaviorResult.Running;
 	}
 
-	private void MoveActor( HumanController human, float targetReachedDistance )
+	private void MoveActor( HumanController human )
 	{
 		var targetPos = _pathPositions[_currentPathIndex];
-		if ( human.Transform.Position.Distance( targetPos ) <= targetReachedDistance )
+		if ( human.Transform.Position.Distance( targetPos ) <= TargetReachedDistance )
 		{
 			_currentPathIndex++;
+			if ( DebugVars.AI )
+			{
+				Log.Info( $"{human.GameObject.Name}: Reached index {_currentPathIndex}" );
+			}
 			return;
 		}
 		var direction = (targetPos - human.Transform.Position).Normal;
@@ -58,7 +68,6 @@ public class GoToCommand : BehaviorNode
 
 	private List<Vector3> GeneratePath( Vector3 startPos, Vector3 targetPos )
 	{
-		_sincePathGenerated = 0;
 		var path = GameManager.ActiveScene.NavMesh.GetSimplePath( startPos, targetPos );
 		_currentPathIndex = path.Any() ? 0 : -1;
 		return path;
