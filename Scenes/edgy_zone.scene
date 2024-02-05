@@ -2097,20 +2097,6 @@
               "ZNear": 10
             },
             {
-              "__type": "CCTVComponent",
-              "Camera": {
-                "_type": "component",
-                "go": "411f909f-0558-477b-9ca0-f28be6311263",
-                "component_type": "CameraComponent"
-              },
-              "RenderSize": "512,512",
-              "Target": {
-                "_type": "component",
-                "go": "167277ee-ed50-40b5-a650-044330f69747",
-                "component_type": "MonitorComponent"
-              }
-            },
-            {
               "__type": "FollowCam",
               "FollowDistance": 0,
               "LerpSpeed": 0,
@@ -2184,7 +2170,7 @@
         {
           "__type": "MonitorComponent",
           "AttributeName": "",
-          "DebugDraw": true,
+          "DebugDraw": false,
           "MaterialName": "models/sbox_props/tv/tv_surface.vmat",
           "MaxUpdatesPerSecond": 15,
           "Model": {
@@ -2871,7 +2857,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-05T11:20:49.0298867-07:00",
+  "LastSaved": "2024-02-05T11:28:37.0546603-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
