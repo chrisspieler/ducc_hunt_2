@@ -1,0 +1,118 @@
+{
+  "RootObject": {
+    "Id": "a838807e-f0f9-4884-b078-554766c7ef57",
+    "Name": "Shelf",
+    "Position": "1255.098,-187.1553,0",
+    "Enabled": true,
+    "Children": [
+      {
+        "Id": "2fa135a3-b2ec-4ab8-a408-2a34b26d3575",
+        "Name": "Cube",
+        "Position": "0,0,2.019597",
+        "Scale": "2.868478,1.028537,0.07944124",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": "materials/dev/gray_grid_8.vmat",
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      },
+      {
+        "Id": "75d5680d-f018-46e0-8414-cb4c226daa04",
+        "Name": "Cube (11)",
+        "Position": "0,0,31.60487",
+        "Scale": "2.868478,1.028537,0.07944124",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": "materials/dev/gray_grid_8.vmat",
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      },
+      {
+        "Id": "2444da8b-35f3-41cb-a46e-cd4c4efef0d7",
+        "Name": "Cube (11)",
+        "Position": "0,0,59.77976",
+        "Scale": "2.868478,1.028537,0.07944124",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": "materials/dev/gray_grid_8.vmat",
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      },
+      {
+        "Id": "945f74f5-fe03-49a6-9247-06095b40feb6",
+        "Name": "Cube (11)",
+        "Position": "0,0,39.30911",
+        "Scale": "2.868478,0.07791532,1.564214",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "MaterialGroup": null,
+            "MaterialOverride": "materials/dev/gray_grid_8.vmat",
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

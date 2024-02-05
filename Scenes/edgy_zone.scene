@@ -953,7 +953,7 @@
     {
       "Id": "e840d1b2-ff3c-4208-9239-c4b3fb5c543d",
       "Name": "pickup",
-      "Position": "304.2919,-63.26288,3.6718",
+      "Position": "1355.421,-109.6148,3.671907",
       "Enabled": true,
       "Components": [
         {
@@ -1360,7 +1360,24 @@
     {
       "Id": "c1677b85-feb4-4734-a309-ee580bc00d8d",
       "Name": "Point Light (2)",
-      "Position": "1181.119,1045.539,183.9975",
+      "Position": "1428.866,583.3435,183.9975",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "Attenuation": 0.5,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "Id": "5ce7e09f-4665-4a34-8fd2-3f48024bcc2d",
+      "Name": "Point Light (4)",
+      "Position": "929.5092,1060.504,183.9975",
       "Enabled": true,
       "Components": [
         {
@@ -1377,7 +1394,7 @@
     {
       "Id": "5d67d85e-bc77-4e6c-989f-e97da3d87561",
       "Name": "Point Light (1)",
-      "Position": "1566.305,363.6311,174.8738",
+      "Position": "1566.305,-222.0269,174.8738",
       "Enabled": true,
       "Components": [
         {
@@ -1760,7 +1777,7 @@
     {
       "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
       "Name": "pickup (2)",
-      "Position": "12.86816,-52.76785,-0.00009856725",
+      "Position": "1813.805,1399.699,0.00005181098",
       "Enabled": true,
       "Components": [
         {
@@ -2167,7 +2184,7 @@
         {
           "__type": "MonitorComponent",
           "AttributeName": "",
-          "DebugDraw": false,
+          "DebugDraw": true,
           "MaterialName": "models/sbox_props/tv/tv_surface.vmat",
           "MaxUpdatesPerSecond": 15,
           "Model": {
@@ -2499,9 +2516,10 @@
     {
       "Id": "85470798-d067-44ae-85e7-5f6cb9853124",
       "Name": "fence_panel_gate (1)",
-      "Position": "787.1348,46.8639,-8.9575",
+      "Position": "903.7242,46.8639,-8.9575",
       "Rotation": "0,0,-0.7071067,0.7071068",
       "Scale": "1.145344,1,1.296405",
+      "Enabled": true,
       "Components": [
         {
           "__type": "Prop",
@@ -2525,9 +2543,9 @@
             {
               "__type": "TextRenderer",
               "Color": "1,1,1,1",
-              "FontFamily": "Chiller",
-              "FontSize": 64,
-              "Scale": 0.3,
+              "FontFamily": "Poppins",
+              "FontSize": 63.23,
+              "Scale": 0.2,
               "Text": "WORK IN PROGRESS"
             }
           ]
@@ -2543,9 +2561,9 @@
             {
               "__type": "TextRenderer",
               "Color": "1,1,1,1",
-              "FontFamily": "Chiller",
-              "FontSize": 35.04,
-              "Scale": 0.3,
+              "FontFamily": "Poppins",
+              "FontSize": 25.64,
+              "Scale": 0.2,
               "Text": "Short game, I know. \nBut there will be more later. I prooooomise.\n:-)"
             }
           ]
@@ -2570,6 +2588,264 @@
           "TintColor": "1,1,1,1"
         }
       ]
+    },
+    {
+      "Id": "73d61585-12f5-4497-b96e-aedb972204b0",
+      "Name": "Text",
+      "Position": "504.2444,548.6176,9.443806",
+      "Rotation": "0,0,-1,0.0000001947072",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "1,1,1,1",
+          "FontFamily": "Chiller",
+          "FontSize": 46.97,
+          "Scale": 0.1,
+          "Text": "Hey, wanna see a ghost?\nType this in the console:\nOh, and then KILL somebody!"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "49a231ca-e6f7-4573-8f6b-7664e20dc74f",
+          "Name": "Text (2)",
+          "Position": "0.00001993123,-27.1853,-0.2667704",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "Color": "1,1,1,1",
+              "FontFamily": "Consolas",
+              "FontSize": 33.77,
+              "Scale": 0.1,
+              "Text": "ai_debug 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "a838807e-f0f9-4884-b078-554766c7ef57",
+      "Name": "Shelf",
+      "Position": "1367.762,-335.6778,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "c823c389-1cdd-425e-aa93-90f1e3a43b70",
+      "Name": "Shelf (5)",
+      "Position": "1367.762,-179.3408,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "8ef9c261-8811-49d6-b9a8-37a5d9557c85",
+      "Name": "Shelf (8)",
+      "Position": "1367.762,-27.54548,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "f573e00d-10e0-4f1a-999d-c76feba005d1",
+      "Name": "Shelf (9)",
+      "Position": "1367.762,836.7664,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "5da38ce4-097c-4b8f-80c7-583d34c68bab",
+      "Name": "Shelf (16)",
+      "Position": "1535.635,836.7664,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "089326fb-9de4-415b-a45c-761f4ebb3daa",
+      "Name": "Shelf (20)",
+      "Position": "1738.874,836.7664,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "a6549244-7338-4359-ba12-5d05c950ced7",
+      "Name": "Shelf (24)",
+      "Position": "1189.508,836.7664,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "0e78fe5e-0b21-48fc-a391-d78c70cc3380",
+      "Name": "Shelf (28)",
+      "Position": "997.1414,836.7664,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "5c0bf20c-e468-4a95-a456-a3dbb506a294",
+      "Name": "Shelf (10)",
+      "Position": "1367.762,979.9346,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "1218ba92-ac2e-4b3f-a1f1-5d162a5d3dcd",
+      "Name": "Shelf (15)",
+      "Position": "1535.635,979.9346,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "732a7414-7bfb-4d8b-ba6f-85048ec03eb8",
+      "Name": "Shelf (19)",
+      "Position": "1738.874,979.9346,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "75aad618-03de-4963-bef5-17013da51e4e",
+      "Name": "Shelf (23)",
+      "Position": "1189.508,979.9346,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "c32a7ed5-d85d-48dd-be5b-0ad436fb978c",
+      "Name": "Shelf (27)",
+      "Position": "997.1414,979.9346,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "580673c4-105a-4dec-aa1c-74ffd1233561",
+      "Name": "Shelf (11)",
+      "Position": "1367.762,1123.48,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "3f35b79d-1209-4200-97df-a6f44476052b",
+      "Name": "Shelf (14)",
+      "Position": "1535.635,1123.48,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "33ca4880-39cd-45dc-9478-9c729a18b53d",
+      "Name": "Shelf (18)",
+      "Position": "1738.874,1123.48,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "14c83f5a-2b9d-42c4-b73b-66a7397734af",
+      "Name": "Shelf (22)",
+      "Position": "1189.508,1123.48,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "c33cd476-9930-4ae7-9e8e-54ac32adf2c9",
+      "Name": "Shelf (26)",
+      "Position": "997.1414,1123.48,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "4d3458e9-5b07-4c6b-ba70-c3ad83e21228",
+      "Name": "Shelf (12)",
+      "Position": "1367.762,1266.753,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "60f1b09c-cfa5-4e69-a052-b739343cc6de",
+      "Name": "Shelf (13)",
+      "Position": "1535.635,1266.753,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "0afadc15-e0a0-491b-b890-9da1913935d5",
+      "Name": "Shelf (17)",
+      "Position": "1738.874,1266.753,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "adf00bf1-1bea-42d6-a7b4-24e8921c31c1",
+      "Name": "Shelf (21)",
+      "Position": "1189.508,1266.753,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "b1f74c9a-fb41-45ce-9642-b3614869233f",
+      "Name": "Shelf (25)",
+      "Position": "997.1414,1266.753,-0.00004485938",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "69515a4b-0efd-4bb9-bd0e-247a5b796e5f",
+      "Name": "Shelf (1)",
+      "Position": "1511.118,-335.6778,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "d7b84596-6283-4513-9f86-939d6dea9342",
+      "Name": "Shelf (4)",
+      "Position": "1511.118,-179.3407,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "ae5e0141-df23-4eff-80c1-ee77a626689a",
+      "Name": "Shelf (7)",
+      "Position": "1511.118,-27.54545,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "f49ad4a7-9604-4379-afa1-9220e669f169",
+      "Name": "Shelf (2)",
+      "Position": "1654.482,-335.6778,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "29430a39-f953-4a25-99e0-df3efaddb5cd",
+      "Name": "Shelf (3)",
+      "Position": "1654.482,-179.3407,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "b4e71a06-4f41-4fd9-b43f-1d10c7e511c6",
+      "Name": "Shelf (6)",
+      "Position": "1654.482,-27.54545,-0.00004485938",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/store_shelf.prefab"
     }
   ],
   "SceneProperties": {
@@ -2595,7 +2871,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-05T11:01:36.5809314-07:00",
+  "LastSaved": "2024-02-05T11:20:49.0298867-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
