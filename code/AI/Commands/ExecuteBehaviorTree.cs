@@ -1,6 +1,6 @@
-﻿namespace Ducc.AI;
+﻿namespace Ducc.AI.Commands;
 
-public class ExecuteBehaviorTreeCommand : BehaviorNode
+public class ExecuteBehaviorTree : BehaviorNode
 {
 	public string BehaviorTreeName { get; set; }
 

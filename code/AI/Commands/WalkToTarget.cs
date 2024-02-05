@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace Ducc.AI;
+namespace Ducc.AI.Commands;
 
-public class GoToCommand : BehaviorNode
+public class WalkToTarget : BehaviorNode
 {
 	public const string K_WALK_TARGET = "walk_target";
 

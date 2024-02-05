@@ -2,15 +2,15 @@
 using System;
 using System.Diagnostics;
 
-namespace Ducc.AI;
+namespace Ducc.AI.Commands;
 
-public class SetRandomWalkTargetCommand : BehaviorNode
+public class SetRandomWalkTarget : BehaviorNode
 {
 	public float Radius { get; set; } = float.PositiveInfinity;
 	
 	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
-		var walkTargetKey = GoToCommand.K_WALK_TARGET;
+		var walkTargetKey = WalkToTarget.K_WALK_TARGET;
 
 		var sw = Stopwatch.StartNew();
 		// It may take a long time to find a random point is the radius is too large.

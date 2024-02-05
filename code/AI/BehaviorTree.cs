@@ -1,4 +1,5 @@
-﻿using Sandbox;
+﻿using Ducc.AI.Commands;
+using Sandbox;
 using System.Text.Json.Nodes;
 
 namespace Ducc.AI;
@@ -53,8 +54,8 @@ public class BehaviorTree
 		{
 			Subtasks = new()
 			{
-				new SetRandomWalkTargetCommand() { Radius = 30f },
-				new GoToCommand()
+				new SetRandomWalkTarget() { Radius = 30f },
+				new WalkToTarget()
 			}
 		};
 		var node = tree.Serialize();
