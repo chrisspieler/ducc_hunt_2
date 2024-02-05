@@ -1,5 +1,6 @@
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.Utility;
 
 public sealed partial class HumanController : Component, Component.IDamageable
 {
@@ -8,6 +9,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	[Property] public CitizenAnimationHelper Animation { get; set; }
 
 	public Vector3 MoveDirection { get; set; }
+	public Vector3? FaceDirection { get; set; }
 	public float MoveSpeed { get; set; } = 120f;
 	public Vector3 Velocity { get; set; }
 
@@ -26,7 +28,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 
 	protected override void OnFixedUpdate()
 	{
-		Renderer.GameObject.Transform.Rotation = Rotation.LookAt( MoveDirection.Normal, Vector3.Up );
+		UpdateYaw();
 
 		var speedFactor = IsRunning ? 2f : 1f;
 		Character.Accelerate( MoveDirection * MoveSpeed * speedFactor );
@@ -42,6 +44,15 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		Animation.WithVelocity( Character.Velocity);
 		Animation.WithWishVelocity( MoveDirection * MoveSpeed );
 		Animation.IsGrounded = true;
+	}
+
+	private void UpdateYaw()
+	{
+		var faceDirection = FaceDirection ?? MoveDirection;
+		var targetRotation = Rotation.LookAt( faceDirection.Normal.WithZ( 0f ), Vector3.Up );
+		var currentYaw = Renderer.GameObject.Transform.Rotation.Yaw();
+		var targetYaw = MathX.Lerp( currentYaw, targetRotation.Yaw(), Time.Delta * 4f );
+		Renderer.GameObject.Transform.Rotation = Rotation.FromYaw( targetYaw );
 	}
 
 	public void OnDamage( in DamageInfo damage )
