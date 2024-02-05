@@ -4,7 +4,7 @@
     "Subtasks": [
       {
         "Radius": 30,
-        "_type": "GoToRandomCommand",
+        "_type": "SetRandomWalkTargetCommand",
         "Subtasks": []
       },
       {

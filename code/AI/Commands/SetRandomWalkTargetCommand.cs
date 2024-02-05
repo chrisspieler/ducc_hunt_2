@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace Ducc.AI;
 
-public class GoToRandomCommand : BehaviorNode
+public class SetRandomWalkTargetCommand : BehaviorNode
 {
 	public float Radius { get; set; } = float.PositiveInfinity;
 	
