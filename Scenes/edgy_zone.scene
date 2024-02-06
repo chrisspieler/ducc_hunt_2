@@ -2588,41 +2588,6 @@
       ]
     },
     {
-      "Id": "73d61585-12f5-4497-b96e-aedb972204b0",
-      "Name": "Text",
-      "Position": "504.2444,548.6176,9.443806",
-      "Rotation": "0,0,-1,0.0000001947072",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "TextRenderer",
-          "Color": "1,1,1,1",
-          "FontFamily": "Chiller",
-          "FontSize": 46.97,
-          "Scale": 0.1,
-          "Text": "Hey, wanna see a ghost?\nType this in the console:\nOh, and then KILL somebody!"
-        }
-      ],
-      "Children": [
-        {
-          "Id": "49a231ca-e6f7-4573-8f6b-7664e20dc74f",
-          "Name": "Text (2)",
-          "Position": "0.00001993123,-27.1853,-0.2667704",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "TextRenderer",
-              "Color": "1,1,1,1",
-              "FontFamily": "Consolas",
-              "FontSize": 33.77,
-              "Scale": 0.1,
-              "Text": "ai_debug 1"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Id": "a838807e-f0f9-4884-b078-554766c7ef57",
       "Name": "Shelf",
       "Position": "1367.762,-335.6778,-0.00004485938",
@@ -2869,7 +2834,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T04:02:36.3213461-07:00",
+  "LastSaved": "2024-02-06T04:11:46.5355093-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
