@@ -16,9 +16,9 @@ public class BehaviorTree
 		return Root.Execute( actor, context );
 	}
 
-	public void Abort()
+	public void Abort( ActorComponent actor, DataContext context )
 	{
-		Root?.Abort();
+		Root?.Abort( actor, context );
 	}
 
 	public JsonNode Serialize()
@@ -82,8 +82,8 @@ public class BehaviorTree
 			{
 				Subtasks = new()
 				{
-					new SetRandomWalkTarget() { Radius = 30f },
-					new WalkToTarget()
+					new FindRandomWalkPosition() { Radius = 30f },
+					new WalkToPosition()
 				}
 			}
 		};
@@ -97,8 +97,12 @@ public class BehaviorTree
 			{
 				Subtasks = new()
 				{
-					new SetTaggedWalkTarget() { Tag = "player" },
-					new WalkToTarget() { TargetReachedDistance = 80f }
+					new FindTaggedWalkPosition() { Tag = "player", Radius = 80f },
+					new WalkToPosition() { TargetReachedDistance = 80f },
+					new FindTaggedFaceTarget() { Tag = "player" },
+					new SetFaceTarget(),
+					new Delay() { Duration = 2f },
+					new SetFaceTarget() { SetNull = true }
 				}
 			}
 		};

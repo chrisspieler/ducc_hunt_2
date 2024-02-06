@@ -292,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-82.75195,-36.81654,0.00002464441",
+      "Position": "1143.494,222.8574,0.0001090778",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -836,8 +836,11 @@
             "go": "73b82939-4917-4646-afd4-d182803888cb",
             "component_type": "CharacterController"
           },
+          "FaceDirection": null,
+          "FaceTarget": null,
           "IsRunning": false,
           "MaxHealth": 1000,
+          "MoveDirection": "0,0,0",
           "OnDamaged": null,
           "Renderer": {
             "_type": "component",
@@ -1217,9 +1220,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false,
-                  "_name": "ToLower"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1229,9 +1232,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false,
-                  "_name": "Contains"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -2934,7 +2937,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T08:56:12.1649004-07:00",
+  "LastSaved": "2024-02-06T14:11:28.6053534-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

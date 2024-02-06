@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Ducc.AI.Commands;
 
-public class WalkToTarget : BehaviorNode
+public class WalkToPosition : BehaviorNode
 {
-	public const string K_WALK_TARGET = "walk_target";
+	public const string K_WALK_POSITION = "walk_position";
 
 	public float TargetReachedDistance { get; set; } = 4.0f;
 
@@ -16,13 +16,12 @@ public class WalkToTarget : BehaviorNode
 
 	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
-		Vector3 target = context.GetVector3( K_WALK_TARGET );
+		Vector3 target = context.GetVector3( K_WALK_POSITION );
 
 		var remainingDistance = actor.Transform.Position.Distance( target );
 		if ( remainingDistance <= TargetReachedDistance ) 
 		{
-			_pathPositions.Clear();
-			_currentPathIndex = -1;
+			StopActor( actor );
 			return BehaviorResult.Success;
 		}
 
@@ -44,14 +43,33 @@ public class WalkToTarget : BehaviorNode
 
 		DebugDraw( actor );
 
-		var human = actor.Components.Get<HumanController>();
-		MoveActor( human );
+		MoveActor( actor );
 
 		return BehaviorResult.Running;
 	}
 
-	private void MoveActor( HumanController human )
+	protected override void OnAbort( ActorComponent actor, DataContext context )
 	{
+		StopActor( actor );
+	}
+
+	private void StopActor( ActorComponent actor )
+	{
+		var human = actor.Components.Get<HumanController>();
+		// Face the last direction of movement.
+		human.FaceDirection = human.MoveDirection;
+		human.MoveDirection = Vector3.Zero;
+		_pathPositions.Clear();
+		_currentPathIndex = -1;
+		if ( DebugVars.AI )
+		{
+			Log.Info( $"{human.GameObject.Name}: Stopped" );
+		}
+	}
+
+	private void MoveActor( ActorComponent actor )
+	{
+		var human = actor.Components.Get<HumanController>();
 		var targetPos = _pathPositions[_currentPathIndex];
 		if ( human.Transform.Position.Distance( targetPos ) <= 1f )
 		{
@@ -63,6 +81,7 @@ public class WalkToTarget : BehaviorNode
 			return;
 		}
 		var direction = (targetPos - human.Transform.Position).Normal;
+		human.FaceDirection = direction;
 		human.MoveDirection = direction;
 	}
 

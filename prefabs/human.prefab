@@ -64,7 +64,7 @@
         "Components": [
           {
             "__type": "SkinnedModelRenderer",
-            "BodyGroups": 69,
+            "BodyGroups": 65,
             "BoneMergeTarget": null,
             "CreateBoneObjects": false,
             "MaterialGroup": "default",

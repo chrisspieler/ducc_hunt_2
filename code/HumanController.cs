@@ -13,12 +13,12 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	[Property] public CitizenAnimationHelper Animation { get; set; }
 	[Property] public ActorComponent Actor { get; set; }
 	[Property] public float MaxHealth { get; set; } = 100f;
+	[Property] public Vector3 MoveDirection { get; set; }
+	[Property] public Vector3? FaceDirection { get; set; }
+	[Property] public GameObject FaceTarget { get; set; }
 
 	public float CurrentHealth { get; private set; }
-	public Vector3 MoveDirection { get; set; }
-	public Vector3? FaceDirection { get; set; }
 	public float MoveSpeed { get; set; } = 120f;
-	public Vector3 Velocity { get; set; }
 
 	[Property] public bool IsRunning { get; set; }
 	public bool IsRagdoll { get; private set; }
@@ -57,6 +57,10 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	private void UpdateYaw()
 	{
 		var faceDirection = FaceDirection ?? MoveDirection;
+		if ( FaceTarget.IsValid() )
+		{
+			faceDirection = FaceTarget.Transform.Position - Transform.Position;
+		}
 		var targetRotation = Rotation.LookAt( faceDirection.Normal.WithZ( 0f ), Vector3.Up );
 		var currentYaw = Renderer.GameObject.Transform.Rotation.Yaw();
 		var targetYaw = MathX.Lerp( currentYaw, targetRotation.Yaw(), Time.Delta * 4f );

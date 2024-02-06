@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Ducc.AI.Commands;
 
-public class SetTaggedWalkTarget : BehaviorNode
+public class FindTaggedFaceTarget : BehaviorNode
 {
 	public string Tag { get; set; }
 
@@ -17,11 +17,19 @@ public class SetTaggedWalkTarget : BehaviorNode
 		var target = Random.Shared.FromArray( tagged );
 
 		if ( !target.IsValid() )
+		{
+			if ( DebugVars.AI )
+			{
+				Log.Info( $"{actor.GameObject.Name}: No valid target found with tag {Tag}" );
+			}
 			return BehaviorResult.Failure;
+		}
 
-		context.Set( WalkToTarget.K_WALK_TARGET, target.Transform.Position );
+		context.Set( SetFaceTarget.K_FACE_TARGET, target.Id );
+		if ( DebugVars.AI )
+		{
+			Log.Info( $"{actor.GameObject.Name}: Found face target {target.Name} tagged \"{Tag}\"" );
+		}
 		return BehaviorResult.Success;
 	}
-
-
 }

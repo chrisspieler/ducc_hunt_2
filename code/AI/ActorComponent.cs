@@ -54,7 +54,7 @@ public class ActorComponent : Component
 
 	public void Abort()
 	{
-		_currentTree?.Abort();
+		_currentTree?.Abort( this, DataContext );
 		_currentTree = null;
 	}
 }

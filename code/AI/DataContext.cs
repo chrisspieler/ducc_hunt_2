@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Ducc.AI;
 
@@ -14,4 +15,9 @@ public class DataContext
 	public Vector3 GetVector3( string key ) => _vector3Data[key];
 	public bool TryGetVector3( string key, out Vector3 value ) => _vector3Data.TryGetValue( key, out value );
 	private Dictionary<string, Vector3> _vector3Data = new();
+	// Guid
+	public void Set( string key, Guid value ) => _guidData[key] = value;
+	public Guid GetGuid( string key ) => _guidData[key];
+	public bool TryGetGuid( string key, out Guid value ) => _guidData.TryGetValue( key, out value );
+	private Dictionary<string, Guid> _guidData = new();
 }

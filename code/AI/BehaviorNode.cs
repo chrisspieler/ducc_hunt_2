@@ -11,6 +11,7 @@ public abstract partial class BehaviorNode
 	[JsonPropertyName( "_type" )]
 	public string TypeName { get; }
 	public List<BehaviorNode> Subtasks { get; init; } = new();
+	public BehaviorResult LastResult { get; private set; }
 
 	public BehaviorNode()
 	{
@@ -23,21 +24,29 @@ public abstract partial class BehaviorNode
 		{
 			// Log.Info( $"({actor.GameObject.Name}) OnExecute: {GetType().Name}" );
 		}
-		return ExecuteInternal( actor, context );
+		// If we weren't running last time, then we're starting fresh.
+		if ( LastResult != BehaviorResult.Running )
+		{
+			OnStart( actor, context );
+		}
+		LastResult = ExecuteInternal( actor, context );
+		return LastResult;
 	}
 
 	protected abstract BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context );
 
-	public void Abort()
+	protected virtual void OnStart( ActorComponent actor, DataContext context ) { }
+
+	public void Abort( ActorComponent actor, DataContext context )
 	{
 		foreach( var subtask in Subtasks )
 		{
-			subtask.Abort();
+			subtask.Abort( actor, context );
 		}
-		OnAbort();
+		OnAbort( actor, context );
 	}
 
-	protected virtual void OnAbort() { }
+	protected virtual void OnAbort( ActorComponent actor, DataContext context ) { }
 
 	public JsonNode Serialize()
 	{

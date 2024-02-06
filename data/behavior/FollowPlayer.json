@@ -4,14 +4,42 @@
     "Subtasks": [
       {
         "Tag": "player",
-        "_type": "SetTaggedWalkTarget",
-        "Subtasks": []
+        "Radius": 80,
+        "_type": "FindTaggedWalkPosition",
+        "Subtasks": [],
+        "LastResult": 0
       },
       {
         "TargetReachedDistance": 80,
-        "_type": "WalkToTarget",
-        "Subtasks": []
+        "_type": "WalkToPosition",
+        "Subtasks": [],
+        "LastResult": 0
+      },
+      {
+        "Tag": "player",
+        "_type": "FindTaggedFaceTarget",
+        "Subtasks": [],
+        "LastResult": 0
+      },
+      {
+        "SetNull": false,
+        "_type": "SetFaceTarget",
+        "Subtasks": [],
+        "LastResult": 0
+      },
+      {
+        "Duration": 2,
+        "_type": "Delay",
+        "Subtasks": [],
+        "LastResult": 0
+      },
+      {
+        "SetNull": true,
+        "_type": "SetFaceTarget",
+        "Subtasks": [],
+        "LastResult": 0
       }
-    ]
+    ],
+    "LastResult": 0
   }
 }
