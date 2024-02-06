@@ -4,13 +4,11 @@
     {
       "Id": "13990d75-60c5-49d8-a125-0be9bbc40445",
       "Name": "Game",
-      "Position": "-91.28232,123.8978,-47.70814",
       "Enabled": true,
       "Children": [
         {
           "Id": "d2c6d7b3-41c5-43e3-9e54-22e1fb83460f",
           "Name": "Screen",
-          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -38,7 +36,6 @@
             {
               "Id": "283864e0-a386-438c-8c3a-4ac2227b3806",
               "Name": "Modal",
-              "Position": "0,0,0",
               "Enabled": true,
               "Components": [
                 {
@@ -56,7 +53,6 @@
             {
               "Id": "6cb4a335-0dad-4f64-ab3c-81e71a1d8ef0",
               "Name": "MegaToast",
-              "Position": "0,0,0",
               "Enabled": true,
               "Components": [
                 {
@@ -70,7 +66,6 @@
             {
               "Id": "ede5b750-995d-4ce9-9f4d-c8fb598b461d",
               "Name": "Crosshair",
-              "Position": "0,0,0",
               "Enabled": true,
               "Components": [
                 {
@@ -79,41 +74,55 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "Id": "c58d43f9-6d0a-4e69-9290-ea8b757f6fda",
-      "Name": "Camera",
-      "Position": "-25.9606,12.50423,15.13272",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "CameraComponent",
-          "BackgroundColor": "0,0,0,1",
-          "ClearFlags": "All",
-          "FieldOfView": 90,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
         },
         {
-          "__type": "FollowCam",
-          "FollowDistance": 30,
-          "LerpSpeed": 100,
-          "SlerpSpeed": 20,
-          "Target": {
-            "_type": "gameobject",
-            "go": "2aaa7f06-8439-4b61-8ac8-a8e00ca522bb"
-          }
+          "Id": "c58d43f9-6d0a-4e69-9290-ea8b757f6fda",
+          "Name": "Camera",
+          "Position": "0,0,100",
+          "Tags": "maincamera",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "BackgroundColor": "0,0,0,1",
+              "ClearFlags": "All",
+              "FieldOfView": 90,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            },
+            {
+              "__type": "FollowCam",
+              "FollowDistance": 30,
+              "LerpSpeed": 100,
+              "SlerpSpeed": 20,
+              "Target": {
+                "_type": "gameobject",
+                "go": "2aaa7f06-8439-4b61-8ac8-a8e00ca522bb"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "67a6b791-6028-4f39-8a1c-6b27ed61cccf",
+          "Name": "Boss Music",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "MusicComponent",
+              "FilePath": "music/vivaldi_winter.ogg",
+              "Loop": true,
+              "PlayOnStart": false,
+              "Volume": 1
+            }
+          ]
         }
       ]
     },
@@ -1107,8 +1116,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "ToLower",
-                  "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_type": "System.Private.CoreLib/System.String",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1119,8 +1128,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Contains",
-                  "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_type": "System.Private.CoreLib/System.String",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -2857,7 +2866,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-05T11:28:37.0546603-07:00",
+  "LastSaved": "2024-02-06T02:49:04.9200624-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
