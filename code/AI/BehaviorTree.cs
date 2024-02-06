@@ -51,25 +51,56 @@ public class BehaviorTree
 	}
 
 	[ConCmd("ai_test_load")]
-	public static void TestLoad()
+	public static void TestLoad( string treeName )
 	{
-		var tree = Load( "TestBehaviorTree" );
+		var tree = Load( treeName );
+		if ( tree is null )
+		{
+			Log.Info( "Unable to find behavior tree: " + treeName );
+		}
 		Log.Info( tree.Serialize().ToString() );
 	}
 
-	[ConCmd("ai_test_save")]
-	public static void TestSave()
+	[ConCmd("ai_save_all")]
+	public static void SaveAll()
 	{
-		var tree = new BehaviorTree();
-		tree.Root = new Sequence()
+		Save( "Wander", BuildWanderTree() );
+		Save( "FollowPlayer", BuildFollowTree() );
+	}
+
+	private static void Save( string name, BehaviorTree tree )
+	{
+		var node = tree.Serialize();
+		FileSystem.Data.WriteAllText( $"{name}.json", node.ToString() );
+	}
+
+	private static BehaviorTree BuildWanderTree()
+	{
+		return new BehaviorTree()
 		{
-			Subtasks = new()
+			Root = new Sequence()
 			{
-				new SetRandomWalkTarget() { Radius = 30f },
-				new WalkToTarget()
+				Subtasks = new()
+				{
+					new SetRandomWalkTarget() { Radius = 30f },
+					new WalkToTarget()
+				}
 			}
 		};
-		var node = tree.Serialize();
-		FileSystem.Data.WriteAllText( $"TestBehaviorTree.json", node.ToString() );
+	}
+
+	private static BehaviorTree BuildFollowTree()
+	{
+		return new BehaviorTree()
+		{
+			Root = new Sequence()
+			{
+				Subtasks = new()
+				{
+					new SetTaggedWalkTarget() { Tag = "player" },
+					new WalkToTarget() { TargetReachedDistance = 80f }
+				}
+			}
+		};
 	}
 }

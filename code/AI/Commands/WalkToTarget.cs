@@ -53,7 +53,7 @@ public class WalkToTarget : BehaviorNode
 	private void MoveActor( HumanController human )
 	{
 		var targetPos = _pathPositions[_currentPathIndex];
-		if ( human.Transform.Position.Distance( targetPos ) <= TargetReachedDistance )
+		if ( human.Transform.Position.Distance( targetPos ) <= 1f )
 		{
 			_currentPathIndex++;
 			if ( DebugVars.AI )

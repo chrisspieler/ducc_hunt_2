@@ -41,7 +41,15 @@ public class ActorComponent : Component
 
 	public void SetTree( string treeName )
 	{
+		if ( string.IsNullOrWhiteSpace( treeName ) )
+		{
+			CurrentTree = null;
+		}
 		CurrentTree = BehaviorTree.Load( treeName );
+		if ( CurrentTree is null )
+		{
+			Log.Error( "Unable to find behavior tree: " + treeName );
+		}
 	}
 
 	public void Abort()

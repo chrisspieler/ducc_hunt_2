@@ -856,7 +856,7 @@
         },
         {
           "__type": "ActorComponent",
-          "InitialTree": "TestBehaviorTree"
+          "InitialTree": "FollowPlayer"
         },
         {
           "__type": "BossEnemy",
@@ -2934,7 +2934,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T07:30:08.3589866-07:00",
+  "LastSaved": "2024-02-06T08:56:12.1649004-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

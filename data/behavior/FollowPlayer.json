@@ -1,0 +1,17 @@
+{
+  "Root": {
+    "_type": "Sequence",
+    "Subtasks": [
+      {
+        "Tag": "player",
+        "_type": "SetTaggedWalkTarget",
+        "Subtasks": []
+      },
+      {
+        "TargetReachedDistance": 80,
+        "_type": "WalkToTarget",
+        "Subtasks": []
+      }
+    ]
+  }
+}

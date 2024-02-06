@@ -34,6 +34,8 @@
           "component_type": "CharacterController"
         },
         "IsRunning": false,
+        "MaxHealth": 100,
+        "OnDamaged": null,
         "Renderer": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
@@ -51,7 +53,7 @@
       },
       {
         "__type": "ActorComponent",
-        "InitialTree": "TestBehaviorTree"
+        "InitialTree": "Wander"
       }
     ],
     "Children": [
