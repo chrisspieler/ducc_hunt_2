@@ -1,0 +1,31 @@
+BossHealthPanel
+{
+	position: absolute;
+	width: 100%;
+	top: 2%;
+	flex-direction: column;
+	align-items: center;
+
+	.name {
+		font-family: 'OldStyle 1 HPLHS';
+		color: white;
+		font-size: 36px;
+		margin-bottom: 10px;
+		text-shadow: 5px 5px 5px black;
+	}
+
+	.health-bar {
+		height: 25px;
+		width: 70%;
+		background-color: black;
+		align-items: center;
+		padding: 5px;
+		border-radius: 5px;
+	}
+
+	.fill {
+		background-color: #8d1125;
+		height: 100%;
+		border-radius: 5px;
+	}
+}

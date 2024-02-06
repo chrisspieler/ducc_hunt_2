@@ -20,6 +20,11 @@
             },
             {
               "__type": "GameUI",
+              "BossPanel": {
+                "_type": "component",
+                "go": "7ffcb206-19dd-49b4-b9df-63a87e104819",
+                "component_type": "BossHealthPanel"
+              },
               "MegaToast": {
                 "_type": "component",
                 "go": "6cb4a335-0dad-4f64-ab3c-81e71a1d8ef0",
@@ -70,6 +75,18 @@
               "Components": [
                 {
                   "__type": "CrosshairPanel"
+                }
+              ]
+            },
+            {
+              "Id": "7ffcb206-19dd-49b4-b9df-63a87e104819",
+              "Name": "Boss Health",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "BossHealthPanel",
+                  "BossName": "",
+                  "HealthPercent": 0.5
                 }
               ]
             }
@@ -275,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-160.1926,-46.55046,-0.0001195216",
+      "Position": "-82.75195,-36.81654,0.00002464441",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -733,16 +750,131 @@
       ]
     },
     {
-      "Id": "908ba999-3da8-4e6e-b012-34024784bb6e",
-      "Name": "Executive",
-      "Position": "1379.302,328.3712,0.00007458445",
+      "Id": "e9c75076-039c-495d-af4d-4b136e53237e",
+      "Name": "Human",
+      "Position": "665.5218,9.571262,0.00003960188",
+      "Rotation": "0,0,-0.9659258,0.2588192",
       "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "9939e9a1-6d57-420f-b151-5269d6750dd0",
+      "Name": "Human (1)",
+      "Position": "1635.57,881.6835,-0.00006091519",
+      "Rotation": "0,0,-0.8660254,0.5000001",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "99cf5c18-32fc-4602-85bc-9a5a5abbe979",
+      "Name": "Human (2)",
+      "Position": "1098.682,1126.999,0.00007009662",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "cb6b9f74-ff69-4f19-812a-05da1dd048c0",
+      "Name": "Human (3)",
+      "Position": "1380.914,-256.6319,0.00002970622",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "41697693-e397-47c0-b24c-84581270a5b3",
+      "Name": "Human (4)",
+      "Position": "857.513,-33.64888,0.00003419312",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "a766d53b-ea4e-40d7-968b-3a98da3e9c1d",
+      "Name": "Human (5)",
+      "Position": "1109.314,511.9852,-0.00001043018",
+      "Rotation": "0,0,0.5000004,-0.8660253",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/human.prefab"
+    },
+    {
+      "Id": "73b82939-4917-4646-afd4-d182803888cb",
+      "Name": "Bob, Manager of Store",
+      "Position": "1506.874,423.4959,-0.00004859213",
+      "Rotation": "0,0,0.9914452,-0.1305259",
+      "Tags": "human",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": false,
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "HumanController",
+          "Actor": {
+            "_type": "component",
+            "go": "73b82939-4917-4646-afd4-d182803888cb",
+            "component_type": "ActorComponent"
+          },
+          "Animation": {
+            "_type": "component",
+            "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "Character": {
+            "_type": "component",
+            "go": "73b82939-4917-4646-afd4-d182803888cb",
+            "component_type": "CharacterController"
+          },
+          "IsRunning": false,
+          "MaxHealth": 1000,
+          "OnDamaged": null,
+          "Renderer": {
+            "_type": "component",
+            "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "NavMeshAgent",
+          "Acceleration": 50,
+          "Height": 64,
+          "MaxSpeed": 150,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true
+        },
+        {
+          "__type": "ActorComponent",
+          "InitialTree": "TestBehaviorTree"
+        },
+        {
+          "__type": "BossEnemy",
+          "BossMusic": {
+            "_type": "component",
+            "go": "67a6b791-6028-4f39-8a1c-6b27ed61cccf",
+            "component_type": "MusicComponent"
+          },
+          "BossName": "Bob, Manager of Store",
+          "Human": null,
+          "IsFighting": false
+        }
+      ],
       "Children": [
         {
-          "Id": "feaf8ba1-3155-443c-a8e8-57a7b65cb60a",
+          "Id": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
           "Name": "Body",
           "Position": "0,0,0",
-          "Rotation": "0,0,-0.9914449,0.1305264",
           "Enabled": true,
           "Components": [
             {
@@ -750,7 +882,7 @@
               "BodyGroups": 65,
               "BoneMergeTarget": null,
               "CreateBoneObjects": false,
-              "MaterialGroup": null,
+              "MaterialGroup": "default",
               "MaterialOverride": null,
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
@@ -771,32 +903,47 @@
               "LookAtEnabled": false,
               "Target": {
                 "_type": "component",
-                "go": "feaf8ba1-3155-443c-a8e8-57a7b65cb60a",
+                "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
                 "component_type": "SkinnedModelRenderer"
               }
+            },
+            {
+              "__type": "ModelPhysics",
+              "__enabled": false,
+              "Locking": {},
+              "Model": "models/citizen/citizen.vmdl",
+              "Renderer": {
+                "_type": "component",
+                "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "RigidbodyFlags": 0
+            },
+            {
+              "__type": "ModelHitboxes",
+              "Renderer": {
+                "_type": "component",
+                "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "Target": {
+                "_type": "gameobject",
+                "prefab": "prefabs/human.prefab"
+              }
+            },
+            {
+              "__type": "CapsuleCollider",
+              "End": "0,0,66",
+              "IsTrigger": false,
+              "Radius": 8,
+              "Start": "0,0,6",
+              "Static": false,
+              "Surface": null
             }
           ],
           "Children": [
             {
-              "Id": "44019686-6fe9-418b-bf3a-6089fbbcb0ae",
-              "Name": "Collider",
-              "Position": "1.666,0,-0.00007458445",
-              "Rotation": "0,0,0.9914448,0.1305264",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "CapsuleCollider",
-                  "End": "0,0,66",
-                  "IsTrigger": false,
-                  "Radius": 6,
-                  "Start": "0,0,6",
-                  "Static": false,
-                  "Surface": null
-                }
-              ]
-            },
-            {
-              "Id": "dc1d0e2f-8202-47fa-a48c-6d070a5cf231",
+              "Id": "159c6122-dd28-4a30-9ab8-96b6df8df335",
               "Name": "Hair",
               "Position": "0,0,0",
               "Tags": "clothing",
@@ -807,20 +954,20 @@
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
-                    "go": "feaf8ba1-3155-443c-a8e8-57a7b65cb60a",
+                    "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
                   "MaterialGroup": "default",
                   "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/hair/hair_looseblonde/hair_looseblonde.vmdl",
+                  "Model": "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
               ]
             },
             {
-              "Id": "279fbb88-8ff5-42a6-8103-882decfb4aec",
+              "Id": "7bed0efc-ab19-4b2d-9a8f-7e4eb4de9863",
               "Name": "Smart Trousers",
               "Position": "0,0,0",
               "Tags": "clothing",
@@ -831,7 +978,7 @@
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
-                    "go": "feaf8ba1-3155-443c-a8e8-57a7b65cb60a",
+                    "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
@@ -844,7 +991,7 @@
               ]
             },
             {
-              "Id": "b87b16a3-b77e-4f4e-90f3-6356aac89069",
+              "Id": "eefb4b27-909a-4931-ac96-dee12642c3cf",
               "Name": "Suit Jacket",
               "Position": "0,0,0",
               "Tags": "clothing",
@@ -855,20 +1002,20 @@
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
-                    "go": "feaf8ba1-3155-443c-a8e8-57a7b65cb60a",
+                    "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
                   "MaterialGroup": null,
                   "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/jacket/suitjacket/suitjacket.vmdl",
+                  "Model": "models/citizen_clothes/shirt/buttoned_shirt/models/buttoned_shirt.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
               ]
             },
             {
-              "Id": "26c8cedd-f5d8-40ce-b0f7-31c06bb20f09",
+              "Id": "4bbc7d5a-e6fd-46e1-983b-7e1a20d16ad5",
               "Name": "Smart Shoes",
               "Position": "0,0,0",
               "Enabled": true,
@@ -878,7 +1025,7 @@
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
-                    "go": "feaf8ba1-3155-443c-a8e8-57a7b65cb60a",
+                    "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
@@ -895,58 +1042,10 @@
       ]
     },
     {
-      "Id": "e9c75076-039c-495d-af4d-4b136e53237e",
-      "Name": "Human",
-      "Position": "665.5218,9.571262,0.00003960188",
-      "Rotation": "0,0,-0.9659258,0.2588192",
-      "Tags": "human",
-      "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
-    },
-    {
-      "Id": "9939e9a1-6d57-420f-b151-5269d6750dd0",
-      "Name": "Human (1)",
-      "Position": "633.4676,97.67917,0.0000376913",
-      "Tags": "human",
-      "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
-    },
-    {
-      "Id": "99cf5c18-32fc-4602-85bc-9a5a5abbe979",
-      "Name": "Human (2)",
-      "Position": "711.2252,-29.84112,0.00004232602",
-      "Tags": "human",
-      "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
-    },
-    {
-      "Id": "cb6b9f74-ff69-4f19-812a-05da1dd048c0",
-      "Name": "Human (3)",
-      "Position": "824.3008,-77.74768,0.00004346823",
-      "Tags": "human",
-      "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
-    },
-    {
-      "Id": "41697693-e397-47c0-b24c-84581270a5b3",
-      "Name": "Human (4)",
-      "Position": "857.513,-33.64888,0.00003419312",
-      "Tags": "human",
-      "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
-    },
-    {
-      "Id": "a766d53b-ea4e-40d7-968b-3a98da3e9c1d",
-      "Name": "Human (5)",
-      "Position": "718.2554,-84.55752,0.00002127117",
-      "Tags": "human",
-      "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
-    },
-    {
       "Id": "7188bf7b-b9a4-460c-91c2-47d2c437cea3",
       "Name": "Human (6)",
-      "Position": "608.2036,-147.2115,0.00001471157",
+      "Position": "652.7416,-183.6105,0.00006046699",
+      "Rotation": "0,0,-0.7071067,0.7071068",
       "Tags": "human",
       "Enabled": true,
       "__Prefab": "prefabs/human.prefab"
@@ -954,7 +1053,8 @@
     {
       "Id": "743c6c52-175d-4f7a-836d-d020e4639119",
       "Name": "Human (7)",
-      "Position": "601.0805,178.9755,0.000014287",
+      "Position": "638.9949,1042.228,0.0000223676",
+      "Rotation": "0,0,-0.3826834,0.9238796",
       "Tags": "human",
       "Enabled": true,
       "__Prefab": "prefabs/human.prefab"
@@ -962,7 +1062,7 @@
     {
       "Id": "e840d1b2-ff3c-4208-9239-c4b3fb5c543d",
       "Name": "pickup",
-      "Position": "1355.421,-109.6148,3.671907",
+      "Position": "1355.421,-97.4247,3.671907",
       "Tags": "pickup",
       "Enabled": true,
       "Components": [
@@ -1117,9 +1217,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "ToLower"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1129,9 +1229,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "Contains"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -1685,7 +1785,7 @@
         {
           "Id": "54c4c03b-754f-47f3-add5-921881579444",
           "Name": "boxes",
-          "Position": "72.95135,41.88687,0.00002919843",
+          "Position": "72.95135,26.3502,0.00002919843",
           "Rotation": "0,0,0.7071068,0.7071068",
           "Scale": "1.551101,1.551101,1.551101",
           "Enabled": true,
@@ -2643,7 +2743,7 @@
     {
       "Id": "0e78fe5e-0b21-48fc-a391-d78c70cc3380",
       "Name": "Shelf (28)",
-      "Position": "997.1414,836.7664,-0.00004485938",
+      "Position": "996.9308,836.7664,-0.00004485938",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
@@ -2834,7 +2934,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T04:11:46.5355093-07:00",
+  "LastSaved": "2024-02-06T07:30:08.3589866-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

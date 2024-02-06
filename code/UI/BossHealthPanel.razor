@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    @if ( !string.IsNullOrWhiteSpace( BossName ) )
+    {
+        <div class="name">@BossName</div>
+        <div class="health-bar">
+            <div class="fill" style="width: @(HealthPercent * 100)%;"></div>
+        </div>
+    }
+</root>
+
+@code
+{
+    [Property] public string BossName { get; set; } = "Boss Name Here";
+    [Property] public float HealthPercent { get; set; } = 0.5f;
+
+    protected override int BuildHash() => System.HashCode.Combine( BossName, HealthPercent );
+}

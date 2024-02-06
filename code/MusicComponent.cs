@@ -40,7 +40,7 @@ public sealed class MusicComponent : Component
 		}
 	}
 
-	private void Play()
+	public void Play()
 	{
 		if ( !FileSystem.Mounted.FileExists( FilePath ) )
 		{ 
@@ -54,7 +54,7 @@ public sealed class MusicComponent : Component
 		_player.Repeat = Loop;
 	}
 
-	private void Stop()
+	public void Stop()
 	{
 		_player?.Stop();
 		_player?.Dispose();

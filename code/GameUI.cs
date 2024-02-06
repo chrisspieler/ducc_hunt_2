@@ -6,6 +6,7 @@ public sealed class GameUI : Component
 {
 	[Property] public ModalPanel Modal { get; set; }
 	[Property] public MegaToastPanel MegaToast { get; set; }
+	[Property] public BossHealthPanel BossPanel { get; set; }
 
 	public static GameUI Instance { get; private set; }
 
@@ -51,5 +52,22 @@ public sealed class GameUI : Component
 	{
 		var megaToast = Instance.MegaToast;
 		megaToast.Show( message, duration );
+	}
+
+	[ActionGraphNode( "menu.showbosspanel")]
+	[Title( "Show Boss Panel" ), Group( "Menu" )]
+	public static void ShowBossPanel( string bossName, float healthPercent )
+	{
+		var bossPanel = Instance.BossPanel;
+		bossPanel.BossName = bossName;
+		bossPanel.HealthPercent = healthPercent;
+	}
+
+	[ActionGraphNode( "menu.hidebosspanel")]
+	[Title( "Close Boss Panel" ), Group( "Menu" )]
+	public static void CloseBossPanel()
+	{
+		var bossPanel = Instance.BossPanel;
+		bossPanel.BossName = null;
 	}
 }

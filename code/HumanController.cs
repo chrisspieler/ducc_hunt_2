@@ -1,14 +1,20 @@
 using Ducc.AI;
 using Sandbox;
 using Sandbox.Citizen;
+using System;
 
 public sealed partial class HumanController : Component, Component.IDamageable
 {
+	public delegate void DamageDelegate( DamageInfo damage );
+
+	[Property] public DamageDelegate OnDamaged { get; set; }
 	[Property] public CharacterController Character { get; set; }
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 	[Property] public CitizenAnimationHelper Animation { get; set; }
 	[Property] public ActorComponent Actor { get; set; }
+	[Property] public float MaxHealth { get; set; } = 100f;
 
+	public float CurrentHealth { get; private set; }
 	public Vector3 MoveDirection { get; set; }
 	public Vector3? FaceDirection { get; set; }
 	public float MoveSpeed { get; set; } = 120f;
@@ -20,6 +26,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	protected override void OnStart()
 	{
 		GameObject.BreakFromPrefab();
+		CurrentHealth = MaxHealth;
 	}
 
 	protected override void OnUpdate()
@@ -30,7 +37,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	protected override void OnFixedUpdate()
 	{
 		UpdateYaw();
-
+		
 		var speedFactor = IsRunning ? 2f : 1f;
 		Character.Accelerate( MoveDirection * MoveSpeed * speedFactor );
 		Character.ApplyFriction( 4f );
@@ -58,15 +65,20 @@ public sealed partial class HumanController : Component, Component.IDamageable
 
 	public void OnDamage( in DamageInfo damage )
 	{
-		// Battery and murder are crimes.
-		Components.Create<Crime>();
-		Kill();
+		CurrentHealth = MathF.Max( 0f, CurrentHealth - damage.Damage );
+		IsRunning = true;
+		if ( CurrentHealth <= 0f )
+		{
+			Kill();
+		}
+		OnDamaged?.Invoke( damage );
 	}
 
 	public void Kill()
 	{
 		SetRagdollState( true );
 		Actor.Abort();
+		Components.Create<Crime>();
 		var nearbyPeople = GetNearby( Transform.Position, 800f );
 		foreach ( var person in nearbyPeople )
 		{
