@@ -1,5 +1,6 @@
 ﻿using Ducc.AI.Commands;
 using Sandbox;
+using Sandbox.Diagnostics;
 using System.Text.Json.Nodes;
 
 namespace Ducc.AI;
@@ -10,11 +11,14 @@ public class BehaviorTree
 
 	public BehaviorResult Execute( ActorComponent actor, DataContext context )
 	{
-		// If this behavior tree is acting as a leaf node in another tree,
-		// its context should be provided by the containing tree.
-		var treeContext = context ?? new DataContext();
+		Assert.NotNull( context );
+		Assert.NotNull( actor );
+		return Root.Execute( actor, context );
+	}
 
-		return Root.Execute( actor, treeContext );
+	public void Abort()
+	{
+		Root?.Abort();
 	}
 
 	public JsonNode Serialize()
@@ -32,9 +36,16 @@ public class BehaviorTree
 		};
 	}
 
+	/// <summary>
+	/// Returns a BehaviorTree with the given name, or null if it does not exist.
+	/// </summary>
 	public static BehaviorTree Load( string name )
 	{
 		var filePath = $"data/behavior/{name}.json";
+		if ( !FileSystem.Mounted.FileExists( filePath ) )
+		{
+			return null;
+		}
 		var json = FileSystem.Mounted.ReadJson<JsonObject>( filePath );
 		return Deserialize( json );
 	}

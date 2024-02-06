@@ -10,6 +10,10 @@ public class ActorComponent : Component
 		get => _currentTree;
 		set
 		{
+			if ( _currentTree is not null )
+			{
+				Abort();
+			}
 			_currentTree = value;
 		}
 	}
@@ -27,11 +31,22 @@ public class ActorComponent : Component
 
 	protected override void OnStart()
 	{
-		_currentTree = BehaviorTree.Load( InitialTree );
+		SetTree( InitialTree );
 	}
 
 	protected override void OnUpdate()
 	{
 		CurrentTree?.Execute( this, DataContext );
+	}
+
+	public void SetTree( string treeName )
+	{
+		CurrentTree = BehaviorTree.Load( treeName );
+	}
+
+	public void Abort()
+	{
+		_currentTree?.Abort();
+		_currentTree = null;
 	}
 }

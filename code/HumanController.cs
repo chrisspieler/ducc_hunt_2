@@ -1,12 +1,13 @@
+using Ducc.AI;
 using Sandbox;
 using Sandbox.Citizen;
-using Sandbox.Utility;
 
 public sealed partial class HumanController : Component, Component.IDamageable
 {
 	[Property] public CharacterController Character { get; set; }
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 	[Property] public CitizenAnimationHelper Animation { get; set; }
+	[Property] public ActorComponent Actor { get; set; }
 
 	public Vector3 MoveDirection { get; set; }
 	public Vector3? FaceDirection { get; set; }
@@ -65,6 +66,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	public void Kill()
 	{
 		SetRagdollState( true );
+		Actor.Abort();
 		var nearbyPeople = GetNearby( Transform.Position, 800f );
 		foreach ( var person in nearbyPeople )
 		{

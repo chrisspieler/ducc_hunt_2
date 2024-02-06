@@ -28,6 +28,17 @@ public abstract partial class BehaviorNode
 
 	protected abstract BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context );
 
+	public void Abort()
+	{
+		foreach( var subtask in Subtasks )
+		{
+			subtask.Abort();
+		}
+		OnAbort();
+	}
+
+	protected virtual void OnAbort() { }
+
 	public JsonNode Serialize()
 	{
 		var type = TypeLibrary.GetType( GetType() );

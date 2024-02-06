@@ -963,6 +963,7 @@
       "Id": "e840d1b2-ff3c-4208-9239-c4b3fb5c543d",
       "Name": "pickup",
       "Position": "1355.421,-109.6148,3.671907",
+      "Tags": "pickup",
       "Enabled": true,
       "Components": [
         {
@@ -1070,6 +1071,7 @@
       "Id": "441c3111-208b-4763-9f5d-3eb3a12f9c8e",
       "Name": "pickup (1)",
       "Position": "584.2814,-447.3395,3.098531",
+      "Tags": "pickup",
       "Enabled": true,
       "Components": [
         {
@@ -1787,6 +1789,7 @@
       "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
       "Name": "pickup (2)",
       "Position": "1813.805,1399.699,0.00005181098",
+      "Tags": "pickup",
       "Enabled": true,
       "Components": [
         {
@@ -2636,7 +2639,7 @@
     {
       "Id": "8ef9c261-8811-49d6-b9a8-37a5d9557c85",
       "Name": "Shelf (8)",
-      "Position": "1367.762,-27.54548,-0.00004485938",
+      "Position": "1367.762,-8.69846,-0.00004485938",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
     },
@@ -2817,7 +2820,7 @@
     {
       "Id": "ae5e0141-df23-4eff-80c1-ee77a626689a",
       "Name": "Shelf (7)",
-      "Position": "1511.118,-27.54545,-0.00004485938",
+      "Position": "1511.118,-8.698429,-0.00004485938",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
     },
@@ -2838,7 +2841,7 @@
     {
       "Id": "b4e71a06-4f41-4fd9-b43f-1d10c7e511c6",
       "Name": "Shelf (6)",
-      "Position": "1654.482,-27.54545,-0.00004485938",
+      "Position": "1654.482,-8.698429,-0.00004485938",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
     }
@@ -2860,13 +2863,13 @@
       "AgentRadius": 16,
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
-      "ExcludedBodies": "human,player",
+      "ExcludedBodies": "human,player,pickup",
       "IncludedBodies": ""
     }
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T02:49:04.9200624-07:00",
+  "LastSaved": "2024-02-06T04:02:36.3213461-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

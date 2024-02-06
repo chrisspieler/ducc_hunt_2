@@ -18,6 +18,11 @@
       },
       {
         "__type": "HumanController",
+        "Actor": {
+          "_type": "component",
+          "go": "e9c75076-039c-495d-af4d-4b136e53237e",
+          "component_type": "ActorComponent"
+        },
         "Animation": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
