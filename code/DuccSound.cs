@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Transactions;
 
 namespace Sandbox
 {
@@ -54,7 +53,6 @@ namespace Sandbox
 			{
 				if ( !hSnd.IsPlaying )
 				{
-					Log.Info( "removed sound" );
 					Current._activeSounds.Remove( duccSnd );
 					continue;
 				}

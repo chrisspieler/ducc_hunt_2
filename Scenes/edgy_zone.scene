@@ -292,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "1000,-50,0.0001198065",
+      "Position": "-100,-50,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -3964,7 +3964,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T11:59:32.034582-07:00",
+  "LastSaved": "2024-02-07T12:00:43.9593515-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
