@@ -30,4 +30,9 @@ public class Selector : BehaviorNode
 		// Either all subtasks have failed, or there are no subtasks.
 		return Subtasks.Any() ? BehaviorResult.Failure : BehaviorResult.Success;
 	}
+
+	protected override void OnAbort( ActorComponent actor, DataContext context )
+	{
+		_failedSubtasks.Clear();
+	}
 }

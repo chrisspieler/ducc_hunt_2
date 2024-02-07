@@ -11,4 +11,9 @@ public class ExecuteBehaviorTree : BehaviorNode
 		_behaviorTree ??= BehaviorTree.Load( BehaviorTreeName );
 		return _behaviorTree.Execute( actor, context );
 	}
+
+	protected override void OnAbort( ActorComponent actor, DataContext context )
+	{
+		_behaviorTree?.Abort( actor, context );
+	}
 }

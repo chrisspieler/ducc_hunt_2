@@ -31,4 +31,9 @@ public class Sequence : BehaviorNode
 		_successfulSubtasks.Clear();
 		return BehaviorResult.Success;
 	}
+
+	protected override void OnAbort( ActorComponent actor, DataContext context )
+	{
+		_successfulSubtasks.Clear();
+	}
 }

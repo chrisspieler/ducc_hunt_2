@@ -292,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "1143.494,222.8574,0.0001090778",
+      "Position": "0,0,0.0001090778",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -2912,6 +2912,578 @@
       "Position": "1654.482,-8.698429,-0.00004485938",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
+    },
+    {
+      "Id": "e753a593-787c-472a-bc37-6cb2e76a7e07",
+      "Name": "Parking Lot Fence",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "1d7926d5-fd64-4801-9ced-e9de77d1036b",
+          "Name": "metal_fence_panel",
+          "Position": "425.0499,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "f59473d2-8423-42ab-9eb5-22e2c74d46d1",
+          "Name": "metal_fence_panel (1)",
+          "Position": "298.3919,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "9c7350fe-231b-4e91-83ee-1b32b7cdc110",
+          "Name": "metal_fence_panel (2)",
+          "Position": "172.6482,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "95cb9204-12d5-4315-b0ff-74e13acc2516",
+          "Name": "metal_fence_panel (3)",
+          "Position": "47.09059,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "0e2585c6-e606-4f1c-959d-0b52d327870f",
+          "Name": "metal_fence_panel (4)",
+          "Position": "-77.9421,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "5ecd3cbe-85f5-434c-b467-75694f515342",
+          "Name": "metal_fence_panel (5)",
+          "Position": "-201.7864,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "b3204c86-9677-4147-9a31-4515145f77b7",
+          "Name": "metal_fence_panel (6)",
+          "Position": "-326.7484,492.1446,0.009915059",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "28964ae7-8d53-4b2c-be4d-ad6e9b0b39c0",
+          "Name": "metal_fence_panel (8)",
+          "Position": "-383.5417,429.3505,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "d5ed60ac-cede-42fd-8ce1-db6a858d610e",
+          "Name": "metal_fence_panel (7)",
+          "Position": "-383.5417,303.5464,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "e6226e6d-ec1d-4334-9a14-1f6c5425bcdf",
+          "Name": "metal_fence_panel (9)",
+          "Position": "-383.5417,178.7597,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "f9a9babf-5d24-432b-b290-fbfa1bccd0e0",
+          "Name": "metal_fence_panel (10)",
+          "Position": "-383.5417,52.51743,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "0b300fbf-e752-45c5-9109-34a94d257e61",
+          "Name": "metal_fence_panel (11)",
+          "Position": "-383.5417,-73.03236,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "407d295c-1289-4c9b-ab50-125bc34d1034",
+          "Name": "metal_fence_panel (12)",
+          "Position": "-383.5417,-200.3694,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "e34d51c3-20ee-4f6a-8bce-28efd9b916c5",
+          "Name": "metal_fence_panel (13)",
+          "Position": "-383.5417,-325.476,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "a42665ba-e0e3-4845-ae6f-7fed940f0305",
+          "Name": "metal_fence_panel (14)",
+          "Position": "-383.5417,-447.7173,0.009896469",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "afe72622-bf65-4baa-b8b7-67a9e62a01d5",
+          "Name": "metal_fence_panel (15)",
+          "Position": "-309.8274,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "4568df77-c2d5-4ee0-a5fc-54b5f9c6ab67",
+          "Name": "metal_fence_panel (16)",
+          "Position": "-186.586,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "3f2082bc-691b-4d7d-a7b0-53b187bf4a88",
+          "Name": "metal_fence_panel (17)",
+          "Position": "-61.97253,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "a47dc83e-1e53-45f3-bc51-55c86475367d",
+          "Name": "metal_fence_panel (18)",
+          "Position": "63.22539,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "48cd25d4-c388-4afd-a715-be7406d94dd8",
+          "Name": "metal_fence_panel (19)",
+          "Position": "190.7966,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "3ab42461-92c4-44a9-b76d-3dec9f43edd7",
+          "Name": "metal_fence_panel (20)",
+          "Position": "316.9539,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "bdb10873-ffe6-4018-ac21-b4250b1f09c7",
+          "Name": "metal_fence_panel (21)",
+          "Position": "440.7468,-498.8994,0.009891473",
+          "Rotation": "0,0,-0.9999999,0.0000001490116",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_panel.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "06a30cf0-20a5-45d1-9b35-484d3c12fa7c",
+      "Name": "sports_car",
+      "Position": "263.9875,409.1134,0.5981607",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "9acf7c5c-d493-4213-984a-93a722a6c687",
+      "Name": "sports_car (1)",
+      "Position": "263.9875,297.3878,0.5981607",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "d477de9b-d090-4dfa-a004-6f1d74d43ebe",
+      "Name": "sports_car (2)",
+      "Position": "263.9875,-271.6656,0.5981607",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "3597a5cb-0055-4a4a-9817-c2820da8666f",
+      "Name": "sports_car (3)",
+      "Position": "263.9875,-371.1118,0.5981607",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "f7e0fc54-96f0-4d6f-8762-cd9bb2c48629",
+      "Name": "sports_car (4)",
+      "Position": "-254.0828,-396.6187,0.5981355",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "f02c76ed-2c40-4041-ba92-59d6f0018ebb",
+      "Name": "sports_car (5)",
+      "Position": "-254.0829,-59.87637,0.5981355",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "a835d34b-dc37-4f9e-a0a7-b9fbd7aef468",
+      "Name": "sports_car (6)",
+      "Position": "-254.083,36.23022,0.5981355",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "4187d4ad-d341-44d7-8aa1-65bb9a2229b7",
+      "Name": "sports_car (7)",
+      "Position": "-254.0831,296.6581,0.5981355",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "4c336fc7-38ee-4b58-893f-9cee202f54a3",
+      "Name": "sports_car (8)",
+      "Position": "-254.083,133.0419,0.5981355",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "5de8ecc0-6735-42c5-8f31-c53d56f0f851",
+      "Name": "sports_car (9)",
+      "Position": "-254.0831,419.4993,0.5981355",
+      "Rotation": "0,0,-1,0.0000001937151",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -2937,13 +3509,14 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T14:11:28.6053534-07:00",
+  "LastSaved": "2024-02-06T14:26:56.4339883-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
     "facepunch.concrete_simple",
     "facepunch.fence_panel_gate",
     "facepunch.floor_rough_asphalt",
+    "facepunch.metal_fence_panel",
     "facepunch.office_desk",
     "facepunch.pallet",
     "facepunch.scaffolding_tube_a",
@@ -2952,6 +3525,7 @@
     "facepunch.wooden_crate_02",
     "polyhaven.ornate_medieval_dagger",
     "rust.pallet_boxes_b",
-    "rust.pallet_boxes_c"
+    "rust.pallet_boxes_c",
+    "simonkvien.sports_car"
   ]
 }
