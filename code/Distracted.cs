@@ -5,6 +5,7 @@ using Sandbox;
 public sealed class Distracted : Component
 {
 	[Property] public float Duration { get; set; } = 3f;
+	[Property, Range( 0f, 1f )] public float Intensity { get; set; } = 0f;
 	[Property] public GameObject Source { get; set; }
 	[Property] public CitizenAnimationHelper Animation { get; set; }
 
@@ -20,6 +21,7 @@ public sealed class Distracted : Component
 
 	protected override void OnDisabled()
 	{
+		Animation.WithLook( Transform.Rotation.Forward, 1f, 1f, 1f );
 		Tags.Remove( "distracted" );
 	}
 
@@ -34,6 +36,8 @@ public sealed class Distracted : Component
 		var lookAt = Source.Transform.Position;
 		var lookFrom = Transform.Position + Vector3.Up * 64f;
 		var lookDir = (lookAt - lookFrom).Normal;
-		Animation.WithLook( lookDir, 1f, 0.2f, 0.6f );
+		var headWeight = MathX.Lerp( 0.2f, 1f, Intensity );
+		var bodyWeight = MathX.Lerp( 0.6f, 1f, Intensity );
+		Animation.WithLook( lookDir, 1f, headWeight, bodyWeight );
 	}
 }

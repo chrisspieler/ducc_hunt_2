@@ -358,6 +358,7 @@
         },
         {
           "__type": "DistractionSource",
+          "DistractionIntensity": 0,
           "DistractionSound": "sounds/ducc/quack.sound",
           "Radius": 300,
           "Source": {
@@ -1220,8 +1221,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
+                  "_name": "ToLower",
                   "_isStatic": false
                 },
                 "UserData": {
@@ -1232,8 +1233,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
+                  "_name": "Contains",
                   "_isStatic": false
                 },
                 "UserData": {
@@ -3509,7 +3510,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-06T14:26:56.4339883-07:00",
+  "LastSaved": "2024-02-07T02:11:21.3673747-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

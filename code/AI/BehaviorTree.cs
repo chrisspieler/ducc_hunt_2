@@ -82,8 +82,9 @@ public class BehaviorTree
 			{
 				Subtasks = new()
 				{
-					new FindRandomWalkPosition() { Radius = 30f },
-					new WalkToPosition()
+					new FindRandomWalkPosition() { Radius = 100f },
+					new WalkToPosition(),
+					new Delay() { Duration = 3f }
 				}
 			}
 		};

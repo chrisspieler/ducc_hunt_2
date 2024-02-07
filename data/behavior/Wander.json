@@ -3,7 +3,7 @@
     "_type": "Sequence",
     "Subtasks": [
       {
-        "Radius": 30,
+        "Radius": 100,
         "_type": "FindRandomWalkPosition",
         "Subtasks": [],
         "LastResult": 0
@@ -11,6 +11,12 @@
       {
         "TargetReachedDistance": 4,
         "_type": "WalkToPosition",
+        "Subtasks": [],
+        "LastResult": 0
+      },
+      {
+        "Duration": 3,
+        "_type": "Delay",
         "Subtasks": [],
         "LastResult": 0
       }
