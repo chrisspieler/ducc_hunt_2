@@ -292,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "0,0,0.0001090778",
+      "Position": "1081.651,-61.06876,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -453,9 +453,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Kill",
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "Kill"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -892,7 +892,401 @@
       "Rotation": "0,0,0.5000004,-0.8660253",
       "Tags": "human",
       "Enabled": true,
-      "__Prefab": "prefabs/human.prefab"
+      "Components": [
+        {
+          "__type": "CharacterController",
+          "__enabled": false,
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
+        },
+        {
+          "__type": "HumanController",
+          "Actor": {
+            "_type": "component",
+            "go": "a766d53b-ea4e-40d7-968b-3a98da3e9c1d",
+            "component_type": "ActorComponent"
+          },
+          "Animation": {
+            "_type": "component",
+            "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "Character": {
+            "_type": "component",
+            "go": "a766d53b-ea4e-40d7-968b-3a98da3e9c1d",
+            "component_type": "CharacterController"
+          },
+          "FaceDirection": null,
+          "FaceTarget": null,
+          "IsRunning": false,
+          "MaxHealth": 100,
+          "MoveDirection": "0,0,0",
+          "OnDamaged": null,
+          "OnKilled": null,
+          "Renderer": {
+            "_type": "component",
+            "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "NavMeshAgent",
+          "Acceleration": 50,
+          "Height": 64,
+          "MaxSpeed": 150,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true
+        },
+        {
+          "__type": "ActorComponent",
+          "InitialTree": "Wander"
+        },
+        {
+          "__type": "SingleTagSensor",
+          "Actor": {
+            "_type": "component",
+            "go": "a766d53b-ea4e-40d7-968b-3a98da3e9c1d",
+            "component_type": "ActorComponent"
+          },
+          "Radius": 800,
+          "SensorOrigin": {
+            "_type": "gameobject",
+            "go": "c0cb2bda-4c03-48aa-b7ff-e36dd0a6ce82"
+          },
+          "Tag": "player"
+        }
+      ],
+      "Children": [
+        {
+          "Id": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+          "Name": "Body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "BodyGroups": 65,
+              "BoneMergeTarget": null,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "MaterialOverride": null,
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "CitizenAnimationHelper",
+              "BodyWeight": 1,
+              "EyeSource": null,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "Height": 1,
+              "IkLeftFoot": null,
+              "IkLeftHand": {
+                "_type": "gameobject",
+                "go": "c4f0a069-51b2-4b90-a625-b633558aa79d"
+              },
+              "IkRightFoot": null,
+              "IkRightHand": {
+                "_type": "gameobject",
+                "go": "84d63d28-8e12-4c54-ac64-96829842ecd3"
+              },
+              "LookAt": null,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                "component_type": "SkinnedModelRenderer"
+              }
+            },
+            {
+              "__type": "ModelPhysics",
+              "__enabled": false,
+              "Locking": {},
+              "Model": "models/citizen/citizen.vmdl",
+              "Renderer": {
+                "_type": "component",
+                "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "RigidbodyFlags": 0
+            },
+            {
+              "__type": "ModelHitboxes",
+              "Renderer": {
+                "_type": "component",
+                "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "Target": {
+                "_type": "gameobject",
+                "prefab": "prefabs/human.prefab"
+              }
+            },
+            {
+              "__type": "CapsuleCollider",
+              "End": "0,0,66",
+              "IsTrigger": false,
+              "Radius": 8,
+              "Start": "0,0,6",
+              "Static": false,
+              "Surface": null
+            }
+          ],
+          "Children": [
+            {
+              "Id": "c0cb2bda-4c03-48aa-b7ff-e36dd0a6ce82",
+              "Name": "Eye",
+              "Position": "7,0,64",
+              "Enabled": true
+            },
+            {
+              "Id": "cca46395-9397-491d-b740-23d3214f0ea6",
+              "Name": "Hair",
+              "Position": "0,0,0",
+              "Tags": "clothing",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "MaterialGroup": "default",
+                  "MaterialOverride": null,
+                  "Model": "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "Id": "a0b41f39-ff0e-4600-8e2e-4c88bbc55f1a",
+              "Name": "Smart Trousers",
+              "Position": "0,0,0",
+              "Tags": "clothing",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/citizen_clothes/trousers/loosetrousers/models/loose_trousers.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "Id": "27f4c7fe-064e-4541-9f1a-2fd3cad750b3",
+              "Name": "Suit Jacket",
+              "Position": "0,0,0",
+              "Tags": "clothing",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt_white.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.55814,0.62442,1,1"
+                }
+              ]
+            },
+            {
+              "Id": "c77c5f40-ab69-4319-81e4-408faa9c8399",
+              "Name": "Smart Shoes",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/citizen_clothes/shoes/sneakers/models/sneakers.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "Id": "3ae29ceb-3640-4157-ac44-a28fff2b20b9",
+              "Name": "trolley",
+              "Position": "48.78933,3.392233,0.00001352952",
+              "Rotation": "0,0,-0.9994326,0.03382763",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/sbox_props/trolley/trolley.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "c4f0a069-51b2-4b90-a625-b633558aa79d",
+                  "Name": "L hand grip",
+                  "Position": "27,-6.170289,45",
+                  "Rotation": "-0.00000002980232,1,-0.00000004371138,0",
+                  "Enabled": true
+                },
+                {
+                  "Id": "84d63d28-8e12-4c54-ac64-96829842ecd3",
+                  "Name": "R hand grip",
+                  "Position": "27,7.052977,45",
+                  "Rotation": "0,0,1,-0.00000004371139",
+                  "Enabled": true
+                },
+                {
+                  "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
+                  "Name": "pickup (2)",
+                  "Position": "-4.940499,8.171213,25.75211",
+                  "Rotation": "0,0,-0.8824389,0.4704164",
+                  "Tags": "pickup",
+                  "Enabled": true,
+                  "Components": [
+                    {
+                      "__type": "CapsuleCollider",
+                      "End": "0,0,40",
+                      "IsTrigger": true,
+                      "Radius": 20,
+                      "Start": "0,0,19.73334",
+                      "Static": false,
+                      "Surface": null
+                    },
+                    {
+                      "__type": "ItemPickup",
+                      "Data": null,
+                      "Equipment": "data/equipment/weapon_death/weapon_death.equip",
+                      "OnPickup": null,
+                      "PickupPosition": {
+                        "_type": "gameobject",
+                        "go": "09cf75ea-e142-4a91-ae1a-13258d495e8e"
+                      },
+                      "RingLight": {
+                        "_type": "component",
+                        "go": "dff0d0d9-e708-4e5e-a548-3b617920027d",
+                        "component_type": "PointLight"
+                      },
+                      "RingModel": {
+                        "_type": "component",
+                        "go": "20f9f1df-f797-4727-9a22-5253b09c6e56",
+                        "component_type": "ModelRenderer"
+                      }
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "Id": "20f9f1df-f797-4727-9a22-5253b09c6e56",
+                      "Name": "Glow Ring",
+                      "Position": "0,0,-28.31013",
+                      "Rotation": "0,-0.7071068,0,0.7071068",
+                      "Scale": "2,3,3",
+                      "Enabled": true,
+                      "Components": [
+                        {
+                          "__type": "ModelRenderer",
+                          "BodyGroups": 18446744073709551615,
+                          "MaterialGroup": null,
+                          "MaterialOverride": "materials/dev/primary_white_emissive_trans.vmat",
+                          "Model": "models/editor/spot_cone.vmdl",
+                          "RenderType": "Off",
+                          "Tint": "0,0.36667,1,0.19"
+                        },
+                        {
+                          "__type": "Rotator",
+                          "RotationPerSecond": "0,0,220"
+                        }
+                      ]
+                    },
+                    {
+                      "Id": "cd39369d-7f5f-4d48-adea-734d83e42210",
+                      "Name": "Pickup Offset",
+                      "Position": "0,0,15",
+                      "Enabled": true,
+                      "Children": [
+                        {
+                          "Id": "09cf75ea-e142-4a91-ae1a-13258d495e8e",
+                          "Name": "Pickup Position",
+                          "Position": "0,0,0",
+                          "Enabled": true,
+                          "Components": [
+                            {
+                              "__type": "SineHover",
+                              "Amplitude": "1,1,3",
+                              "Frequency": "0.25,0.25,2"
+                            },
+                            {
+                              "__type": "Rotator",
+                              "RotationPerSecond": "0,180,0"
+                            }
+                          ],
+                          "Children": [
+                            {
+                              "Id": "dff0d0d9-e708-4e5e-a548-3b617920027d",
+                              "Name": "Point Light",
+                              "Position": "30,0,15",
+                              "Scale": "3,3,3",
+                              "Enabled": true,
+                              "Components": [
+                                {
+                                  "__type": "PointLight",
+                                  "Attenuation": 4.41,
+                                  "FogMode": "Enabled",
+                                  "FogStrength": 1,
+                                  "LightColor": "0.91373,0.98039,1,1",
+                                  "Radius": 41.332775,
+                                  "Shadows": true
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "Id": "73b82939-4917-4646-afd4-d182803888cb",
@@ -936,6 +1330,7 @@
           "MaxHealth": 1000,
           "MoveDirection": "0,0,0",
           "OnDamaged": null,
+          "OnKilled": null,
           "Renderer": {
             "_type": "component",
             "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
@@ -1334,9 +1729,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "ToLower"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1346,9 +1741,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "Contains"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -2061,114 +2456,6 @@
               "Model": "models/rust_props/wooden_pallets/pallet_boxes_c.vmdl",
               "Static": false,
               "Surface": null
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
-      "Name": "pickup (2)",
-      "Position": "1813.805,1399.699,0.00005181098",
-      "Tags": "pickup",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "CapsuleCollider",
-          "End": "0,0,40",
-          "IsTrigger": true,
-          "Radius": 20,
-          "Start": "0,0,19.73334",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "ItemPickup",
-          "Data": null,
-          "Equipment": "data/equipment/weapon_death/weapon_death.equip",
-          "OnPickup": null,
-          "PickupPosition": {
-            "_type": "gameobject",
-            "go": "09cf75ea-e142-4a91-ae1a-13258d495e8e"
-          },
-          "RingLight": {
-            "_type": "component",
-            "go": "dff0d0d9-e708-4e5e-a548-3b617920027d",
-            "component_type": "PointLight"
-          },
-          "RingModel": {
-            "_type": "component",
-            "go": "20f9f1df-f797-4727-9a22-5253b09c6e56",
-            "component_type": "ModelRenderer"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "Id": "20f9f1df-f797-4727-9a22-5253b09c6e56",
-          "Name": "Glow Ring",
-          "Position": "0,0,-28.31013",
-          "Rotation": "0,-0.7071068,0,0.7071068",
-          "Scale": "2,3,3",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": "materials/dev/primary_white_emissive_trans.vmat",
-              "Model": "models/editor/spot_cone.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.36667,1,0.19"
-            },
-            {
-              "__type": "Rotator",
-              "RotationPerSecond": "0,0,220"
-            }
-          ]
-        },
-        {
-          "Id": "cd39369d-7f5f-4d48-adea-734d83e42210",
-          "Name": "Pickup Offset",
-          "Position": "0,0,15",
-          "Enabled": true,
-          "Children": [
-            {
-              "Id": "09cf75ea-e142-4a91-ae1a-13258d495e8e",
-              "Name": "Pickup Position",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "SineHover",
-                  "Amplitude": "1,1,3",
-                  "Frequency": "0.25,0.25,2"
-                },
-                {
-                  "__type": "Rotator",
-                  "RotationPerSecond": "0,180,0"
-                }
-              ],
-              "Children": [
-                {
-                  "Id": "dff0d0d9-e708-4e5e-a548-3b617920027d",
-                  "Name": "Point Light",
-                  "Position": "30,0,15",
-                  "Scale": "3,3,3",
-                  "Enabled": true,
-                  "Components": [
-                    {
-                      "__type": "PointLight",
-                      "Attenuation": 4.41,
-                      "FogMode": "Enabled",
-                      "FogStrength": 1,
-                      "LightColor": "0.91373,0.98039,1,1",
-                      "Radius": 41.332775,
-                      "Shadows": true
-                    }
-                  ]
-                }
-              ]
             }
           ]
         }
@@ -3543,8 +3830,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -3554,8 +3841,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -3639,7 +3926,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T05:06:06.2234553-07:00",
+  "LastSaved": "2024-02-07T05:44:14.1986265-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

@@ -8,6 +8,8 @@ public sealed partial class HumanController : Component, Component.IDamageable
 	public delegate void DamageDelegate( DamageInfo damage );
 
 	[Property] public DamageDelegate OnDamaged { get; set; }
+	[Property] public Action<GameObject> OnKilled { get; set; }
+
 	[Property] public CharacterController Character { get; set; }
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
 	[Property] public CitizenAnimationHelper Animation { get; set; }
@@ -92,6 +94,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 			}
 			person.IsRunning = true;
 		}
+		OnKilled?.Invoke( GameObject );
 	}
 
 	private void SetRagdollState( bool enabled )
