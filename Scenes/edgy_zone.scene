@@ -2075,7 +2075,7 @@
     },
     {
       "Id": "d6366027-2390-4e8d-ae7e-57221a065408",
-      "Name": "Object",
+      "Name": "Soundscape",
       "Position": "1107.875,476.0066,99.60135",
       "Enabled": true,
       "Components": [
@@ -2694,7 +2694,7 @@
     },
     {
       "Id": "22583873-6fb4-40f5-81a9-447ce3a0e55a",
-      "Name": "Object",
+      "Name": "Envmap",
       "Position": "630.2137,-25.3322,79.79255",
       "Enabled": true,
       "Components": [
@@ -3530,7 +3530,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T02:59:17.5563737-07:00",
+  "LastSaved": "2024-02-07T03:16:21.8280197-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

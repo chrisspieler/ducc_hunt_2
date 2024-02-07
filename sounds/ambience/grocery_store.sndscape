@@ -9,9 +9,9 @@
   "StingSounds": [
     {
       "SoundFile": "sounds/ambience/metal_bar_falling.sound",
-      "InstanceCount": 1,
-      "RepeatTime": "1.00,2.00,1",
-      "Distance": "50.00,100.00,1"
+      "InstanceCount": 5,
+      "RepeatTime": "1.00,4.00,1",
+      "Distance": "1.00,100.00,1"
     }
   ],
   "__references": []
