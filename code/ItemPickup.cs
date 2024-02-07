@@ -71,7 +71,7 @@ public sealed class ItemPickup : Component, Component.ITriggerListener
 		OnPickup?.Invoke( Data );
 		if ( Data.PickupSound is not null )
 		{
-			var hSnd = Sound.Play( Data.PickupSound );
+			var hSnd = DuccSound.Play( Data.PickupSound );
 			hSnd.ListenLocal = true;
 		}
 		if ( Data is EquipmentData equipment )

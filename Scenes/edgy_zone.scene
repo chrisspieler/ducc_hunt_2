@@ -292,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-200,-50,0.0001198065",
+      "Position": "1000,-50,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -440,10 +440,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Get",
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "T": "Sandbox.Game/Sandbox.Prop",
                       "_isStatic": false,
-                      "T": "Sandbox.Game/Sandbox.Prop"
+                      "_name": "Get",
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -453,9 +453,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
+                      "_isStatic": false,
                       "_name": "Kill",
-                      "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false
+                      "_type": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -1729,9 +1729,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "ToLower",
-                  "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1741,9 +1741,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "Contains",
-                  "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -3964,7 +3964,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T10:26:03.4299165-07:00",
+  "LastSaved": "2024-02-07T11:59:32.034582-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

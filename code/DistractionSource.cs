@@ -9,7 +9,7 @@ public sealed class DistractionSource : Component
 
 	public void DeployDistraction()
 	{
-		Sound.Play( DistractionSound, Source.Transform.Position );
+		DuccSound.Play( DistractionSound, Source.Transform.Position );
 		var tr = Scene.Trace
 			.Sphere( Radius, Transform.Position, Transform.Position )
 			.WithAnyTags( "human" )

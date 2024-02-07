@@ -7,7 +7,7 @@ public sealed class ScrapeNoise : Component
 	[Property] public SoundEvent ScrapeSound { get; set; }
 	[Property] public CharacterController Character { get; set; }
 
-	private SoundHandle _currentSound;
+	private DuccSoundHandle _currentSound;
 
 	protected override void OnUpdate()
 	{
@@ -38,7 +38,7 @@ public sealed class ScrapeNoise : Component
 	{
 		if ( _currentSound is null || _currentSound.IsStopped )
 		{
-			_currentSound = Sound.Play( ScrapeSound );
+			_currentSound = DuccSound.Play( ScrapeSound, Transform.Position );
 			// The pitch will reset on each loop. Is this okay?
 			_currentSound.Pitch = 0f;
 		}

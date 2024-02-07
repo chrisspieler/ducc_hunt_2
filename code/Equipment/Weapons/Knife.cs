@@ -109,7 +109,7 @@ public class Knife : Equipment
 		{
 			Log.Info( $"stabbed {other.GameObject.Name}" );
 		}
-		Sound.Play( StabSound, other.Transform.Position );
+		DuccSound.Play( StabSound, other.Transform.Position );
 		if ( other.Tags.Has( "human" ) && FleshHitParticles.IsValid() )
 		{
 			var hitParticles = FleshHitParticles.Clone();

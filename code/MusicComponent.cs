@@ -2,9 +2,6 @@
 
 public sealed class MusicComponent : Component
 {
-	[ConVar("volume_music")]
-	public static float GlobalMusicVolume { get; set; } = 1.0f;
-
 	[Property] public string FilePath { get; set; }
 	[Property] public bool PlayOnStart { get; set; }
 	[Property] public bool Loop 
@@ -36,7 +33,7 @@ public sealed class MusicComponent : Component
 	{
 		if ( _player is not null )
 		{
-			_player.Volume = Volume * GlobalMusicVolume;
+			_player.Volume = Volume * DuccSound.GlobalMusicVolume;
 		}
 	}
 
@@ -49,7 +46,7 @@ public sealed class MusicComponent : Component
 		}
 		Stop();
 		_player = MusicPlayer.Play( FileSystem.Mounted, FilePath );
-		_player.Volume = Volume * GlobalMusicVolume;
+		_player.Volume = Volume * DuccSound.GlobalMusicVolume;
 		_player.ListenLocal = true;
 		_player.Repeat = Loop;
 	}
