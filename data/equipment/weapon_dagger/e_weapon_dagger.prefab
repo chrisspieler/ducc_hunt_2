@@ -1,15 +1,19 @@
 {
   "RootObject": {
-    "Id": "a916e1c5-ad7e-4e20-a22e-31ae9136e84c",
+    "Id": "78e3e952-e824-45de-829f-fd4f237c2180",
     "Name": "e_weapon_dagger",
     "Enabled": true,
     "Components": [
       {
         "__type": "Knife",
+        "FleshHitParticles": {
+          "_type": "gameobject",
+          "prefab": "effects/blood_hit.prefab"
+        },
         "StabSound": "data/equipment/weapon_dagger/knife_stab.sound",
         "StabTrigger": {
           "_type": "component",
-          "go": "3892501d-b588-4909-8f09-4566c9f323ab",
+          "go": "8f4c62d0-c75a-42dc-bab0-5181f44e40d6",
           "component_type": "Trigger"
         },
         "State": "Idle"
@@ -17,7 +21,7 @@
     ],
     "Children": [
       {
-        "Id": "ea44039c-902d-4b33-939c-4589208716c6",
+        "Id": "5b869da6-9ccf-48fe-91c9-462816ade170",
         "Name": "Model",
         "Enabled": true,
         "Components": [
@@ -33,7 +37,7 @@
         ]
       },
       {
-        "Id": "3892501d-b588-4909-8f09-4566c9f323ab",
+        "Id": "8f4c62d0-c75a-42dc-bab0-5181f44e40d6",
         "Name": "Trigger",
         "Enabled": true,
         "Components": [
@@ -49,7 +53,7 @@
           {
             "__type": "Trigger",
             "ExcludeAny": "player",
-            "IncludeAny": null,
+            "IncludeAny": "",
             "OnEnter": null,
             "OnExit": null
           }

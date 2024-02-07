@@ -292,7 +292,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "1081.651,-61.06876,0.0001198065",
+      "Position": "-200,-50,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -453,9 +453,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
+                      "_name": "Kill",
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false,
-                      "_name": "Kill"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -1176,8 +1176,8 @@
                 {
                   "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
                   "Name": "pickup (2)",
-                  "Position": "-4.940499,8.171213,25.75211",
-                  "Rotation": "0,0,-0.8824389,0.4704164",
+                  "Position": "-1.314096,-2.477476,41.58994",
+                  "Rotation": "0,0,-0.882439,0.4704164",
                   "Tags": "pickup",
                   "Enabled": true,
                   "Components": [
@@ -1729,9 +1729,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false,
-                  "_name": "ToLower"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1741,9 +1741,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false,
-                  "_name": "Contains"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -3830,8 +3830,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -3841,8 +3841,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -3964,7 +3964,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T09:31:07.7420355-07:00",
+  "LastSaved": "2024-02-07T10:26:03.4299165-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

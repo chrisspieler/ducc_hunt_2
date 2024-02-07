@@ -14,6 +14,7 @@ public class Knife : Equipment
 
 	[Property] public Trigger StabTrigger { get; set; }
 	[Property] public SoundEvent StabSound { get; set; }
+	[Property] public GameObject FleshHitParticles { get; set; }
 
 	[Property] KnifeState State => _state;
 	private KnifeState _state;
@@ -81,12 +82,6 @@ public class Knife : Equipment
 	{
 		_state = KnifeState.Attacking;
 		var attackRay = Scene.Camera.ScreenNormalToRay( new( 0.5f ) );
-		//var tr = Scene.Trace
-		//	.Ray( attackRay, 120f )
-		//	.WithoutTags( "player" )
-		//	.UseHitboxes()
-		//	.Run();
-		//_attackPosition = tr.EndPosition;
 		_attackPosition = attackRay.Project( 160f );
 		StabTrigger.Enabled = true;
 	}
@@ -115,6 +110,16 @@ public class Knife : Equipment
 			Log.Info( $"stabbed {other.GameObject.Name}" );
 		}
 		Sound.Play( StabSound, other.Transform.Position );
+		if ( other.Tags.Has( "human" ) && FleshHitParticles.IsValid() )
+		{
+			var hitParticles = FleshHitParticles.Clone();
+			hitParticles.Parent = other.GameObject;
+			hitParticles.Transform.Position = Transform.Position;
+			// Estimate the normal of the hit surface based on the direction from the
+			// knife's wielder to the hit object.
+			var normal = -(other.Transform.Position - GameObject.Parent.Transform.Position).Normal;
+			hitParticles.Transform.Rotation = Rotation.LookAt( normal );
+		}
 		DoDamage( other.GameObject );
 		BeginIdle();
 	}
