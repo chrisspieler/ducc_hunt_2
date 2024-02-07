@@ -440,10 +440,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
+                      "_name": "Get",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
-                      "T": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Get"
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -3901,6 +3901,44 @@
           "ShowCreatedComponents": false
         }
       ]
+    },
+    {
+      "Id": "bc4c079b-0b96-4bef-9cbe-7cbdeea71292",
+      "Name": "lamppost03a_on",
+      "Position": "-329.7035,-3.192696,0",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/props_c17/lamppost03a_on.vmdl",
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ],
+      "Children": [
+        {
+          "Id": "b2df9bef-0052-48b0-8aa5-cee6bc19ed76",
+          "Name": "Spot Light",
+          "Position": "0.0000006911523,95.86518,423.1775",
+          "Rotation": "0.00000005960464,0.7071067,-0.00000005960464,0.7071067",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PointLight",
+              "Attenuation": 0.05,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.91373,0.98039,1,1",
+              "Radius": 774.59796,
+              "Shadows": true
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3926,7 +3964,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T05:44:14.1986265-07:00",
+  "LastSaved": "2024-02-07T09:31:07.7420355-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
@@ -3943,6 +3981,7 @@
     "polyhaven.ornate_medieval_dagger",
     "rust.pallet_boxes_b",
     "rust.pallet_boxes_c",
-    "simonkvien.sports_car"
+    "simonkvien.sports_car",
+    "taoliguoshu.lamppost03a_on"
   ]
 }
