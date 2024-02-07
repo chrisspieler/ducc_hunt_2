@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 using System.Linq;
 
 namespace Ducc.AI.Sensors
@@ -24,7 +25,7 @@ namespace Ducc.AI.Sensors
 			GameObject target = Radius > 0f ? FindByRadius( Radius ) : FindByTag();
 			if ( target is null )
 			{
-				Actor.DataContext.RemoveGuid( TagTargetKey );
+				Actor.DataContext.Remove<Guid>( TagTargetKey );
 			}
 			else
 			{

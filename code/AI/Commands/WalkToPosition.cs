@@ -16,7 +16,7 @@ public class WalkToPosition : BehaviorNode
 
 	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
-		Vector3 target = context.GetVector3( K_WALK_POSITION );
+		var target = context.Get<Vector3>( K_WALK_POSITION );
 
 		var remainingDistance = actor.Transform.Position.Distance( target );
 		if ( remainingDistance <= TargetReachedDistance ) 

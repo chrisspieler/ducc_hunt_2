@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 
 namespace Ducc.AI.Commands
 {
@@ -13,7 +14,7 @@ namespace Ducc.AI.Commands
 			GameObject targetGo = null;
 			if ( !SetNull )
 			{
-				var target = context.GetGuid( K_FACE_TARGET );
+				var target = context.Get<Guid>( K_FACE_TARGET );
 				targetGo = actor.Scene.Directory.FindByGuid( target );
 				if ( targetGo is null )
 				{
