@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Ducc.AI;
+namespace Ducc.AI.Flow;
 
 public class Selector : BehaviorNode
 {

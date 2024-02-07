@@ -3,6 +3,12 @@
     "_type": "Sequence",
     "Subtasks": [
       {
+        "Key": "player_tag_target",
+        "_type": "HasKeyConditional",
+        "Subtasks": [],
+        "LastResult": 0
+      },
+      {
         "Tag": "player",
         "Radius": 80,
         "_type": "FindTaggedWalkPosition",

@@ -872,6 +872,20 @@
           "BossName": "Bob, Manager of Store",
           "Human": null,
           "IsFighting": false
+        },
+        {
+          "__type": "SingleTagSensor",
+          "Actor": {
+            "_type": "component",
+            "go": "73b82939-4917-4646-afd4-d182803888cb",
+            "component_type": "ActorComponent"
+          },
+          "Radius": 800,
+          "SensorOrigin": {
+            "_type": "gameobject",
+            "go": "d69a7b46-4ae5-4963-8e8a-b854f745b038"
+          },
+          "Tag": "player"
         }
       ],
       "Children": [
@@ -946,6 +960,12 @@
             }
           ],
           "Children": [
+            {
+              "Id": "d69a7b46-4ae5-4963-8e8a-b854f745b038",
+              "Name": "Eye",
+              "Position": "7,0,64",
+              "Enabled": true
+            },
             {
               "Id": "159c6122-dd28-4a30-9ab8-96b6df8df335",
               "Name": "Hair",
@@ -3510,7 +3530,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T02:11:21.3673747-07:00",
+  "LastSaved": "2024-02-07T02:59:17.5563737-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

@@ -33,8 +33,11 @@
           "go": "e9c75076-039c-495d-af4d-4b136e53237e",
           "component_type": "CharacterController"
         },
+        "FaceDirection": null,
+        "FaceTarget": null,
         "IsRunning": false,
         "MaxHealth": 100,
+        "MoveDirection": "0,0,0",
         "OnDamaged": null,
         "Renderer": {
           "_type": "component",
@@ -54,6 +57,20 @@
       {
         "__type": "ActorComponent",
         "InitialTree": "Wander"
+      },
+      {
+        "__type": "SingleTagSensor",
+        "Actor": {
+          "_type": "component",
+          "go": "e9c75076-039c-495d-af4d-4b136e53237e",
+          "component_type": "ActorComponent"
+        },
+        "Radius": 800,
+        "SensorOrigin": {
+          "_type": "gameobject",
+          "go": "bef13e97-0304-4b7e-8aa7-567f88f1cf90"
+        },
+        "Tag": "player"
       }
     ],
     "Children": [
@@ -127,6 +144,12 @@
           }
         ],
         "Children": [
+          {
+            "Id": "bef13e97-0304-4b7e-8aa7-567f88f1cf90",
+            "Name": "Eye",
+            "Position": "7,0,64",
+            "Enabled": true
+          },
           {
             "Id": "dc248c89-fd8c-4cb7-8cf2-4fc1d3681ce0",
             "Name": "Hair",

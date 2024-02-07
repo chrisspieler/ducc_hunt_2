@@ -1,4 +1,5 @@
 ﻿using Ducc.AI.Commands;
+using Ducc.AI.Flow;
 using Sandbox;
 using Sandbox.Diagnostics;
 using System.Text.Json.Nodes;
@@ -98,6 +99,7 @@ public class BehaviorTree
 			{
 				Subtasks = new()
 				{
+					new HasKeyConditional() { Key = "player_tag_target" },
 					new FindTaggedWalkPosition() { Tag = "player", Radius = 80f },
 					new WalkToPosition() { TargetReachedDistance = 80f },
 					new FindTaggedFaceTarget() { Tag = "player" },

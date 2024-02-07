@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Ducc.AI;
+namespace Ducc.AI.Flow;
 
 public class Sequence : BehaviorNode
 {
