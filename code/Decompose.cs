@@ -30,6 +30,7 @@ public sealed class Decompose : Component
 			Skeletonize();
 			OnDecomposed?.Invoke();
 			Destroy();
+			Tags.Remove( "fleshy" );
 		}
 	}
 

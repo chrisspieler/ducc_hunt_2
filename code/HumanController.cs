@@ -71,6 +71,8 @@ public sealed partial class HumanController : Component, Component.IDamageable
 
 	public void OnDamage( in DamageInfo damage )
 	{
+		if ( IsRagdoll )
+			return;
 		CurrentHealth = MathF.Max( 0f, CurrentHealth - damage.Damage );
 		IsRunning = true;
 		if ( CurrentHealth <= 0f )

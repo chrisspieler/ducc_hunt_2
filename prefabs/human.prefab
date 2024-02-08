@@ -78,6 +78,7 @@
       {
         "Id": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
         "Name": "Body",
+        "Tags": "fleshy",
         "Enabled": true,
         "Components": [
           {

@@ -210,6 +210,7 @@
       "Name": "Plane (1)",
       "Position": "998.7651,0,0",
       "Scale": "10,10,1",
+      "Tags": "solid",
       "Enabled": true,
       "Components": [
         {
@@ -236,6 +237,7 @@
       "Name": "Plane (3)",
       "Position": "1994.016,0,0",
       "Scale": "10,10,1",
+      "Tags": "solid",
       "Enabled": true,
       "Components": [
         {
@@ -262,6 +264,7 @@
       "Name": "Plane (4)",
       "Position": "1994.016,992.7681,0",
       "Scale": "10,10,1",
+      "Tags": "solid",
       "Enabled": true,
       "Components": [
         {
@@ -288,6 +291,7 @@
       "Name": "Plane (2)",
       "Position": "998.7651,991.7205,0",
       "Scale": "10,10,1",
+      "Tags": "solid",
       "Enabled": true,
       "Components": [
         {
@@ -460,9 +464,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "Get",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_isStatic": false,
                       "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
@@ -473,9 +477,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "Kill",
-                      "_type": "Sandbox.Game/Sandbox.Prop"
+                      "_type": "Sandbox.Game/Sandbox.Prop",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -987,6 +991,7 @@
           "Id": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
           "Name": "Body",
           "Position": "0,0,0",
+          "Tags": "fleshy",
           "Enabled": true,
           "Components": [
             {
@@ -1393,15 +1398,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Yellow"
-                },
+                "Value": "Yellow",
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -1478,6 +1475,7 @@
           "Id": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
           "Name": "Body",
           "Position": "0,0,0",
+          "Tags": "fleshy",
           "Enabled": true,
           "Components": [
             {
@@ -1827,9 +1825,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "ToLower",
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_type": "System.Private.CoreLib/System.String",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1839,9 +1837,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Contains",
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_type": "System.Private.CoreLib/System.String",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -1977,7 +1975,7 @@
               },
               {
                 "SrcId": 4,
-                "SrcName": "_signal",
+                "SrcName": "true",
                 "DstId": 8,
                 "DstName": "_signal"
               },
@@ -1988,15 +1986,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Red"
-                },
+                "Value": "Red",
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -4598,7 +4588,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T13:08:46.9448772-07:00",
+  "LastSaved": "2024-02-08T15:43:49.7319159-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

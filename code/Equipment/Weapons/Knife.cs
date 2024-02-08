@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System.Diagnostics;
 
 public class Knife : Equipment
 {
@@ -12,9 +13,9 @@ public class Knife : Equipment
 		Attacking
 	}
 
-	[Property] public Trigger StabTrigger { get; set; }
 	[Property] public SoundEvent StabSound { get; set; }
 	[Property] public GameObject FleshHitParticles { get; set; }
+	[Property] public GameObject StabPoint { get; set; }
 
 	[Property] KnifeState State => _state;
 	private KnifeState _state;
@@ -23,11 +24,6 @@ public class Knife : Equipment
 	private Vector3 _targetPosition;
 	private Rotation _targetRotation;
 	private Vector3 _attackPosition;
-
-	protected override void OnStart()
-	{
-		StabTrigger.OnEnter += HandleStab;
-	}
 
 	protected override void OnUpdate()
 	{
@@ -60,7 +56,6 @@ public class Knife : Equipment
 		{
 			BeginRaised();
 		}
-		StabTrigger.Enabled = false;
 	}
 
 	private void BeginRaised()
@@ -83,11 +78,13 @@ public class Knife : Equipment
 		_state = KnifeState.Attacking;
 		var attackRay = Scene.Camera.ScreenNormalToRay( new( 0.5f ) );
 		_attackPosition = attackRay.Project( 160f );
-		StabTrigger.Enabled = true;
 	}
 
 	private void UpdateAttacking()
 	{
+		if ( UpdateStabDetection() )
+			return;
+
 		_targetPosition = _attackPosition;
 		var forwardRotation = Rotation.LookAt( (_attackPosition - Transform.Position).Normal );
 		_targetRotation = forwardRotation * Rotation.FromPitch( 90f );
@@ -103,24 +100,34 @@ public class Knife : Equipment
 		}
 	}
 
-	private void HandleStab( Collider other )
+	private bool UpdateStabDetection()
+	{
+		var stabTrace = Scene.Trace
+			.Sphere( 3f, StabPoint.Transform.Position, StabPoint.Transform.Position )
+			.WithoutTags( "player" )
+			.Run();
+		if ( stabTrace.Hit )
+		{
+			HandleStab( stabTrace.GameObject, stabTrace.HitPosition, stabTrace.Normal );
+		}
+		return stabTrace.Hit;
+	}
+
+	private void HandleStab( GameObject other, Vector3 hitPosition, Vector3 normal )
 	{
 		if ( Debug )
 		{
-			Log.Info( $"stabbed {other.GameObject.Name}" );
+			Log.Info( $"stabbed {other.Name}" );
 		}
 		DuccSound.Play( StabSound, other.Transform.Position );
-		if ( other.Tags.Has( "human" ) && FleshHitParticles.IsValid() )
+		if ( other.Tags.Has( "fleshy" ) && FleshHitParticles.IsValid() )
 		{
 			var hitParticles = FleshHitParticles.Clone();
-			hitParticles.Parent = other.GameObject;
+			hitParticles.Parent = other;
 			hitParticles.Transform.Position = Transform.Position;
-			// Estimate the normal of the hit surface based on the direction from the
-			// knife's wielder to the hit object.
-			var normal = -(other.Transform.Position - GameObject.Parent.Transform.Position).Normal;
 			hitParticles.Transform.Rotation = Rotation.LookAt( normal );
 		}
-		DoDamage( other.GameObject );
+		DoDamage( other );
 		BeginIdle();
 	}
 

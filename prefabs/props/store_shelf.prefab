@@ -1,8 +1,8 @@
 {
   "RootObject": {
     "Id": "a838807e-f0f9-4884-b078-554766c7ef57",
-    "Name": "Shelf",
-    "Position": "1255.098,-187.1553,0",
+    "Name": "store_shelf",
+    "Tags": "solid",
     "Enabled": true,
     "Children": [
       {

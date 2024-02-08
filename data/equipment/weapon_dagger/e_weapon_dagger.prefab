@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "78e3e952-e824-45de-829f-fd4f237c2180",
+    "Id": "5de821dd-547f-457f-b7d8-7b9951a5a924",
     "Name": "e_weapon_dagger",
     "Enabled": true,
     "Components": [
@@ -10,18 +10,17 @@
           "_type": "gameobject",
           "prefab": "effects/blood_hit.prefab"
         },
-        "StabSound": "data/equipment/weapon_dagger/knife_stab.sound",
-        "StabTrigger": {
-          "_type": "component",
-          "go": "8f4c62d0-c75a-42dc-bab0-5181f44e40d6",
-          "component_type": "Trigger"
+        "StabPoint": {
+          "_type": "gameobject",
+          "go": "72f92e17-27de-419b-ae0d-385da85c1e9e"
         },
+        "StabSound": "data/equipment/weapon_dagger/knife_stab.sound",
         "State": "Idle"
       }
     ],
     "Children": [
       {
-        "Id": "5b869da6-9ccf-48fe-91c9-462816ade170",
+        "Id": "78ff05fd-379c-4632-a4a8-2987bd6fe7e9",
         "Name": "Model",
         "Enabled": true,
         "Components": [
@@ -37,27 +36,26 @@
         ]
       },
       {
-        "Id": "8f4c62d0-c75a-42dc-bab0-5181f44e40d6",
-        "Name": "Trigger",
+        "Id": "dff5d135-5510-47da-8601-6c262b6dbad9",
+        "Name": "Collider",
         "Enabled": true,
         "Components": [
           {
             "__type": "CapsuleCollider",
             "End": "0,0,10",
-            "IsTrigger": true,
-            "Radius": 0.60000014,
+            "IsTrigger": false,
+            "Radius": 1,
             "Start": "0,0,0",
             "Static": false,
             "Surface": null
-          },
-          {
-            "__type": "Trigger",
-            "ExcludeAny": "player",
-            "IncludeAny": "",
-            "OnEnter": null,
-            "OnExit": null
           }
         ]
+      },
+      {
+        "Id": "72f92e17-27de-419b-ae0d-385da85c1e9e",
+        "Name": "StabPoint",
+        "Position": "0,0,10",
+        "Enabled": true
       }
     ]
   },
