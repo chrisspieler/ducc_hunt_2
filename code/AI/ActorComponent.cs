@@ -54,6 +54,7 @@ public class ActorComponent : Component
 
 	public void SetTree( string treeName )
 	{
+		AIDebug.Log( this, $"Switch to Behavior Tree: {treeName}" );
 		if ( string.IsNullOrWhiteSpace( treeName ) )
 		{
 			CurrentTree = null;
