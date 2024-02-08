@@ -1,0 +1,58 @@
+VictoryPanel {
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	opacity: 1;
+
+	&.invisible {
+		opacity: 0;
+	}
+
+	.shadow {
+		width: 100%;
+		background: linear-gradient( #0000, #000C 30%, #000C 60%, #0000 );
+		justify-content: center;
+		align-items: center;
+		padding: 200px;
+		transition: all 0.5s ease-out;
+		opacity: 1;
+
+		&:intro {
+            opacity: 0;
+        }
+	}
+
+	.text {
+		font-size: 128px;
+		font-family: OptimusPrinceps;
+		text-align: center;
+		white-space: nowrap;
+		color: #8d1125;
+		transform: scale( 1 );
+		opacity: 1;
+		transition: all 1s ease-out;
+
+		&:intro {
+			transform: scale( 0 );
+			opacity: -1;
+		}
+	}
+
+	.blurry {
+		position: absolute;
+		font-size: 128px;
+		font-weight: bold;
+		color: #8d112580;
+		text-stroke: 5px #0002;
+		filter: blur( 10px );
+		transform: scaleX( 1.07 );
+		opacity: 1;
+		z-index: -2;
+		transition: all 2s;
+
+		&:intro {
+			opacity: 0;
+			transform: scaleX( 1 );
+		}
+	}
+}

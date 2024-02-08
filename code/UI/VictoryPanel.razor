@@ -1,0 +1,40 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class="@(ShouldFade ? "invisible" : "")" style="transition: opacity @(FadeOutTime)s ease-in;">
+    <div class="shadow">
+        <div class="text" style="color: @(TextColor.Hex);">@VictoryText</div>
+        <div class="text blurry" style="color: @(TextColor.WithAlpha( 0.5f ).Hex);">@VictoryText</div>
+    </div>
+</root>
+
+@code
+{
+    public static readonly Color DefaultTextColor = Color.Parse("#8d1125").Value;
+
+    [Property] public string VictoryText { get; set; } = "YOU'RE WINNER !";
+    [Property] public Color TextColor { get; set; } = DefaultTextColor;
+    [Property] public float FadeOutTime { get; set; } = 3f;
+    [Property] public float FadeOutStartTime { get; set; } = 3f;
+
+    protected override int BuildHash() => System.HashCode.Combine( VictoryText, TextColor, ShouldFade );
+
+    private bool ShouldFade => _sinceEnabled > FadeOutStartTime;
+    private TimeSince _sinceEnabled = 0f;
+
+    protected override void OnEnabled()
+    {
+        base.OnEnabled();
+        _sinceEnabled = 0f;
+    }
+
+    protected override void OnUpdate()
+    {
+        // The message should have faded in and out by now.
+        if ( _sinceEnabled > FadeOutStartTime + FadeOutTime )
+        {
+            Enabled = false;
+        }
+    }
+}

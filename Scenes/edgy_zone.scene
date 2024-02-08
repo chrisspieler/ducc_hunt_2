@@ -34,6 +34,11 @@
                 "_type": "component",
                 "go": "283864e0-a386-438c-8c3a-4ac2227b3806",
                 "component_type": "ModalPanel"
+              },
+              "Victory": {
+                "_type": "component",
+                "go": "89206e4d-9bcf-4e98-85e6-5b7867decad9",
+                "component_type": "VictoryPanel"
               }
             }
           ],
@@ -87,6 +92,21 @@
                   "__type": "BossHealthPanel",
                   "BossName": "",
                   "HealthPercent": 0.5
+                }
+              ]
+            },
+            {
+              "Id": "89206e4d-9bcf-4e98-85e6-5b7867decad9",
+              "Name": "Victory",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "VictoryPanel",
+                  "__enabled": false,
+                  "FadeOutStartTime": 3,
+                  "FadeOutTime": 3,
+                  "TextColor": "0.55294,0.06667,0.1451,1",
+                  "VictoryText": "YOU\u0027RE WINNER !"
                 }
               ]
             }
@@ -441,8 +461,8 @@
                     "Type": "call",
                     "Properties": {
                       "T": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false,
                       "_name": "Get",
+                      "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.IComponentLister"
                     },
                     "UserData": {
@@ -453,8 +473,8 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "Kill",
+                      "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
@@ -1327,10 +1347,73 @@
           "FaceDirection": null,
           "FaceTarget": null,
           "IsRunning": false,
-          "MaxHealth": 1000,
+          "MaxHealth": 2510,
           "MoveDirection": "0,0,0",
           "OnDamaged": null,
-          "OnKilled": null,
+          "OnKilled": {
+            "Kind": "Action",
+            "Version": 3,
+            "Variables": [
+              {
+                "Name": "_this",
+                "Type": "Sandbox.Game/Sandbox.Component",
+                "Default": {
+                  "_type": "component",
+                  "go": "73b82939-4917-4646-afd4-d182803888cb",
+                  "component_type": "CharacterController"
+                }
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "menu.showvictorypanel",
+                "UserData": {
+                  "Position": "448,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "time.delay",
+                "UserData": {
+                  "Position": "192,-0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "LOW-WAGE WORKER SLAIN",
+                "DstId": 2,
+                "DstName": "text"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 3,
+                "DstName": "seconds"
+              }
+            ],
+            "UserData": {
+              "Title": "On Killed",
+              "id": "574adf28-06c7-4464-b6a8-f5d811d212fa",
+              "ReferencedComponentTypes": []
+            }
+          },
           "Renderer": {
             "_type": "component",
             "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
@@ -1729,8 +1812,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "ToLower",
+                  "_isStatic": false,
                   "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
@@ -1741,8 +1824,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Contains",
+                  "_isStatic": false,
                   "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
@@ -2486,23 +2569,6 @@
         }
       ],
       "Children": [
-        {
-          "Id": "06798244-7d78-4898-9718-d6694b0e1807",
-          "Name": "Text",
-          "Position": "-4.21589,-12.05574,32.3094",
-          "Rotation": "0.7011632,0.7071066,0.09149127,0.0000001255366",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "TextRenderer",
-              "Color": "1,1,1,1",
-              "FontFamily": "Consolas",
-              "FontSize": 91.65,
-              "Scale": 0.07,
-              "Text": "Gay Baby Jail"
-            }
-          ]
-        },
         {
           "Id": "01c45679-f9a9-4639-a4aa-cdb842af947c",
           "Name": "GBJ Spawn",
@@ -3964,7 +4030,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-07T12:00:43.9593515-07:00",
+  "LastSaved": "2024-02-08T06:20:53.154124-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

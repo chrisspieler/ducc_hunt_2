@@ -7,6 +7,7 @@ public sealed class GameUI : Component
 	[Property] public ModalPanel Modal { get; set; }
 	[Property] public MegaToastPanel MegaToast { get; set; }
 	[Property] public BossHealthPanel BossPanel { get; set; }
+	[Property] public VictoryPanel Victory { get; set; }
 
 	public static GameUI Instance { get; private set; }
 
@@ -69,5 +70,14 @@ public sealed class GameUI : Component
 	{
 		var bossPanel = Instance.BossPanel;
 		bossPanel.BossName = null;
+	}
+
+	[ActionGraphNode( "menu.showvictorypanel" )]
+	[Title( "Show Victory Message" ), Group( "Menu" )]
+	public static void ShowVictoryPanel( string text )
+	{
+		var victory = Instance.Victory;
+		victory.VictoryText = text;
+		victory.Enabled = true;
 	}
 }
