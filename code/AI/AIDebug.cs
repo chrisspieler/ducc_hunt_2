@@ -103,8 +103,11 @@ public static class AIDebug
 		if ( !_log.ContainsKey( _selectedActor ) )
 			return;
 
-		Gizmo.Draw.Color = Color.Green;
-		Gizmo.Draw.LineBBox( _selectedBody.GetBounds() );
+		if ( _selectedBody.IsValid() )
+		{
+			Gizmo.Draw.Color = Color.Green;
+			Gizmo.Draw.LineBBox( _selectedBody.GetBounds() );
+		}
 		DrawLog( _selectedActor, _log[_selectedActor] );
 		if ( _currentPath.ContainsKey( _selectedActor ) )
 		{
