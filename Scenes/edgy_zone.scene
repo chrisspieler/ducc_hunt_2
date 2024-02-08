@@ -464,9 +464,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
+                      "_isStatic": false,
                       "_name": "Get",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_isStatic": false,
                       "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
@@ -1388,6 +1388,13 @@
                 "UserData": {
                   "Position": "192,-0"
                 }
+              },
+              {
+                "Id": 4,
+                "Type": "sound.play",
+                "UserData": {
+                  "Position": "480,112"
+                }
               }
             ],
             "Links": [
@@ -1417,6 +1424,17 @@
                 "Value": 0.5,
                 "DstId": 3,
                 "DstName": "seconds"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "sounds/ducc/mega_quacc.sound",
+                "DstId": 4,
+                "DstName": "soundEvent"
               }
             ],
             "UserData": {
@@ -4588,7 +4606,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T15:43:49.7319159-07:00",
+  "LastSaved": "2024-02-08T16:12:51.0066218-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
