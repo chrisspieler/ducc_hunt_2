@@ -10,6 +10,7 @@ public static class AIDebug
 	public static bool ShouldDraw { get; set; } = false;
 
 	private static Dictionary<ActorComponent, CircularBuffer<LogMessage>> _log = new();
+	private static Dictionary<ActorComponent, List<Vector3>> _currentPath = new();
 	private static ActorComponent _selectedActor = null;
 	private static PhysicsBody _selectedBody = null;
 
@@ -22,6 +23,11 @@ public static class AIDebug
 		{
 			return $"{Time,-10} {Message}";
 		}
+	}
+
+	public static void UpdatePath( ActorComponent actor, List<Vector3> path )
+	{
+		_currentPath[actor] = path;
 	}
 
 	public static void Log( ActorComponent actor, string message )
@@ -100,6 +106,10 @@ public static class AIDebug
 		Gizmo.Draw.Color = Color.Green;
 		Gizmo.Draw.LineBBox( _selectedBody.GetBounds() );
 		DrawLog( _selectedActor, _log[_selectedActor] );
+		if ( _currentPath.ContainsKey( _selectedActor ) )
+		{
+			DrawPath( _selectedActor, _currentPath[_selectedActor] );
+		}
 	}
 
 	private static ActorComponent FindActor()
@@ -138,6 +148,27 @@ public static class AIDebug
 			{
 				Gizmo.Draw.ScreenText( message.ToString(), new Vector2( Screen.Width / 2, y ), "Consolas", 12, TextFlag.LeftTop );
 				y += 18;
+			}
+		}
+	}
+
+	private static void DrawPath( ActorComponent actor, List<Vector3> path )
+	{
+		if ( path is null )
+			return;
+
+		using ( Gizmo.Scope( $"{actor.GameObject.Name} Draw Path", Transform.Zero ) )
+		{
+			Gizmo.Draw.Color = Color.Green;
+			Gizmo.Draw.LineSphere( new Sphere( actor.Transform.Position, 2f ) );
+
+			for ( int i = 0; i < path.Count; i++ )
+			{
+				Gizmo.Draw.LineSphere( new Sphere( path[i], 0.5f ) );
+				if ( i > 0 )
+				{
+					Gizmo.Draw.Line( path[i - 1], path[i] );
+				}
 			}
 		}
 	}

@@ -38,7 +38,7 @@ public class WalkToPosition : BehaviorNode
 			}
 		}
 
-		DebugDraw( actor );
+		AIDebug.UpdatePath( actor, _pathPositions.ToList() );
 
 		MoveActor( actor );
 
@@ -58,6 +58,7 @@ public class WalkToPosition : BehaviorNode
 		human.MoveDirection = Vector3.Zero;
 		_pathPositions.Clear();
 		_currentPathIndex = -1;
+		AIDebug.UpdatePath( actor, null );
 		AIDebug.Log( actor, $"Stopped walking" );
 	}
 
@@ -81,33 +82,5 @@ public class WalkToPosition : BehaviorNode
 		var path = GameManager.ActiveScene.NavMesh.GetSimplePath( startPos, targetPos );
 		_currentPathIndex = path.Any() ? 0 : -1;
 		return path;
-	}
-
-	private void DebugDraw( ActorComponent actor )
-	{
-		if ( !AIDebug.ShouldDraw )
-			return;
-
-		using ( Gizmo.Scope( "GoToCommand", Transform.Zero ) )
-		{
-			Gizmo.Draw.Color = Color.Green;
-			Gizmo.Draw.LineSphere( new Sphere( actor.Transform.Position, 2f ) );
-			if ( _pathPositions.Any() )
-			{
-				Gizmo.Draw.Line( actor.Transform.Position, _pathPositions[_currentPathIndex] );
-			}
-			for ( int i = 0; i < _pathPositions.Count; i++ )
-			{
-				Gizmo.Draw.Color = _currentPathIndex < i
-					? Color.Green.WithAlpha( 0.5f )
-					: Color.Green;
-				Gizmo.Draw.LineSphere( new Sphere( _pathPositions[i], 0.5f ) );
-				if ( i > 0 )
-				{
-					Gizmo.Draw.Line( _pathPositions[i - 1], _pathPositions[i] );
-				}
-			}
-		}
-		
 	}
 }
