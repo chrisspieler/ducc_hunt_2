@@ -6,6 +6,10 @@ public class AISystem : GameObjectSystem
 {
 	[ConVar("ai_tick_rate")]
 	public static int AITickRate { get; set; } = 15;
+
+	[ConVar( "ai_actor_tag" )]
+	public static string ActorTag { get; set; } = "actor";
+
 	public AISystem( Scene scene ) : base( scene )
 	{
 		AIDebug.ClearLog();

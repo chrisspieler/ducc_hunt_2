@@ -80,7 +80,7 @@ public static class AIDebug
 		var tr = scene.Trace
 			.Ray( ray, 2000f )
 			.Radius( 10f )
-			.WithTag( "human" )
+			.WithTag( AISystem.ActorTag )
 			.Run();
 		if ( !tr.Hit || !tr.GameObject.Components.TryGet<ActorComponent>( out var actor, FindMode.EverythingInSelfAndAncestors ) )
 			return null;

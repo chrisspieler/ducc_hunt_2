@@ -36,6 +36,16 @@ public class ActorComponent : Component
 		SetTree( InitialTree );
 	}
 
+	protected override void OnEnabled()
+	{
+		Tags.Add( AISystem.ActorTag );
+	}
+
+	protected override void OnDisabled()
+	{
+		Tags.Remove( AISystem.ActorTag );
+	}
+
 	public void Tick( float deltaTime )
 	{
 		DataContext.Set( K_DELTA_TIME, deltaTime );
