@@ -18,18 +18,12 @@ public class FindTaggedFaceTarget : BehaviorNode
 
 		if ( !target.IsValid() )
 		{
-			if ( DebugVars.AI )
-			{
-				Log.Info( $"{actor.GameObject.Name}: No valid target found with tag {Tag}" );
-			}
+			AIDebug.Log( actor, $"No valid target found with tag {Tag}" );
 			return BehaviorResult.Failure;
 		}
 
 		context.Set( SetFaceTarget.K_FACE_TARGET, target.Id );
-		if ( DebugVars.AI )
-		{
-			Log.Info( $"{actor.GameObject.Name}: Found face target {target.Name} tagged \"{Tag}\"" );
-		}
+		AIDebug.Log( actor, $"Found face target {target.Name} tagged \"{Tag}\"" );
 		return BehaviorResult.Success;
 	}
 }

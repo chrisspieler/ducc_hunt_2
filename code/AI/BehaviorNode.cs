@@ -1,5 +1,4 @@
-﻿using Sandbox;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
@@ -20,10 +19,6 @@ public abstract partial class BehaviorNode
 
 	public BehaviorResult Execute( ActorComponent actor, DataContext context )
 	{
-		if ( DebugVars.AI )
-		{
-			// Log.Info( $"({actor.GameObject.Name}) OnExecute: {GetType().Name}" );
-		}
 		// If we weren't running last time, then we're starting fresh.
 		if ( LastResult != BehaviorResult.Running )
 		{

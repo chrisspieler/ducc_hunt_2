@@ -18,18 +18,12 @@ namespace Ducc.AI.Commands
 				targetGo = actor.Scene.Directory.FindByGuid( target );
 				if ( targetGo is null )
 				{
-					if ( DebugVars.AI )
-					{
-						Log.Info( $"{actor.GameObject.Name}: No valid target found with guid {target}" );
-					}
+					AIDebug.Log( actor, $"No valid target found with guid {target}" );
 					return BehaviorResult.Failure;
 				}
 			}
 			var human = actor.Components.Get<HumanController>();
-			if ( DebugVars.AI )
-			{
-				Log.Info( $"{actor.GameObject.Name}: Setting face target to {targetGo?.Name ?? "null"}" );
-			}
+			AIDebug.Log( actor, $"Setting face target to {targetGo?.Name ?? "null"}" );
 			human.FaceTarget = targetGo;
 			return BehaviorResult.Success;
 		}

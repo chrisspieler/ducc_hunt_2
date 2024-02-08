@@ -19,10 +19,7 @@ public class Delay : BehaviorNode
 
 	protected override void OnStart( ActorComponent actor, DataContext context )
 	{
-		if ( DebugVars.AI )
-		{
-			Log.Info( $"{actor.GameObject.Name}: Delay for {Duration}s" );
-		}
+		AIDebug.Log( actor, $"Delay for {Duration}s" );
 		_sinceStartDelay = 0f;
 	}
 }

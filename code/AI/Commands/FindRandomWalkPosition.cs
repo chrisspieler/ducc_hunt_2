@@ -17,10 +17,7 @@ public class FindRandomWalkPosition : BehaviorNode
 		var radius = MathF.Min( Radius, 100_000 );
 		var target = GameManager.ActiveScene.NavMesh.GetRandomPoint( actor.Transform.Position, radius );
 		sw.Stop();
-		if ( DebugVars.AI )
-		{
-			Log.Info( $"{actor.GameObject.Name}: New random target {target} in radius {radius} in {sw.ElapsedMilliseconds}ms" );
-		}
+		AIDebug.Log( actor, $"New random target {target} in radius {radius} in {sw.ElapsedMilliseconds}ms" );
 		if ( target.HasValue )
 		{
 			context.Set( walkTargetKey, target.Value );

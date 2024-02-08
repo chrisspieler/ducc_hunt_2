@@ -27,10 +27,7 @@ public class FindTaggedWalkPosition : BehaviorNode
 				.NavMesh
 				.GetRandomPoint( walkTarget, Radius ) ?? walkTarget;
 		}
-		if ( DebugVars.AI )
-		{
-			Log.Info( $"{actor.GameObject.Name}: Navigate to {walkTarget}, distance {walkTarget.Distance( target.Transform.Position )}, radius {Radius}" );
-		}
+		AIDebug.Log( actor, $"Navigate to {walkTarget}, distance {walkTarget.Distance( target.Transform.Position )}, radius {Radius}" );
 
 		context.Set( WalkToPosition.K_WALK_POSITION, target.Transform.Position );
 		return BehaviorResult.Success;

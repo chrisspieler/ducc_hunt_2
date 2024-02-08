@@ -30,10 +30,7 @@ public class WalkToPosition : BehaviorNode
 			var sw = Stopwatch.StartNew();
 			_pathPositions = GeneratePath( actor.Transform.Position, target );
 			sw.Stop();
-			if ( DebugVars.AI )
-			{
-				Log.Info( $"{actor.GameObject.Name}: New {_pathPositions.Count} segment path in {sw.ElapsedMilliseconds}ms" );
-			}
+			AIDebug.Log( actor, $"New {_pathPositions.Count} segment path in {sw.ElapsedMilliseconds}ms" );
 			if (!_pathPositions.Any() )
 			{
 				// No path to the target was found.
@@ -61,10 +58,7 @@ public class WalkToPosition : BehaviorNode
 		human.MoveDirection = Vector3.Zero;
 		_pathPositions.Clear();
 		_currentPathIndex = -1;
-		if ( DebugVars.AI )
-		{
-			Log.Info( $"{human.GameObject.Name}: Stopped" );
-		}
+		AIDebug.Log( actor, $"Stopped walking" );
 	}
 
 	private void MoveActor( ActorComponent actor )
@@ -74,10 +68,7 @@ public class WalkToPosition : BehaviorNode
 		if ( human.Transform.Position.Distance( targetPos ) <= 1f )
 		{
 			_currentPathIndex++;
-			if ( DebugVars.AI )
-			{
-				Log.Info( $"{human.GameObject.Name}: Reached index {_currentPathIndex}" );
-			}
+			AIDebug.Log( actor, $"Reached index {_currentPathIndex}" );
 			return;
 		}
 		var direction = (targetPos - human.Transform.Position).Normal;
@@ -94,7 +85,7 @@ public class WalkToPosition : BehaviorNode
 
 	private void DebugDraw( ActorComponent actor )
 	{
-		if ( !DebugVars.AI )
+		if ( !AIDebug.ShouldDraw )
 			return;
 
 		using ( Gizmo.Scope( "GoToCommand", Transform.Zero ) )
