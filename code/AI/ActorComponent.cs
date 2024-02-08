@@ -4,6 +4,8 @@ namespace Ducc.AI;
 
 public class ActorComponent : Component
 {
+	public const string K_DELTA_TIME = "delta_time";
+
 	[Property] public string InitialTree { get; set; }
 	public BehaviorTree CurrentTree 
 	{
@@ -34,8 +36,9 @@ public class ActorComponent : Component
 		SetTree( InitialTree );
 	}
 
-	protected override void OnUpdate()
+	public void Tick( float deltaTime )
 	{
+		DataContext.Set( K_DELTA_TIME, deltaTime );
 		CurrentTree?.Execute( this, DataContext );
 	}
 
