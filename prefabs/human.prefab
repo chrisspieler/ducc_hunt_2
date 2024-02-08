@@ -39,6 +39,7 @@
         "MaxHealth": 100,
         "MoveDirection": "0,0,0",
         "OnDamaged": null,
+        "OnKilled": null,
         "Renderer": {
           "_type": "component",
           "go": "82dc9bfd-a0c9-4343-b6a6-5cbcd81e0e1e",
@@ -215,13 +216,14 @@
                 "MaterialOverride": null,
                 "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt_white.vmdl",
                 "RenderType": "On",
-                "Tint": "0.55814,0.62442,1,1"
+                "Tint": "1,1,1,1"
               }
             ]
           },
           {
             "Id": "dabdab8f-ab36-4c2b-8115-214a096d9504",
             "Name": "Smart Shoes",
+            "Tags": "clothing",
             "Enabled": true,
             "Components": [
               {

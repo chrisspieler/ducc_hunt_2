@@ -462,8 +462,8 @@
                     "Properties": {
                       "_isStatic": false,
                       "_name": "Get",
-                      "T": "Sandbox.Game/Sandbox.Prop",
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -1134,7 +1134,7 @@
                   "MaterialOverride": null,
                   "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt_white.vmdl",
                   "RenderType": "On",
-                  "Tint": "0.55814,0.62442,1,1"
+                  "Tint": "1,1,1,1"
                 }
               ]
             },
@@ -1142,6 +1142,7 @@
               "Id": "c77c5f40-ab69-4319-81e4-408faa9c8399",
               "Name": "Smart Shoes",
               "Position": "0,0,0",
+              "Tags": "clothing",
               "Enabled": true,
               "Components": [
                 {
@@ -1626,6 +1627,7 @@
               "Id": "4bbc7d5a-e6fd-46e1-983b-7e1a20d16ad5",
               "Name": "Smart Shoes",
               "Position": "0,0,0",
+              "Tags": "clothing",
               "Enabled": true,
               "Components": [
                 {
@@ -4596,7 +4598,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T10:26:09.3428564-07:00",
+  "LastSaved": "2024-02-08T13:08:46.9448772-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

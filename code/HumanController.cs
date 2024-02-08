@@ -85,6 +85,8 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		SetRagdollState( true );
 		Actor.Abort();
 		Components.Create<Crime>();
+		var decomp = Renderer.Components.Create<Decompose>();
+		decomp.StartTime = 1f;
 		var nearbyPeople = GetNearby( Transform.Position, 800f );
 		foreach ( var person in nearbyPeople )
 		{
