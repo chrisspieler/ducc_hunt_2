@@ -460,10 +460,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "T": "Sandbox.Game/Sandbox.Prop",
                       "_name": "Get",
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -2266,7 +2266,7 @@
         {
           "Id": "1c88d8aa-9fd6-46cf-85ef-7b2c5edb3826",
           "Name": "trolley (6)",
-          "Position": "209.8605,-108.8181,-19.01735",
+          "Position": "215.004,-108.8181,-19.01735",
           "Rotation": "0,0,0.7071069,-0.7071066",
           "Tags": "destructible",
           "Enabled": true,
@@ -2286,6 +2286,252 @@
                     "Default": {
                       "_type": "component",
                       "go": "1c88d8aa-9fd6-46cf-85ef-7b2c5edb3826",
+                      "component_type": "Prop"
+                    }
+                  }
+                ],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "sound.play",
+                    "UserData": {
+                      "Position": "224,-0"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "menu.megatoast",
+                    "UserData": {
+                      "Position": "464,0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "sounds/ambience/metal_bar_falling.sound",
+                    "DstId": 1,
+                    "DstName": "soundEvent"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "lololol get trolled XD",
+                    "DstId": 2,
+                    "DstName": "message"
+                  }
+                ],
+                "UserData": {
+                  "Title": "On Prop Break",
+                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
+                  "ReferencedComponentTypes": []
+                }
+              },
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
+          "Name": "trolley (6)",
+          "Position": "687.1552,41.51773,-19.01736",
+          "Rotation": "0,0,0.7933534,-0.6087612",
+          "Tags": "destructible",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 400,
+              "IsStatic": true,
+              "Model": "models/sbox_props/trolley/trolley.vmdl",
+              "OnPropBreak": {
+                "Kind": "Action",
+                "Version": 3,
+                "Variables": [
+                  {
+                    "Name": "_this",
+                    "Type": "Sandbox.Game/Sandbox.Component",
+                    "Default": {
+                      "_type": "component",
+                      "go": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
+                      "component_type": "Prop"
+                    }
+                  }
+                ],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "sound.play",
+                    "UserData": {
+                      "Position": "224,-0"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "menu.megatoast",
+                    "UserData": {
+                      "Position": "464,0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "sounds/ambience/metal_bar_falling.sound",
+                    "DstId": 1,
+                    "DstName": "soundEvent"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "lololol get trolled XD",
+                    "DstId": 2,
+                    "DstName": "message"
+                  }
+                ],
+                "UserData": {
+                  "Title": "On Prop Break",
+                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
+                  "ReferencedComponentTypes": []
+                }
+              },
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "61dae2ab-befc-4e8e-a748-4a4cc932e46f",
+          "Name": "trolley (6)",
+          "Position": "918.8435,1224.958,-19.01739",
+          "Rotation": "0,0,0.7071069,-0.7071066",
+          "Tags": "destructible",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 400,
+              "IsStatic": true,
+              "Model": "models/sbox_props/trolley/trolley.vmdl",
+              "OnPropBreak": {
+                "Kind": "Action",
+                "Version": 3,
+                "Variables": [
+                  {
+                    "Name": "_this",
+                    "Type": "Sandbox.Game/Sandbox.Component",
+                    "Default": {
+                      "_type": "component",
+                      "go": "61dae2ab-befc-4e8e-a748-4a4cc932e46f",
+                      "component_type": "Prop"
+                    }
+                  }
+                ],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "sound.play",
+                    "UserData": {
+                      "Position": "224,-0"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "menu.megatoast",
+                    "UserData": {
+                      "Position": "464,0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "sounds/ambience/metal_bar_falling.sound",
+                    "DstId": 1,
+                    "DstName": "soundEvent"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "lololol get trolled XD",
+                    "DstId": 2,
+                    "DstName": "message"
+                  }
+                ],
+                "UserData": {
+                  "Title": "On Prop Break",
+                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
+                  "ReferencedComponentTypes": []
+                }
+              },
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "85cae94c-0aab-4c03-b8d7-4117ccd9934a",
+          "Name": "trolley (6)",
+          "Position": "367.1737,1418.839,-19.01736",
+          "Rotation": "0,0,0.7933533,0.6087614",
+          "Tags": "destructible",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 400,
+              "IsStatic": true,
+              "Model": "models/sbox_props/trolley/trolley.vmdl",
+              "OnPropBreak": {
+                "Kind": "Action",
+                "Version": 3,
+                "Variables": [
+                  {
+                    "Name": "_this",
+                    "Type": "Sandbox.Game/Sandbox.Component",
+                    "Default": {
+                      "_type": "component",
+                      "go": "85cae94c-0aab-4c03-b8d7-4117ccd9934a",
                       "component_type": "Prop"
                     }
                   }
@@ -3969,6 +4215,264 @@
       ]
     },
     {
+      "Id": "5a4cb063-1e7a-48ea-9865-381c275c9084",
+      "Name": "sports_car (1)",
+      "Position": "-245.4348,358.2543,0.5981952",
+      "Rotation": "0,0,-0.9914449,-0.1305261",
+      "Tags": "destructible",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": {
+            "Kind": "Action",
+            "Version": 3,
+            "Variables": [
+              {
+                "Name": "_this",
+                "Type": "Sandbox.Game/Sandbox.Component",
+                "Default": {
+                  "_type": "component",
+                  "go": "5a4cb063-1e7a-48ea-9865-381c275c9084",
+                  "component_type": "Prop"
+                }
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "sound.play",
+                "UserData": {
+                  "Position": "256,-96"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.instantiate",
+                "UserData": {
+                  "Position": "256,80"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.getobject",
+                "UserData": {
+                  "Position": "-384,112"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-224,112"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "-48,112"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "sounds/ambience/metal_bar_falling.sound",
+                "DstId": 1,
+                "DstName": "soundEvent"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "Value": "effects/car_explosion.prefab",
+                "DstId": 2,
+                "DstName": "prefab"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "target"
+              }
+            ],
+            "UserData": {
+              "Title": "On Prop Break",
+              "id": "1ff48baf-a219-430b-beaf-20ceee17ed73",
+              "ReferencedComponentTypes": []
+            }
+          },
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
+      "Id": "fbe971a0-e18d-446f-aea9-851c51ac8533",
+      "Name": "sports_car (2)",
+      "Position": "-255.2242,-416.2314,0.598104",
+      "Rotation": "0,0,-1,0.00000008940697",
+      "Tags": "destructible",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Prop",
+          "Health": 0,
+          "IsStatic": true,
+          "Model": "models/sports_car.vmdl",
+          "OnPropBreak": {
+            "Kind": "Action",
+            "Version": 3,
+            "Variables": [
+              {
+                "Name": "_this",
+                "Type": "Sandbox.Game/Sandbox.Component",
+                "Default": {
+                  "_type": "component",
+                  "go": "fbe971a0-e18d-446f-aea9-851c51ac8533",
+                  "component_type": "Prop"
+                }
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "sound.play",
+                "UserData": {
+                  "Position": "256,-96"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.instantiate",
+                "UserData": {
+                  "Position": "256,80"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.getobject",
+                "UserData": {
+                  "Position": "-384,112"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-224,112"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "-48,112"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "sounds/ambience/metal_bar_falling.sound",
+                "DstId": 1,
+                "DstName": "soundEvent"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "Value": "effects/car_explosion.prefab",
+                "DstId": 2,
+                "DstName": "prefab"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "target"
+              }
+            ],
+            "UserData": {
+              "Title": "On Prop Break",
+              "id": "1ff48baf-a219-430b-beaf-20ceee17ed73",
+              "ReferencedComponentTypes": []
+            }
+          },
+          "OnPropTakeDamage": null,
+          "ShowCreatedComponents": false
+        }
+      ]
+    },
+    {
       "Id": "bc4c079b-0b96-4bef-9cbe-7cbdeea71292",
       "Name": "lamppost03a_on",
       "Position": "-329.7035,-3.192696,0",
@@ -4030,7 +4534,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T06:20:53.154124-07:00",
+  "LastSaved": "2024-02-08T06:43:21.5436337-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
