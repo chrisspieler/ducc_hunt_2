@@ -1,9 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace Sandbox;
 
 public sealed class Decompose : Component
 {
+	[Property] public Action OnDecomposed { get; set; }
+
 	[Property] public ModelRenderer Renderer { get; set; }
 	[Property] public Model DecomposedModel { get; set; }
 	[Property] public float StartTime { get; set; } = 20f;
@@ -25,6 +28,7 @@ public sealed class Decompose : Component
 		{
 			RotClothing();
 			Skeletonize();
+			OnDecomposed?.Invoke();
 			Destroy();
 		}
 	}
