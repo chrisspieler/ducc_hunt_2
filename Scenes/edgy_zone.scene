@@ -105,7 +105,7 @@
                   "__enabled": false,
                   "FadeOutStartTime": 3,
                   "FadeOutTime": 3,
-                  "TextColor": "0.55294,0.06667,0.1451,1",
+                  "TextColor": "Yellow",
                   "VictoryText": "YOU\u0027RE WINNER !"
                 }
               ]
@@ -460,10 +460,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Get",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
-                      "T": "Sandbox.Game/Sandbox.Prop"
+                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_name": "Get"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -473,9 +473,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_name": "Kill",
-                      "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.Prop"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -1373,7 +1373,7 @@
                 "Id": 2,
                 "Type": "menu.showvictorypanel",
                 "UserData": {
-                  "Position": "448,0"
+                  "Position": "480,0"
                 }
               },
               {
@@ -1390,6 +1390,11 @@
                 "SrcName": "_signal",
                 "DstId": 2,
                 "DstName": "_signal"
+              },
+              {
+                "Value": "Yellow",
+                "DstId": 2,
+                "DstName": "color"
               },
               {
                 "Value": "LOW-WAGE WORKER SLAIN",
@@ -1812,9 +1817,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "ToLower",
-                  "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -1824,9 +1829,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "Contains",
-                  "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -1843,7 +1848,7 @@
                 "Id": 6,
                 "Type": "menu.megatoast",
                 "UserData": {
-                  "Position": "880,144"
+                  "Position": "1536,144"
                 }
               },
               {
@@ -1857,7 +1862,21 @@
                 "Id": 8,
                 "Type": "ducc.banish",
                 "UserData": {
-                  "Position": "1056,144"
+                  "Position": "896,144"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "menu.showvictorypanel",
+                "UserData": {
+                  "Position": "1072,144"
+                }
+              },
+              {
+                "Id": 11,
+                "Type": "time.delay",
+                "UserData": {
+                  "Position": "1296,144"
                 }
               }
             ],
@@ -1920,8 +1939,8 @@
                 "DstName": "condition"
               },
               {
-                "SrcId": 4,
-                "SrcName": "true",
+                "SrcId": 11,
+                "SrcName": "_signal",
                 "DstId": 6,
                 "DstName": "_signal"
               },
@@ -1947,10 +1966,37 @@
                 "DstName": "message"
               },
               {
-                "SrcId": 6,
+                "SrcId": 4,
                 "SrcName": "_signal",
                 "DstId": 8,
                 "DstName": "_signal"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "Red",
+                "DstId": 9,
+                "DstName": "color"
+              },
+              {
+                "Value": "GAY BABY JAILED",
+                "DstId": 9,
+                "DstName": "text"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_signal",
+                "DstId": 11,
+                "DstName": "_signal"
+              },
+              {
+                "Value": 10,
+                "DstId": 11,
+                "DstName": "seconds"
               }
             ],
             "UserData": {
@@ -4142,8 +4188,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -4153,8 +4199,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -4271,8 +4317,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -4282,8 +4328,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -4400,8 +4446,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -4411,8 +4457,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -4534,7 +4580,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T06:43:21.5436337-07:00",
+  "LastSaved": "2024-02-08T06:57:36.4873581-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

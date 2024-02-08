@@ -74,10 +74,11 @@ public sealed class GameUI : Component
 
 	[ActionGraphNode( "menu.showvictorypanel" )]
 	[Title( "Show Victory Message" ), Group( "Menu" )]
-	public static void ShowVictoryPanel( string text )
+	public static void ShowVictoryPanel( string text, VictoryPanel.VictoryTextColor color )
 	{
 		var victory = Instance.Victory;
 		victory.VictoryText = text;
+		victory.TextColor = color;
 		victory.Enabled = true;
 	}
 }
