@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "5de821dd-547f-457f-b7d8-7b9951a5a924",
+    "Id": "8128e3a6-c5ed-44f8-b3e8-5933219469e5",
     "Name": "e_weapon_dagger",
     "Enabled": true,
     "Components": [
@@ -12,7 +12,7 @@
         },
         "StabPoint": {
           "_type": "gameobject",
-          "go": "72f92e17-27de-419b-ae0d-385da85c1e9e"
+          "go": "c46a6682-4dc0-4201-9096-45ec1d9a2509"
         },
         "StabSound": "data/equipment/weapon_dagger/knife_stab.sound",
         "State": "Idle"
@@ -20,7 +20,7 @@
     ],
     "Children": [
       {
-        "Id": "78ff05fd-379c-4632-a4a8-2987bd6fe7e9",
+        "Id": "c5b1ffa6-809b-4cb3-8bbc-bcece5caa232",
         "Name": "Model",
         "Enabled": true,
         "Components": [
@@ -36,7 +36,7 @@
         ]
       },
       {
-        "Id": "dff5d135-5510-47da-8601-6c262b6dbad9",
+        "Id": "b525a1e7-e037-4326-9868-84a54676dfc2",
         "Name": "Collider",
         "Enabled": true,
         "Components": [
@@ -52,9 +52,10 @@
         ]
       },
       {
-        "Id": "72f92e17-27de-419b-ae0d-385da85c1e9e",
+        "Id": "c46a6682-4dc0-4201-9096-45ec1d9a2509",
         "Name": "StabPoint",
-        "Position": "0,0,10",
+        "Position": "-0.0000004754762,0,2",
+        "Rotation": "0,-0.7071068,0,0.7071068",
         "Enabled": true
       }
     ]

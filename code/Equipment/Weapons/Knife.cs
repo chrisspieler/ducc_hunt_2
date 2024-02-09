@@ -40,7 +40,8 @@ public class Knife : Equipment
 				break;
 		}
 		Transform.Position = Transform.Position.LerpTo( _targetPosition, Time.Delta * 15f );
-		Transform.Rotation = Rotation.Slerp( Transform.Rotation, _targetRotation, Time.Delta * 15f );
+		Transform.Rotation = _targetRotation;
+		//Transform.Rotation = Rotation.Slerp( Transform.Rotation, _targetRotation, Time.Delta * 15f );
 	}
 
 	private void BeginIdle()
@@ -102,19 +103,22 @@ public class Knife : Equipment
 
 	private bool UpdateStabDetection()
 	{
+		var ray = new Ray( StabPoint.Transform.Position, StabPoint.Transform.Rotation.Forward );
 		var stabTrace = Scene.Trace
-			.Sphere( 3f, StabPoint.Transform.Position, StabPoint.Transform.Position )
+			.Ray( ray, 12f )
 			.WithoutTags( "player" )
+			.UseHitboxes( true )
 			.Run();
 		if ( stabTrace.Hit )
 		{
-			HandleStab( stabTrace.GameObject, stabTrace.HitPosition, stabTrace.Normal );
+			HandleStab( stabTrace );
 		}
 		return stabTrace.Hit;
 	}
 
-	private void HandleStab( GameObject other, Vector3 hitPosition, Vector3 normal )
+	private void HandleStab( SceneTraceResult tr )
 	{
+		var other = tr.GameObject;
 		if ( Debug )
 		{
 			Log.Info( $"stabbed {other.Name}" );
@@ -125,7 +129,10 @@ public class Knife : Equipment
 			var hitParticles = FleshHitParticles.Clone();
 			hitParticles.Parent = other;
 			hitParticles.Transform.Position = Transform.Position;
-			hitParticles.Transform.Rotation = Rotation.LookAt( normal );
+			hitParticles.Transform.Rotation = Rotation.LookAt( tr.Normal );
+			var model = other.Components.Get<SkinnedModelRenderer>();
+			var material = Material.Load( "materials/decals/blood-impact.vmat" );
+			RagdollDecal.FromTrace( tr, model, material, new Vector3( 5f ) );
 		}
 		DoDamage( other );
 		BeginIdle();

@@ -28,6 +28,7 @@ public sealed class Decompose : Component
 		{
 			RotClothing();
 			Skeletonize();
+			RemoveDecals();
 			OnDecomposed?.Invoke();
 			Destroy();
 			Tags.Remove( "fleshy" );
@@ -54,6 +55,17 @@ public sealed class Decompose : Component
 		foreach( var clothing in toDestroy )
 		{
 			clothing.GameObject.Destroy();
+		}
+	}
+
+	private void RemoveDecals()
+	{
+		var toDestroy = Components
+			.GetAll<DecalRenderer>( FindMode.InDescendants )
+			.ToList();
+		foreach ( var decal in toDestroy )
+		{
+			decal.GameObject.Destroy();
 		}
 	}
 
