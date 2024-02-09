@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using System;
 using System.Diagnostics;
 
 public class Knife : Equipment
@@ -24,6 +25,7 @@ public class Knife : Equipment
 	private Vector3 _targetPosition;
 	private Rotation _targetRotation;
 	private Vector3 _attackPosition;
+	private float _attackCharge;
 
 	protected override void OnUpdate()
 	{
@@ -62,12 +64,15 @@ public class Knife : Equipment
 	private void BeginRaised()
 	{
 		_state = KnifeState.Raised;
+		_attackCharge = 0f;
 	}
 	
 	private void UpdateRaised()
 	{
+		_attackCharge = Math.Min( _attackCharge + Time.Delta, 1f );
 		_targetPosition = Transform.Parent.Transform.World.PointToWorld( Vector3.Up * 5f );
-		_targetRotation = Transform.Parent.Transform.Rotation * Rotation.FromPitch( 90f );
+		var direction = (GetAttackPosition() - Transform.Position).Normal;
+		_targetRotation = Rotation.LookAt( direction ) * Rotation.FromPitch( 90f );
 		if ( !Input.Down( "attack1" ) )
 		{
 			BeginAttacking();
@@ -77,8 +82,14 @@ public class Knife : Equipment
 	private void BeginAttacking()
 	{
 		_state = KnifeState.Attacking;
+		_attackPosition = GetAttackPosition();
+	}
+
+	private Vector3 GetAttackPosition()
+	{
 		var attackRay = Scene.Camera.ScreenNormalToRay( new( 0.5f ) );
-		_attackPosition = attackRay.Project( 160f );
+		var distance = MathX.Lerp( 10f, 280f, _attackCharge );
+		return attackRay.Project( distance );
 	}
 
 	private void UpdateAttacking()
@@ -105,7 +116,8 @@ public class Knife : Equipment
 	{
 		var ray = new Ray( StabPoint.Transform.Position, StabPoint.Transform.Rotation.Forward );
 		var stabTrace = Scene.Trace
-			.Ray( ray, 12f )
+			.Ray( ray, 17f )
+			.Size( 3f )
 			.WithoutTags( "player" )
 			.UseHitboxes( true )
 			.Run();
