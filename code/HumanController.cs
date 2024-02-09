@@ -90,6 +90,7 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		Components.Create<Crime>();
 		var decomp = Renderer.Components.Create<Decompose>();
 		decomp.StartTime = 1f;
+		decomp.IgnoreTime = 5f;
 		var nearbyPeople = GetNearby( Transform.Position, 800f );
 		foreach ( var person in nearbyPeople )
 		{

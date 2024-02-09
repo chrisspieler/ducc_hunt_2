@@ -465,9 +465,9 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_isStatic": false,
                       "_name": "Get",
-                      "_isStatic": false
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -478,8 +478,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Kill",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "Kill"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -2130,7 +2130,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Yellow",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Yellow"
+                },
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3293,8 +3301,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "System.Private.CoreLib/System.String",
-                  "_name": "ToLower",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "ToLower"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -3305,8 +3313,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "System.Private.CoreLib/System.String",
-                  "_name": "Contains",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "Contains"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -3453,7 +3461,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Red",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Red"
+                },
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -6055,7 +6071,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T17:08:06.7195238-07:00",
+  "LastSaved": "2024-02-08T17:21:09.8501277-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

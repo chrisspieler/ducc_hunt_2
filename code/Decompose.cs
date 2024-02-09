@@ -10,9 +10,11 @@ public sealed class Decompose : Component
 	[Property] public ModelRenderer Renderer { get; set; }
 	[Property] public Model DecomposedModel { get; set; }
 	[Property] public float StartTime { get; set; } = 20f;
+	[Property] public float IgnoreTime { get; set; } = 5f;
 	[Property] public bool OnlyWhenLookingAway { get; set; } = true;
 
 	private TimeSince _sinceStart;
+	private TimeSince _sinceIgnoreStart;
 
 	protected override void OnStart()
 	{
@@ -40,6 +42,16 @@ public sealed class Decompose : Component
 		if ( !OnlyWhenLookingAway )
 			return true;
 
+		var isLookingAway = IsLookingAway();
+		if ( !isLookingAway )
+		{
+			_sinceIgnoreStart = 0f;
+		}
+		return isLookingAway && _sinceIgnoreStart > IgnoreTime;
+	}
+
+	private bool IsLookingAway()
+	{
 		var camDirection = Scene.Camera.Transform.Rotation.Forward;
 		var camToCorpse = (Renderer.Transform.Position - Scene.Camera.Transform.Position).Normal;
 		// Only decompose if the camera is looking away from the corpse.
