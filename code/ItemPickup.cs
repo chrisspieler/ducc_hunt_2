@@ -11,7 +11,8 @@ public sealed class ItemPickup : Component, Component.ITriggerListener
 	[Property] public GameObject PickupPosition { get; set; }
 	[Property] public PickupData Data { get; set; }
 	[Property] public EquipmentData Equipment { get; set; }
-
+	[Property] public bool Gravity { get; set; } = true;
+	
 	private GameObject _pickupInstance;
 
 	protected override void OnStart()
@@ -41,6 +42,10 @@ public sealed class ItemPickup : Component, Component.ITriggerListener
 	protected override void OnUpdate()
 	{
 		UpdateRingLightPosition();
+		if ( Gravity )
+		{
+			UpdateGravity();
+		}
 	}
 
 	private void UpdateRingLightPosition()
@@ -51,6 +56,18 @@ public sealed class ItemPickup : Component, Component.ITriggerListener
 		RingLight.Transform.Position = modelTx.Position 
 			+ dirToCam * 10f
 			+ Vector3.Up * 15f;
+	}
+
+	private void UpdateGravity()
+	{
+		var ray = new Ray( Transform.Position, Vector3.Down );
+		var tr = Scene.Trace
+			.Ray( ray, 300f )
+			.Size( 5f )
+			.Run();
+		if ( tr.StartedSolid )
+			return;
+		Transform.Position += Vector3.Down * tr.Distance * Time.Delta;
 	}
 
 	public bool CanPickup( GameObject player )
@@ -82,4 +99,24 @@ public sealed class ItemPickup : Component, Component.ITriggerListener
 	}
 
 	public void OnTriggerExit( Collider other ) { }
+
+	[ActionGraphNode( "item.spawnpickup" )]
+	[Title( "Spawn Pickup" ), Category( "Items" )]
+	public static ItemPickup Spawn( PickupData data, Vector3 position )
+	{
+		var prefabFile = ResourceLibrary.Get<PrefabFile>( "prefabs/pickup.prefab" );
+		var prefabScene = SceneUtility.GetPrefabScene( prefabFile );
+		var pickupGo = prefabScene.Clone( position );
+		var pickup = pickupGo.Components.Get<ItemPickup>();
+		pickup.Data = data;
+		return pickup;
+	}
+
+	[ActionGraphNode( "item.spawnequipment" )]
+	[Title( "Spawn Equipment" ), Category( "Items" )]
+	public static ItemPickup Spawn( EquipmentData data, Vector3 position )
+	{
+		// TODO: Remove this method once polymorphism is supported.
+		return Spawn( data as PickupData, position );
+	}
 }

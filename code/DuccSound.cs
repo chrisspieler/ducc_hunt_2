@@ -39,6 +39,8 @@ namespace Sandbox
 			return new DuccSoundHandle( hSnd );
 		}
 
+		[ActionGraphNode( "duccsound.play" )]
+		[Title( "Play Sound at Position" ), Category("Ducc Sound")]
 		public static DuccSoundHandle Play( SoundEvent sound, Vector3 position )
 		{
 			var duccSnd = Play( sound );

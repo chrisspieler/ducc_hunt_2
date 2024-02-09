@@ -1,0 +1,119 @@
+{
+  "RootObject": {
+    "Id": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
+    "Name": "Breakable Shopping Cart",
+    "Position": "687.1552,41.51773,-19.01736",
+    "Rotation": "0,0,0.7933534,-0.6087612",
+    "Tags": "destructible",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Prop",
+        "Health": 400,
+        "IsStatic": true,
+        "Model": "models/sbox_props/trolley/trolley.vmdl",
+        "OnPropBreak": {
+          "Kind": "Action",
+          "Version": 3,
+          "Variables": [
+            {
+              "Name": "_this",
+              "Type": "Sandbox.Game/Sandbox.Component",
+              "Default": {
+                "_type": "component",
+                "go": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
+                "component_type": "Prop"
+              }
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "duccsound.play",
+              "UserData": {
+                "Position": "304,0"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "scene.getobject",
+              "UserData": {
+                "Position": "-336,80"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property.get",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "-112,80"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "property.get",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Position": "96,80"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "position"
+            },
+            {
+              "Value": "sounds/ambience/metal_bar_falling.sound",
+              "DstId": 2,
+              "DstName": "sound"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "target"
+            }
+          ],
+          "UserData": {
+            "Title": "On Prop Break",
+            "id": "9c279a40-fd1e-48c3-8f97-b1543bc798c4",
+            "ReferencedComponentTypes": []
+          }
+        },
+        "OnPropTakeDamage": null,
+        "ShowCreatedComponents": false
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "facepunch.trolley"
+  ]
+}

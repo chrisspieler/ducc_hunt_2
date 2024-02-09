@@ -208,7 +208,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-100,-50,0.0001198065",
+      "Position": "1000,-50,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -356,10 +356,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
+                      "_name": "Get",
                       "T": "Sandbox.Game/Sandbox.Prop",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "Get"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -369,9 +369,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
+                      "_name": "Kill",
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Kill"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -1189,58 +1189,208 @@
               ]
             },
             {
-              "Id": "3ae29ceb-3640-4157-ac44-a28fff2b20b9",
-              "Name": "trolley",
+              "Id": "70fa016c-e991-4ab0-afc1-9022080d4d2e",
+              "Name": "Breakable Shopping Cart (7)",
               "Position": "48.78933,3.392233,0.00001352952",
               "Rotation": "0,0,-0.9994326,0.03382763",
+              "Tags": "destructible",
               "Enabled": true,
               "Components": [
                 {
-                  "__type": "ModelRenderer",
-                  "BodyGroups": 18446744073709551615,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
+                  "__type": "Prop",
+                  "Health": 400,
+                  "IsStatic": true,
                   "Model": "models/sbox_props/trolley/trolley.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "OnPropBreak": {
+                    "Kind": "Action",
+                    "Version": 3,
+                    "Variables": [
+                      {
+                        "Name": "_this",
+                        "Type": "Sandbox.Game/Sandbox.Component",
+                        "Default": {
+                          "_type": "component",
+                          "go": "70fa016c-e991-4ab0-afc1-9022080d4d2e",
+                          "component_type": "Prop"
+                        }
+                      }
+                    ],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input"
+                      },
+                      {
+                        "Id": 2,
+                        "Type": "duccsound.play",
+                        "UserData": {
+                          "Position": "304,0"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "scene.getobject",
+                        "UserData": {
+                          "Position": "-336,80"
+                        }
+                      },
+                      {
+                        "Id": 4,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "Transform",
+                          "_type": "Sandbox.Game/Sandbox.GameObject"
+                        },
+                        "UserData": {
+                          "Position": "-112,80"
+                        }
+                      },
+                      {
+                        "Id": 5,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "Position",
+                          "_type": "Sandbox.Game/Sandbox.GameTransform"
+                        },
+                        "UserData": {
+                          "Position": "96,80"
+                        }
+                      },
+                      {
+                        "Id": 7,
+                        "Type": "item.spawnequipment",
+                        "UserData": {
+                          "Position": "752,0"
+                        }
+                      },
+                      {
+                        "Id": 8,
+                        "Type": "op.add",
+                        "UserData": {
+                          "Position": "560,96"
+                        }
+                      },
+                      {
+                        "Id": 9,
+                        "Type": "vec3.new",
+                        "UserData": {
+                          "Position": "368,176"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 2,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 5,
+                        "SrcName": "_result",
+                        "DstId": 2,
+                        "DstName": "position"
+                      },
+                      {
+                        "Value": "sounds/ambience/metal_bar_falling.sound",
+                        "DstId": 2,
+                        "DstName": "sound"
+                      },
+                      {
+                        "SrcId": 3,
+                        "SrcName": "_result",
+                        "DstId": 4,
+                        "DstName": "target"
+                      },
+                      {
+                        "SrcId": 4,
+                        "SrcName": "_result",
+                        "DstId": 5,
+                        "DstName": "target"
+                      },
+                      {
+                        "SrcId": 2,
+                        "SrcName": "_signal",
+                        "DstId": 7,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "Value": "data/equipment/weapon_death/weapon_death.equip",
+                        "DstId": 7,
+                        "DstName": "data"
+                      },
+                      {
+                        "SrcId": 8,
+                        "SrcName": "_result",
+                        "DstId": 7,
+                        "DstName": "position"
+                      },
+                      {
+                        "SrcId": 5,
+                        "SrcName": "_result",
+                        "DstId": 8,
+                        "DstName": "a"
+                      },
+                      {
+                        "SrcId": 9,
+                        "SrcName": "_result",
+                        "DstId": 8,
+                        "DstName": "b"
+                      },
+                      {
+                        "Value": 0,
+                        "DstId": 9,
+                        "DstName": "x"
+                      },
+                      {
+                        "Value": 0,
+                        "DstId": 9,
+                        "DstName": "y"
+                      },
+                      {
+                        "Value": 100,
+                        "DstId": 9,
+                        "DstName": "z"
+                      }
+                    ],
+                    "UserData": {
+                      "Title": "On Prop Break",
+                      "id": "9c279a40-fd1e-48c3-8f97-b1543bc798c4",
+                      "ReferencedComponentTypes": []
+                    }
+                  },
+                  "OnPropTakeDamage": null,
+                  "ShowCreatedComponents": false
                 }
               ],
               "Children": [
                 {
                   "Id": "c4f0a069-51b2-4b90-a625-b633558aa79d",
                   "Name": "L hand grip",
-                  "Position": "27,-6.170289,45",
+                  "Position": "27.00011,-6.169816,45",
                   "Rotation": "-0.00000002980232,1,-0.00000004371138,0",
                   "Enabled": true
                 },
                 {
                   "Id": "84d63d28-8e12-4c54-ac64-96829842ecd3",
                   "Name": "R hand grip",
-                  "Position": "27,7.052977,45",
-                  "Rotation": "0,0,1,-0.00000004371139",
+                  "Position": "26.99989,7.053419,45",
+                  "Rotation": "0,0,1,-0.00000002980232",
                   "Enabled": true
                 },
                 {
                   "Id": "592b893b-332f-4c62-9cf0-f8e03e08bcea",
-                  "Name": "pickup (2)",
+                  "Name": "Fake Pickup",
                   "Position": "-1.314096,-2.477476,41.58994",
                   "Rotation": "0,0,-0.882439,0.4704164",
                   "Tags": "pickup",
                   "Enabled": true,
                   "Components": [
                     {
-                      "__type": "CapsuleCollider",
-                      "End": "0,0,40",
-                      "IsTrigger": true,
-                      "Radius": 20,
-                      "Start": "0,0,19.73334",
-                      "Static": false,
-                      "Surface": null
-                    },
-                    {
                       "__type": "ItemPickup",
                       "Data": null,
                       "Equipment": "data/equipment/weapon_death/weapon_death.equip",
+                      "Gravity": false,
                       "OnPickup": null,
                       "PickupPosition": {
                         "_type": "gameobject",
@@ -2165,9 +2315,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "Open",
                   "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "Open"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "912,0"
@@ -2182,15 +2332,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Yellow"
-                },
+                "Value": "Yellow",
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3236,6 +3378,7 @@
           "__type": "ItemPickup",
           "Data": null,
           "Equipment": "data/equipment/weapon_dagger/weapon_dagger.equip",
+          "Gravity": true,
           "OnPickup": null,
           "PickupPosition": {
             "_type": "gameobject",
@@ -3344,6 +3487,7 @@
           "__type": "ItemPickup",
           "Data": "data/powerups/cash_stack/cash_stack.pickup",
           "Equipment": null,
+          "Gravity": true,
           "OnPickup": {
             "Kind": "Action",
             "Version": 3,
@@ -3374,9 +3518,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "ToLower",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_name": "ToLower"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -3386,9 +3530,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "Contains",
                   "_type": "System.Private.CoreLib/System.String",
-                  "_name": "Contains"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -3535,15 +3679,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Red"
-                },
+                "Value": "Red",
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -3975,84 +4111,36 @@
         },
         {
           "Id": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
-          "Name": "trolley (6)",
+          "Name": "Breakable Shopping Cart",
           "Position": "687.1552,41.51773,-19.01736",
           "Rotation": "0,0,0.7933534,-0.6087612",
           "Tags": "destructible",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Prop",
-              "Health": 400,
-              "IsStatic": true,
-              "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": null,
-              "OnPropTakeDamage": null,
-              "ShowCreatedComponents": false
-            }
-          ]
+          "__Prefab": "prefabs/props/shopping_cart.prefab"
         },
         {
-          "Id": "61dae2ab-befc-4e8e-a748-4a4cc932e46f",
-          "Name": "trolley (6)",
-          "Position": "918.8435,1224.958,-19.01739",
-          "Rotation": "0,0,0.7071069,-0.7071066",
+          "Id": "4b4e890c-ac33-424a-a41e-ea1fa4a6b107",
+          "Name": "Breakable Shopping Cart (7)",
+          "Position": "1010.441,295.2332,-19.01739",
+          "Rotation": "0,0,0.0000002682209,-0.9999999",
           "Tags": "destructible",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Prop",
-              "Health": 400,
-              "IsStatic": true,
-              "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": null,
-              "OnPropTakeDamage": null,
-              "ShowCreatedComponents": false
-            }
-          ]
+          "__Prefab": "prefabs/props/shopping_cart.prefab"
         },
         {
-          "Id": "85cae94c-0aab-4c03-b8d7-4117ccd9934a",
-          "Name": "trolley (6)",
-          "Position": "367.1737,1418.839,-19.01736",
-          "Rotation": "0,0,0.7933533,0.6087614",
+          "Id": "d876d85c-d448-400b-ad3c-edff56741c2d",
+          "Name": "Breakable Shopping Cart (7)",
+          "Position": "1138.775,-97.62949,-19.01736",
+          "Rotation": "0,0,0.9914448,-0.1305261",
           "Tags": "destructible",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "Prop",
-              "Health": 400,
-              "IsStatic": true,
-              "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": null,
-              "OnPropTakeDamage": null,
-              "ShowCreatedComponents": false
-            }
-          ]
+          "__Prefab": "prefabs/props/shopping_cart.prefab"
         },
         {
           "Id": "3969f3f9-645e-4d9d-ab7c-e8af8f17e39f",
           "Name": "trolley (6)",
           "Position": "185.0729,-108.8181,-19.01735",
           "Rotation": "0,0,0.7071069,-0.7071066",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Prop",
-              "Health": 400,
-              "IsStatic": true,
-              "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": null,
-              "OnPropTakeDamage": null,
-              "ShowCreatedComponents": false
-            }
-          ]
-        },
-        {
-          "Id": "c509f1c4-772d-41c0-b13e-ef29732f2cd8",
-          "Name": "trolley (7)",
-          "Position": "14.44525,-41.98227,-19.01735",
-          "Rotation": "0,0,1,0.00000008940697",
           "Enabled": true,
           "Components": [
             {
@@ -5581,8 +5669,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5592,8 +5680,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5710,8 +5798,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5721,8 +5809,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5839,8 +5927,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5850,8 +5938,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5998,8 +6086,7 @@
                 "Type": "Sandbox.Game/Sandbox.Component",
                 "Default": {
                   "_type": "component",
-                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
-                  "component_type": "UpdateActionComponent"
+                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28"
                 }
               }
             ],
@@ -6036,8 +6123,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "ShouldBeOpen"
+                  "_name": "ShouldBeOpen",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "448,16"
@@ -6054,8 +6141,8 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "ShouldBeOpen"
+                  "_name": "ShouldBeOpen",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "208,-240"
@@ -6125,7 +6212,7 @@
         {
           "Id": "7918bdc7-a6b5-472c-a441-aa2116eff984",
           "Name": "security_shutter_curtain_128",
-          "Position": "-0.00005382874,-0.00000000003137316,-0.00000000000727596",
+          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -6224,7 +6311,7 @@
         {
           "Id": "1c3c0203-31d5-4aaf-949d-c2e94d4af6eb",
           "Name": "Close Target",
-          "Position": "-0.00005729073,0,-0.00002296204",
+          "Position": "0,0,0",
           "Enabled": true
         }
       ]
@@ -6485,6 +6572,69 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "209fee9a-cdc2-4c38-bd4f-083a2358efc3",
+      "Name": "Breakable Shopping Cart",
+      "Position": "1607.795,76.57416,-0.000006509669",
+      "Rotation": "0,0,-0.1305262,0.9914449",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "114c840f-e03c-46e0-81e0-d248b1775a7e",
+      "Name": "Breakable Shopping Cart (2)",
+      "Position": "1675.508,666.1896,-0.000006509669",
+      "Rotation": "0,0,0.9268675,0.3753887",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "cf78ed8e-2ca9-4dde-b892-8afec7756176",
+      "Name": "Breakable Shopping Cart (3)",
+      "Position": "1584.805,1208.269,-0.000009702313",
+      "Rotation": "0,0,0.7126589,0.7015107",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "2291fab2-e94a-40db-8989-40e8141f25f3",
+      "Name": "Breakable Shopping Cart (4)",
+      "Position": "1832.346,1174.094,-0.000004812749",
+      "Rotation": "0,0,-0.7015106,0.712659",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "d5a79d45-2937-4f51-9ff5-f984bef4ba38",
+      "Name": "Breakable Shopping Cart (1)",
+      "Position": "1319.478,870.9622,-0.0000338024",
+      "Rotation": "0,0,0.7933532,0.6087614",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "2d4b9db4-d484-47e6-a0db-a040ccc2d042",
+      "Name": "Breakable Shopping Cart (5)",
+      "Position": "935.6219,852.3391,-0.0000761593",
+      "Rotation": "0,0,-0.6087611,0.7933532",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "56508fd4-a60c-426d-842c-13875a259340",
+      "Name": "Breakable Shopping Cart (6)",
+      "Position": "768.0657,1409.553,-0.00007786536",
+      "Rotation": "0,0,0.1305264,-0.9914447",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
     }
   ],
   "SceneProperties": {
@@ -6510,7 +6660,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-09T06:38:57.4910358-07:00",
+  "LastSaved": "2024-02-09T09:15:21.7356178-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
