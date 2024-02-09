@@ -206,114 +206,6 @@
       ]
     },
     {
-      "Id": "28309495-f31e-48b9-87b9-86d53a4337eb",
-      "Name": "Plane (1)",
-      "Position": "998.7651,0,0",
-      "Scale": "10,10,1",
-      "Tags": "solid",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/generic/concrete_simple.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,-0.125",
-          "IsTrigger": false,
-          "Scale": "100,100,0.25",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "cd93397b-3c49-4060-bc5a-c2c565b5fe25",
-      "Name": "Plane (3)",
-      "Position": "1994.016,0,0",
-      "Scale": "10,10,1",
-      "Tags": "solid",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/generic/concrete_simple.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,-0.125",
-          "IsTrigger": false,
-          "Scale": "100,100,0.25",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "a9250449-6497-4ff4-b90c-7f9b480f9823",
-      "Name": "Plane (4)",
-      "Position": "1994.016,992.7681,0",
-      "Scale": "10,10,1",
-      "Tags": "solid",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/generic/concrete_simple.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,-0.125",
-          "IsTrigger": false,
-          "Scale": "100,100,0.25",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "dd3ad5fc-dda4-4c2a-882e-164b588f9efd",
-      "Name": "Plane (2)",
-      "Position": "998.7651,991.7205,0",
-      "Scale": "10,10,1",
-      "Tags": "solid",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/generic/concrete_simple.vmat",
-          "Model": "models/dev/plane.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,-0.125",
-          "IsTrigger": false,
-          "Scale": "100,100,0.25",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
       "Position": "-100,-50,0.0001198065",
@@ -464,10 +356,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
-                      "_name": "Get",
-                      "T": "Sandbox.Game/Sandbox.Prop"
+                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_name": "Get"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -477,8 +369,8 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_name": "Kill"
                     },
                     "UserData": {
@@ -565,284 +457,425 @@
       ]
     },
     {
-      "Id": "57cceca9-bd05-47ae-aaf6-db2bbeaff8ae",
-      "Name": "Cube",
-      "Position": "496.6458,-64.57561,168.6557",
-      "Scale": "0.2869897,5.932916,1.530678",
+      "Id": "0c086992-8098-420f-aa4c-7a95f80f8b5d",
+      "Name": "Building",
       "Enabled": true,
-      "Components": [
+      "Children": [
         {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "Id": "de58ec7e-96ac-4eb0-9912-10a3b12fcb37",
-      "Name": "Cube (1)",
-      "Position": "496.6458,794.3199,98.72241",
-      "Scale": "0.2869897,28.71338,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "2e4fe258-d326-4f28-b415-7e1611c35160",
+          "Name": "Cube (3)",
+          "Position": "1177.964,502.9106,212.9968",
+          "Rotation": "0,0.7071067,0,0.7071068",
+          "Scale": "0.2869897,40.30243,27.47998",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "3888e743-32ef-476a-bde3-628b1be5bd0d",
-      "Name": "Cube (5)",
-      "Position": "786.3889,-249.1311,98.72241",
-      "Scale": "0.3786802,5.825036,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "2e1a19c1-f467-4140-93fc-df3f0e062d90",
+          "Name": "Cube (10)",
+          "Position": "1178.105,1486.232,98.72241",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "0.2869897,27.48757,4.31312",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "739028ba-cb39-4161-915d-cc8ddcfd0b0d",
-      "Name": "Cube (6)",
-      "Position": "786.3889,274.3225,98.72241",
-      "Scale": "0.3786802,9.060583,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "cc7986aa-89e3-4b3f-be1b-e258d2981f2a",
+          "Name": "Cube (4)",
+          "Position": "1178.105,-498.8633,98.72241",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "0.2869897,27.48757,4.31312",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "55088f02-db85-4869-b6d9-8c580d2f5603",
-      "Name": "Cube (9)",
-      "Position": "1858.178,522.2653,98.72241",
-      "Scale": "0.3786802,41.22744,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "829cc13c-c63f-46f0-a7b1-df84bb3ca4db",
+          "Name": "Cube (2)",
+          "Position": "496.6458,-351.7501,98.72241",
+          "Scale": "0.2869897,5.628775,4.31312",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "d3394c80-c9c0-4a36-8895-36e4ea61c415",
-      "Name": "Cube (8)",
-      "Position": "641.91,502.7437,98.72253",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Scale": "0.2909851,5.551902,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "4a0064e0-2536-4b63-96ec-aa244051f629",
+          "Name": "Cube (7)",
+          "Position": "1858.258,393.6808,156.9637",
+          "Scale": "0.3786802,3.546095,2.009595",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "4a0064e0-2536-4b63-96ec-aa244051f629",
-      "Name": "Cube (7)",
-      "Position": "786.3889,-33.50673,156.9637",
-      "Scale": "0.3786802,3.546095,2.009595",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "d3394c80-c9c0-4a36-8895-36e4ea61c415",
+          "Name": "Cube (8)",
+          "Position": "641.91,502.7437,82.21527",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Scale": "0.2909851,5.551902,3.514405",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "829cc13c-c63f-46f0-a7b1-df84bb3ca4db",
-      "Name": "Cube (2)",
-      "Position": "496.6458,-351.7501,98.72241",
-      "Scale": "0.2869897,5.628775,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "6ae7e8dd-5313-48d0-9e2a-cdd0802f6822",
+          "Name": "Cube (11)",
+          "Position": "1858.178,978.2948,98.72241",
+          "Scale": "0.3786802,20.44587,4.31312",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "cc7986aa-89e3-4b3f-be1b-e258d2981f2a",
-      "Name": "Cube (4)",
-      "Position": "1178.105,-498.8633,98.72241",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Scale": "0.2869897,27.48757,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "55088f02-db85-4869-b6d9-8c580d2f5603",
+          "Name": "Cube (9)",
+          "Position": "1858.178,-112.0753,98.72241",
+          "Scale": "0.3786802,17.4905,4.31312",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "2e1a19c1-f467-4140-93fc-df3f0e062d90",
-      "Name": "Cube (10)",
-      "Position": "1178.105,1486.232,98.72241",
-      "Rotation": "0,0,0.7071067,0.7071068",
-      "Scale": "0.2869897,27.48757,4.31312",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "739028ba-cb39-4161-915d-cc8ddcfd0b0d",
+          "Name": "Cube (6)",
+          "Position": "786.3889,274.3225,80.59367",
+          "Scale": "0.3786802,9.060583,3.578449",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "2e4fe258-d326-4f28-b415-7e1611c35160",
-      "Name": "Cube (3)",
-      "Position": "1177.964,502.9106,212.9968",
-      "Rotation": "0,0.7071067,0,0.7071068",
-      "Scale": "0.2869897,40.30243,27.47998",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Id": "3888e743-32ef-476a-bde3-628b1be5bd0d",
+          "Name": "Cube (5)",
+          "Position": "786.3889,-249.1311,87.00255",
+          "Scale": "0.3786802,5.825036,3.509642",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         },
         {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
+          "Id": "de58ec7e-96ac-4eb0-9912-10a3b12fcb37",
+          "Name": "Cube (1)",
+          "Position": "496.6458,794.3199,98.72241",
+          "Scale": "0.2869897,28.71338,4.31312",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "57cceca9-bd05-47ae-aaf6-db2bbeaff8ae",
+          "Name": "Cube",
+          "Position": "496.6458,-64.57561,168.6557",
+          "Scale": "0.2869897,5.932916,1.530678",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "28309495-f31e-48b9-87b9-86d53a4337eb",
+          "Name": "Plane (1)",
+          "Position": "998.7651,0,0",
+          "Scale": "10,10,1",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/generic/concrete_simple.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "0547cd43-692f-4710-8837-c32401f447c0",
+          "Name": "Plane (1)",
+          "Position": "1998.945,0,0",
+          "Scale": "10,10,1",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/generic/concrete_simple.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "dd3ad5fc-dda4-4c2a-882e-164b588f9efd",
+          "Name": "Plane (2)",
+          "Position": "998.7651,991.7205,0",
+          "Scale": "10,10,1",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/generic/concrete_simple.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "29940f03-3018-4cb3-af9c-59a52cc150be",
+          "Name": "Plane (2)",
+          "Position": "1998.945,991.7205,0",
+          "Scale": "10,10,1",
+          "Tags": "solid",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/generic/concrete_simple.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
         }
       ]
     },
@@ -861,7 +894,7 @@
           "Cookie": null,
           "FogMode": "Enabled",
           "FogStrength": 1,
-          "LightColor": "1,0,0,1",
+          "LightColor": "0,0,1,1",
           "Radius": 500,
           "Shadows": true
         }
@@ -2041,7 +2074,7 @@
     },
     {
       "Id": "73b82939-4917-4646-afd4-d182803888cb",
-      "Name": "Bob, Manager of Store",
+      "Name": "Terry, Manager of Store",
       "Position": "1576.588,362.15,-0.00006567618",
       "Rotation": "0,0,0.9914452,-0.1305259",
       "Tags": "human",
@@ -2120,6 +2153,25 @@
                 "UserData": {
                   "Position": "480,112"
                 }
+              },
+              {
+                "Id": 5,
+                "Type": "door.find",
+                "UserData": {
+                  "Position": "720,-0"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "Open"
+                },
+                "UserData": {
+                  "Position": "912,0"
+                }
               }
             ],
             "Links": [
@@ -2168,6 +2220,29 @@
                 "Value": "sounds/ducc/mega_quacc.sound",
                 "DstId": 4,
                 "DstName": "soundEvent"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "exit_door",
+                "DstId": 5,
+                "DstName": "doorName"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
               }
             ],
             "UserData": {
@@ -2202,7 +2277,7 @@
             "go": "67a6b791-6028-4f39-8a1c-6b27ed61cccf",
             "component_type": "MusicComponent"
           },
-          "BossName": "Bob, Manager of Store",
+          "BossName": "Terry, Manager of Store",
           "Human": null,
           "IsFighting": false
         },
@@ -2289,30 +2364,6 @@
               "Enabled": true
             },
             {
-              "Id": "159c6122-dd28-4a30-9ab8-96b6df8df335",
-              "Name": "Hair",
-              "Position": "0,0,0",
-              "Tags": "clothing",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "SkinnedModelRenderer",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "MaterialGroup": "default",
-                  "MaterialOverride": null,
-                  "Model": "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
               "Id": "7bed0efc-ab19-4b2d-9a8f-7e4eb4de9863",
               "Name": "Smart Trousers",
               "Position": "0,0,0",
@@ -2379,6 +2430,29 @@
                   "MaterialGroup": null,
                   "MaterialOverride": null,
                   "Model": "models/citizen_clothes/shoes/smartshoes/smartshoes.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "Id": "01db35c7-b445-44f0-998b-cfa23465e323",
+              "Name": "Object",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/citizen_clothes/hair/eyebrows/models/eyebrows.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -3300,8 +3374,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "ToLower"
                 },
                 "UserData": {
@@ -3312,8 +3386,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "Contains"
                 },
                 "UserData": {
@@ -3620,7 +3694,24 @@
     {
       "Id": "5ce7e09f-4665-4a34-8fd2-3f48024bcc2d",
       "Name": "Point Light (4)",
-      "Position": "929.5092,1060.504,183.9975",
+      "Position": "846.0881,1060.504,183.9975",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PointLight",
+          "Attenuation": 0.5,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "Id": "a9cae607-c131-4166-af7b-f6da401062ba",
+      "Name": "Point Light (5)",
+      "Position": "1751.621,1060.504,183.9975",
       "Enabled": true,
       "Components": [
         {
@@ -3843,7 +3934,7 @@
                     "Id": 2,
                     "Type": "menu.megatoast",
                     "UserData": {
-                      "Position": "464,0"
+                      "Position": "528,0"
                     }
                   }
                 ],
@@ -3895,70 +3986,7 @@
               "Health": 400,
               "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": {
-                "Kind": "Action",
-                "Version": 3,
-                "Variables": [
-                  {
-                    "Name": "_this",
-                    "Type": "Sandbox.Game/Sandbox.Component",
-                    "Default": {
-                      "_type": "component",
-                      "go": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
-                      "component_type": "Prop"
-                    }
-                  }
-                ],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "sound.play",
-                    "UserData": {
-                      "Position": "224,-0"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "menu.megatoast",
-                    "UserData": {
-                      "Position": "464,0"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 1,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "sounds/ambience/metal_bar_falling.sound",
-                    "DstId": 1,
-                    "DstName": "soundEvent"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "lololol get trolled XD",
-                    "DstId": 2,
-                    "DstName": "message"
-                  }
-                ],
-                "UserData": {
-                  "Title": "On Prop Break",
-                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
-                  "ReferencedComponentTypes": []
-                }
-              },
+              "OnPropBreak": null,
               "OnPropTakeDamage": null,
               "ShowCreatedComponents": false
             }
@@ -3977,70 +4005,7 @@
               "Health": 400,
               "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": {
-                "Kind": "Action",
-                "Version": 3,
-                "Variables": [
-                  {
-                    "Name": "_this",
-                    "Type": "Sandbox.Game/Sandbox.Component",
-                    "Default": {
-                      "_type": "component",
-                      "go": "61dae2ab-befc-4e8e-a748-4a4cc932e46f",
-                      "component_type": "Prop"
-                    }
-                  }
-                ],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "sound.play",
-                    "UserData": {
-                      "Position": "224,-0"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "menu.megatoast",
-                    "UserData": {
-                      "Position": "464,0"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 1,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "sounds/ambience/metal_bar_falling.sound",
-                    "DstId": 1,
-                    "DstName": "soundEvent"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "lololol get trolled XD",
-                    "DstId": 2,
-                    "DstName": "message"
-                  }
-                ],
-                "UserData": {
-                  "Title": "On Prop Break",
-                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
-                  "ReferencedComponentTypes": []
-                }
-              },
+              "OnPropBreak": null,
               "OnPropTakeDamage": null,
               "ShowCreatedComponents": false
             }
@@ -4059,70 +4024,7 @@
               "Health": 400,
               "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
-              "OnPropBreak": {
-                "Kind": "Action",
-                "Version": 3,
-                "Variables": [
-                  {
-                    "Name": "_this",
-                    "Type": "Sandbox.Game/Sandbox.Component",
-                    "Default": {
-                      "_type": "component",
-                      "go": "85cae94c-0aab-4c03-b8d7-4117ccd9934a",
-                      "component_type": "Prop"
-                    }
-                  }
-                ],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "sound.play",
-                    "UserData": {
-                      "Position": "224,-0"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "menu.megatoast",
-                    "UserData": {
-                      "Position": "464,0"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 1,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "sounds/ambience/metal_bar_falling.sound",
-                    "DstId": 1,
-                    "DstName": "soundEvent"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "lololol get trolled XD",
-                    "DstId": 2,
-                    "DstName": "message"
-                  }
-                ],
-                "UserData": {
-                  "Title": "On Prop Break",
-                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
-                  "ReferencedComponentTypes": []
-                }
-              },
+              "OnPropBreak": null,
               "OnPropTakeDamage": null,
               "ShowCreatedComponents": false
             }
@@ -5223,7 +5125,7 @@
     {
       "Id": "b4e71a06-4f41-4fd9-b43f-1d10c7e511c6",
       "Name": "Shelf (6)",
-      "Position": "1654.482,-8.698429,-0.00004485938",
+      "Position": "1654.482,-8.916331,-0.00004485938",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
     },
@@ -6046,6 +5948,543 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
+      "Name": "Exit Door",
+      "Position": "1854.582,396.26,0",
+      "Rotation": "-0.5,0.4999998,0.5,-0.4999999",
+      "Scale": "1.133877,1,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DoorComponent",
+          "ClosedLightColor": "1,0,0,1",
+          "CloseTarget": {
+            "_type": "gameobject",
+            "go": "1c3c0203-31d5-4aaf-949d-c2e94d4af6eb"
+          },
+          "DoorLight": {
+            "_type": "component",
+            "go": "24b306cd-4f6d-46b7-9f10-8ed71a08b358",
+            "component_type": "PointLight"
+          },
+          "DoorName": "exit_door",
+          "DoorSpeed": 5,
+          "OnClosed": null,
+          "OnClosing": null,
+          "OnOpened": null,
+          "OnOpening": null,
+          "OpenedLightColor": "0,0,1,1",
+          "OpenTarget": {
+            "_type": "gameobject",
+            "go": "072203ff-882f-4c63-8487-3a4c89bb6ea4"
+          },
+          "ShouldBeOpen": false,
+          "Shutter": {
+            "_type": "gameobject",
+            "go": "7918bdc7-a6b5-472c-a441-aa2116eff984"
+          },
+          "State": "Closed"
+        },
+        {
+          "__type": "UpdateActionComponent",
+          "Action": {
+            "Kind": "Action",
+            "Version": 3,
+            "Variables": [
+              {
+                "Name": "_this",
+                "Type": "Sandbox.Game/Sandbox.Component",
+                "Default": {
+                  "_type": "component",
+                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
+                  "component_type": "UpdateActionComponent"
+                }
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "input.pressed",
+                "UserData": {
+                  "Position": "0,96"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "if",
+                "UserData": {
+                  "Position": "160,-0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                },
+                "UserData": {
+                  "Position": "-16,-144"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "ShouldBeOpen"
+                },
+                "UserData": {
+                  "Position": "448,16"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "op.not",
+                "UserData": {
+                  "Position": "352,-80"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "ShouldBeOpen"
+                },
+                "UserData": {
+                  "Position": "208,-240"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Value": "reload",
+                "DstId": 1,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "true",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "value"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "target"
+              }
+            ],
+            "UserData": {
+              "Title": "Action",
+              "id": "fac0ff45-bf75-4402-8943-ff49c245e8a0",
+              "ReferencedComponentTypes": [
+                "package.duccsoft.ducc_hunt_2/DoorComponent"
+              ]
+            }
+          }
+        }
+      ],
+      "Children": [
+        {
+          "Id": "7918bdc7-a6b5-472c-a441-aa2116eff984",
+          "Name": "security_shutter_curtain_128",
+          "Position": "-0.00005382874,-0.00000000003137316,-0.00000000000727596",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/security_shutter/security_shutter_curtain_128.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "6dbed821-882a-4da4-8c7a-f9772e7dbad2",
+          "Name": "security_shutter_curtain_right",
+          "Position": "60.21043,108.1138,-0.2114435",
+          "Rotation": "-0.0000001788139,-0.0000001366671,-0.7071068,0.7071069",
+          "Scale": "0.8819298,1,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/security_shutter/security_shutter_curtain_right.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "8f010263-6bca-4ace-bc5a-64930b0ccb21",
+          "Name": "security_shutter_curtain_right (1)",
+          "Position": "-63.69426,108.1137,-0.2114602",
+          "Rotation": "-0.0000001788139,-0.0000001366671,-0.7071068,0.7071069",
+          "Scale": "0.8819298,1,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/security_shutter/security_shutter_curtain_right.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "c173e8ca-22c1-4b34-9e03-fb3018ddfeac",
+          "Name": "security_shutter_box_middle",
+          "Position": "0.2130809,86.85642,1.435405",
+          "Rotation": "0.7071068,0.00000008940697,-0.0000001490116,-0.7071069",
+          "Scale": "0.9986655,0.1592849,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/security_shutter/security_shutter_box_middle.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "24b306cd-4f6d-46b7-9f10-8ed71a08b358",
+          "Name": "Exit Light",
+          "Position": "4.11225,130.6892,84.88733",
+          "Rotation": "0.5000002,-0.4999999,-0.5000002,-0.5000001",
+          "Scale": "0.8819298,1,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "PointLight",
+              "Attenuation": 1,
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "1,0,0,1",
+              "Radius": 200,
+              "Shadows": true
+            }
+          ]
+        },
+        {
+          "Id": "072203ff-882f-4c63-8487-3a4c89bb6ea4",
+          "Name": "Open Target",
+          "Position": "-0.00002987277,94.71316,-0.00002258137",
+          "Enabled": true
+        },
+        {
+          "Id": "1c3c0203-31d5-4aaf-949d-c2e94d4af6eb",
+          "Name": "Close Target",
+          "Position": "-0.00005729073,0,-0.00002296204",
+          "Enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "115fafc0-14a3-473e-a7ae-35a530f8451c",
+      "Name": "Text",
+      "Position": "1848.611,394.1177,119.05",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 172,
+          "Scale": 0.1,
+          "Text": "EXIT"
+        }
+      ]
+    },
+    {
+      "Id": "8d1a4970-73c5-4881-b6b5-8aa92a0d1268",
+      "Name": "Obama\u0027s Embrace",
+      "Position": "1951.995,383.8934,-3.832812",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "f66cff2b-fc61-4b43-b8a8-177781a97c9e",
+          "Name": "Text (2)",
+          "Position": "94.63904,-50.4483,53.13057",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "TextRenderer",
+              "Color": "1,1,1,1",
+              "FontFamily": "Poppins",
+              "FontSize": 172,
+              "Scale": 0.1,
+              "Text": "Well done.\nThe level\u0027s over.\nHold ESC to Quit"
+            }
+          ]
+        },
+        {
+          "Id": "4921c27f-834f-436a-8a77-c5bcbb9fa6a7",
+          "Name": "Plane",
+          "Position": "95.29639,46.70065,49.77344",
+          "Rotation": "0.7071067,-0.0000001376788,-0.7071068,0.0000001376788",
+          "Scale": "1,2.167648,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ed8be990-48e0-4609-a41c-499fa9a5925d",
+          "Name": "Plane (1)",
+          "Position": "-83.98767,46.70065,49.77344",
+          "Rotation": "0,-0.7071067,-0.0000002753576,-0.7071068",
+          "Scale": "1,2.167648,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__enabled": false,
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "925a2b17-9593-4ab3-88a0-97abf1b53fd7",
+          "Name": "Plane (1)",
+          "Position": "95.29639,-148.8976,49.77344",
+          "Rotation": "0.7071067,-0.0000001376788,-0.7071068,0.0000001376788",
+          "Scale": "1,1.749503,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "2572092c-69ae-47a0-a8e1-9b5060c3da57",
+          "Name": "Plane (1)",
+          "Position": "-83.98767,-148.8976,49.77344",
+          "Rotation": "0,-0.7071067,-0.0000002753576,-0.7071068",
+          "Scale": "1,1.749503,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "c06e30de-b58b-49db-8ac2-bc99daa18346",
+          "Name": "Plane (2)",
+          "Position": "5.623047,-223.8038,49.77344",
+          "Rotation": "0.4999999,-0.5,-0.5000002,-0.4999999",
+          "Scale": "0.9838705,1.806729,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "f6e0ea8f-698a-4825-9c73-b502dea711a5",
+          "Name": "Plane (3)",
+          "Position": "5.623047,154.7415,49.77344",
+          "Rotation": "0.5000001,0.4999998,-0.5,0.5000001",
+          "Scale": "0.9838705,1.806729,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "a36c3c6d-8c1c-43e7-bd2b-b20b1cb6cd99",
+          "Name": "Plane (4)",
+          "Position": "5.623047,-42.22528,97.87726",
+          "Rotation": "0.0000002980232,0.9999999,-0.0000001264406,0.0000001264405",
+          "Scale": "1.926645,4.196737,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "e110e83b-cd02-4ee5-a362-ec7147441db5",
+          "Name": "Plane (4)",
+          "Position": "5.623047,-42.22528,4.766703",
+          "Rotation": "-0.0000001264405,0.0000000682666,-0.9999999,0.0000002980233",
+          "Scale": "1.926645,4.196737,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": "materials/obama.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,-0.125",
+              "IsTrigger": false,
+              "Scale": "100,100,0.25",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -6071,10 +6510,11 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-08T17:21:09.8501277-07:00",
+  "LastSaved": "2024-02-09T06:38:57.4910358-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
+    "duccsoft.obama",
     "facepunch.concrete_simple",
     "facepunch.fence_panel_gate",
     "facepunch.floor_rough_asphalt",
@@ -6082,6 +6522,9 @@
     "facepunch.office_desk",
     "facepunch.pallet",
     "facepunch.scaffolding_tube_a",
+    "facepunch.security_shutter_box_middle",
+    "facepunch.security_shutter_curtain_128",
+    "facepunch.security_shutter_curtain_right",
     "facepunch.trolley",
     "facepunch.tv",
     "facepunch.wooden_crate_02",

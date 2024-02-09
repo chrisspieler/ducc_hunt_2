@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "307df406-6dd6-43f4-bdec-5f313a5c46af",
+    "Id": "01cc2086-ae77-46b7-bc5d-d27ecebec25a",
     "Name": "car_explosion",
     "Enabled": true,
     "Components": [
@@ -11,7 +11,7 @@
     ],
     "Children": [
       {
-        "Id": "48936f16-6215-4b30-8ced-dee24e5f748f",
+        "Id": "33f2a44a-c6e7-486c-ac2e-c46f64e9332e",
         "Name": "Burst",
         "Position": "0,0,8.484565",
         "Rotation": "0,-0.7071068,0,0.7071069",
@@ -170,7 +170,7 @@
         ]
       },
       {
-        "Id": "67da6097-d264-46ff-b4e5-bb8525090546",
+        "Id": "c2cee98d-0484-4c6c-88c2-f01d494cc4ee",
         "Name": "Spray",
         "Position": "0.0000006595394,0,3.688415",
         "Rotation": "0,-0.7071067,0,0.7071068",
@@ -337,7 +337,7 @@
         ]
       },
       {
-        "Id": "b9e1b432-74de-4cab-ab3a-22526986d3bd",
+        "Id": "b4d98a14-946f-4fc3-9ed2-7b98665313af",
         "Name": "Smoke",
         "Position": "0,0,10",
         "Enabled": true,
@@ -482,7 +482,7 @@
         ]
       },
       {
-        "Id": "d504f933-9341-4694-a34f-b7d470c03c2b",
+        "Id": "a8f46e89-b26b-4c93-a68e-26364fa92134",
         "Name": "Spark",
         "Position": "0,0,20",
         "Enabled": true,
@@ -638,7 +638,7 @@
         ]
       },
       {
-        "Id": "b498520b-de6b-4fd9-8610-13fd2559dcae",
+        "Id": "85a6687f-4f1b-4552-a79a-2c04b672f54d",
         "Name": "Plane",
         "Components": [
           {
@@ -661,7 +661,7 @@
         ]
       },
       {
-        "Id": "4e15a164-a82b-4ebc-bade-a3e770b4a861",
+        "Id": "b1607c25-7759-4b48-97b1-7d00d5d14c35",
         "Name": "Point Light",
         "Enabled": true,
         "Components": [
@@ -686,7 +686,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "facepunch.explosion_emission001",
     "facepunch.smoke002"
   ]
 }
