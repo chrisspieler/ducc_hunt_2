@@ -13,6 +13,7 @@ public sealed class DistractionSource : Component
 		var tr = Scene.Trace
 			.Sphere( Radius, Transform.Position, Transform.Position )
 			.WithAnyTags( "human" )
+			.UseHitboxes( true )
 			.RunAll();
 		foreach( var hit in tr )
 		{
