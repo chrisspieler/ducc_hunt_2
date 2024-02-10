@@ -1,4 +1,5 @@
 ﻿using Sandbox;
+using Sandbox.Utility;
 using System;
 using System.Diagnostics;
 
@@ -136,17 +137,23 @@ public class Knife : Equipment
 			Log.Info( $"stabbed {other.Name}" );
 		}
 		DuccSound.Play( StabSound, other.Transform.Position );
-		if ( other.Tags.Has( "fleshy" ) && FleshHitParticles.IsValid() )
+		var damage = new DamageInfo()
 		{
-			var hitParticles = FleshHitParticles.Clone();
-			hitParticles.Parent = other;
-			hitParticles.Transform.Position = Transform.Position;
-			hitParticles.Transform.Rotation = Rotation.LookAt( tr.Normal );
-			var model = other.Components.Get<SkinnedModelRenderer>();
+			Attacker = DuccController.Instance.GameObject,
+			Weapon = GameObject,
+			Damage = 100,
+			Hitbox = tr.Hitbox,
+			Shape = tr.Shape,
+			Position = tr.HitPosition,
+			IsExplosion = false
+		};
+		other.DoDamage( damage );
+		// Assume that anything that has a hitbox is made of flesh and blood.
+		if ( tr.Hitbox is not null && FleshHitParticles.IsValid() )
+		{
 			var material = Material.Load( "materials/decals/blood-impact.vmat" );
-			RagdollDecal.FromTrace( tr, model, material, new Vector3( 5f ) );
+			HitEffects.MakeHitEffect( tr, FleshHitParticles, material, new Vector3( 5f ) );
 		}
-		DoDamage( other );
 		BeginIdle();
 	}
 

@@ -208,7 +208,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "1000,-50,0.0001198065",
+      "Position": "-100,-50,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -1315,7 +1315,11 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": "data/equipment/weapon_death/weapon_death.equip",
+                        "Value": {
+                          "$type": "Simple",
+                          "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
+                          "Value": "data/equipment/weapon_death/weapon_death.equip"
+                        },
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -2332,7 +2336,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Yellow",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Yellow"
+                },
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3679,7 +3691,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Red",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Red"
+                },
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -6660,7 +6680,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-09T09:28:13.2567364-07:00",
+  "LastSaved": "2024-02-10T05:46:16.44898-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
