@@ -1,0 +1,11 @@
+PictureInPicturePanel
+{
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	.camera {
+		height: 360px;
+		width: 640px;
+		background-size: contain;
+	}
+}

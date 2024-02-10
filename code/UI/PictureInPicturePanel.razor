@@ -1,0 +1,42 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+    <div class="camera" @ref=CameraPanel></div>
+</root>
+
+@code
+{
+    [Property] public CameraComponent ActiveCamera { get; set; }
+
+    private Panel CameraPanel { get; set; }
+    private Texture PanelTexture { get; set; }
+
+    protected override int BuildHash() => System.HashCode.Combine( ActiveCamera );
+
+    protected override void OnUpdate()
+    {
+        if ( !ActiveCamera.IsValid() || CameraPanel is null )
+        {
+            CameraPanel?.Style?.SetBackgroundImage( (string)null );
+            return;
+        }
+
+        EnsureTexture();
+        ActiveCamera.RenderToTexture( PanelTexture );
+    }
+
+    private void EnsureTexture()
+    {
+        if ( PanelTexture is null )
+        {
+            var size = new Vector2(320, 180);
+            PanelTexture = Texture.CreateRenderTarget("PictureInPicture", ImageFormat.RGBA8888, size);
+        }
+        if ( CameraPanel.Style.BackgroundImage != PanelTexture )
+        {
+            CameraPanel.Style.SetBackgroundImage( PanelTexture );
+        }
+    }
+}

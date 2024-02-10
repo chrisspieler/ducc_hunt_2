@@ -51,24 +51,45 @@ public sealed class CrimeCam : Component
 		return newestCrime is not null;
 	}
 
-	private async Task ActivateCrimeCam( Crime crime)
+	private async Task ActivateCrimeCam( Crime crime, bool fullscreen = false, bool slowmo = false )
 	{
 		if ( ActiveCrime.IsValid() )
 			return;
 
 		ActiveCrime = crime;
-		Camera.Priority++;
-		Scene.TimeScale = 0.05f;
+		if ( fullscreen )
+		{
+			Camera.Priority++;
+		}
+		else
+		{
+			GameUI.SetCameraFeed( Camera ); 
+		}
+		if ( slowmo )
+		{
+			Scene.TimeScale = 0.05f;
+		}
 		RealTimeUntil _unpause = 2f;
 		while ( !_unpause )
 		{
 			await Task.Frame();
 		}
-		Scene.TimeScale = 1f;
-		Camera.Priority--;
+		if ( slowmo )
+		{
+			Scene.TimeScale = 1f;
+		}
+		if ( fullscreen )
+		{
+			Camera.Priority--;
+		}
+		else
+		{
+			GameUI.SetCameraFeed( null );
+		}
 		ActiveCrime.Destroy();
 		ActiveCrime = null;
 	}
+
 
 	protected override void DrawGizmos()
 	{

@@ -8,6 +8,7 @@ public sealed class GameUI : Component
 	[Property] public MegaToastPanel MegaToast { get; set; }
 	[Property] public BossHealthPanel BossPanel { get; set; }
 	[Property] public VictoryPanel Victory { get; set; }
+	[Property] public PictureInPicturePanel CameraFeed { get; set; }
 
 	public static GameUI Instance { get; private set; }
 
@@ -80,5 +81,13 @@ public sealed class GameUI : Component
 		victory.VictoryText = text;
 		victory.TextColor = color;
 		victory.Enabled = true;
+	}
+
+	[ActionGraphNode( "menu.setcamerafeed" )]
+	[Title( "Set Camera Feed" ), Group( "Menu" )]
+	public static void SetCameraFeed( CameraComponent camera )
+	{
+		var cameraFeed = Instance.CameraFeed;
+		cameraFeed.ActiveCamera = camera;
 	}
 }
