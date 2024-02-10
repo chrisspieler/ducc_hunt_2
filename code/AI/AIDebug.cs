@@ -86,12 +86,13 @@ public static class AIDebug
 		var tr = scene.Trace
 			.Ray( ray, 2000f )
 			.Radius( 10f )
+			.UseHitboxes( true )
 			.WithTag( AISystem.ActorTag )
 			.Run();
 		if ( !tr.Hit || !tr.GameObject.Components.TryGet<ActorComponent>( out var actor, FindMode.EverythingInSelfAndAncestors ) )
 			return null;
 
-		body = tr.Body;
+		body = tr.Body ?? tr.Hitbox.Body;
 		return actor;
 	}
 
