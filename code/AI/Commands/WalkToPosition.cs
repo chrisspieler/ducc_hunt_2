@@ -25,6 +25,12 @@ public class WalkToPosition : BehaviorNode
 			return BehaviorResult.Success;
 		}
 
+		if ( _currentPathIndex >= _pathPositions.Count )
+		{
+			StopActor( actor );
+			return BehaviorResult.Failure;
+		}
+
 		if ( !_pathPositions.Any() )
 		{
 			var sw = Stopwatch.StartNew();
@@ -66,7 +72,7 @@ public class WalkToPosition : BehaviorNode
 	{
 		var human = actor.Components.Get<HumanController>();
 		var targetPos = _pathPositions[_currentPathIndex];
-		if ( human.Transform.Position.Distance( targetPos ) <= 1f )
+		if ( human.Transform.Position.Distance( targetPos ) <= 4f )
 		{
 			_currentPathIndex++;
 			AIDebug.Log( actor, $"Reached index {_currentPathIndex}" );

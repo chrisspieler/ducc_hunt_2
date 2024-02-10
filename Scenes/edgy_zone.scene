@@ -356,10 +356,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "Get",
                       "_isStatic": false,
-                      "T": "Sandbox.Game/Sandbox.Prop"
+                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_name": "Get",
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -370,8 +370,8 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Kill"
+                      "_name": "Kill",
+                      "_type": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -958,7 +958,7 @@
           "GroundAngle": 45,
           "Height": 64,
           "IgnoreLayers": "",
-          "Radius": 16,
+          "Radius": 8,
           "StepHeight": 18
         },
         {
@@ -1237,8 +1237,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.GameObject",
-                          "_name": "Transform"
+                          "_name": "Transform",
+                          "_type": "Sandbox.Game/Sandbox.GameObject"
                         },
                         "UserData": {
                           "Position": "-112,80"
@@ -1248,8 +1248,8 @@
                         "Id": 5,
                         "Type": "property.get",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.GameTransform",
-                          "_name": "Position"
+                          "_name": "Position",
+                          "_type": "Sandbox.Game/Sandbox.GameTransform"
                         },
                         "UserData": {
                           "Position": "96,80"
@@ -2237,7 +2237,7 @@
           "GroundAngle": 45,
           "Height": 64,
           "IgnoreLayers": "",
-          "Radius": 16,
+          "Radius": 8,
           "StepHeight": 18
         },
         {
@@ -2315,8 +2315,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "Open"
+                  "_name": "Open",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "912,0"
@@ -2331,7 +2331,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Yellow",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Yellow"
+                },
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3517,8 +3525,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String",
-                  "_name": "ToLower"
+                  "_name": "ToLower",
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -3529,8 +3537,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String",
-                  "_name": "Contains"
+                  "_name": "Contains",
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -3677,7 +3685,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Red",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Red"
+                },
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -5032,7 +5048,7 @@
     {
       "Id": "089326fb-9de4-415b-a45c-761f4ebb3daa",
       "Name": "Shelf (20)",
-      "Position": "1738.874,836.7664,-0.00004485938",
+      "Position": "1717.294,836.7664,-0.00004485938",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
@@ -5072,7 +5088,7 @@
     {
       "Id": "732a7414-7bfb-4d8b-ba6f-85048ec03eb8",
       "Name": "Shelf (19)",
-      "Position": "1738.874,979.9346,-0.00004485938",
+      "Position": "1717.294,979.9346,-0.00004485938",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
@@ -5112,7 +5128,7 @@
     {
       "Id": "33ca4880-39cd-45dc-9478-9c729a18b53d",
       "Name": "Shelf (18)",
-      "Position": "1738.874,1123.48,-0.00004485938",
+      "Position": "1717.294,1123.48,-0.00004485938",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
@@ -5152,7 +5168,7 @@
     {
       "Id": "0afadc15-e0a0-491b-b890-9da1913935d5",
       "Name": "Shelf (17)",
-      "Position": "1738.874,1266.753,-0.00004485938",
+      "Position": "1717.294,1266.753,-0.00004485938",
       "Rotation": "0,0,0.7071067,0.7071068",
       "Enabled": true,
       "__Prefab": "prefabs/props/store_shelf.prefab"
@@ -5667,8 +5683,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5678,8 +5694,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5796,8 +5812,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5807,8 +5823,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5925,8 +5941,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5936,8 +5952,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -6084,8 +6100,7 @@
                 "Type": "Sandbox.Game/Sandbox.Component",
                 "Default": {
                   "_type": "component",
-                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
-                  "component_type": "DoorComponent"
+                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28"
                 }
               }
             ],
@@ -6122,8 +6137,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "ShouldBeOpen"
+                  "_name": "ShouldBeOpen",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "448,16"
@@ -6140,8 +6155,8 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "ShouldBeOpen"
+                  "_name": "ShouldBeOpen",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "208,-240"
@@ -6602,7 +6617,7 @@
     {
       "Id": "2291fab2-e94a-40db-8989-40e8141f25f3",
       "Name": "Breakable Shopping Cart (4)",
-      "Position": "1832.346,1174.094,-0.000004812749",
+      "Position": "1835.148,1118.688,-0.00002114619",
       "Rotation": "0,0,-0.7015106,0.712659",
       "Tags": "destructible",
       "Enabled": true,
@@ -6650,7 +6665,7 @@
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
       "AgentHeight": 64,
-      "AgentRadius": 16,
+      "AgentRadius": 18,
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "human,player,pickup",
@@ -6659,7 +6674,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-10T06:00:42.6310144-07:00",
+  "LastSaved": "2024-02-10T06:20:26.4902972-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
