@@ -31,9 +31,9 @@ public sealed class Decompose : Component
 			RotClothing();
 			Skeletonize();
 			RemoveDecals();
+			DisableHitboxes();
 			OnDecomposed?.Invoke();
 			Destroy();
-			Tags.Remove( "fleshy" );
 		}
 	}
 
@@ -78,6 +78,15 @@ public sealed class Decompose : Component
 		foreach ( var decal in toDestroy )
 		{
 			decal.GameObject.Destroy();
+		}
+	}
+
+	private void DisableHitboxes()
+	{
+		var toDisable = Components.Get<ModelHitboxes>( FindMode.EnabledInSelfAndDescendants );
+		if ( toDisable != null )
+		{
+			toDisable.Enabled = false;
 		}
 	}
 

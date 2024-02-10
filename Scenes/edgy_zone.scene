@@ -208,7 +208,7 @@
     {
       "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
       "Name": "ducc",
-      "Position": "-100,-50,0.0001198065",
+      "Position": "1000,-50,0.0001198065",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -356,10 +356,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Get",
-                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_isStatic": false
+                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_name": "Get"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -369,9 +369,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Kill",
+                      "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false
+                      "_name": "Kill"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -1024,7 +1024,6 @@
           "Id": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
           "Name": "Body",
           "Position": "0,0,0",
-          "Tags": "fleshy",
           "Enabled": true,
           "Components": [
             {
@@ -1238,8 +1237,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Transform",
-                          "_type": "Sandbox.Game/Sandbox.GameObject"
+                          "_type": "Sandbox.Game/Sandbox.GameObject",
+                          "_name": "Transform"
                         },
                         "UserData": {
                           "Position": "-112,80"
@@ -1249,8 +1248,8 @@
                         "Id": 5,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Position",
-                          "_type": "Sandbox.Game/Sandbox.GameTransform"
+                          "_type": "Sandbox.Game/Sandbox.GameTransform",
+                          "_name": "Position"
                         },
                         "UserData": {
                           "Position": "96,80"
@@ -1315,11 +1314,7 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": {
-                          "$type": "Simple",
-                          "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
-                          "Value": "data/equipment/weapon_death/weapon_death.equip"
-                        },
+                        "Value": null,
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -2319,9 +2314,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Open",
+                  "_isStatic": false,
                   "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_isStatic": false
+                  "_name": "Open"
                 },
                 "UserData": {
                   "Position": "912,0"
@@ -2455,7 +2450,6 @@
           "Id": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
           "Name": "Body",
           "Position": "0,0,0",
-          "Tags": "fleshy",
           "Enabled": true,
           "Components": [
             {
@@ -3530,9 +3524,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "ToLower",
+                  "_isStatic": false,
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_name": "ToLower"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -3542,9 +3536,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Contains",
+                  "_isStatic": false,
                   "_type": "System.Private.CoreLib/System.String",
-                  "_isStatic": false
+                  "_name": "Contains"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -5689,8 +5683,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5700,8 +5694,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5818,8 +5812,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5829,8 +5823,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5947,8 +5941,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5958,8 +5952,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -6143,8 +6137,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "ShouldBeOpen",
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "ShouldBeOpen"
                 },
                 "UserData": {
                   "Position": "448,16"
@@ -6161,8 +6155,8 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "ShouldBeOpen",
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "ShouldBeOpen"
                 },
                 "UserData": {
                   "Position": "208,-240"
@@ -6680,7 +6674,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-10T05:46:16.44898-07:00",
+  "LastSaved": "2024-02-10T05:55:39.7100343-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
