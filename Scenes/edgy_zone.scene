@@ -372,10 +372,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "T": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Get",
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                      "_isStatic": false,
+                      "_name": "Get"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -385,9 +385,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_isStatic": false,
-                      "_name": "Kill",
-                      "_type": "Sandbox.Game/Sandbox.Prop"
+                      "_name": "Kill"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -1253,8 +1253,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Transform",
-                          "_type": "Sandbox.Game/Sandbox.GameObject"
+                          "_type": "Sandbox.Game/Sandbox.GameObject",
+                          "_name": "Transform"
                         },
                         "UserData": {
                           "Position": "-112,80"
@@ -1264,8 +1264,8 @@
                         "Id": 5,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Position",
-                          "_type": "Sandbox.Game/Sandbox.GameTransform"
+                          "_type": "Sandbox.Game/Sandbox.GameTransform",
+                          "_name": "Position"
                         },
                         "UserData": {
                           "Position": "96,80"
@@ -2330,9 +2330,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
                   "_isStatic": false,
-                  "_name": "Open",
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                  "_name": "Open"
                 },
                 "UserData": {
                   "Position": "960,0"
@@ -3540,9 +3540,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_type": "System.Private.CoreLib/System.String",
                   "_isStatic": false,
-                  "_name": "ToLower",
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_name": "ToLower"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -3552,9 +3552,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_type": "System.Private.CoreLib/System.String",
                   "_isStatic": false,
-                  "_name": "Contains",
-                  "_type": "System.Private.CoreLib/System.String"
+                  "_name": "Contains"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -5699,8 +5699,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5710,8 +5710,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5828,8 +5828,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5839,8 +5839,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -5957,8 +5957,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-224,112"
@@ -5968,8 +5968,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-48,112"
@@ -6153,8 +6153,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "ShouldBeOpen",
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "ShouldBeOpen"
                 },
                 "UserData": {
                   "Position": "448,16"
@@ -6171,8 +6171,8 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "ShouldBeOpen",
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_name": "ShouldBeOpen"
                 },
                 "UserData": {
                   "Position": "208,-240"
@@ -6690,7 +6690,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-12T07:42:32.1808819-07:00",
+  "LastSaved": "2024-02-12T08:57:22.0968151-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

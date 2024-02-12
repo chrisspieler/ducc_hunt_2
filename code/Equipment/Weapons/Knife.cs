@@ -1,7 +1,6 @@
 ﻿using Sandbox;
 using Sandbox.Utility;
 using System;
-using System.Diagnostics;
 
 public class Knife : Equipment
 {
@@ -28,7 +27,7 @@ public class Knife : Equipment
 	private Vector3 _attackPosition;
 	private float _attackCharge;
 
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		switch ( _state )
 		{
@@ -44,7 +43,6 @@ public class Knife : Equipment
 		}
 		Transform.Position = Transform.Position.LerpTo( _targetPosition, Time.Delta * 15f );
 		Transform.Rotation = _targetRotation;
-		//Transform.Rotation = Rotation.Slerp( Transform.Rotation, _targetRotation, Time.Delta * 15f );
 	}
 
 	private void BeginIdle()
@@ -116,12 +114,13 @@ public class Knife : Equipment
 	private bool UpdateStabDetection()
 	{
 		var ray = new Ray( StabPoint.Transform.Position, StabPoint.Transform.Rotation.Forward );
+		// I can't use BBox trace because it is axis-aligned. I can't use capsules because the
+		// hit postition isn't accurate. So instead I make a grid of ray traces and use the
+		// first one that hits.
 		var stabTrace = Scene.Trace
-			.Ray( ray, 17f )
-			.Size( 3f )
 			.WithoutTags( "player" )
 			.UseHitboxes( true )
-			.Run();
+			.RunGridTrace( ray, 17f, 2, 1f, Debug );
 		if ( stabTrace.Hit )
 		{
 			HandleStab( stabTrace );
@@ -155,15 +154,5 @@ public class Knife : Equipment
 			HitEffects.MakeHitEffect( tr, FleshHitParticles, material, new Vector3( 5f ) );
 		}
 		BeginIdle();
-	}
-
-	private void DoDamage( GameObject go )
-	{
-		if ( !go.Components.TryGet<IDamageable>( out var damageable, FindMode.EverythingInSelfAndAncestors ) )
-			return;
-
-		// TODO: Add hitbox support.
-		var damageInfo = new DamageInfo( 100, DuccController.Instance.GameObject, GameObject );
-		damageable.OnDamage( damageInfo );
 	}
 }
