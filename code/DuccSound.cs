@@ -6,11 +6,9 @@ namespace Sandbox
 {
 	public class DuccSound : GameObjectSystem
 	{
-		[ConCmd("duccsound_status")]
-		public static void PrintSoundStatus()
-		{
-			Log.Info( "Active sounds: " + Current._activeSounds.Count );
-		}
+		[ConVar( "duccsound_debug" )]
+		public static bool Debug { get; set; } = false;
+		
 
 		public DuccSound( Scene scene ) : base( scene )
 		{
@@ -36,7 +34,7 @@ namespace Sandbox
 			hSnd.Volume = GetEffectiveVolume( duccSnd );
 			hSnd.Pitch = GetEffectivePitch( duccSnd );
 			Current._activeSounds.Add( duccSnd, hSnd );
-			return new DuccSoundHandle( hSnd );
+			return duccSnd;
 		}
 
 		[ActionGraphNode( "duccsound.play" )]
@@ -66,6 +64,7 @@ namespace Sandbox
 				}
 				hSnd.Update();
 			}
+			DebugPrint();
 		}
 
 		private static float GetEffectiveVolume( DuccSoundHandle sound )
@@ -76,6 +75,26 @@ namespace Sandbox
 		private static float GetEffectivePitch( DuccSoundHandle sound )
 		{
 			return sound.Pitch * Math.Max( GameManager.ActiveScene.TimeScale, 0.3f );
+		}
+
+		public static void DebugPrint()
+		{
+			if ( !Debug )
+				return;
+
+			using ( Gizmo.Scope( "DuccSound Debug" ) )
+			{
+				Gizmo.Draw.Color = Color.Yellow;
+				var message = $"Active sounds: {Current._activeSounds.Count}";
+				Gizmo.Draw.ScreenText( message, new Vector2( Screen.Width / 2, 25 ), "Consolas" );
+				Gizmo.Draw.Color = Color.White;
+				Gizmo.Draw.IgnoreDepth = true;
+				foreach ( var (dSnd, hSnd) in Current._activeSounds )
+				{
+					message = $"Volume: {dSnd.Volume} -> {hSnd.Volume}, Pitch: {dSnd.Pitch} -> {hSnd.Pitch}";
+					Gizmo.Draw.Text( message, new Transform( hSnd.Position ), "Consolas" );
+				}
+			}
 		}
 	}
 
@@ -94,7 +113,6 @@ namespace Sandbox
 			set
 			{
 				_volume = value;
-				_hSnd.Volume = value;
 			}
 		}
 		private float _volume = 1f;
@@ -104,7 +122,6 @@ namespace Sandbox
 			set
 			{
 				_pitch = value;
-				_hSnd.Pitch = value;
 			}
 		}
 		private float _pitch = 1f;
