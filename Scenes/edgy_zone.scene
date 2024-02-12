@@ -251,7 +251,7 @@
           "GroundAngle": 45,
           "Height": 12,
           "IgnoreLayers": "",
-          "Radius": 6,
+          "Radius": 3,
           "StepHeight": 4
         },
         {
@@ -335,7 +335,6 @@
           "Id": "4064752c-8013-4f6a-a3e8-d441cb661d0b",
           "Name": "Prop Breaker",
           "Position": "6.330047,0,9.073989",
-          "Enabled": true,
           "Components": [
             {
               "__type": "SphereCollider",
@@ -372,9 +371,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_name": "Get",
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_isStatic": false,
                       "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
@@ -1213,7 +1212,7 @@
               "Components": [
                 {
                   "__type": "Prop",
-                  "Health": 400,
+                  "Health": 100,
                   "IsStatic": true,
                   "Model": "models/sbox_props/trolley/trolley.vmdl",
                   "OnPropBreak": {
@@ -4124,33 +4123,6 @@
           ]
         },
         {
-          "Id": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
-          "Name": "Breakable Shopping Cart",
-          "Position": "687.1552,41.51773,-19.01736",
-          "Rotation": "0,0,0.7933534,-0.6087612",
-          "Tags": "destructible",
-          "Enabled": true,
-          "__Prefab": "prefabs/props/shopping_cart.prefab"
-        },
-        {
-          "Id": "4b4e890c-ac33-424a-a41e-ea1fa4a6b107",
-          "Name": "Breakable Shopping Cart (7)",
-          "Position": "1010.441,295.2332,-19.01739",
-          "Rotation": "0,0,0.0000002682209,-0.9999999",
-          "Tags": "destructible",
-          "Enabled": true,
-          "__Prefab": "prefabs/props/shopping_cart.prefab"
-        },
-        {
-          "Id": "d876d85c-d448-400b-ad3c-edff56741c2d",
-          "Name": "Breakable Shopping Cart (7)",
-          "Position": "1138.775,-97.62949,-19.01736",
-          "Rotation": "0,0,0.9914448,-0.1305261",
-          "Tags": "destructible",
-          "Enabled": true,
-          "__Prefab": "prefabs/props/shopping_cart.prefab"
-        },
-        {
           "Id": "3969f3f9-645e-4d9d-ab7c-e8af8f17e39f",
           "Name": "trolley (6)",
           "Position": "185.0729,-108.8181,-19.01735",
@@ -4933,63 +4905,6 @@
       ]
     },
     {
-      "Id": "85470798-d067-44ae-85e7-5f6cb9853124",
-      "Name": "fence_panel_gate (1)",
-      "Position": "903.7242,46.8639,-8.9575",
-      "Rotation": "0,0,-0.7071067,0.7071068",
-      "Scale": "1.145344,1,1.296405",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Prop",
-          "Health": 0,
-          "IsStatic": true,
-          "Model": "models/props/temporary_fencing/fence_panel_gate.vmdl",
-          "OnPropBreak": null,
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
-        }
-      ],
-      "Children": [
-        {
-          "Id": "e9625d63-0b51-49e0-aa20-1b414f1ea9bc",
-          "Name": "Text",
-          "Position": "67.66234,-2.826918,51.97531",
-          "Rotation": "0,0,0.7071067,0.7071068",
-          "Scale": "0.8731001,1,0.7713639",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "TextRenderer",
-              "Color": "1,1,1,1",
-              "FontFamily": "Poppins",
-              "FontSize": 63.23,
-              "Scale": 0.2,
-              "Text": "WORK IN PROGRESS"
-            }
-          ]
-        },
-        {
-          "Id": "66823189-3308-4d72-b354-53f000d2f686",
-          "Name": "Text (3)",
-          "Position": "67.66234,-2.826918,28.63486",
-          "Rotation": "0,0,0.7071067,0.7071068",
-          "Scale": "0.8731001,1,0.7713639",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "TextRenderer",
-              "Color": "1,1,1,1",
-              "FontFamily": "Poppins",
-              "FontSize": 25.64,
-              "Scale": 0.2,
-              "Text": "Short game, I know. \nBut there will be more later. I prooooomise.\n:-)"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "Id": "22583873-6fb4-40f5-81a9-447ce3a0e55a",
       "Name": "Envmap",
       "Position": "630.2137,-25.3322,79.79255",
@@ -5636,7 +5551,7 @@
       "Components": [
         {
           "__type": "Prop",
-          "Health": 0,
+          "Health": 400,
           "IsStatic": true,
           "Model": "models/sports_car.vmdl",
           "OnPropBreak": {
@@ -5765,7 +5680,7 @@
       "Components": [
         {
           "__type": "Prop",
-          "Health": 0,
+          "Health": 400,
           "IsStatic": true,
           "Model": "models/sports_car.vmdl",
           "OnPropBreak": {
@@ -5894,7 +5809,7 @@
       "Components": [
         {
           "__type": "Prop",
-          "Health": 0,
+          "Health": 400,
           "IsStatic": true,
           "Model": "models/sports_car.vmdl",
           "OnPropBreak": {
@@ -6354,22 +6269,6 @@
       "Enabled": true,
       "Children": [
         {
-          "Id": "f66cff2b-fc61-4b43-b8a8-177781a97c9e",
-          "Name": "Text (2)",
-          "Position": "94.63904,-50.4483,53.13057",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "TextRenderer",
-              "Color": "1,1,1,1",
-              "FontFamily": "Poppins",
-              "FontSize": 172,
-              "Scale": 0.1,
-              "Text": "Well done.\nThe level\u0027s over.\nHold ESC to Quit"
-            }
-          ]
-        },
-        {
           "Id": "4921c27f-834f-436a-8a77-c5bcbb9fa6a7",
           "Name": "Plane",
           "Position": "95.29639,46.70065,49.77344",
@@ -6585,68 +6484,203 @@
               "Surface": null
             }
           ]
+        },
+        {
+          "Id": "85470798-d067-44ae-85e7-5f6cb9853124",
+          "Name": "fence_panel_gate (1)",
+          "Position": "-81.2373,87.71893,-5.124726",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Scale": "1.145344,1,1.296405",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/props/temporary_fencing/fence_panel_gate.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ],
+          "Children": [
+            {
+              "Id": "e9625d63-0b51-49e0-aa20-1b414f1ea9bc",
+              "Name": "Text",
+              "Position": "67.66234,-2.826918,51.97531",
+              "Rotation": "0,0,0.7071067,0.7071068",
+              "Scale": "0.8731001,1,0.7713639",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "TextRenderer",
+                  "Color": "1,1,1,1",
+                  "FontFamily": "Poppins",
+                  "FontSize": 63.23,
+                  "Scale": 0.2,
+                  "Text": "WORK IN PROGRESS"
+                }
+              ]
+            },
+            {
+              "Id": "66823189-3308-4d72-b354-53f000d2f686",
+              "Name": "Text (3)",
+              "Position": "67.66234,-2.826918,28.63486",
+              "Rotation": "0,0,0.7071067,0.7071068",
+              "Scale": "0.8731001,1,0.7713639",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "TextRenderer",
+                  "Color": "1,1,1,1",
+                  "FontFamily": "Poppins",
+                  "FontSize": 25.64,
+                  "Scale": 0.2,
+                  "Text": "Short game, I know. \nThere is more to come.\nCheck back occasionally, okay?"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
-      "Id": "209fee9a-cdc2-4c38-bd4f-083a2358efc3",
-      "Name": "Breakable Shopping Cart",
-      "Position": "1607.795,76.57416,-0.000006509669",
+      "Id": "afc60945-aeec-4219-8169-b18d92ee0e06",
+      "Name": "Checkstand",
+      "Position": "1008.51,-169.2854,0",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/checkstand.prefab"
+    },
+    {
+      "Id": "fc6b6944-ea2b-4f46-87bd-5bebf4ba3e4a",
+      "Name": "Checkstand (2)",
+      "Position": "1008.51,129.4868,0",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/checkstand.prefab"
+    },
+    {
+      "Id": "fd5df3bc-633e-4dae-b5f5-f7ada03c32be",
+      "Name": "Checkstand (3)",
+      "Position": "1008.51,311.0545,0",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/checkstand.prefab"
+    },
+    {
+      "Id": "1798c9c8-f6b3-4fb4-a05c-297dc36299b7",
+      "Name": "Checkstand (1)",
+      "Position": "1008.51,-334.4687,0",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/checkstand.prefab"
+    },
+    {
+      "Id": "4452cd58-a51f-4ba5-87be-18e42257dc0c",
+      "Name": "cash_register",
+      "Position": "1043.866,-166.934,33.81487",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/cash_register.prefab"
+    },
+    {
+      "Id": "56622c21-4d5c-4c72-b1ef-7d304054d186",
+      "Name": "cash_register (2)",
+      "Position": "1043.866,131.8382,33.81487",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/cash_register.prefab"
+    },
+    {
+      "Id": "0c276994-dc50-431b-8b20-0f282412813f",
+      "Name": "cash_register (3)",
+      "Position": "1043.866,313.4059,33.81487",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/cash_register.prefab"
+    },
+    {
+      "Id": "0b73237d-73c9-44c2-9eac-c78bcc7021ba",
+      "Name": "cash_register (1)",
+      "Position": "1043.866,-334.1154,33.81487",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/cash_register.prefab"
+    },
+    {
+      "Id": "20935009-6cd7-43aa-88b7-f7d362229981",
+      "Name": "shopping_cart",
+      "Position": "1296.281,-380.3245,0.00001816663",
       "Rotation": "0,0,-0.1305262,0.9914449",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
     },
     {
-      "Id": "114c840f-e03c-46e0-81e0-d248b1775a7e",
-      "Name": "Breakable Shopping Cart (2)",
-      "Position": "1675.508,666.1896,-0.000006509669",
-      "Rotation": "0,0,0.9268675,0.3753887",
+      "Id": "88208760-2c13-4d69-b02c-8118c6605553",
+      "Name": "shopping_cart (1)",
+      "Position": "1588.328,-132.2637,-0.00001357336",
+      "Rotation": "0,0,0.1305262,0.9914449",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
     },
     {
-      "Id": "cf78ed8e-2ca9-4dde-b892-8afec7756176",
-      "Name": "Breakable Shopping Cart (3)",
-      "Position": "1584.805,1208.269,-0.000009702313",
-      "Rotation": "0,0,0.7126589,0.7015107",
+      "Id": "412f20c0-6b27-4acf-ae91-73e611ed659f",
+      "Name": "shopping_cart (2)",
+      "Position": "1584.253,110.3656,0.0000090794",
+      "Rotation": "0,0,-0.9914449,0.1305264",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
     },
     {
-      "Id": "2291fab2-e94a-40db-8989-40e8141f25f3",
-      "Name": "Breakable Shopping Cart (4)",
-      "Position": "1835.148,1118.688,-0.00002114619",
-      "Rotation": "0,0,-0.7015106,0.712659",
+      "Id": "7233d26e-ddcf-4fd1-94b0-a2f4e98a3fc1",
+      "Name": "shopping_cart (3)",
+      "Position": "1378.97,526.8083,0.00001330013",
+      "Rotation": "0,0,-0.7071067,0.7071069",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
     },
     {
-      "Id": "d5a79d45-2937-4f51-9ff5-f984bef4ba38",
-      "Name": "Breakable Shopping Cart (1)",
-      "Position": "1319.478,870.9622,-0.0000338024",
-      "Rotation": "0,0,0.7933532,0.6087614",
+      "Id": "8e96fed1-8544-4622-826e-63529b11f0df",
+      "Name": "shopping_cart (4)",
+      "Position": "856.7091,314.9998,0.00001226315",
+      "Rotation": "0,0,0.7071067,0.7071068",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
     },
     {
-      "Id": "2d4b9db4-d484-47e6-a0db-a040ccc2d042",
-      "Name": "Breakable Shopping Cart (5)",
-      "Position": "935.6219,852.3391,-0.0000761593",
-      "Rotation": "0,0,-0.6087611,0.7933532",
+      "Id": "78ca3401-7dd5-47f4-92d5-179a7e16dcc5",
+      "Name": "shopping_cart (5)",
+      "Position": "866.6533,1016.234,0.00007366837",
+      "Rotation": "0,0,-0.4999999,0.8660254",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
     },
     {
-      "Id": "56508fd4-a60c-426d-842c-13875a259340",
-      "Name": "Breakable Shopping Cart (6)",
-      "Position": "768.0657,1409.553,-0.00007786536",
-      "Rotation": "0,0,0.1305264,-0.9914447",
+      "Id": "709e35be-cc66-4cbb-8412-8b7695d608a2",
+      "Name": "shopping_cart (6)",
+      "Position": "1236.474,758.4565,0.000124498",
+      "Rotation": "0,0,-0.8660254,0.5000001",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "1a041392-3cd6-45dc-b16e-1ac2d302794e",
+      "Name": "shopping_cart (7)",
+      "Position": "1425.677,1244.293,0.00008224167",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Tags": "destructible",
+      "Enabled": true,
+      "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "26b3e4e2-cc9d-4372-a3a5-2a6ebfbc8e01",
+      "Name": "shopping_cart (8)",
+      "Position": "1823.804,1315.278,0.00008658545",
+      "Rotation": "0,0,0.7933534,0.6087615",
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
@@ -6666,7 +6700,7 @@
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
       "AgentHeight": 64,
-      "AgentRadius": 18,
+      "AgentRadius": 16,
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "human,player,pickup",
@@ -6675,7 +6709,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-12T10:04:21.0299382-07:00",
+  "LastSaved": "2024-02-12T11:20:45.3210513-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

@@ -1,16 +1,14 @@
 {
   "RootObject": {
     "Id": "4d65210d-58e7-467d-898c-3f41d1a9fc06",
-    "Name": "Breakable Shopping Cart",
-    "Position": "687.1552,41.51773,-19.01736",
-    "Rotation": "0,0,0.7933534,-0.6087612",
+    "Name": "shopping_cart",
     "Tags": "destructible",
     "Enabled": true,
     "Components": [
       {
         "__type": "Prop",
         "Health": 400,
-        "IsStatic": true,
+        "IsStatic": false,
         "Model": "models/sbox_props/trolley/trolley.vmdl",
         "OnPropBreak": {
           "Kind": "Action",
@@ -107,6 +105,27 @@
         },
         "OnPropTakeDamage": null,
         "ShowCreatedComponents": false
+      }
+    ],
+    "Children": [
+      {
+        "Id": "480aee8c-8064-49bc-a2e7-cf0b29af43e9",
+        "Name": "Ducc Catcher",
+        "Position": "-19.4323,0,8.901539",
+        "Rotation": "0,0.258819,0,0.9659258",
+        "Scale": "0.02901269,0.2918296,0.07862318",
+        "Tags": "blockplayer",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "BoxCollider",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false,
+            "Surface": null
+          }
+        ]
       }
     ]
   },

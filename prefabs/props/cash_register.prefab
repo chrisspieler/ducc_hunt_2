@@ -1,0 +1,216 @@
+{
+  "RootObject": {
+    "Id": "4452cd58-a51f-4ba5-87be-18e42257dc0c",
+    "Name": "cash_register",
+    "Position": "1043.866,-179.1542,33.81487",
+    "Rotation": "0,0,0.7071067,0.7071068",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Prop",
+        "Health": 100,
+        "IsStatic": true,
+        "Model": "models/city_props/cash_register/cash_register.vmdl",
+        "OnPropBreak": {
+          "Kind": "Action",
+          "Version": 3,
+          "Variables": [
+            {
+              "Name": "_this",
+              "Type": "Sandbox.Game/Sandbox.Component",
+              "Default": {
+                "_type": "component",
+                "go": "4452cd58-a51f-4ba5-87be-18e42257dc0c",
+                "component_type": "Prop"
+              }
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "duccsound.play",
+              "UserData": {
+                "Position": "272,-64"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "scene.getobject",
+              "UserData": {
+                "Position": "-336,96"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property.get",
+              "Properties": {
+                "_name": "Transform",
+                "_type": "Sandbox.Game/Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "-160,96"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property.get",
+              "Properties": {
+                "_name": "Position",
+                "_type": "Sandbox.Game/Sandbox.GameTransform"
+              },
+              "UserData": {
+                "Position": "32,96"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "scene.instantiate",
+              "UserData": {
+                "Position": "272,48"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "vec3.new",
+              "UserData": {
+                "Position": "48,176"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "item.spawnpickup",
+              "UserData": {
+                "Position": "528,-64"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "304,288"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 1,
+              "DstName": "position"
+            },
+            {
+              "Value": "sounds/damage/cash_register_destruction.sound",
+              "DstId": 1,
+              "DstName": "sound"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "position"
+            },
+            {
+              "Value": "effects/car_explosion.prefab",
+              "DstId": 5,
+              "DstName": "prefab"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "scale"
+            },
+            {
+              "Value": 0.3,
+              "DstId": 6,
+              "DstName": "x"
+            },
+            {
+              "Value": 0.3,
+              "DstId": 6,
+              "DstName": "y"
+            },
+            {
+              "Value": 0.3,
+              "DstId": 6,
+              "DstName": "z"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "Value": "data/powerups/cash_stack/cash_stack.pickup",
+              "DstId": 7,
+              "DstName": "data"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 8,
+              "DstName": "a"
+            },
+            {
+              "Value": {
+                "$type": "Simple",
+                "Type": "Sandbox.System/Vector3",
+                "Value": "0,0,50"
+              },
+              "DstId": 8,
+              "DstName": "b"
+            }
+          ],
+          "UserData": {
+            "Title": "On Prop Break",
+            "id": "71749090-66ec-40e5-a72f-4e0364d495fe",
+            "ReferencedComponentTypes": []
+          }
+        },
+        "OnPropTakeDamage": null,
+        "ShowCreatedComponents": false
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "svin.cash_register"
+  ]
+}
