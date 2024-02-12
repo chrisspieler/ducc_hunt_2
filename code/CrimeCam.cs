@@ -28,7 +28,9 @@ public sealed class CrimeCam : Component
 		if ( !TryGetNearbyCrime( out var crime ) )
 			return;
 
-		_ = ActivateCrimeCam( crime );
+		var isBoss = crime.Victim.IsValid() && crime.Victim.Components.TryGet<BossEnemy>( out _ );
+		var isBigCrime = isBoss && crime.CrimeType == CrimeType.Murder;
+		_ = ActivateCrimeCam( crime, isBigCrime, isBigCrime );
 	}
 
 	private bool TryGetNearbyCrime( out Crime newestCrime )
@@ -51,7 +53,7 @@ public sealed class CrimeCam : Component
 		return newestCrime is not null;
 	}
 
-	private async Task ActivateCrimeCam( Crime crime, bool fullscreen = false, bool slowmo = false )
+	private async Task ActivateCrimeCam( Crime crime, bool fullscreen, bool slowmo )
 	{
 		if ( ActiveCrime.IsValid() )
 			return;

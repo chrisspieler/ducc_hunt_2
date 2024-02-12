@@ -87,7 +87,9 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		SetRagdollState( true );
 		Actor.Abort();
 		Renderer.SceneModel.UseAnimGraph = false;
-		Components.Create<Crime>();
+		var crime = Components.Create<Crime>();
+		crime.Victim = GameObject;
+		crime.CrimeType = CrimeType.Murder;
 		var decomp = Renderer.Components.Create<Decompose>();
 		decomp.StartTime = 1f;
 		decomp.IgnoreTime = 5f;

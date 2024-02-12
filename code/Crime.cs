@@ -4,6 +4,9 @@ public sealed class Crime : Component
 {
 	[ConVar( "crime_debug" )]
 	public static bool Debug { get; set; }
+
+	[Property] public GameObject Victim { get; set; }
+	[Property] public CrimeType CrimeType { get; set; }
 	[Property] public float SecondsSinceCrime => _crimeStart.Relative;
 	private TimeSince _crimeStart;
 
@@ -21,6 +24,9 @@ public sealed class Crime : Component
 			GameObject.Destroy();
 		}
 	}
+}
 
-
+public enum CrimeType
+{
+	Murder
 }
