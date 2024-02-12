@@ -372,10 +372,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "T": "Sandbox.Game/Sandbox.Prop",
                       "_isStatic": false,
-                      "_name": "Get"
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_name": "Get",
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -1330,7 +1330,7 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": null,
+                        "Value": "data/equipment/weapon_death/weapon_death.equip",
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -2347,15 +2347,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Yellow"
-                },
+                "Value": "Yellow",
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3701,15 +3693,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Red"
-                },
+                "Value": "Red",
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -6116,7 +6100,8 @@
                 "Type": "Sandbox.Game/Sandbox.Component",
                 "Default": {
                   "_type": "component",
-                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28"
+                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
+                  "component_type": "DoorComponent"
                 }
               }
             ],
@@ -6690,7 +6675,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-12T08:57:22.0968151-07:00",
+  "LastSaved": "2024-02-12T10:04:21.0299382-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
