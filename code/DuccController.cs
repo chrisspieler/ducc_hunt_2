@@ -5,10 +5,11 @@ public sealed partial class DuccController : Component
 	[Property] public CharacterController Character { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Property] public GameObject Body { get; set; }
-	[Property] public float Speed { get; set; }
+	[Property] public float Speed { get; set; } = 80f;
 
 	[Property] public DistractionSource Distraction { get; set; }
 
+	private Vector3 LastDirectionInput { get; set; }
 	public Vector3 WishVelocity { get; set; }
 
 	public static DuccController Instance { get; private set; }
@@ -50,11 +51,10 @@ public sealed partial class DuccController : Component
 		Character.Accelerate( WishVelocity );
 		Character.ApplyFriction( 4.0f, 150f );
 		Character.Move();
-		
-		if ( !Character.Velocity.IsNearlyZero( 60f ) )
-		{
-			Body.Transform.Rotation = Rotation.LookAt( Character.Velocity.WithZ( 0f ).Normal, Vector3.Up );
-		}
+
+
+		var targetRotation = Rotation.LookAt( LastDirectionInput.WithZ( 0f ).Normal, Vector3.Up );
+		Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 20f );
 
 		if ( Transform.Position.z < -200f )
 		{
@@ -68,7 +68,12 @@ public sealed partial class DuccController : Component
 		var inputLength = Input.AnalogMove.ClampLength( 0f, 1f).Length;
 		var eyeRotation = Scene.Camera.Transform.Rotation;
 		var inputDir = (Input.AnalogMove * eyeRotation).WithZ(0f).Normal;
+		if ( !Input.AnalogMove.IsNearlyZero() )
+		{
+			LastDirectionInput = inputDir;
+		}
 		var inputVec = inputDir * inputLength;
-		WishVelocity = inputVec * Speed;
+		var speedFactor = Input.Down( "run" ) ? 1.5f : 1.0f;
+		WishVelocity = inputVec * Speed * speedFactor;
 	}
 }

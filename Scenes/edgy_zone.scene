@@ -153,7 +153,8 @@
             },
             {
               "__type": "FollowCam",
-              "FollowDistance": 30,
+              "FollowDistance": 25,
+              "InterpolateRotation": false,
               "LerpSpeed": 100,
               "SlerpSpeed": 20,
               "Target": {
@@ -272,7 +273,7 @@
             "go": "fb562d64-11df-4499-8741-5b300b258fa1"
           },
           "OnEquipmentAdded": null,
-          "Speed": 175,
+          "Speed": 80,
           "WeaponHoldPoint": {
             "_type": "gameobject",
             "go": "b85fa407-dc34-429c-b170-b0363dbc5d3a"
@@ -303,7 +304,7 @@
         {
           "Id": "2aaa7f06-8439-4b61-8ac8-a8e00ca522bb",
           "Name": "Eye",
-          "Position": "0,0,15",
+          "Position": "0,0,12",
           "Enabled": true
         },
         {
@@ -371,9 +372,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Get",
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_name": "Get",
                       "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
@@ -384,8 +385,8 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_name": "Kill"
                     },
                     "UserData": {
@@ -1212,7 +1213,7 @@
               "Components": [
                 {
                   "__type": "Prop",
-                  "Health": 100,
+                  "Health": 400,
                   "IsStatic": true,
                   "Model": "models/sbox_props/trolley/trolley.vmdl",
                   "OnPropBreak": {
@@ -1329,7 +1330,11 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": "data/equipment/weapon_death/weapon_death.equip",
+                        "Value": {
+                          "$type": "Simple",
+                          "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
+                          "Value": "data/equipment/weapon_death/weapon_death.equip"
+                        },
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -2329,8 +2334,8 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
                   "_isStatic": false,
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
                   "_name": "Open"
                 },
                 "UserData": {
@@ -2346,7 +2351,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Yellow",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Yellow"
+                },
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3531,8 +3544,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "ToLower"
                 },
                 "UserData": {
@@ -3543,8 +3556,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "Contains"
                 },
                 "UserData": {
@@ -3692,7 +3705,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Red",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Red"
+                },
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -4416,6 +4437,7 @@
             {
               "__type": "FollowCam",
               "FollowDistance": 0,
+              "InterpolateRotation": true,
               "LerpSpeed": 0,
               "SlerpSpeed": 2,
               "Target": {
@@ -4504,6 +4526,7 @@
             {
               "__type": "FollowCam",
               "FollowDistance": 0,
+              "InterpolateRotation": true,
               "LerpSpeed": 0,
               "SlerpSpeed": 2,
               "Target": {
@@ -6015,8 +6038,7 @@
                 "Type": "Sandbox.Game/Sandbox.Component",
                 "Default": {
                   "_type": "component",
-                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
-                  "component_type": "DoorComponent"
+                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28"
                 }
               }
             ],
@@ -6709,7 +6731,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-12T11:20:45.3210513-07:00",
+  "LastSaved": "2024-02-12T15:06:19.9320948-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",

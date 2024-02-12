@@ -5,7 +5,8 @@ public sealed class FollowCam : Component
 	[Property] public GameObject Target { get; set; }
 	[Property] public float FollowDistance { get; set; }
 	[Property] public float LerpSpeed { get; set; } = 20f;
-	[Property] public float SlerpSpeed { get; set; } = 5f;
+	[Property] public bool InterpolateRotation { get; set; } = true;
+	[Property, ShowIf("InterpolateRotation", true)] public float SlerpSpeed { get; set; } = 5f;
 
 	public Angles EyeAngles { get; set; }
 
@@ -36,6 +37,8 @@ public sealed class FollowCam : Component
 	{
 		var direction = (Target.Transform.Position - Transform.Position).Normal;
 		var targetRotation = Rotation.LookAt( direction, Vector3.Up );
-		Transform.Rotation = Rotation.Slerp( Transform.Rotation, targetRotation, Time.Delta * SlerpSpeed );
+		Transform.Rotation = InterpolateRotation
+			? Rotation.Slerp( Transform.Rotation, targetRotation, Time.Delta * SlerpSpeed )
+			: targetRotation;
 	}
 }
