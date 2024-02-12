@@ -7,10 +7,12 @@ public sealed class FollowCam : Component
 	[Property] public float LerpSpeed { get; set; } = 20f;
 	[Property] public bool InterpolateRotation { get; set; } = true;
 	[Property, ShowIf("InterpolateRotation", true)] public float SlerpSpeed { get; set; } = 5f;
+	[Property] bool Collide { get; set; } = false;
+	[Property, ShowIf("Collide", true)] TagSet CollisionIgnoreTags { get; set; } = new();
 
 	public Angles EyeAngles { get; set; }
 
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		if ( !Target.IsValid() )
 			return;
@@ -29,8 +31,25 @@ public sealed class FollowCam : Component
 	private void UpdatePosition()
 	{
 		var orbitRay = new Ray( Target.Transform.Position, -EyeAngles.Forward );
-		var targetPosition = orbitRay.Project( FollowDistance );
+		var targetPosition = GetTargetPosition( orbitRay );
 		Transform.Position = Transform.Position.LerpTo( targetPosition, Time.Delta * LerpSpeed );
+	}
+
+	private Vector3 GetTargetPosition( Ray orbitRay )
+	{
+		if ( !Collide )
+			return orbitRay.Project( FollowDistance );
+
+		var tr = Scene.Trace
+			.Ray( orbitRay, FollowDistance )
+			.WithoutTags( CollisionIgnoreTags )
+			.Run();
+		var targetPosition = tr.EndPosition;
+		if ( tr.Hit )
+		{
+			targetPosition = orbitRay.Project( tr.Distance - 1f );
+		}
+		return targetPosition;
 	}
 
 	private void UpdateRotation()

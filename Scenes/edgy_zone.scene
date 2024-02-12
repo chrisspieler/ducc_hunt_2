@@ -149,13 +149,15 @@
               "TargetEye": "None",
               "Viewport": "0,0,1,1",
               "ZFar": 10000,
-              "ZNear": 10
+              "ZNear": 0.1
             },
             {
               "__type": "FollowCam",
+              "Collide": true,
+              "CollisionIgnoreTags": "player",
               "FollowDistance": 25,
               "InterpolateRotation": false,
-              "LerpSpeed": 100,
+              "LerpSpeed": 25,
               "SlerpSpeed": 20,
               "Target": {
                 "_type": "gameobject",
@@ -4436,6 +4438,8 @@
             },
             {
               "__type": "FollowCam",
+              "Collide": false,
+              "CollisionIgnoreTags": "",
               "FollowDistance": 0,
               "InterpolateRotation": true,
               "LerpSpeed": 0,
@@ -4525,6 +4529,8 @@
             },
             {
               "__type": "FollowCam",
+              "Collide": false,
+              "CollisionIgnoreTags": "",
               "FollowDistance": 0,
               "InterpolateRotation": true,
               "LerpSpeed": 0,
@@ -6731,7 +6737,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-12T15:06:19.9320948-07:00",
+  "LastSaved": "2024-02-12T15:22:56.2316988-07:00",
   "__references": [
     "agentab.starrynight",
     "duccsoft.duck_decoration",
