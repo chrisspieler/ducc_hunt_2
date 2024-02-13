@@ -3,12 +3,14 @@ using Sandbox;
 using Sandbox.Citizen;
 using System;
 
-public sealed partial class HumanController : Component, Component.IDamageable
+public sealed partial class HumanController : Component, Component.IDamageable, IRagdoll
 {
 	public delegate void DamageDelegate( DamageInfo damage );
 
 	[Property] public DamageDelegate OnDamaged { get; set; }
 	[Property] public Action<GameObject> OnKilled { get; set; }
+	[Property] public Action OnRagdollStart { get; set; }
+	[Property] public Action OnRagdollEnd { get; set; }
 
 	[Property] public CharacterController Character { get; set; }
 	[Property] public SkinnedModelRenderer Renderer { get; set; }
@@ -105,16 +107,20 @@ public sealed partial class HumanController : Component, Component.IDamageable
 		OnKilled?.Invoke( GameObject );
 	}
 
-	private void SetRagdollState( bool enabled )
+	public void SetRagdollState( bool enabled )
 	{
 		var collider = Renderer.Components.Get<Collider>( FindMode.EverythingInSelf );
 		if ( collider.IsValid() )
 		{
 			collider.Enabled = !enabled;
 		}
-		var physics = Renderer.Components.GetOrCreate<ModelPhysics>( FindMode.EverythingInSelf );
-		physics.Enabled = enabled;
-		physics.Renderer = Renderer;
+		var physics = Components.GetAll<ModelPhysics>( FindMode.EverythingInSelfAndDescendants );
+		foreach( var phys in physics )
+		{
+			phys.Enabled = enabled;
+		}
 		IsRagdoll = enabled;
+		var action = enabled ? OnRagdollStart : OnRagdollEnd;
+		action?.Invoke();
 	}
 }

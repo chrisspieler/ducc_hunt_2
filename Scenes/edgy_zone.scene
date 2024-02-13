@@ -375,9 +375,9 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
+                      "T": "Sandbox.Game/Sandbox.Prop",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "Get",
-                      "T": "Sandbox.Game/Sandbox.Prop"
+                      "_name": "Get"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -460,7 +460,8 @@
     {
       "Id": "9cf2749a-abb4-44c0-96d9-e5e6146f7c28",
       "Name": "Text (1)",
-      "Position": "775.6945,110.3549,93.89991",
+      "Position": "641.1136,481.809,143.3937",
+      "Rotation": "0,0,0.7071067,0.7071068",
       "Scale": "1,0.5873044,0.4987805",
       "Enabled": true,
       "Components": [
@@ -470,7 +471,24 @@
           "FontFamily": "Times New Roman",
           "FontSize": 64.5,
           "Scale": 0.25,
-          "Text": "SHOPLIFTING IS FOLLY.\nYOU WILL PAY."
+          "Text": "WE APPRECIATE OUR\nNON-SHOPLIFTERS"
+        }
+      ]
+    },
+    {
+      "Id": "54b32bd7-1aad-48d0-a3cf-b4a3245fb65d",
+      "Name": "Text (2)",
+      "Position": "776.6592,121.718,73.68025",
+      "Scale": "1,0.5873044,0.4987805",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "0,0,0,1",
+          "FontFamily": "Times New Roman",
+          "FontSize": 64.5,
+          "Scale": 0.25,
+          "Text": "SMILE - YOU\u0027RE ON CAMERA!"
         }
       ]
     },
@@ -1003,6 +1021,8 @@
           "MoveDirection": "0,0,0",
           "OnDamaged": null,
           "OnKilled": null,
+          "OnRagdollEnd": null,
+          "OnRagdollStart": null,
           "Renderer": {
             "_type": "component",
             "go": "e82c4afb-7fdc-4a23-b29b-259def43a89b",
@@ -1332,11 +1352,7 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": {
-                          "$type": "Simple",
-                          "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
-                          "Value": "data/equipment/weapon_death/weapon_death.equip"
-                        },
+                        "Value": "data/equipment/weapon_death/weapon_death.equip",
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -2353,15 +2369,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Yellow"
-                },
+                "Value": "Yellow",
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -2422,6 +2430,8 @@
               "ReferencedComponentTypes": []
             }
           },
+          "OnRagdollEnd": null,
+          "OnRagdollStart": null,
           "Renderer": {
             "_type": "component",
             "go": "dc8a7516-a5c8-4bc2-959b-6089ba7309a2",
@@ -3707,15 +3717,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Red"
-                },
+                "Value": "Red",
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -4329,8 +4331,8 @@
     {
       "Id": "e11e1688-c680-4a04-a3e7-f20af979fc30",
       "Name": "Overturned Trolly",
-      "Position": "525.065,169.9021,39.46834",
-      "Rotation": "-0.7056191,0.7056193,-0.0458418,-0.04584213",
+      "Position": "738.4874,433.5773,39.46835",
+      "Rotation": "0.2582746,0.9638937,0.01677955,-0.06262123",
       "Enabled": true,
       "Components": [
         {
@@ -4580,7 +4582,7 @@
     {
       "Id": "167277ee-ed50-40b5-a650-044330f69747",
       "Name": "tv",
-      "Position": "760.8324,80.00238,33.21685",
+      "Position": "760.8324,80.00238,32.00003",
       "Rotation": "0.00000000000001065814,-0.00000005217163,-0.9999999,0.0000001788139",
       "Scale": "1.295826,1.295826,1.295826",
       "Enabled": true,
@@ -5574,7 +5576,7 @@
     {
       "Id": "35d54b07-b646-4533-a731-8e079973165b",
       "Name": "sports_car (9)",
-      "Position": "330.5761,191.5204,0.5982295",
+      "Position": "330.5761,190.8859,0.5982295",
       "Tags": "destructible",
       "Enabled": true,
       "Components": [
@@ -6044,7 +6046,8 @@
                 "Type": "Sandbox.Game/Sandbox.Component",
                 "Default": {
                   "_type": "component",
-                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28"
+                  "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
+                  "component_type": "DoorComponent"
                 }
               }
             ],
@@ -6712,6 +6715,77 @@
       "Tags": "destructible",
       "Enabled": true,
       "__Prefab": "prefabs/props/shopping_cart.prefab"
+    },
+    {
+      "Id": "23c14aab-8c4e-4baa-a593-83e4e20b2a72",
+      "Name": "Freak",
+      "Position": "633.4863,383.7013,-0.000002148618",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Tags": "human",
+      "Enabled": true,
+      "__Prefab": "prefabs/freak.prefab"
+    },
+    {
+      "Id": "2b4332c8-b474-4bc7-a503-bd90dd2e09f6",
+      "Name": "Jail Fence",
+      "Position": "640.2587,292.2868,0.3446004",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "c3ec205e-ee29-4f23-b7ee-6b0316cd3705",
+          "Name": "metal_fence_post",
+          "Position": "0,0,0",
+          "Scale": "2,2,1.1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/sbox_props/metal_fences/metal_fence_panel/metal_fence_post.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "a202bd5a-960b-463f-8180-a54274de6cc5",
+          "Name": "fence_128 (1)",
+          "Position": "-70.63318,1.079559,-0.3446004",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/newcity/fence/fence_128.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        },
+        {
+          "Id": "02903025-6e90-4165-a5e6-eaf118b7e9cd",
+          "Name": "fence_128",
+          "Position": "70.77777,1.079468,-0.3446004",
+          "Rotation": "0,0,0.7071067,0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Prop",
+              "Health": 0,
+              "IsStatic": true,
+              "Model": "models/newcity/fence/fence_128.vmdl",
+              "OnPropBreak": null,
+              "OnPropTakeDamage": null,
+              "ShowCreatedComponents": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -6727,9 +6801,9 @@
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
-      "AgentHeight": 64,
+      "AgentHeight": 72,
       "AgentRadius": 16,
-      "AgentStepSize": 18,
+      "AgentStepSize": 8,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "human,player,pickup",
       "IncludedBodies": ""
@@ -6737,15 +6811,17 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-12T15:22:56.2316988-07:00",
+  "LastSaved": "2024-02-13T09:22:13.5952306-07:00",
   "__references": [
     "agentab.starrynight",
+    "brax.fence_128",
     "duccsoft.duck_decoration",
     "duccsoft.obama",
     "facepunch.concrete_simple",
     "facepunch.fence_panel_gate",
     "facepunch.floor_rough_asphalt",
     "facepunch.metal_fence_panel",
+    "facepunch.metal_fence_post",
     "facepunch.office_desk",
     "facepunch.pallet",
     "facepunch.scaffolding_tube_a",
