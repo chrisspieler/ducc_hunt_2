@@ -81,7 +81,6 @@
             {
               "Id": "ede5b750-995d-4ce9-9f4d-c8fb598b461d",
               "Name": "Crosshair",
-              "Enabled": true,
               "Components": [
                 {
                   "__type": "CrosshairPanel"
@@ -375,9 +374,9 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_name": "Get",
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "Get"
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -6811,7 +6810,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-13T09:22:13.5952306-07:00",
+  "LastSaved": "2024-02-13T10:05:51.3069263-07:00",
   "__references": [
     "agentab.starrynight",
     "brax.fence_128",
