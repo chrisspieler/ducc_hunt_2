@@ -17,6 +17,7 @@ public sealed partial class DuccController : Component
 	protected override void OnStart()
 	{
 		Character ??= Components.GetOrCreate<CharacterController>();
+		Body ??= GameObject;
 		Instance = this;
 	}
 

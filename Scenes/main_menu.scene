@@ -79,6 +79,8 @@
         },
         {
           "__type": "GameUI",
+          "BossPanel": null,
+          "CameraFeed": null,
           "MegaToast": {
             "_type": "component",
             "go": "4d1a959e-8737-4412-bbed-42d55a05c876",
@@ -88,7 +90,8 @@
             "_type": "component",
             "go": "b48c848f-ef12-4045-8918-25a7aac03732",
             "component_type": "ModalPanel"
-          }
+          },
+          "Victory": null
         }
       ],
       "Children": [
@@ -124,12 +127,16 @@
                   ],
                   "Message": "Hello, Mr. President. It\u0027s an honor to meet you!",
                   "OnClose": {
-                    "Kind": "Action",
-                    "Version": 3,
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Close",
+                      "id": "502079b0-e268-4551-a905-0081fad134f9",
+                      "ReferencedComponentTypes": []
+                    },
                     "Variables": [
                       {
                         "Name": "_this",
-                        "Type": "Sandbox.Game/Sandbox.Component",
+                        "Type": "Component",
                         "Default": {
                           "_type": "component",
                           "go": "b48c848f-ef12-4045-8918-25a7aac03732",
@@ -162,12 +169,7 @@
                         "DstId": 1,
                         "DstName": "message"
                       }
-                    ],
-                    "UserData": {
-                      "Title": "On Close",
-                      "id": "502079b0-e268-4551-a905-0081fad134f9",
-                      "ReferencedComponentTypes": []
-                    }
+                    ]
                   },
                   "Title": "ducc says:"
                 }
@@ -269,11 +271,23 @@
     "NetworkFrequency": 30,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
   },
   "Title": "main_menu",
   "Description": "",
-  "LastSaved": "2024-02-01T04:41:01.9013871-07:00",
+  "LastSaved": "2024-02-15T15:14:57.0201773-07:00",
   "__references": [
     "dopamine.starmap",
     "duccsoft.duck_decoration"

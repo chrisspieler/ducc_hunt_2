@@ -1,0 +1,127 @@
+{
+  "RootObject": {
+    "Id": "d2c6d7b3-41c5-43e3-9e54-22e1fb83460f",
+    "Name": "Screen",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ScreenPanel",
+        "AutoScreenScale": true,
+        "Opacity": 1,
+        "Scale": 1,
+        "ZIndex": 100
+      },
+      {
+        "__type": "GameUI",
+        "BossPanel": {
+          "_type": "component",
+          "go": "7ffcb206-19dd-49b4-b9df-63a87e104819",
+          "component_type": "BossHealthPanel"
+        },
+        "CameraFeed": {
+          "_type": "component",
+          "go": "397035b5-81e6-4754-bffe-f2fd4cea14b6",
+          "component_type": "PictureInPicturePanel"
+        },
+        "MegaToast": {
+          "_type": "component",
+          "go": "6cb4a335-0dad-4f64-ab3c-81e71a1d8ef0",
+          "component_type": "MegaToastPanel"
+        },
+        "Modal": {
+          "_type": "component",
+          "go": "283864e0-a386-438c-8c3a-4ac2227b3806",
+          "component_type": "ModalPanel"
+        },
+        "Victory": {
+          "_type": "component",
+          "go": "89206e4d-9bcf-4e98-85e6-5b7867decad9",
+          "component_type": "VictoryPanel"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "Id": "283864e0-a386-438c-8c3a-4ac2227b3806",
+        "Name": "Modal",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModalPanel",
+            "__enabled": false,
+            "Choices": [
+              "Ok"
+            ],
+            "Message": "Sample Text",
+            "OnClose": null,
+            "Title": null
+          }
+        ]
+      },
+      {
+        "Id": "6cb4a335-0dad-4f64-ab3c-81e71a1d8ef0",
+        "Name": "MegaToast",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "MegaToastPanel",
+            "__enabled": false,
+            "DefaultDuration": 3,
+            "Message": "Hello World!"
+          }
+        ]
+      },
+      {
+        "Id": "ede5b750-995d-4ce9-9f4d-c8fb598b461d",
+        "Name": "Crosshair",
+        "Components": [
+          {
+            "__type": "CrosshairPanel"
+          }
+        ]
+      },
+      {
+        "Id": "7ffcb206-19dd-49b4-b9df-63a87e104819",
+        "Name": "Boss Health",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "BossHealthPanel",
+            "BossName": "",
+            "HealthPercent": 0.5
+          }
+        ]
+      },
+      {
+        "Id": "89206e4d-9bcf-4e98-85e6-5b7867decad9",
+        "Name": "Victory",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "VictoryPanel",
+            "__enabled": false,
+            "FadeOutStartTime": 3,
+            "FadeOutTime": 3,
+            "TextColor": "Yellow",
+            "VictoryText": "YOU\u0027RE WINNER !"
+          }
+        ]
+      },
+      {
+        "Id": "397035b5-81e6-4754-bffe-f2fd4cea14b6",
+        "Name": "Picture in Picture",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "PictureInPicturePanel",
+            "ActiveCamera": null
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

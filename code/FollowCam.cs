@@ -1,4 +1,5 @@
 using Sandbox;
+using System.Linq;
 
 public sealed class FollowCam : Component
 {
@@ -15,7 +16,10 @@ public sealed class FollowCam : Component
 	protected override void OnFixedUpdate()
 	{
 		if ( !Target.IsValid() )
+		{
+			Target = Scene.GetAllObjects( true ).FirstOrDefault( go => go.Tags.Has( "camera_target" ) );
 			return;
+		}
 
 		UpdateEye();
 		UpdatePosition();

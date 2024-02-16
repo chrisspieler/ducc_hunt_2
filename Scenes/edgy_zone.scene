@@ -10,122 +10,7 @@
           "Id": "d2c6d7b3-41c5-43e3-9e54-22e1fb83460f",
           "Name": "Screen",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "ScreenPanel",
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ZIndex": 100
-            },
-            {
-              "__type": "GameUI",
-              "BossPanel": {
-                "_type": "component",
-                "go": "7ffcb206-19dd-49b4-b9df-63a87e104819",
-                "component_type": "BossHealthPanel"
-              },
-              "CameraFeed": {
-                "_type": "component",
-                "go": "397035b5-81e6-4754-bffe-f2fd4cea14b6",
-                "component_type": "PictureInPicturePanel"
-              },
-              "MegaToast": {
-                "_type": "component",
-                "go": "6cb4a335-0dad-4f64-ab3c-81e71a1d8ef0",
-                "component_type": "MegaToastPanel"
-              },
-              "Modal": {
-                "_type": "component",
-                "go": "283864e0-a386-438c-8c3a-4ac2227b3806",
-                "component_type": "ModalPanel"
-              },
-              "Victory": {
-                "_type": "component",
-                "go": "89206e4d-9bcf-4e98-85e6-5b7867decad9",
-                "component_type": "VictoryPanel"
-              }
-            }
-          ],
-          "Children": [
-            {
-              "Id": "283864e0-a386-438c-8c3a-4ac2227b3806",
-              "Name": "Modal",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "ModalPanel",
-                  "__enabled": false,
-                  "Choices": [
-                    "Ok"
-                  ],
-                  "Message": "Sample Text",
-                  "OnClose": null,
-                  "Title": null
-                }
-              ]
-            },
-            {
-              "Id": "6cb4a335-0dad-4f64-ab3c-81e71a1d8ef0",
-              "Name": "MegaToast",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "MegaToastPanel",
-                  "__enabled": false,
-                  "DefaultDuration": 3,
-                  "Message": "Hello World!"
-                }
-              ]
-            },
-            {
-              "Id": "ede5b750-995d-4ce9-9f4d-c8fb598b461d",
-              "Name": "Crosshair",
-              "Components": [
-                {
-                  "__type": "CrosshairPanel"
-                }
-              ]
-            },
-            {
-              "Id": "7ffcb206-19dd-49b4-b9df-63a87e104819",
-              "Name": "Boss Health",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "BossHealthPanel",
-                  "BossName": "",
-                  "HealthPercent": 0.5
-                }
-              ]
-            },
-            {
-              "Id": "89206e4d-9bcf-4e98-85e6-5b7867decad9",
-              "Name": "Victory",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "VictoryPanel",
-                  "__enabled": false,
-                  "FadeOutStartTime": 3,
-                  "FadeOutTime": 3,
-                  "TextColor": "Yellow",
-                  "VictoryText": "YOU\u0027RE WINNER !"
-                }
-              ]
-            },
-            {
-              "Id": "397035b5-81e6-4754-bffe-f2fd4cea14b6",
-              "Name": "Picture in Picture",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "PictureInPicturePanel",
-                  "ActiveCamera": null
-                }
-              ]
-            }
-          ]
+          "__Prefab": "prefabs/game_ui.prefab"
         },
         {
           "Id": "c58d43f9-6d0a-4e69-9290-ea8b757f6fda",
@@ -133,37 +18,7 @@
           "Position": "0,0,100",
           "Tags": "maincamera",
           "Enabled": true,
-          "Components": [
-            {
-              "__type": "CameraComponent",
-              "BackgroundColor": "0,0,0,1",
-              "ClearFlags": "All",
-              "FieldOfView": 90,
-              "IsMainCamera": true,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 0.1
-            },
-            {
-              "__type": "FollowCam",
-              "Collide": true,
-              "CollisionIgnoreTags": "player",
-              "FollowDistance": 25,
-              "InterpolateRotation": false,
-              "LerpSpeed": 25,
-              "SlerpSpeed": 20,
-              "Target": {
-                "_type": "gameobject",
-                "go": "2aaa7f06-8439-4b61-8ac8-a8e00ca522bb"
-              }
-            }
-          ]
+          "__Prefab": "prefabs/third_person_camera.prefab"
         },
         {
           "Id": "67a6b791-6028-4f39-8a1c-6b27ed61cccf",
@@ -220,210 +75,6 @@
           "Scale": "100,100,0.25",
           "Static": false,
           "Surface": null
-        }
-      ]
-    },
-    {
-      "Id": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
-      "Name": "ducc",
-      "Position": "-100,-50,0.0001198065",
-      "Tags": "player",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Model": "models/duck_decoration/duck_decoration.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ModelCollider",
-          "IsTrigger": false,
-          "Model": "models/duck_decoration/duck_decoration.vmdl",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "CharacterController",
-          "Acceleration": 10,
-          "Bounciness": 0.3,
-          "GroundAngle": 45,
-          "Height": 12,
-          "IgnoreLayers": "",
-          "Radius": 3,
-          "StepHeight": 4
-        },
-        {
-          "__type": "DuccController",
-          "Body": {
-            "_type": "gameobject",
-            "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
-          },
-          "Character": null,
-          "Distraction": {
-            "_type": "component",
-            "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
-            "component_type": "DistractionSource"
-          },
-          "Eye": null,
-          "HeadHoldPoint": {
-            "_type": "gameobject",
-            "go": "fb562d64-11df-4499-8741-5b300b258fa1"
-          },
-          "OnEquipmentAdded": null,
-          "Speed": 80,
-          "WeaponHoldPoint": {
-            "_type": "gameobject",
-            "go": "b85fa407-dc34-429c-b170-b0363dbc5d3a"
-          }
-        },
-        {
-          "__type": "ScrapeNoise",
-          "Character": {
-            "_type": "component",
-            "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890",
-            "component_type": "CharacterController"
-          },
-          "ScrapeSound": "sounds/ducc/scrape.sound",
-          "VolumeFactor": 2
-        },
-        {
-          "__type": "DistractionSource",
-          "DistractionIntensity": 0,
-          "DistractionSound": "sounds/ducc/quack.sound",
-          "Radius": 300,
-          "Source": {
-            "_type": "gameobject",
-            "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
-          }
-        }
-      ],
-      "Children": [
-        {
-          "Id": "2aaa7f06-8439-4b61-8ac8-a8e00ca522bb",
-          "Name": "Eye",
-          "Position": "0,0,12",
-          "Enabled": true
-        },
-        {
-          "Id": "b85fa407-dc34-429c-b170-b0363dbc5d3a",
-          "Name": "Weapon Hold Point",
-          "Position": "0.500061,-3.966262,6.83918",
-          "Rotation": "0.1449114,-0.1308425,-0.05955962,0.9789452",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__enabled": false,
-              "BodyGroups": 5,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/ornate_medieval_dagger.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "Id": "fb562d64-11df-4499-8741-5b300b258fa1",
-          "Name": "Head Hold Point",
-          "Position": "1.2,-1,12",
-          "Enabled": true
-        },
-        {
-          "Id": "4064752c-8013-4f6a-a3e8-d441cb661d0b",
-          "Name": "Prop Breaker",
-          "Position": "6.330047,0,9.073989",
-          "Components": [
-            {
-              "__type": "SphereCollider",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Radius": 10,
-              "Static": false,
-              "Surface": null
-            },
-            {
-              "__type": "Trigger",
-              "ExcludeAny": "",
-              "IncludeAny": "destructible",
-              "OnEnter": {
-                "Kind": "Action",
-                "Version": 3,
-                "Variables": [
-                  {
-                    "Name": "_this",
-                    "Type": "Sandbox.Game/Sandbox.Component",
-                    "Default": {
-                      "_type": "component",
-                      "go": "4064752c-8013-4f6a-a3e8-d441cb661d0b",
-                      "component_type": "SphereCollider"
-                    }
-                  }
-                ],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "Get",
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "T": "Sandbox.Game/Sandbox.Prop"
-                    },
-                    "UserData": {
-                      "Position": "160,32"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Kill"
-                    },
-                    "UserData": {
-                      "Position": "352,0"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "other",
-                    "DstId": 1,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  }
-                ],
-                "UserData": {
-                  "Title": "On Enter",
-                  "id": "30072044-7c01-4753-8e3b-aea9d7499571",
-                  "ReferencedComponentTypes": []
-                }
-              },
-              "OnExit": null
-            }
-          ]
         }
       ]
     },
@@ -1065,6 +716,7 @@
           "Components": [
             {
               "__type": "SkinnedModelRenderer",
+              "AnimationGraph": null,
               "BodyGroups": 65,
               "BoneMergeTarget": null,
               "CreateBoneObjects": true,
@@ -1137,6 +789,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -1161,6 +814,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -1185,6 +839,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -1209,6 +864,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -1238,19 +894,13 @@
                   "IsStatic": true,
                   "Model": "models/sbox_props/trolley/trolley.vmdl",
                   "OnPropBreak": {
-                    "Kind": "Action",
-                    "Version": 3,
-                    "Variables": [
-                      {
-                        "Name": "_this",
-                        "Type": "Sandbox.Game/Sandbox.Component",
-                        "Default": {
-                          "_type": "component",
-                          "go": "70fa016c-e991-4ab0-afc1-9022080d4d2e",
-                          "component_type": "Prop"
-                        }
-                      }
-                    ],
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Prop Break",
+                      "id": "9c279a40-fd1e-48c3-8f97-b1543bc798c4",
+                      "ReferencedComponentTypes": []
+                    },
+                    "Variables": [],
                     "Nodes": [
                       {
                         "Id": 0,
@@ -1264,28 +914,10 @@
                         }
                       },
                       {
-                        "Id": 3,
-                        "Type": "scene.getobject",
-                        "UserData": {
-                          "Position": "-336,80"
-                        }
-                      },
-                      {
-                        "Id": 4,
-                        "Type": "property.get",
-                        "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.GameObject",
-                          "_name": "Transform"
-                        },
-                        "UserData": {
-                          "Position": "-112,80"
-                        }
-                      },
-                      {
                         "Id": 5,
                         "Type": "property.get",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.GameTransform",
+                          "_type": "GameTransform",
                           "_name": "Position"
                         },
                         "UserData": {
@@ -1312,6 +944,16 @@
                         "UserData": {
                           "Position": "368,176"
                         }
+                      },
+                      {
+                        "Id": 10,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "Transform"
+                        },
+                        "UserData": {
+                          "Position": "-64,80"
+                        }
                       }
                     ],
                     "Links": [
@@ -1333,16 +975,10 @@
                         "DstName": "sound"
                       },
                       {
-                        "SrcId": 3,
-                        "SrcName": "_result",
-                        "DstId": 4,
-                        "DstName": "target"
-                      },
-                      {
-                        "SrcId": 4,
+                        "SrcId": 10,
                         "SrcName": "_result",
                         "DstId": 5,
-                        "DstName": "target"
+                        "DstName": "_target"
                       },
                       {
                         "SrcId": 2,
@@ -1387,13 +1023,14 @@
                         "Value": 100,
                         "DstId": 9,
                         "DstName": "z"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 10,
+                        "DstName": "_target"
                       }
-                    ],
-                    "UserData": {
-                      "Title": "On Prop Break",
-                      "id": "9c279a40-fd1e-48c3-8f97-b1543bc798c4",
-                      "ReferencedComponentTypes": []
-                    }
+                    ]
                   },
                   "OnPropTakeDamage": null,
                   "ShowCreatedComponents": false
@@ -2301,19 +1938,13 @@
           "MoveDirection": "0,0,0",
           "OnDamaged": null,
           "OnKilled": {
-            "Kind": "Action",
-            "Version": 3,
-            "Variables": [
-              {
-                "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
-                "Default": {
-                  "_type": "component",
-                  "go": "73b82939-4917-4646-afd4-d182803888cb",
-                  "component_type": "CharacterController"
-                }
-              }
-            ],
+            "Version": 5,
+            "UserData": {
+              "Title": "On Killed",
+              "id": "574adf28-06c7-4464-b6a8-f5d811d212fa",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
             "Nodes": [
               {
                 "Id": 0,
@@ -2334,13 +1965,6 @@
                 }
               },
               {
-                "Id": 4,
-                "Type": "sound.play",
-                "UserData": {
-                  "Position": "480,112"
-                }
-              },
-              {
                 "Id": 5,
                 "Type": "door.find",
                 "UserData": {
@@ -2352,11 +1976,18 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_type": "DoorComponent",
                   "_name": "Open"
                 },
                 "UserData": {
                   "Position": "960,0"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "sound.playfile",
+                "UserData": {
+                  "Position": "480,112"
                 }
               }
             ],
@@ -2389,17 +2020,6 @@
                 "DstName": "seconds"
               },
               {
-                "SrcId": 3,
-                "SrcName": "_signal",
-                "DstId": 4,
-                "DstName": "_signal"
-              },
-              {
-                "Value": "sounds/ducc/mega_quacc.sound",
-                "DstId": 4,
-                "DstName": "soundEvent"
-              },
-              {
                 "SrcId": 2,
                 "SrcName": "_signal",
                 "DstId": 5,
@@ -2421,13 +2041,19 @@
                 "SrcName": "_result",
                 "DstId": 6,
                 "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "sounds/ducc/mega_quacc.vsnd",
+                "DstId": 9,
+                "DstName": "soundFile"
               }
-            ],
-            "UserData": {
-              "Title": "On Killed",
-              "id": "574adf28-06c7-4464-b6a8-f5d811d212fa",
-              "ReferencedComponentTypes": []
-            }
+            ]
           },
           "OnRagdollEnd": null,
           "OnRagdollStart": null,
@@ -2485,6 +2111,7 @@
           "Components": [
             {
               "__type": "SkinnedModelRenderer",
+              "AnimationGraph": null,
               "BodyGroups": 65,
               "BoneMergeTarget": null,
               "CreateBoneObjects": true,
@@ -2551,6 +2178,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -2575,6 +2203,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -2599,6 +2228,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -2622,6 +2252,7 @@
               "Components": [
                 {
                   "__type": "SkinnedModelRenderer",
+                  "AnimationGraph": null,
                   "BodyGroups": 18446744073709551615,
                   "BoneMergeTarget": {
                     "_type": "component",
@@ -3526,12 +3157,16 @@
           "Equipment": null,
           "Gravity": true,
           "OnPickup": {
-            "Kind": "Action",
-            "Version": 3,
+            "Version": 5,
+            "UserData": {
+              "Title": "On Pickup",
+              "id": "d4629892-c818-4f03-9467-384d33b926ed",
+              "ReferencedComponentTypes": []
+            },
             "Variables": [
               {
                 "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
+                "Type": "Component",
                 "Default": {
                   "_type": "component",
                   "go": "441c3111-208b-4763-9f5d-3eb3a12f9c8e",
@@ -3556,7 +3191,7 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String",
+                  "_type": "String",
                   "_name": "ToLower"
                 },
                 "UserData": {
@@ -3568,7 +3203,7 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "System.Private.CoreLib/System.String",
+                  "_type": "String",
                   "_name": "Contains"
                 },
                 "UserData": {
@@ -3736,12 +3371,7 @@
                 "DstId": 11,
                 "DstName": "seconds"
               }
-            ],
-            "UserData": {
-              "Title": "On Pickup",
-              "id": "d4629892-c818-4f03-9467-384d33b926ed",
-              "ReferencedComponentTypes": []
-            }
+            ]
           },
           "PickupPosition": {
             "_type": "gameobject",
@@ -4078,12 +3708,16 @@
               "IsStatic": true,
               "Model": "models/sbox_props/trolley/trolley.vmdl",
               "OnPropBreak": {
-                "Kind": "Action",
-                "Version": 3,
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Prop Break",
+                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
+                  "ReferencedComponentTypes": []
+                },
                 "Variables": [
                   {
                     "Name": "_this",
-                    "Type": "Sandbox.Game/Sandbox.Component",
+                    "Type": "Component",
                     "Default": {
                       "_type": "component",
                       "go": "1c88d8aa-9fd6-46cf-85ef-7b2c5edb3826",
@@ -4134,12 +3768,7 @@
                     "DstId": 2,
                     "DstName": "message"
                   }
-                ],
-                "UserData": {
-                  "Title": "On Prop Break",
-                  "id": "c4a1f137-d7b4-48d2-a138-4c01dd387744",
-                  "ReferencedComponentTypes": []
-                }
+                ]
               },
               "OnPropTakeDamage": null,
               "ShowCreatedComponents": false
@@ -4445,10 +4074,7 @@
               "InterpolateRotation": true,
               "LerpSpeed": 0,
               "SlerpSpeed": 2,
-              "Target": {
-                "_type": "gameobject",
-                "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
-              }
+              "Target": null
             },
             {
               "__type": "ColorAdjustments",
@@ -4536,10 +4162,7 @@
               "InterpolateRotation": true,
               "LerpSpeed": 0,
               "SlerpSpeed": 2,
-              "Target": {
-                "_type": "gameobject",
-                "go": "cf7a5b4c-a91a-44c8-8727-e22c8a69e890"
-              }
+              "Target": null
             },
             {
               "__type": "ColorAdjustments",
@@ -5574,389 +5197,29 @@
     },
     {
       "Id": "35d54b07-b646-4533-a731-8e079973165b",
-      "Name": "sports_car (9)",
+      "Name": "Sports Car",
       "Position": "330.5761,190.8859,0.5982295",
       "Tags": "destructible",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Prop",
-          "Health": 400,
-          "IsStatic": true,
-          "Model": "models/sports_car.vmdl",
-          "OnPropBreak": {
-            "Kind": "Action",
-            "Version": 3,
-            "Variables": [
-              {
-                "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
-                "Default": {
-                  "_type": "component",
-                  "go": "35d54b07-b646-4533-a731-8e079973165b",
-                  "component_type": "Prop"
-                }
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "sound.play",
-                "UserData": {
-                  "Position": "256,-96"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.instantiate",
-                "UserData": {
-                  "Position": "256,80"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "scene.getobject",
-                "UserData": {
-                  "Position": "-384,112"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-224,112"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
-                },
-                "UserData": {
-                  "Position": "-48,112"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "Value": "sounds/ambience/metal_bar_falling.sound",
-                "DstId": 1,
-                "DstName": "soundEvent"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "Value": "effects/car_explosion.prefab",
-                "DstId": 2,
-                "DstName": "prefab"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "target"
-              }
-            ],
-            "UserData": {
-              "Title": "On Prop Break",
-              "id": "1ff48baf-a219-430b-beaf-20ceee17ed73",
-              "ReferencedComponentTypes": []
-            }
-          },
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
-        }
-      ]
+      "__Prefab": "prefabs/props/sports_car.prefab"
     },
     {
-      "Id": "5a4cb063-1e7a-48ea-9865-381c275c9084",
-      "Name": "sports_car (1)",
-      "Position": "-245.4348,358.2543,0.5981952",
-      "Rotation": "0,0,-0.9914449,-0.1305261",
+      "Id": "a148de2a-bc35-49bc-8648-f18e9ebf7f63",
+      "Name": "Sports Car (1)",
+      "Position": "-205.5963,343.946,0.5982728",
+      "Rotation": "0,0,0.1305262,0.9914449",
       "Tags": "destructible",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Prop",
-          "Health": 400,
-          "IsStatic": true,
-          "Model": "models/sports_car.vmdl",
-          "OnPropBreak": {
-            "Kind": "Action",
-            "Version": 3,
-            "Variables": [
-              {
-                "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
-                "Default": {
-                  "_type": "component",
-                  "go": "5a4cb063-1e7a-48ea-9865-381c275c9084",
-                  "component_type": "Prop"
-                }
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "sound.play",
-                "UserData": {
-                  "Position": "256,-96"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.instantiate",
-                "UserData": {
-                  "Position": "256,80"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "scene.getobject",
-                "UserData": {
-                  "Position": "-384,112"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-224,112"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
-                },
-                "UserData": {
-                  "Position": "-48,112"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "Value": "sounds/ambience/metal_bar_falling.sound",
-                "DstId": 1,
-                "DstName": "soundEvent"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "Value": "effects/car_explosion.prefab",
-                "DstId": 2,
-                "DstName": "prefab"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "target"
-              }
-            ],
-            "UserData": {
-              "Title": "On Prop Break",
-              "id": "1ff48baf-a219-430b-beaf-20ceee17ed73",
-              "ReferencedComponentTypes": []
-            }
-          },
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
-        }
-      ]
+      "__Prefab": "prefabs/props/sports_car.prefab"
     },
     {
-      "Id": "fbe971a0-e18d-446f-aea9-851c51ac8533",
-      "Name": "sports_car (2)",
-      "Position": "-255.2242,-416.2314,0.598104",
-      "Rotation": "0,0,-1,0.00000008940697",
+      "Id": "a3ff777c-f62a-4696-8a41-f576dbfcbe29",
+      "Name": "Sports Car (2)",
+      "Position": "-185.7155,-397.2915,0.5982348",
+      "Rotation": "0,0,-0.1305262,0.9914449",
       "Tags": "destructible",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Prop",
-          "Health": 400,
-          "IsStatic": true,
-          "Model": "models/sports_car.vmdl",
-          "OnPropBreak": {
-            "Kind": "Action",
-            "Version": 3,
-            "Variables": [
-              {
-                "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
-                "Default": {
-                  "_type": "component",
-                  "go": "fbe971a0-e18d-446f-aea9-851c51ac8533",
-                  "component_type": "Prop"
-                }
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "sound.play",
-                "UserData": {
-                  "Position": "256,-96"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.instantiate",
-                "UserData": {
-                  "Position": "256,80"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "scene.getobject",
-                "UserData": {
-                  "Position": "-384,112"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-224,112"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
-                },
-                "UserData": {
-                  "Position": "-48,112"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "Value": "sounds/ambience/metal_bar_falling.sound",
-                "DstId": 1,
-                "DstName": "soundEvent"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "Value": "effects/car_explosion.prefab",
-                "DstId": 2,
-                "DstName": "prefab"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "target"
-              }
-            ],
-            "UserData": {
-              "Title": "On Prop Break",
-              "id": "1ff48baf-a219-430b-beaf-20ceee17ed73",
-              "ReferencedComponentTypes": []
-            }
-          },
-          "OnPropTakeDamage": null,
-          "ShowCreatedComponents": false
-        }
-      ]
+      "__Prefab": "prefabs/props/sports_car.prefab"
     },
     {
       "Id": "bc4c079b-0b96-4bef-9cbe-7cbdeea71292",
@@ -6037,12 +5300,18 @@
         {
           "__type": "UpdateActionComponent",
           "Action": {
-            "Kind": "Action",
-            "Version": 3,
+            "Version": 5,
+            "UserData": {
+              "Title": "Action",
+              "id": "fac0ff45-bf75-4402-8943-ff49c245e8a0",
+              "ReferencedComponentTypes": [
+                "package.duccsoft.ducc_hunt_2/DoorComponent"
+              ]
+            },
             "Variables": [
               {
                 "Name": "_this",
-                "Type": "Sandbox.Game/Sandbox.Component",
+                "Type": "Component",
                 "Default": {
                   "_type": "component",
                   "go": "0757ad35-4b7c-4764-b886-95cdcb7c6e28",
@@ -6073,7 +5342,7 @@
                 "Id": 3,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.duccsoft.ducc_hunt_2/DoorComponent"
+                  "T": "DoorComponent"
                 },
                 "UserData": {
                   "Position": "-16,-144"
@@ -6083,7 +5352,7 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_type": "DoorComponent",
                   "_name": "ShouldBeOpen"
                 },
                 "UserData": {
@@ -6101,7 +5370,7 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
+                  "_type": "DoorComponent",
                   "_name": "ShouldBeOpen"
                 },
                 "UserData": {
@@ -6137,13 +5406,13 @@
                 "SrcId": 3,
                 "SrcName": "_result",
                 "DstId": 4,
-                "DstName": "target"
+                "DstName": "_target"
               },
               {
                 "SrcId": 5,
                 "SrcName": "_result",
                 "DstId": 4,
-                "DstName": "value"
+                "DstName": "_value"
               },
               {
                 "SrcId": 6,
@@ -6155,16 +5424,9 @@
                 "SrcId": 3,
                 "SrcName": "_result",
                 "DstId": 6,
-                "DstName": "target"
+                "DstName": "_target"
               }
-            ],
-            "UserData": {
-              "Title": "Action",
-              "id": "fac0ff45-bf75-4402-8943-ff49c245e8a0",
-              "ReferencedComponentTypes": [
-                "package.duccsoft.ducc_hunt_2/DoorComponent"
-              ]
-            }
+            ]
           }
         }
       ],
@@ -6785,6 +6047,233 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "48e2d7e8-0007-4104-8594-04af134a903c",
+      "Name": "Text",
+      "Position": "82.77216,-185.4321,38.90429",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "TextRenderer",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 18.78,
+          "Scale": 0.3,
+          "Text": "Protip: Hold SHIFT to run!"
+        }
+      ]
+    },
+    {
+      "Id": "6d35eb72-72bc-49d9-9865-53f20f8f7523",
+      "Name": "ducc",
+      "Position": "7.943359,-21.38404,0",
+      "Tags": "player",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/duck_decoration/duck_decoration.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/duck_decoration/duck_decoration.vmdl",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "CharacterController",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 12,
+          "IgnoreLayers": "",
+          "Radius": 3,
+          "StepHeight": 4
+        },
+        {
+          "__type": "DuccController",
+          "Body": {
+            "_type": "gameobject",
+            "go": "6d35eb72-72bc-49d9-9865-53f20f8f7523"
+          },
+          "Character": {
+            "_type": "component",
+            "go": "6d35eb72-72bc-49d9-9865-53f20f8f7523",
+            "component_type": "CharacterController"
+          },
+          "Distraction": {
+            "_type": "component",
+            "go": "6d35eb72-72bc-49d9-9865-53f20f8f7523",
+            "component_type": "DistractionSource"
+          },
+          "Eye": {
+            "_type": "gameobject",
+            "go": "62bd2294-459b-436b-93e9-cdfb277a7a51"
+          },
+          "HeadHoldPoint": {
+            "_type": "gameobject",
+            "go": "5972302b-f70c-462c-96d5-d2201f343904"
+          },
+          "OnEquipmentAdded": null,
+          "Speed": 80,
+          "WeaponHoldPoint": {
+            "_type": "gameobject",
+            "go": "29081c77-32b9-498e-a46e-52ec4b3fb8e0"
+          }
+        },
+        {
+          "__type": "ScrapeNoise",
+          "Character": {
+            "_type": "component",
+            "go": "6d35eb72-72bc-49d9-9865-53f20f8f7523",
+            "component_type": "CharacterController"
+          },
+          "ScrapeSound": "sounds/ducc/scrape.sound",
+          "VolumeFactor": 2
+        },
+        {
+          "__type": "DistractionSource",
+          "DistractionIntensity": 0,
+          "DistractionSound": "sounds/ducc/quack.sound",
+          "Radius": 300,
+          "Source": {
+            "_type": "gameobject",
+            "prefab": "prefabs/ducc.prefab"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "Id": "62bd2294-459b-436b-93e9-cdfb277a7a51",
+          "Name": "Eye",
+          "Position": "0,0,12",
+          "Tags": "camera_target",
+          "Enabled": true
+        },
+        {
+          "Id": "29081c77-32b9-498e-a46e-52ec4b3fb8e0",
+          "Name": "Weapon Hold Point",
+          "Position": "0.500061,-3.966262,6.83918",
+          "Rotation": "0.1449114,-0.1308425,-0.05955962,0.9789452",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__enabled": false,
+              "BodyGroups": 5,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/ornate_medieval_dagger.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "Id": "5972302b-f70c-462c-96d5-d2201f343904",
+          "Name": "Head Hold Point",
+          "Position": "1.2,-1,12",
+          "Enabled": true
+        },
+        {
+          "Id": "ace5a83e-75f0-4025-8a61-96251cb97234",
+          "Name": "Prop Breaker",
+          "Position": "6.330047,0,9.073989",
+          "Components": [
+            {
+              "__type": "SphereCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Radius": 10,
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "Trigger",
+              "ExcludeAny": "",
+              "IncludeAny": "destructible",
+              "OnEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Enter",
+                  "id": "30072044-7c01-4753-8e3b-aea9d7499571",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [
+                  {
+                    "Name": "_this",
+                    "Type": "Component",
+                    "Default": {
+                      "_type": "component",
+                      "go": "ace5a83e-75f0-4025-8a61-96251cb97234",
+                      "component_type": "SphereCollider"
+                    }
+                  }
+                ],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.Prop",
+                      "_isStatic": false,
+                      "_name": "Get",
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                    },
+                    "UserData": {
+                      "Position": "160,32"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.Prop",
+                      "_name": "Kill"
+                    },
+                    "UserData": {
+                      "Position": "352,0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "other",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  }
+                ]
+              },
+              "OnExit": null
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -6810,7 +6299,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-13T10:05:51.3069263-07:00",
+  "LastSaved": "2024-02-15T21:08:16.4637712-07:00",
   "__references": [
     "agentab.starrynight",
     "brax.fence_128",
@@ -6833,7 +6322,6 @@
     "polyhaven.ornate_medieval_dagger",
     "rust.pallet_boxes_b",
     "rust.pallet_boxes_c",
-    "simonkvien.sports_car",
     "taoliguoshu.lamppost03a_on"
   ]
 }

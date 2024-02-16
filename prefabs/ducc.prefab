@@ -1,0 +1,219 @@
+{
+  "RootObject": {
+    "Id": "93ac8196-80da-44b7-8004-cfb9313561a7",
+    "Name": "ducc",
+    "Tags": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "BodyGroups": 18446744073709551615,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Model": "models/duck_decoration/duck_decoration.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelCollider",
+        "IsTrigger": false,
+        "Model": "models/duck_decoration/duck_decoration.vmdl",
+        "Static": false,
+        "Surface": null
+      },
+      {
+        "__type": "CharacterController",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 12,
+        "IgnoreLayers": "",
+        "Radius": 3,
+        "StepHeight": 4
+      },
+      {
+        "__type": "DuccController",
+        "Body": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ducc.prefab"
+        },
+        "Character": {
+          "_type": "component",
+          "go": "93ac8196-80da-44b7-8004-cfb9313561a7",
+          "component_type": "CharacterController"
+        },
+        "Distraction": {
+          "_type": "component",
+          "go": "93ac8196-80da-44b7-8004-cfb9313561a7",
+          "component_type": "DistractionSource"
+        },
+        "Eye": {
+          "_type": "gameobject",
+          "go": "a9f135c6-7c4a-4b5a-a655-299d5fff87eb"
+        },
+        "HeadHoldPoint": {
+          "_type": "gameobject",
+          "go": "2e54242a-6518-46a6-a373-d32f8976b59d"
+        },
+        "OnEquipmentAdded": null,
+        "Speed": 80,
+        "WeaponHoldPoint": {
+          "_type": "gameobject",
+          "go": "0de11373-fcd5-4bf1-9fa0-95318325b0cc"
+        }
+      },
+      {
+        "__type": "ScrapeNoise",
+        "Character": {
+          "_type": "component",
+          "go": "93ac8196-80da-44b7-8004-cfb9313561a7",
+          "component_type": "CharacterController"
+        },
+        "ScrapeSound": "sounds/ducc/scrape.sound",
+        "VolumeFactor": 2
+      },
+      {
+        "__type": "DistractionSource",
+        "DistractionIntensity": 0,
+        "DistractionSound": "sounds/ducc/quack.sound",
+        "Radius": 300,
+        "Source": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ducc.prefab"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "Id": "a9f135c6-7c4a-4b5a-a655-299d5fff87eb",
+        "Name": "Eye",
+        "Position": "0,0,12",
+        "Tags": "camera_target",
+        "Enabled": true
+      },
+      {
+        "Id": "0de11373-fcd5-4bf1-9fa0-95318325b0cc",
+        "Name": "Weapon Hold Point",
+        "Position": "0.500061,-3.966262,6.83918",
+        "Rotation": "0.1449114,-0.1308425,-0.05955962,0.9789452",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "ModelRenderer",
+            "__enabled": false,
+            "BodyGroups": 5,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Model": "models/ornate_medieval_dagger.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "Id": "2e54242a-6518-46a6-a373-d32f8976b59d",
+        "Name": "Head Hold Point",
+        "Position": "1.2,-1,12",
+        "Enabled": true
+      },
+      {
+        "Id": "ec5e1f69-6fd5-4b76-9b62-f4fcc833e30d",
+        "Name": "Prop Breaker",
+        "Position": "6.330047,0,9.073989",
+        "Components": [
+          {
+            "__type": "SphereCollider",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "Radius": 10,
+            "Static": false,
+            "Surface": null
+          },
+          {
+            "__type": "Trigger",
+            "ExcludeAny": "",
+            "IncludeAny": "destructible",
+            "OnEnter": {
+              "Version": 5,
+              "UserData": {
+                "Title": "On Enter",
+                "id": "30072044-7c01-4753-8e3b-aea9d7499571",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [
+                {
+                  "Name": "_this",
+                  "Type": "Component",
+                  "Default": {
+                    "_type": "component",
+                    "go": "ec5e1f69-6fd5-4b76-9b62-f4fcc833e30d",
+                    "component_type": "SphereCollider"
+                  }
+                }
+              ],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "T": "Sandbox.Game/Sandbox.Prop",
+                    "_isStatic": false,
+                    "_name": "Get",
+                    "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                  },
+                  "UserData": {
+                    "Position": "160,32"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_type": "Sandbox.Game/Sandbox.Prop",
+                    "_name": "Kill"
+                  },
+                  "UserData": {
+                    "Position": "352,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "other",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 2,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_target"
+                }
+              ]
+            },
+            "OnExit": null
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "duccsoft.duck_decoration",
+    "polyhaven.ornate_medieval_dagger"
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "RootObject": {
+    "Id": "35d54b07-b646-4533-a731-8e079973165b",
+    "Name": "Sports Car",
+    "Position": "330.5761,190.8859,0.5982295",
+    "Tags": "destructible",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Prop",
+        "Health": 400,
+        "IsStatic": true,
+        "Model": "models/sports_car.vmdl",
+        "OnPropBreak": {
+          "Version": 5,
+          "UserData": {
+            "Title": "On Prop Break",
+            "id": "1ff48baf-a219-430b-beaf-20ceee17ed73",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [
+            {
+              "Name": "_this",
+              "Type": "Component",
+              "Default": {
+                "_type": "component",
+                "go": "35d54b07-b646-4533-a731-8e079973165b",
+                "component_type": "Prop"
+              }
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "scene.instantiate",
+              "UserData": {
+                "Position": "256,96"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "property.get",
+              "Properties": {
+                "_type": "GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Position": "-48,112"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "duccsound.play",
+              "UserData": {
+                "Position": "256,-64"
+              }
+            },
+            {
+              "Id": 8,
+              "Type": "property.get",
+              "Properties": {
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "-208,112"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "position"
+            },
+            {
+              "Value": "effects/car_explosion.prefab",
+              "DstId": 2,
+              "DstName": "prefab"
+            },
+            {
+              "SrcId": 8,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "position"
+            },
+            {
+              "Value": "sounds/ambience/metal_bar_falling.sound",
+              "DstId": 7,
+              "DstName": "sound"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 8,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "OnPropTakeDamage": null,
+        "ShowCreatedComponents": false
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": [
+    "simonkvien.sports_car"
+  ]
+}
