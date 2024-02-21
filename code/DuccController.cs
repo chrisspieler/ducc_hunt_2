@@ -19,6 +19,7 @@ public sealed partial class DuccController : Component
 		Character ??= Components.GetOrCreate<CharacterController>();
 		Body ??= GameObject;
 		Instance = this;
+		Respawn();
 	}
 
 	protected override void OnUpdate()
@@ -59,8 +60,7 @@ public sealed partial class DuccController : Component
 
 		if ( Transform.Position.z < -200f )
 		{
-			Transform.Position = Vector3.Up * 50f;
-			Character.Velocity = Vector3.Zero;
+			Respawn();
 		}
 	}
 

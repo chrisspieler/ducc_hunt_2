@@ -27,4 +27,26 @@ public partial class DuccController
 		Instance.Tags.Add( "banished" );
 	}
 
+	[ActionGraphNode( "ducc.teleport" )]
+	[Title( "Teleport" ), Group( "Ducc" )]
+	public static void Teleport( GameObject destination )
+	{
+		Instance.Transform.World = destination.Transform.World.WithScale( Instance.Transform.Scale );
+		Instance.Character.Velocity = 0f;
+	}
+
+	[ActionGraphNode( "ducc.respawn" )]
+	[Title( "Respawn" ), Group( "Ducc" )]
+	public static void Respawn()
+	{
+		var spawnPoint = Instance.Scene.GetAllComponents<SpawnPoint>()
+			.FirstOrDefault( c => !DebugTeleport.IsDevSpawnPoint( c ) );
+		if ( !spawnPoint.IsValid() )
+		{
+			Instance.Transform.Position = Vector3.Up * 50f;
+			return;
+		}
+		Teleport( spawnPoint.GameObject );
+	}
+
 }

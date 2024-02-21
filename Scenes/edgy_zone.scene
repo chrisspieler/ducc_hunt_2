@@ -692,10 +692,10 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                  "T": "Sandbox.Game/Sandbox.Prop",
                   "_name": "TryGet",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                  "T": "Sandbox.Game/Sandbox.Prop"
                 },
                 "UserData": {
                   "Position": "-16,64"
@@ -712,9 +712,9 @@
                 "Id": 4,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.Prop",
                   "_name": "Kill",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.Prop"
                 },
                 "UserData": {
                   "Position": "432,64"
@@ -1004,8 +1004,8 @@
                         "Id": 5,
                         "Type": "property.get",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.GameTransform",
-                          "_name": "Position"
+                          "_name": "Position",
+                          "_type": "Sandbox.Game/Sandbox.GameTransform"
                         },
                         "UserData": {
                           "Position": "96,80"
@@ -1074,7 +1074,11 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": "data/equipment/weapon_death/weapon_death.equip",
+                        "Value": {
+                          "$type": "Simple",
+                          "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
+                          "Value": "data/equipment/weapon_death/weapon_death.equip"
+                        },
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -1267,10 +1271,10 @@
                             "Id": 1,
                             "Type": "call",
                             "Properties": {
-                              "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                              "T": "Sandbox.Game/Sandbox.Prop",
                               "_name": "Get",
-                              "_isStatic": false
+                              "_isStatic": false,
+                              "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                              "T": "Sandbox.Game/Sandbox.Prop"
                             },
                             "UserData": {
                               "Position": "-16,96"
@@ -1280,9 +1284,9 @@
                             "Id": 2,
                             "Type": "call",
                             "Properties": {
-                              "_type": "Sandbox.Game/Sandbox.Prop",
                               "_name": "Kill",
-                              "_isStatic": false
+                              "_isStatic": false,
+                              "_type": "Sandbox.Game/Sandbox.Prop"
                             },
                             "UserData": {
                               "Position": "192,-0"
@@ -2150,9 +2154,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
                   "_name": "Open",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "960,0"
@@ -2174,7 +2178,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Yellow",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Yellow"
+                },
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3367,9 +3379,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "ToLower",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "400,112"
@@ -3379,9 +3391,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "Contains",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "400,176"
@@ -3559,7 +3571,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Red",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Red"
+                },
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -3586,7 +3606,11 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "data/equipment/weapon_dagger/weapon_dagger.equip",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
+                  "Value": "data/equipment/weapon_dagger/weapon_dagger.equip"
+                },
                 "DstId": 12,
                 "DstName": "equipment"
               },
@@ -4007,8 +4031,8 @@
                     "Id": 5,
                     "Type": "property.get",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameTransform",
-                      "_name": "Position"
+                      "_name": "Position",
+                      "_type": "Sandbox.Game/Sandbox.GameTransform"
                     },
                     "UserData": {
                       "Position": "0,112"
@@ -4098,10 +4122,10 @@
                         "Id": 1,
                         "Type": "call",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "T": "Sandbox.Game/Sandbox.Prop",
                           "_name": "Get",
-                          "_isStatic": false
+                          "_isStatic": false,
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "T": "Sandbox.Game/Sandbox.Prop"
                         },
                         "UserData": {
                           "Position": "-16,96"
@@ -4111,9 +4135,9 @@
                         "Id": 2,
                         "Type": "call",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.Prop",
                           "_name": "Kill",
-                          "_isStatic": false
+                          "_isStatic": false,
+                          "_type": "Sandbox.Game/Sandbox.Prop"
                         },
                         "UserData": {
                           "Position": "192,-0"
@@ -4379,8 +4403,8 @@
                 "Id": 3,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-112,96"
@@ -5796,8 +5820,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "ShouldBeOpen"
+                  "_name": "ShouldBeOpen",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "448,16"
@@ -5814,8 +5838,8 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent",
-                  "_name": "ShouldBeOpen"
+                  "_name": "ShouldBeOpen",
+                  "_type": "package.duccsoft.ducc_hunt_2/DoorComponent"
                 },
                 "UserData": {
                   "Position": "208,-240"
@@ -6487,8 +6511,8 @@
                 "Id": 4,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.Component",
-                  "_name": "GameObject"
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
                 },
                 "UserData": {
                   "Position": "128,96"
@@ -6498,8 +6522,8 @@
                 "Id": 5,
                 "Type": "property.get",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Tags"
+                  "_name": "Tags",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "160,160"
@@ -6509,9 +6533,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTags",
                   "_name": "Has",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameTags"
                 },
                 "UserData": {
                   "Position": "336,160"
@@ -6607,7 +6631,15 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Yellow",
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
+                    "Name": "VictoryTextColor"
+                  },
+                  "Value": "Yellow"
+                },
                 "DstId": 8,
                 "DstName": "color"
               },
@@ -7695,7 +7727,7 @@
     {
       "Id": "48e2d7e8-0007-4104-8594-04af134a903c",
       "Name": "Text",
-      "Position": "82.77216,-185.4321,38.90429",
+      "Position": "82.77216,-73.44011,38.90429",
       "Enabled": true,
       "Components": [
         {
@@ -7711,7 +7743,6 @@
     {
       "Id": "6d35eb72-72bc-49d9-9865-53f20f8f7523",
       "Name": "ducc",
-      "Position": "1100,-50,0",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -7818,9 +7849,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "System.Private.CoreLib/System.String",
                   "_name": "Contains",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "System.Private.CoreLib/System.String"
                 },
                 "UserData": {
                   "Position": "464,64"
@@ -8004,10 +8035,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "T": "Sandbox.Game/Sandbox.Prop",
                       "_name": "Get",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "160,32"
@@ -8017,9 +8048,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.Prop",
                       "_name": "Kill",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "352,0"
@@ -8052,6 +8083,67 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "6340a629-c9b6-42e5-a174-061d1a2ea151",
+      "Name": "Spawn Points",
+      "Position": "-30.0364,-70.49289,47.35114",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "5958090f-d77b-4480-a981-39726153d18f",
+          "Name": "Parking Lot",
+          "Position": "-169.9636,20.49289,-47.35114",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.8902,0.05098,0.05098,1"
+            }
+          ]
+        },
+        {
+          "Id": "b694b5a9-cade-414f-9652-ed11286e0d36",
+          "Name": "Knife Pickup",
+          "Position": "1273.723,-26.28812,-47.35104",
+          "Tags": "debug",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.14888,0.10806,0.51628,1"
+            }
+          ]
+        },
+        {
+          "Id": "eb669e30-a699-4e2e-ac88-7692ad5580f5",
+          "Name": "Jail",
+          "Position": "606.2307,462.4653,-47.35106",
+          "Rotation": "0,0,-0.6087614,0.7933534",
+          "Tags": "debug",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.14888,0.10806,0.51628,1"
+            }
+          ]
+        },
+        {
+          "Id": "0fb0cbf1-97b2-4a6d-9878-4b918f646900",
+          "Name": "Obama\u0027s Embrace",
+          "Position": "1969.355,463.6927,-47.35125",
+          "Rotation": "0,0,-0.6087614,0.7933534",
+          "Tags": "debug",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpawnPoint",
+              "Color": "0.14888,0.10806,0.51628,1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -8077,7 +8169,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-21T03:25:07.2685048-07:00",
+  "LastSaved": "2024-02-21T16:45:00.1141937-07:00",
   "__references": [
     "agentab.starrynight",
     "brax.fence_128",

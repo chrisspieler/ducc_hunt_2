@@ -210,6 +210,11 @@
           "Name": "DebugAction",
           "KeyboardCode": "MOUSE3",
           "GroupName": "Other"
+        },
+        {
+          "Name": "Teleport",
+          "KeyboardCode": "T",
+          "GroupName": "Debug"
         }
       ]
     },
