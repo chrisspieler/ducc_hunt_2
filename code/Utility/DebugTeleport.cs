@@ -19,7 +19,6 @@ public sealed class DebugTeleport : GameObjectSystem
 	private void UpdateSpawnPoints()
 	{
 		var allSpawnPoints = Scene.GetAllComponents<SpawnPoint>();
-		Log.Info( $"found {allSpawnPoints.Count()} spawn points" );
 		var devSpawns = allSpawnPoints
 			.Where(IsDevSpawnPoint)
 			.Select( c => c.GameObject );

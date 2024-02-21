@@ -1074,11 +1074,7 @@
                         "DstName": "_signal"
                       },
                       {
-                        "Value": {
-                          "$type": "Simple",
-                          "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
-                          "Value": "data/equipment/weapon_death/weapon_death.equip"
-                        },
+                        "Value": "data/equipment/weapon_death/weapon_death.equip",
                         "DstId": 7,
                         "DstName": "data"
                       },
@@ -2178,15 +2174,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Yellow"
-                },
+                "Value": "Yellow",
                 "DstId": 2,
                 "DstName": "color"
               },
@@ -3571,15 +3559,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Red"
-                },
+                "Value": "Red",
                 "DstId": 9,
                 "DstName": "color"
               },
@@ -3606,11 +3586,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": "package.duccsoft.ducc_hunt_2/EquipmentData",
-                  "Value": "data/equipment/weapon_dagger/weapon_dagger.equip"
-                },
+                "Value": null,
                 "DstId": 12,
                 "DstName": "equipment"
               },
@@ -6631,15 +6607,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": {
-                    "$type": "Nested",
-                    "DeclaringType": "package.duccsoft.ducc_hunt_2/VictoryPanel",
-                    "Name": "VictoryTextColor"
-                  },
-                  "Value": "Yellow"
-                },
+                "Value": "Yellow",
                 "DstId": 8,
                 "DstName": "color"
               },
@@ -8169,7 +8137,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-21T16:45:00.1141937-07:00",
+  "LastSaved": "2024-02-21T16:48:36.7422407-07:00",
   "__references": [
     "agentab.starrynight",
     "brax.fence_128",
