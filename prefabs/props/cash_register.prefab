@@ -2,8 +2,6 @@
   "RootObject": {
     "Id": "4452cd58-a51f-4ba5-87be-18e42257dc0c",
     "Name": "cash_register",
-    "Position": "1043.866,-179.1542,33.81487",
-    "Rotation": "0,0,0.7071067,0.7071068",
     "Enabled": true,
     "Components": [
       {
@@ -12,8 +10,12 @@
         "IsStatic": true,
         "Model": "models/city_props/cash_register/cash_register.vmdl",
         "OnPropBreak": {
-          "Kind": "Action",
-          "Version": 3,
+          "Version": 5,
+          "UserData": {
+            "Title": "On Prop Break",
+            "id": "71749090-66ec-40e5-a72f-4e0364d495fe",
+            "ReferencedComponentTypes": []
+          },
           "Variables": [
             {
               "Name": "_this",
@@ -38,29 +40,11 @@
               }
             },
             {
-              "Id": 2,
-              "Type": "scene.getobject",
-              "UserData": {
-                "Position": "-336,96"
-              }
-            },
-            {
-              "Id": 3,
-              "Type": "property.get",
-              "Properties": {
-                "_name": "Transform",
-                "_type": "Sandbox.Game/Sandbox.GameObject"
-              },
-              "UserData": {
-                "Position": "-160,96"
-              }
-            },
-            {
               "Id": 4,
               "Type": "property.get",
               "Properties": {
-                "_name": "Position",
-                "_type": "Sandbox.Game/Sandbox.GameTransform"
+                "_type": "Sandbox.Game/Sandbox.GameTransform",
+                "_name": "Position"
               },
               "UserData": {
                 "Position": "32,96"
@@ -93,6 +77,16 @@
               "UserData": {
                 "Position": "304,288"
               }
+            },
+            {
+              "Id": 9,
+              "Type": "property.get",
+              "Properties": {
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "-112,96"
+              }
             }
           ],
           "Links": [
@@ -114,16 +108,10 @@
               "DstName": "sound"
             },
             {
-              "SrcId": 2,
-              "SrcName": "_result",
-              "DstId": 3,
-              "DstName": "target"
-            },
-            {
-              "SrcId": 3,
+              "SrcId": 9,
               "SrcName": "_result",
               "DstId": 4,
-              "DstName": "target"
+              "DstName": "_target"
             },
             {
               "SrcId": 0,
@@ -194,18 +182,20 @@
               },
               "DstId": 8,
               "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 9,
+              "DstName": "_target"
             }
-          ],
-          "UserData": {
-            "Title": "On Prop Break",
-            "id": "71749090-66ec-40e5-a72f-4e0364d495fe",
-            "ReferencedComponentTypes": []
-          }
+          ]
         },
         "OnPropTakeDamage": null,
         "ShowCreatedComponents": false
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

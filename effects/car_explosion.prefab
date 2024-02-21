@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "Id": "01cc2086-ae77-46b7-bc5d-d27ecebec25a",
+    "Id": "8b0f1f3d-06da-4d5c-995a-bc2b00df9985",
     "Name": "car_explosion",
     "Enabled": true,
     "Components": [
@@ -11,10 +11,11 @@
     ],
     "Children": [
       {
-        "Id": "33f2a44a-c6e7-486c-ac2e-c46f64e9332e",
+        "Id": "19fa4c58-8934-4da9-afe8-e5edfd79ad38",
         "Name": "Burst",
         "Position": "0,0,8.484565",
         "Rotation": "0,-0.7071068,0,0.7071069",
+        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {
@@ -170,10 +171,11 @@
         ]
       },
       {
-        "Id": "c2cee98d-0484-4c6c-88c2-f01d494cc4ee",
+        "Id": "9114fae7-8045-4477-8dad-14aaa5639c59",
         "Name": "Spray",
         "Position": "0.0000006595394,0,3.688415",
         "Rotation": "0,-0.7071067,0,0.7071068",
+        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {
@@ -337,9 +339,10 @@
         ]
       },
       {
-        "Id": "b4d98a14-946f-4fc3-9ed2-7b98665313af",
+        "Id": "29953a9c-617b-4101-b32d-49950c52859c",
         "Name": "Smoke",
         "Position": "0,0,10",
+        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {
@@ -482,9 +485,10 @@
         ]
       },
       {
-        "Id": "a8f46e89-b26b-4c93-a68e-26364fa92134",
+        "Id": "468c7e5f-dd7c-42af-a431-060753a7e2ca",
         "Name": "Spark",
         "Position": "0,0,20",
+        "Tags": "particles",
         "Enabled": true,
         "Components": [
           {
@@ -621,7 +625,7 @@
             "Scale": 1,
             "Shadows": false,
             "SortMode": "ByDistance",
-            "Texture": "particles/explosion/explosion_emission001.vtex"
+            "Texture": "particles/explosion/explosion001.vtex"
           },
           {
             "__type": "ParticleSphereEmitter",
@@ -638,7 +642,7 @@
         ]
       },
       {
-        "Id": "85a6687f-4f1b-4552-a79a-2c04b672f54d",
+        "Id": "dbeae427-8d15-4bd4-8526-5df4982fdf95",
         "Name": "Plane",
         "Components": [
           {
@@ -661,8 +665,9 @@
         ]
       },
       {
-        "Id": "b1607c25-7759-4b48-97b1-7d00d5d14c35",
+        "Id": "9540d598-6201-4d15-8023-b8695fdfe3e3",
         "Name": "Point Light",
+        "Tags": "light_point,light",
         "Enabled": true,
         "Components": [
           {
@@ -686,6 +691,7 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
+    "facepunch.explosion001",
     "facepunch.smoke002"
   ]
 }

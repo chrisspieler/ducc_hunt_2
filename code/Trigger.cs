@@ -1,5 +1,4 @@
 using Sandbox;
-using System.Linq;
 
 public sealed class Trigger : Component, Component.ITriggerListener
 {
@@ -10,13 +9,13 @@ public sealed class Trigger : Component, Component.ITriggerListener
 
 
 	[Property, Category( "Filter" )]
-	public TagSet IncludeAny { get; set; } = new();
+	public TagSet IncludeAny { get; set; }
 	[Property, Category( "Filter" )]
-	public TagSet ExcludeAny { get; set; } = new();
+	public TagSet ExcludeAny { get; set; }
 
 	public void OnTriggerEnter( Collider other )
 	{
-		if ( !Filter( other ) )
+		if ( !CanTriggerFrom( other ) )
 			return;
 
 		OnEnter?.Invoke( other );
@@ -24,15 +23,15 @@ public sealed class Trigger : Component, Component.ITriggerListener
 
 	public void OnTriggerExit( Collider other )
 	{
-		if ( !Filter( other ) )
+		if ( !CanTriggerFrom( other ) )
 			return;
 
 		OnExit?.Invoke( other );
 	}
 
-	private bool Filter( Collider other )
+	private bool CanTriggerFrom( Collider other )
 	{
-		return ( !IncludeAny.TryGetAll().Any() || other.Tags.HasAny( IncludeAny ) )
-			&& !other.Tags.HasAny( ExcludeAny );
+		return ( IncludeAny is null || IncludeAny.IsEmpty || other.Tags.HasAny( IncludeAny ) )
+			&& ( ExcludeAny is null || ExcludeAny.IsEmpty || !other.Tags.HasAny( ExcludeAny ));
 	}
 }

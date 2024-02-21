@@ -1,8 +1,7 @@
 {
   "RootObject": {
     "Id": "35d54b07-b646-4533-a731-8e079973165b",
-    "Name": "Sports Car",
-    "Position": "330.5761,190.8859,0.5982295",
+    "Name": "sports_car",
     "Tags": "destructible",
     "Enabled": true,
     "Components": [
@@ -21,7 +20,7 @@
           "Variables": [
             {
               "Name": "_this",
-              "Type": "Component",
+              "Type": "Sandbox.Game/Sandbox.Component",
               "Default": {
                 "_type": "component",
                 "go": "35d54b07-b646-4533-a731-8e079973165b",
@@ -38,14 +37,14 @@
               "Id": 2,
               "Type": "scene.instantiate",
               "UserData": {
-                "Position": "256,96"
+                "Position": "256,144"
               }
             },
             {
               "Id": 5,
               "Type": "property.get",
               "Properties": {
-                "_type": "GameTransform",
+                "_type": "Sandbox.Game/Sandbox.GameTransform",
                 "_name": "Position"
               },
               "UserData": {
@@ -122,7 +121,8 @@
         "OnPropTakeDamage": null,
         "ShowCreatedComponents": false
       }
-    ]
+    ],
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
