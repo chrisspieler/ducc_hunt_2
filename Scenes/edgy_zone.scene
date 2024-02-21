@@ -3586,7 +3586,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": null,
+                "Value": "data/equipment/weapon_dagger/weapon_dagger.equip",
                 "DstId": 12,
                 "DstName": "equipment"
               },
@@ -8137,7 +8137,7 @@
   },
   "Title": "gamer_zone",
   "Description": "",
-  "LastSaved": "2024-02-21T16:48:36.7422407-07:00",
+  "LastSaved": "2024-02-21T16:56:04.888764-07:00",
   "__references": [
     "agentab.starrynight",
     "brax.fence_128",
