@@ -5,12 +5,7 @@
   "Ident": "ducc_hunt_2",
   "Tags": null,
   "Schema": 1,
-  "HasAssets": true,
-  "AssetsPath": "",
   "Resources": "*.ttf\n*.scss\n*Attribution.txt",
-  "MenuResources": "*",
-  "HasCode": true,
-  "CodePath": "/code/",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
@@ -28,7 +23,6 @@
     "CsProjName": "",
     "StartupScene": "scenes/main_menu.scene",
     "ProjectTemplate": null,
-    "MapStartupScene": null,
     "LaunchMode": "Normal",
     "ControlModes": {
       "Keyboard": true
@@ -215,48 +209,6 @@
           "Name": "Teleport",
           "KeyboardCode": "T",
           "GroupName": "Debug"
-        }
-      ]
-    },
-    "Collision": {
-      "Defaults": {
-        "solid": "Collide",
-        "trigger": "Trigger",
-        "ladder": "Ignore",
-        "water": "Trigger",
-        "blockplayer": "Ignore",
-        "player": "Collide"
-      },
-      "Pairs": [
-        {
-          "a": "solid",
-          "b": "solid",
-          "r": "Collide"
-        },
-        {
-          "a": "trigger",
-          "b": "playerclip",
-          "r": "Ignore"
-        },
-        {
-          "a": "trigger",
-          "b": "solid",
-          "r": "Trigger"
-        },
-        {
-          "a": "solid",
-          "b": "trigger",
-          "r": "Collide"
-        },
-        {
-          "a": "playerclip",
-          "b": "solid",
-          "r": "Collide"
-        },
-        {
-          "a": "blockplayer",
-          "b": "player",
-          "r": "Collide"
         }
       ]
     }
