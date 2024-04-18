@@ -5,7 +5,7 @@
   "Ident": "ducc_hunt_2",
   "Tags": null,
   "Schema": 1,
-  "Resources": "*.ttf\n*.scss\n*Attribution.txt",
+  "Resources": "*\n*.scss\n*.config",
   "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
