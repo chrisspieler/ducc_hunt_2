@@ -133,6 +133,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "facepunch.trolley"
+    "facepunch.trolley#33629"
   ]
 }

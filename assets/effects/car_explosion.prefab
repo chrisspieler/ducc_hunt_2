@@ -691,7 +691,7 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "facepunch.explosion001",
-    "facepunch.smoke002"
+    "facepunch.explosion001#45287",
+    "facepunch.smoke002#45286"
   ]
 }

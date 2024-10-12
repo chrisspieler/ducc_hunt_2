@@ -213,7 +213,7 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "duccsoft.duck_decoration",
-    "polyhaven.ornate_medieval_dagger"
+    "duccsoft.duck_decoration#16326",
+    "polyhaven.ornate_medieval_dagger#19658"
   ]
 }

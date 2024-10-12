@@ -201,6 +201,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "__references": [
-    "svin.cash_register"
+    "svin.cash_register#20716"
   ]
 }
