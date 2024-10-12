@@ -7,7 +7,7 @@ public sealed class CrimeCam : Component
 	[Property] public Crime ActiveCrime { get; set; }
 	[Property] public BBox CheckArea { get; set; }
 
-	private BBox WorldSpaceArea => CheckArea.Translate( Transform.Position );
+	private BBox WorldSpaceArea => CheckArea.Translate( WorldPosition );
 
 	protected override void OnStart()
 	{
@@ -38,7 +38,7 @@ public sealed class CrimeCam : Component
 		newestCrime = null;
 		foreach( var crime in Scene.GetAllComponents<Crime>() )
 		{
-			if ( !WorldSpaceArea.Contains( crime.Transform.Position ) )
+			if ( !WorldSpaceArea.Contains( crime.WorldPosition ) )
 				continue;
 
 			if ( Crime.Debug )
@@ -96,7 +96,7 @@ public sealed class CrimeCam : Component
 	protected override void DrawGizmos()
 	{
 		Gizmo.Draw.Color = Gizmo.IsSelected ? Color.Yellow : Color.White;
-		Gizmo.Transform = new Transform( Transform.Position );
+		Gizmo.Transform = new Transform( WorldPosition );
 		Gizmo.Draw.LineBBox( CheckArea );
 		if ( !Gizmo.IsSelected ) return;
 

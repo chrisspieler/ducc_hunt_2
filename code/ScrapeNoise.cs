@@ -38,7 +38,7 @@ public sealed class ScrapeNoise : Component
 	{
 		if ( _currentSound is null || _currentSound.IsStopped )
 		{
-			_currentSound = DuccSound.Play( ScrapeSound, Transform.Position );
+			_currentSound = DuccSound.Play( ScrapeSound, WorldPosition );
 			// The pitch will reset on each loop. Is this okay?
 			_currentSound.Pitch = 0f;
 		}
@@ -50,7 +50,7 @@ public sealed class ScrapeNoise : Component
 		_currentSound.Volume = GetScrapeIntensity() * VolumeFactor;
 		// Never reduce the pitch of the scrape sound once it starts.
 		_currentSound.Pitch = MathF.Max( _currentSound.Pitch, intensity );
-		_currentSound.Position = Transform.Position;
+		_currentSound.Position = WorldPosition;
 	}
 
 	private float GetScrapeIntensity()

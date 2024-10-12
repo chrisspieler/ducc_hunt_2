@@ -9,9 +9,9 @@ public sealed class DistractionSource : Component
 
 	public void DeployDistraction()
 	{
-		DuccSound.Play( DistractionSound, Source.Transform.Position );
+		DuccSound.Play( DistractionSound, Source.WorldPosition );
 		var tr = Scene.Trace
-			.Sphere( Radius, Transform.Position, Transform.Position )
+			.Sphere( Radius, WorldPosition, WorldPosition )
 			.WithAnyTags( "human" )
 			.UseHitboxes( true )
 			.RunAll();

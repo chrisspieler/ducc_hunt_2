@@ -50,24 +50,24 @@ public sealed class ItemPickup : Component, Component.ITriggerListener
 
 	private void UpdateRingLightPosition()
 	{
-		var camTx = Scene.Camera.Transform;
-		var modelTx = _pickupInstance.Transform;
+		var camTx = Scene.Camera.Transform.World;
+		var modelTx = _pickupInstance.Transform.World;
 		var dirToCam = (camTx.Position - modelTx.Position).Normal;
-		RingLight.Transform.Position = modelTx.Position 
+		RingLight.WorldPosition = modelTx.Position 
 			+ dirToCam * 10f
 			+ Vector3.Up * 15f;
 	}
 
 	private void UpdateGravity()
 	{
-		var ray = new Ray( Transform.Position, Vector3.Down );
+		var ray = new Ray( WorldPosition, Vector3.Down );
 		var tr = Scene.Trace
 			.Ray( ray, 300f )
 			.Size( 5f )
 			.Run();
 		if ( tr.StartedSolid )
 			return;
-		Transform.Position += Vector3.Down * tr.Distance * Time.Delta;
+		WorldPosition += Vector3.Down * tr.Distance * Time.Delta;
 	}
 
 	public bool CanPickup( GameObject player )

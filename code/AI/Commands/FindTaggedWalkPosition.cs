@@ -11,7 +11,7 @@ public class FindTaggedWalkPosition : BehaviorNode
 
 	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
-		var tagged = GameManager.ActiveScene
+		var tagged = Game.ActiveScene
 			.GetAllObjects( true )
 			.Where( go => go.Tags.Has( Tag ) )
 			.ToArray();
@@ -20,16 +20,16 @@ public class FindTaggedWalkPosition : BehaviorNode
 		if ( !target.IsValid() )
 			return BehaviorResult.Failure;
 
-		var walkTarget = target.Transform.Position;
+		var walkTarget = target.WorldPosition;
 		if ( Radius > 0f )
 		{
-			walkTarget = GameManager.ActiveScene
+			walkTarget = Game.ActiveScene
 				.NavMesh
 				.GetRandomPoint( walkTarget, Radius ) ?? walkTarget;
 		}
-		AIDebug.Log( actor, $"Navigate to {walkTarget}, distance {walkTarget.Distance( target.Transform.Position )}, radius {Radius}" );
+		AIDebug.Log( actor, $"Navigate to {walkTarget}, distance {walkTarget.Distance( target.WorldPosition )}, radius {Radius}" );
 
-		context.Set( WalkToPosition.K_WALK_POSITION, target.Transform.Position );
+		context.Set( WalkToPosition.K_WALK_POSITION, target.WorldPosition );
 		return BehaviorResult.Success;
 	}
 

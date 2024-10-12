@@ -12,10 +12,10 @@ namespace Sandbox.Utility
 		[Title("Disable Shadows"), Group("Performance")]
 		public static void DisableShadows()
 		{
-			if ( !GameManager.ActiveScene.IsValid() )
+			if ( !Game.ActiveScene.IsValid() )
 				return;
 
-			var lights = GameManager.ActiveScene
+			var lights = Game.ActiveScene
 				.GetAllComponents<Light>();
 			foreach ( var light in lights )
 			{

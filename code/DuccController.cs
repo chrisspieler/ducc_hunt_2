@@ -56,9 +56,9 @@ public sealed partial class DuccController : Component
 
 
 		var targetRotation = Rotation.LookAt( LastDirectionInput.WithZ( 0f ).Normal, Vector3.Up );
-		Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targetRotation, Time.Delta * 20f );
+		Body.WorldRotation = Rotation.Lerp( Body.WorldRotation, targetRotation, Time.Delta * 20f );
 
-		if ( Transform.Position.z < -200f )
+		if ( WorldPosition.z < -200f )
 		{
 			Respawn();
 		}
@@ -67,7 +67,7 @@ public sealed partial class DuccController : Component
 	private void UpdateWishVelocity()
 	{
 		var inputLength = Input.AnalogMove.ClampLength( 0f, 1f).Length;
-		var eyeRotation = Scene.Camera.Transform.Rotation;
+		var eyeRotation = Scene.Camera.WorldRotation;
 		var inputDir = (Input.AnalogMove * eyeRotation).WithZ(0f).Normal;
 		if ( !Input.AnalogMove.IsNearlyZero() )
 		{

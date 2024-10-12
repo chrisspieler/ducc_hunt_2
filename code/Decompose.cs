@@ -52,8 +52,8 @@ public sealed class Decompose : Component
 
 	private bool IsLookingAway()
 	{
-		var camDirection = Scene.Camera.Transform.Rotation.Forward;
-		var camToCorpse = (Renderer.Transform.Position - Scene.Camera.Transform.Position).Normal;
+		var camDirection = Scene.Camera.WorldRotation.Forward;
+		var camToCorpse = (Renderer.WorldPosition - Scene.Camera.WorldPosition).Normal;
 		// Only decompose if the camera is looking away from the corpse.
 		return camToCorpse.Dot( camDirection ) < 0f;
 	}

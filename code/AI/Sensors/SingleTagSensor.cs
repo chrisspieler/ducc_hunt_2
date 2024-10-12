@@ -41,7 +41,7 @@ namespace Ducc.AI.Sensors
 
 		private GameObject FindByRadius( float radius )
 		{
-			var startPos = SensorOrigin.Transform.Position;
+			var startPos = SensorOrigin.WorldPosition;
 			var tr = Scene.Trace
 				.Sphere( Radius, startPos, startPos )
 				.WithAllTags( Tag )

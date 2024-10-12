@@ -21,8 +21,8 @@ namespace Sandbox.Utility
 		{
 			var hitEffect = hitPrefab.Clone();
 			hitEffect.Parent = parent;
-			hitEffect.Transform.Position = tr.HitPosition + tr.Normal;
-			hitEffect.Transform.Rotation = Rotation.LookAt( tr.Normal );
+			hitEffect.WorldPosition = tr.HitPosition + tr.Normal;
+			hitEffect.WorldRotation = Rotation.LookAt( tr.Normal );
 			return hitEffect;
 		}
 
@@ -32,10 +32,10 @@ namespace Sandbox.Utility
 			gameObject.Parent = parent;
 			// Project the decal on to the surface, but back it up a little so that
 			// the decal doesn't clip in to the surface or clothing.
-			gameObject.Transform.Position = tr.HitPosition + tr.Normal * 1f;
-			gameObject.Transform.Rotation = Rotation.LookAt( -tr.Normal );
+			gameObject.WorldPosition = tr.HitPosition + tr.Normal * 1f;
+			gameObject.WorldRotation = Rotation.LookAt( -tr.Normal );
 			// Randomize the rotation.
-			gameObject.Transform.Rotation *= Rotation.FromRoll( Random.Shared.Float( 0, 360 ) );
+			gameObject.WorldRotation *= Rotation.FromRoll( Random.Shared.Float( 0, 360 ) );
 			var decal = gameObject.Components.Create<DecalRenderer>();
 			decal.Material = decalMat;
 			decal.Size = size;

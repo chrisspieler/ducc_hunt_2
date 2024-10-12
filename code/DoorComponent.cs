@@ -67,13 +67,13 @@ public sealed class DoorComponent : Component
 		if ( target is null )
 			return;
 
-		var startPos = Shutter.Transform.Position;
-		var endPos = target.Transform.Position;
-		Shutter.Transform.Position = startPos.LerpTo( endPos, Time.Delta * 5f );
-		var distance = Shutter.Transform.Position.Distance( endPos );
+		var startPos = Shutter.WorldPosition;
+		var endPos = target.WorldPosition;
+		Shutter.WorldPosition = startPos.LerpTo( endPos, Time.Delta * 5f );
+		var distance = Shutter.WorldPosition.Distance( endPos );
 		if ( distance <= 0.5f )
 		{
-			Shutter.Transform.Position = endPos;
+			Shutter.WorldPosition = endPos;
 			switch ( _state )
 			{
 				case DoorState.Opening:
@@ -97,7 +97,7 @@ public sealed class DoorComponent : Component
 		{
 			DoorLight.LightColor = OpenedLightColor;
 		}
-		if ( GameManager.IsPlaying )
+		if ( Game.IsPlaying )
 		{
 			_state = DoorState.Opening;
 			OnOpening?.Invoke();
@@ -107,7 +107,7 @@ public sealed class DoorComponent : Component
 			_state = DoorState.Open;
 			if ( Shutter.IsValid() && OpenTarget.IsValid() )
 			{
-				Shutter.Transform.Position = OpenTarget.Transform.Position;
+				Shutter.WorldPosition = OpenTarget.WorldPosition;
 			}
 		}
 	}
@@ -121,7 +121,7 @@ public sealed class DoorComponent : Component
 		{
 			DoorLight.LightColor = ClosedLightColor;
 		}
-		if ( GameManager.IsPlaying )
+		if ( Game.IsPlaying )
 		{
 			_state = DoorState.Closing;
 			OnClosing?.Invoke();
@@ -131,7 +131,7 @@ public sealed class DoorComponent : Component
 			_state = DoorState.Closed;
 			if ( Shutter.IsValid() && CloseTarget.IsValid() )
 			{
-				Shutter.Transform.Position = CloseTarget.Transform.Position;
+				Shutter.WorldPosition = CloseTarget.WorldPosition;
 			}
 		}
 	}
@@ -140,7 +140,7 @@ public sealed class DoorComponent : Component
 	[Title( "Find Door" ), Group( "Door" )]
 	public static DoorComponent Find( string doorName )
 	{
-		return GameManager.ActiveScene
+		return Game.ActiveScene
 			.GetAllComponents<DoorComponent>()
 			.FirstOrDefault( d => d.DoorName.ToLower() == doorName.ToLower() );
 	}

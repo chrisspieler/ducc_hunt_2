@@ -10,7 +10,7 @@ public class FindTaggedFaceTarget : BehaviorNode
 
 	protected override BehaviorResult ExecuteInternal( ActorComponent actor, DataContext context )
 	{
-		var tagged = GameManager.ActiveScene
+		var tagged = Game.ActiveScene
 			.GetAllObjects( true )
 			.Where( go => go.Tags.Has( Tag ) )
 			.ToArray();

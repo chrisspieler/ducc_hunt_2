@@ -21,7 +21,7 @@ public sealed class Distracted : Component
 
 	protected override void OnDisabled()
 	{
-		Animation.WithLook( Transform.Rotation.Forward, 1f, 1f, 1f );
+		Animation.WithLook( WorldRotation.Forward, 1f, 1f, 1f );
 		Tags.Remove( "distracted" );
 	}
 
@@ -33,8 +33,8 @@ public sealed class Distracted : Component
 			Destroy();
 			return;
 		}
-		var lookAt = Source.Transform.Position;
-		var lookFrom = Transform.Position + Vector3.Up * 64f;
+		var lookAt = Source.WorldPosition;
+		var lookFrom = WorldPosition + Vector3.Up * 64f;
 		var lookDir = (lookAt - lookFrom).Normal;
 		var headWeight = MathX.Lerp( 0.2f, 1f, Intensity );
 		var bodyWeight = MathX.Lerp( 0.6f, 1f, Intensity );

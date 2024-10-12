@@ -6,6 +6,6 @@ public sealed class Rotator : Component
 
 	protected override void OnUpdate()
 	{
-		Transform.Rotation *= RotationPerSecond * Time.Delta;
+		WorldRotation *= RotationPerSecond * Time.Delta;
 	}
 }

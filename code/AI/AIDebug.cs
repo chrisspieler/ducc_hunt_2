@@ -77,7 +77,7 @@ public static class AIDebug
 	{
 		body = null;
 
-		var scene = GameManager.ActiveScene;
+		var scene = Game.ActiveScene;
 		if ( !scene.IsValid() )
 			return null;
 
@@ -118,7 +118,7 @@ public static class AIDebug
 
 	private static ActorComponent FindActor()
 	{
-		var scene = GameManager.ActiveScene;
+		var scene = Game.ActiveScene;
 		if ( !scene.IsValid() )
 			return null;
 
@@ -137,7 +137,7 @@ public static class AIDebug
 
 	private static void DrawLog( ActorComponent actor, IEnumerable<LogMessage> log )
 	{
-		var transform = new Transform( actor.Transform.Position + Vector3.Up * 72 );
+		var transform = new Transform( actor.WorldPosition + Vector3.Up * 72 );
 		using ( Gizmo.Scope( $"{actor.GameObject.Name} AI Log", transform ) )
 		{
 			Gizmo.Draw.Color = Color.Yellow;
@@ -164,7 +164,7 @@ public static class AIDebug
 		using ( Gizmo.Scope( $"{actor.GameObject.Name} Draw Path", Transform.Zero ) )
 		{
 			Gizmo.Draw.Color = Color.Green;
-			Gizmo.Draw.LineSphere( new Sphere( actor.Transform.Position, 2f ) );
+			Gizmo.Draw.LineSphere( new Sphere( actor.WorldPosition, 2f ) );
 
 			for ( int i = 0; i < path.Count; i++ )
 			{

@@ -12,6 +12,6 @@ public sealed class SineHover : Component
 		translation.x = MathF.Sin( Time.Now * Frequency.x ) * Amplitude.x;
 		translation.y = MathF.Sin( Time.Now * Frequency.y ) * Amplitude.y;
 		translation.z = MathF.Sin( Time.Now * Frequency.z ) * Amplitude.z;
-		Transform.LocalPosition = translation;
+		LocalPosition = translation;
 	}
 }

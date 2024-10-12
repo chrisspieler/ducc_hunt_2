@@ -7,7 +7,7 @@ public partial class HumanController
 {
 	public static IEnumerable<HumanController> GetNearby( Vector3 position, float radius )
 	{
-		return GameManager.ActiveScene.Trace
+		return Game.ActiveScene.Trace
 			.Sphere( radius, position, position )
 			.WithAllTags( "human" )
 			.RunAll()

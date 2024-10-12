@@ -34,9 +34,9 @@ public sealed class FollowCam : Component
 
 	private void UpdatePosition()
 	{
-		var orbitRay = new Ray( Target.Transform.Position, -EyeAngles.Forward );
+		var orbitRay = new Ray( Target.WorldPosition, -EyeAngles.Forward );
 		var targetPosition = GetTargetPosition( orbitRay );
-		Transform.Position = Transform.Position.LerpTo( targetPosition, Time.Delta * LerpSpeed );
+		WorldPosition = WorldPosition.LerpTo( targetPosition, Time.Delta * LerpSpeed );
 	}
 
 	private Vector3 GetTargetPosition( Ray orbitRay )
@@ -58,10 +58,10 @@ public sealed class FollowCam : Component
 
 	private void UpdateRotation()
 	{
-		var direction = (Target.Transform.Position - Transform.Position).Normal;
+		var direction = (Target.WorldPosition - WorldPosition).Normal;
 		var targetRotation = Rotation.LookAt( direction, Vector3.Up );
-		Transform.Rotation = InterpolateRotation
-			? Rotation.Slerp( Transform.Rotation, targetRotation, Time.Delta * SlerpSpeed )
+		WorldRotation = InterpolateRotation
+			? Rotation.Slerp( WorldRotation, targetRotation, Time.Delta * SlerpSpeed )
 			: targetRotation;
 	}
 }

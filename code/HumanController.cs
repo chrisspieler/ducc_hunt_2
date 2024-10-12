@@ -63,12 +63,12 @@ public sealed partial class HumanController : Component, Component.IDamageable, 
 		var faceDirection = FaceDirection ?? MoveDirection;
 		if ( FaceTarget.IsValid() )
 		{
-			faceDirection = FaceTarget.Transform.Position - Transform.Position;
+			faceDirection = FaceTarget.WorldPosition - WorldPosition;
 		}
 		var targetRotation = Rotation.LookAt( faceDirection.Normal.WithZ( 0f ), Vector3.Up );
-		var currentYaw = Renderer.GameObject.Transform.Rotation.Yaw();
+		var currentYaw = Renderer.GameObject.WorldRotation.Yaw();
 		var targetYaw = MathX.Lerp( currentYaw, targetRotation.Yaw(), Time.Delta * 4f );
-		Renderer.GameObject.Transform.Rotation = Rotation.FromYaw( targetYaw );
+		Renderer.GameObject.WorldRotation = Rotation.FromYaw( targetYaw );
 	}
 
 	public void OnDamage( in DamageInfo damage )
@@ -95,7 +95,7 @@ public sealed partial class HumanController : Component, Component.IDamageable, 
 		var decomp = Renderer.Components.Create<Decompose>();
 		decomp.StartTime = 1f;
 		decomp.IgnoreTime = 5f;
-		var nearbyPeople = GetNearby( Transform.Position, 800f );
+		var nearbyPeople = GetNearby( WorldPosition, 800f );
 		foreach ( var person in nearbyPeople )
 		{
 			if ( Crime.Debug )

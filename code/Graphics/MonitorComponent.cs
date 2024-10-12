@@ -38,7 +38,7 @@ public sealed class MonitorComponent : DynamicTextureComponent
 
 	public void ApplyMaterialOverride()
 	{
-		if ( !GameManager.IsPlaying || Model?.SceneObject is null )
+		if ( !Game.IsPlaying || Model?.SceneObject is null )
 			return;
 
 		if ( !string.IsNullOrWhiteSpace( MaterialName ) )

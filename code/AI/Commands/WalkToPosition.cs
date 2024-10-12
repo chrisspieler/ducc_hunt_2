@@ -18,7 +18,7 @@ public class WalkToPosition : BehaviorNode
 	{
 		var target = context.Get<Vector3>( K_WALK_POSITION );
 
-		var remainingDistance = actor.Transform.Position.Distance( target );
+		var remainingDistance = actor.WorldPosition.Distance( target );
 		if ( remainingDistance <= TargetReachedDistance ) 
 		{
 			StopActor( actor );
@@ -34,7 +34,7 @@ public class WalkToPosition : BehaviorNode
 		if ( !_pathPositions.Any() )
 		{
 			var sw = Stopwatch.StartNew();
-			_pathPositions = GeneratePath( actor.Transform.Position, target );
+			_pathPositions = GeneratePath( actor.WorldPosition, target );
 			sw.Stop();
 			AIDebug.Log( actor, $"New {_pathPositions.Count} segment path in {sw.ElapsedMilliseconds}ms" );
 			if (!_pathPositions.Any() )
@@ -72,20 +72,20 @@ public class WalkToPosition : BehaviorNode
 	{
 		var human = actor.Components.Get<HumanController>();
 		var targetPos = _pathPositions[_currentPathIndex];
-		if ( human.Transform.Position.Distance( targetPos ) <= 4f )
+		if ( human.WorldPosition.Distance( targetPos ) <= 4f )
 		{
 			_currentPathIndex++;
 			AIDebug.Log( actor, $"Reached index {_currentPathIndex}" );
 			return;
 		}
-		var direction = (targetPos - human.Transform.Position).Normal;
+		var direction = (targetPos - human.WorldPosition).Normal;
 		human.FaceDirection = direction;
 		human.MoveDirection = direction;
 	}
 
 	private List<Vector3> GeneratePath( Vector3 startPos, Vector3 targetPos )
 	{
-		var path = GameManager.ActiveScene.NavMesh.GetSimplePath( startPos, targetPos );
+		var path = Game.ActiveScene.NavMesh.GetSimplePath( startPos, targetPos );
 		_currentPathIndex = path.Any() ? 0 : -1;
 		return path;
 	}

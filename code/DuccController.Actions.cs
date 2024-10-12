@@ -31,7 +31,7 @@ public partial class DuccController
 	[Title( "Teleport" ), Group( "Ducc" )]
 	public static void Teleport( GameObject destination )
 	{
-		Instance.Transform.World = destination.Transform.World.WithScale( Instance.Transform.Scale );
+		Instance.Transform.World = destination.Transform.World.WithScale( Instance.WorldScale );
 		Instance.Character.Velocity = 0f;
 	}
 
@@ -43,7 +43,7 @@ public partial class DuccController
 			.FirstOrDefault( c => !DebugTeleport.IsDevSpawnPoint( c ) );
 		if ( !spawnPoint.IsValid() )
 		{
-			Instance.Transform.Position = Vector3.Up * 50f;
+			Instance.WorldPosition = Vector3.Up * 50f;
 			return;
 		}
 		Teleport( spawnPoint.GameObject );

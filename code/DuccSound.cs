@@ -22,7 +22,7 @@ namespace Sandbox
 
 		private Dictionary<DuccSoundHandle, SoundHandle> _activeSounds = new();
 
-		public static DuccSound Current => GameManager.ActiveScene.GetSystem<DuccSound>();
+		public static DuccSound Current => Game.ActiveScene.GetSystem<DuccSound>();
 
 		public static DuccSoundHandle Play( SoundEvent sound, GameObject follow = null )
 		{
@@ -60,9 +60,8 @@ namespace Sandbox
 				hSnd.Pitch = GetEffectivePitch( duccSnd );
 				if ( duccSnd.Follow.IsValid() )
 				{
-					hSnd.Position = duccSnd.Follow.Transform.Position;
+					hSnd.Position = duccSnd.Follow.WorldPosition;
 				}
-				hSnd.Update();
 			}
 			DebugPrint();
 		}
@@ -74,7 +73,7 @@ namespace Sandbox
 
 		private static float GetEffectivePitch( DuccSoundHandle sound )
 		{
-			return sound.Pitch * Math.Max( GameManager.ActiveScene.TimeScale, 0.3f );
+			return sound.Pitch * Math.Max( Game.ActiveScene.TimeScale, 0.3f );
 		}
 
 		public static void DebugPrint()

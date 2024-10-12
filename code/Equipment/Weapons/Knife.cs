@@ -41,8 +41,8 @@ public class Knife : Equipment
 				UpdateIdle();
 				break;
 		}
-		Transform.Position = Transform.Position.LerpTo( _targetPosition, Time.Delta * 15f );
-		Transform.Rotation = _targetRotation;
+		WorldPosition = WorldPosition.LerpTo( _targetPosition, Time.Delta * 15f );
+		WorldRotation = _targetRotation;
 	}
 
 	private void BeginIdle()
@@ -70,7 +70,7 @@ public class Knife : Equipment
 	{
 		_attackCharge = Math.Min( _attackCharge + Time.Delta, 1f );
 		_targetPosition = Transform.Parent.Transform.World.PointToWorld( Vector3.Up * 5f );
-		var direction = (GetAttackPosition() - Transform.Position).Normal;
+		var direction = (GetAttackPosition() - WorldPosition).Normal;
 		_targetRotation = Rotation.LookAt( direction ) * Rotation.FromPitch( 90f );
 		if ( !Input.Down( "attack1" ) )
 		{
@@ -97,23 +97,23 @@ public class Knife : Equipment
 			return;
 
 		_targetPosition = _attackPosition;
-		var forwardRotation = Rotation.LookAt( (_attackPosition - Transform.Position).Normal );
+		var forwardRotation = Rotation.LookAt( (_attackPosition - WorldPosition).Normal );
 		_targetRotation = forwardRotation * Rotation.FromPitch( 90f );
-		if ( _targetPosition.Distance( Transform.Position ) <= 5f )
+		if ( _targetPosition.Distance( WorldPosition ) <= 5f )
 		{
 			BeginIdle();
 		}
 		if ( Debug )
 		{
 			Gizmo.Draw.Color = Color.Blue;
-			Gizmo.Draw.Line( Transform.Position, _attackPosition );
+			Gizmo.Draw.Line( WorldPosition, _attackPosition );
 			Gizmo.Draw.LineSphere( new Sphere( _attackPosition, 2f ) );
 		}
 	}
 
 	private bool UpdateStabDetection()
 	{
-		var ray = new Ray( StabPoint.Transform.Position, StabPoint.Transform.Rotation.Forward );
+		var ray = new Ray( StabPoint.WorldPosition, StabPoint.WorldRotation.Forward );
 		// I can't use BBox trace because it is axis-aligned. I can't use capsules because the
 		// hit postition isn't accurate. So instead I make a grid of ray traces and use the
 		// first one that hits.
@@ -135,7 +135,7 @@ public class Knife : Equipment
 		{
 			Log.Info( $"stabbed {other.Name}" );
 		}
-		DuccSound.Play( StabSound, other.Transform.Position );
+		DuccSound.Play( StabSound, other.WorldPosition );
 		var damage = new DamageInfo()
 		{
 			Attacker = DuccController.Instance.GameObject,
