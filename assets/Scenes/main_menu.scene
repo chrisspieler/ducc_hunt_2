@@ -1,15 +1,17 @@
 {
-  "Id": "947a54f3-4c55-4fa2-9c74-96a04f0546b2",
+  "__guid": "947a54f3-4c55-4fa2-9c74-96a04f0546b2",
   "GameObjects": [
     {
-      "Id": "e05baf65-4b63-4b09-a5f8-e6bf9310fe41",
+      "__guid": "e05baf65-4b63-4b09-a5f8-e6bf9310fe41",
+      "Flags": 0,
       "Name": "Camera",
       "Position": "-200,0,100",
       "Tags": "maincamera",
       "Enabled": true,
       "Components": [
         {
-          "__type": "CameraComponent",
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "2b790531-8dba-4cbd-ade4-89f91cf585da",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
@@ -25,7 +27,8 @@
           "ZNear": 10
         },
         {
-          "__type": "Bloom",
+          "__type": "Sandbox.Bloom",
+          "__guid": "47c1c5fb-7433-4737-b9ea-20cd31f43785",
           "BloomColor": {
             "color": [
               {
@@ -50,63 +53,90 @@
               "y": 1
             }
           ],
-          "Mode": "Screen",
+          "Mode": "Additive",
           "Strength": 2,
-          "Threshold": 0.04,
+          "Threshold": 0.05,
           "ThresholdWidth": 0
         },
         {
-          "__type": "DepthOfField",
+          "__type": "Sandbox.DepthOfField",
+          "__guid": "c42d4b39-1067-4647-b9cf-a0f988a6576c",
           "BackBlur": true,
           "BlurSize": 100,
           "FocalDistance": 50,
           "FrontBlur": false
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "4b3f8497-af17-4184-8014-c88cf9d19f0e",
+          "FalloffDistance": 1,
+          "Intensity": 8,
+          "Quality": "High",
+          "Radius": 32
+        },
+        {
+          "__type": "Sandbox.Tonemapping",
+          "__guid": "4330ee3c-13e4-4ae2-854b-376536203df4",
+          "__version": 1,
+          "AutoExposureEnabled": false,
+          "ExposureBias": 2,
+          "ExposureCompensation": 0,
+          "ExposureMethod": "RGB",
+          "MaximumExposure": 3,
+          "MinimumExposure": 1,
+          "Mode": "ACES",
+          "Rate": 1
         }
       ]
     },
     {
-      "Id": "5020c781-e95d-4c34-af0e-5714538c8fcb",
+      "__guid": "5020c781-e95d-4c34-af0e-5714538c8fcb",
+      "Flags": 0,
       "Name": "Screen",
       "Position": "153.8508,130.9362,-221.7649",
       "Enabled": true,
       "Components": [
         {
-          "__type": "ScreenPanel",
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "10742398-9fdd-49a0-a919-909b87e2793f",
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {
           "__type": "GameUI",
-          "BossPanel": null,
-          "CameraFeed": null,
+          "__guid": "c8011c24-3d1f-47a9-9b61-e901accfcdb0",
           "MegaToast": {
             "_type": "component",
+            "component_id": "378bd3a7-12b4-4696-8dc1-7554921b2a2c",
             "go": "4d1a959e-8737-4412-bbed-42d55a05c876",
             "component_type": "MegaToastPanel"
           },
           "Modal": {
             "_type": "component",
+            "component_id": "707b09ca-9e60-4c8d-a11b-2fa0ddc672eb",
             "go": "b48c848f-ef12-4045-8918-25a7aac03732",
             "component_type": "ModalPanel"
-          },
-          "Victory": null
+          }
         }
       ],
       "Children": [
         {
-          "Id": "ca8d968f-ec66-4b6d-bf89-a40157e34289",
+          "__guid": "ca8d968f-ec66-4b6d-bf89-a40157e34289",
+          "Flags": 0,
           "Name": "Main Menu",
-          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "MainMenu",
+              "__guid": "f5922181-758e-4d72-be1e-1a12c631ca05",
               "GameTitle": "ducc hunt 2",
               "NewGameScene": "scenes/edgy_zone.scene",
               "PresidentialModal": {
                 "_type": "component",
+                "component_id": "707b09ca-9e60-4c8d-a11b-2fa0ddc672eb",
                 "go": "b48c848f-ef12-4045-8918-25a7aac03732",
                 "component_type": "ModalPanel"
               }
@@ -114,31 +144,34 @@
           ],
           "Children": [
             {
-              "Id": "b48c848f-ef12-4045-8918-25a7aac03732",
+              "__guid": "b48c848f-ef12-4045-8918-25a7aac03732",
+              "Flags": 0,
               "Name": "Modal",
-              "Position": "0,0,0",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "ModalPanel",
+                  "__guid": "707b09ca-9e60-4c8d-a11b-2fa0ddc672eb",
                   "__enabled": false,
                   "Choices": [
                     "The honor is all mine, ducc."
                   ],
                   "Message": "Hello, Mr. President. It\u0027s an honor to meet you!",
                   "OnClose": {
-                    "Version": 5,
+                    "__version": 8,
+                    "__guid": "502079b0-e268-4551-a905-0081fad134f9",
+                    "__changeId": 0,
                     "UserData": {
                       "Title": "On Close",
-                      "id": "502079b0-e268-4551-a905-0081fad134f9",
                       "ReferencedComponentTypes": []
                     },
                     "Variables": [
                       {
                         "Name": "_this",
-                        "Type": "Component",
+                        "Type": "Sandbox.Component",
                         "Default": {
                           "_type": "component",
+                          "component_id": "707b09ca-9e60-4c8d-a11b-2fa0ddc672eb",
                           "go": "b48c848f-ef12-4045-8918-25a7aac03732",
                           "component_type": "ModalPanel"
                         }
@@ -165,6 +198,7 @@
                         "DstName": "_signal"
                       },
                       {
+                        "Id": 2,
                         "Value": "I hope you enjoy my game, Mr. President.",
                         "DstId": 1,
                         "DstName": "message"
@@ -176,13 +210,14 @@
               ]
             },
             {
-              "Id": "4d1a959e-8737-4412-bbed-42d55a05c876",
+              "__guid": "4d1a959e-8737-4412-bbed-42d55a05c876",
+              "Flags": 0,
               "Name": "Mega Toast",
-              "Position": "0,0,0",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "MegaToastPanel",
+                  "__guid": "378bd3a7-12b4-4696-8dc1-7554921b2a2c",
                   "__enabled": false,
                   "DefaultDuration": 3,
                   "Message": "Hello World!"
@@ -194,13 +229,16 @@
       ]
     },
     {
-      "Id": "0253edae-a5fe-4d91-8538-f64c021b1ae5",
+      "__guid": "0253edae-a5fe-4d91-8538-f64c021b1ae5",
+      "Flags": 0,
       "Name": "Sun",
       "Rotation": "0,0.5688016,0,0.8224748",
+      "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
         {
-          "__type": "DirectionalLight",
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "cc993c07-654f-4828-b595-29f1d2f7a4b4",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.91373,0.98039,1,1",
@@ -209,19 +247,24 @@
         },
         {
           "__type": "Rotator",
+          "__guid": "2934bcc7-705c-4281-9d39-24aa5945b671",
           "RotationPerSecond": "0,6,9"
         }
       ],
       "Children": [
         {
-          "Id": "e8ccc776-f290-497c-b265-13be66ee2716",
+          "__guid": "e8ccc776-f290-497c-b265-13be66ee2716",
+          "Flags": 0,
           "Name": "2D Skybox",
           "Position": "-110.0869,77.6129,-91.30151",
           "Rotation": "0,-0.5688016,0,0.8224748",
+          "Tags": "skybox",
           "Enabled": true,
           "Components": [
             {
-              "__type": "SkyBox2D",
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "8ad3a0cb-32fc-423a-88d4-bff83e9c84a0",
+              "SkyIndirectLighting": true,
               "SkyMaterial": "starmap20.vmat",
               "Tint": "1,1,1,1"
             }
@@ -230,32 +273,40 @@
       ]
     },
     {
-      "Id": "dcf817d0-c41d-4e77-bef4-ec431a94a607",
+      "__guid": "dcf817d0-c41d-4e77-bef4-ec431a94a607",
+      "Flags": 0,
       "Name": "ducc",
       "Position": "-150,0,95",
       "Enabled": true,
       "Children": [
         {
-          "Id": "534ef729-f534-4656-b43f-201007f58155",
+          "__guid": "534ef729-f534-4656-b43f-201007f58155",
+          "Flags": 0,
           "Name": "Model",
-          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
-              "__type": "ModelRenderer",
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "c82dea1a-3232-46ab-baa9-83f9ff919d74",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/duck_decoration/duck_decoration.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
             {
               "__type": "Rotator",
+              "__guid": "ecdca23d-8890-4853-bb2b-15758d0be09e",
               "RotationPerSecond": "0,80,0"
             },
             {
               "__type": "SineHover",
+              "__guid": "f830401f-d617-409b-b382-ffa55a597c27",
               "Amplitude": "15,9,6",
               "Frequency": "1,0.6,0.9"
             }
@@ -266,9 +317,10 @@
   ],
   "SceneProperties": {
     "FixedUpdateFrequency": 50,
-    "Lerping": true,
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
@@ -287,9 +339,10 @@
   },
   "Title": "main_menu",
   "Description": "",
-  "LastSaved": "2024-02-15T15:14:57.0201773-07:00",
+  "ResourceVersion": 1,
   "__references": [
-    "dopamine.starmap",
-    "duccsoft.duck_decoration"
-  ]
+    "dopamine.starmap#27121",
+    "duccsoft.duck_decoration#16326"
+  ],
+  "__version": 1
 }

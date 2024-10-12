@@ -1,12 +1,14 @@
 {
   "RootObject": {
-    "Id": "c58d43f9-6d0a-4e69-9290-ea8b757f6fda",
+    "__guid": "c58d43f9-6d0a-4e69-9290-ea8b757f6fda",
+    "Flags": 0,
     "Name": "third_person_camera",
     "Tags": "maincamera",
     "Enabled": true,
     "Components": [
       {
-        "__type": "CameraComponent",
+        "__type": "Sandbox.CameraComponent",
+        "__guid": "7d877750-f6b7-4239-ac6e-960c1741be20",
         "BackgroundColor": "0,0,0,1",
         "ClearFlags": "All",
         "FieldOfView": 90,
@@ -23,19 +25,76 @@
       },
       {
         "__type": "FollowCam",
+        "__guid": "4d3abdbf-b200-49a9-bbae-0da50e09221e",
         "Collide": true,
         "CollisionIgnoreTags": "player",
         "FollowDistance": 25,
         "InterpolateRotation": false,
         "LerpSpeed": 25,
-        "SlerpSpeed": 20,
-        "Target": null
+        "SlerpSpeed": 20
+      },
+      {
+        "__type": "Sandbox.Bloom",
+        "__guid": "47c1c5fb-7433-4737-b9ea-20cd31f43785",
+        "BloomColor": {
+          "color": [
+            {
+              "c": "1,1,1,1"
+            },
+            {
+              "c": "1,1,1,1"
+            },
+            {
+              "t": 1,
+              "c": "1,1,1,1"
+            }
+          ],
+          "alpha": []
+        },
+        "BloomCurve": [
+          {
+            "y": 0.5
+          },
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "Mode": "Additive",
+        "Strength": 1,
+        "Threshold": 0.5,
+        "ThresholdWidth": 0
+      },
+      {
+        "__type": "Sandbox.AmbientOcclusion",
+        "__guid": "4b3f8497-af17-4184-8014-c88cf9d19f0e",
+        "FalloffDistance": 1,
+        "Intensity": 8,
+        "Quality": "High",
+        "Radius": 32
+      },
+      {
+        "__type": "Sandbox.Tonemapping",
+        "__guid": "4330ee3c-13e4-4ae2-854b-376536203df4",
+        "__version": 1,
+        "AutoExposureEnabled": false,
+        "ExposureBias": 2,
+        "ExposureCompensation": 0,
+        "ExposureMethod": "RGB",
+        "MaximumExposure": 3,
+        "MinimumExposure": 1,
+        "Mode": "ACES",
+        "Rate": 1
       }
     ],
-    "Children": []
+    "Children": [],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
-  "__references": []
+  "DontBreakAsTemplate": false,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
 }
